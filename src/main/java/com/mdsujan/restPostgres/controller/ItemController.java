@@ -1,6 +1,6 @@
-package com.mdsujan.restProges.controller;
+package com.mdsujan.restPostgres.controller;
 
-import com.mdsujan.restProges.response.ItemResponse;
+import com.mdsujan.restPostgres.response.ItemResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
