@@ -1,5 +1,6 @@
 package com.mdsujan.restPostgres.response;
 
+import com.mdsujan.restPostgres.entity.Item;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemResponse {
-    private String id;
+    private Long id;
 
     @Setter
     private String desc;
@@ -27,6 +28,19 @@ public class ItemResponse {
     private Boolean shippingAllowed;
     @Setter
     private Boolean deliveryAllowed;
+
+    public ItemResponse(Item item) {
+        this.id = item.getItemId();
+        this.desc=item.getItemDescription();
+        this.category=item.getCategory();
+        this.type=item.getType();
+        this.status=item.getStatus();
+        this.price=item.getPrice();
+        this.deliveryAllowed=item.getDeliveryAllowed();
+        this.shippingAllowed=item.getShippingAllowed();
+        this.pickupAllowed=item.getPickupAllowed();
+
+    }
 
     @Override
     public String toString() {
