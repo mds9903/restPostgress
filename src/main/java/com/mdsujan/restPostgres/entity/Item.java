@@ -15,24 +15,23 @@ import javax.persistence.*;
 @Table(name = "item")
 public class Item {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "item_id")
     private Long itemId;
 
     @Setter
-    @Column(name = "item_description")
-    private String itemDescription;
+    @Column(name = "item_desc")
+    private String itemDesc;
 
     @Setter
     @Column(name = "category")
     private String category;
 
     @Setter
-    @Column(name = "type")
+    @Column(name = "item_type")
     private String type;
 
     @Setter
-    @Column(name = "status")
+    @Column(name = "item_status")
     private String status;
 
     @Setter
@@ -53,7 +52,7 @@ public class Item {
 
     public Item(CreateItemRequest createItemRequest) {
         this.itemId = createItemRequest.getId();
-        this.itemDescription = createItemRequest.getDesc();
+        this.itemDesc = createItemRequest.getDesc();
         this.category = createItemRequest.getCategory();
         this.type = createItemRequest.getType();
         this.status = createItemRequest.getStatus();

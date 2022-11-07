@@ -4,6 +4,7 @@ import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.request.CreateItemRequest;
 import com.mdsujan.restPostgres.response.ItemResponse;
 import com.mdsujan.restPostgres.service.ItemService;
+import com.mdsujan.restPostgres.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +35,7 @@ public class ItemController {
     }
 
     @PostMapping("/") // create an item in the table
-    public ItemResponse createItem(@Valid @RequestBody CreateItemRequest createItemRequest){
+    public ItemResponse createItem(@RequestBody CreateItemRequest createItemRequest){
         Item newItem = itemService.createItem(createItemRequest);
         return new ItemResponse(newItem);
     }

@@ -31,7 +31,7 @@ public class ItemResponse {
 
     public ItemResponse(Item item) {
         this.id = item.getItemId();
-        this.desc=item.getItemDescription();
+        this.desc=item.getItemDesc();
         this.category=item.getCategory();
         this.type=item.getType();
         this.status=item.getStatus();
