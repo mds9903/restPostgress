@@ -1,5 +1,6 @@
 package com.mdsujan.restPostgres.entity;
 
+import com.mdsujan.restPostgres.request.CreateItemRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -50,4 +51,15 @@ public class Item {
     @Column(name = "delivery_allowed")
     private Boolean deliveryAllowed;
 
+    public Item(CreateItemRequest createItemRequest) {
+        this.itemId = createItemRequest.getId();
+        this.itemDescription = createItemRequest.getDesc();
+        this.category = createItemRequest.getCategory();
+        this.type = createItemRequest.getType();
+        this.status = createItemRequest.getStatus();
+        this.price = createItemRequest.getPrice();
+        this.pickupAllowed = createItemRequest.getPickupAllowed();
+        this.shippingAllowed=createItemRequest.getShippingAllowed();
+        this.deliveryAllowed = createItemRequest.getDeliveryAllowed();
+    }
 }
