@@ -1,6 +1,7 @@
 package com.mdsujan.restPostgres.entity;
 
 import com.mdsujan.restPostgres.request.CreateItemRequest;
+import com.mdsujan.restPostgres.request.UpdateItemRequest;
 import lombok.*;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
@@ -60,5 +61,17 @@ public class Item {
         this.pickupAllowed = createItemRequest.getPickupAllowed();
         this.shippingAllowed = createItemRequest.getShippingAllowed();
         this.deliveryAllowed = createItemRequest.getDeliveryAllowed();
+    }
+
+    public Item(UpdateItemRequest updateItemRequest) {
+        this.itemId = updateItemRequest.getId();
+        this.itemDesc=updateItemRequest.getDesc();
+        this.category = updateItemRequest.getCategory();
+        this.type = updateItemRequest.getType();
+        this.status = updateItemRequest.getStatus();
+        this.price = updateItemRequest.getPrice();
+        this.pickupAllowed = updateItemRequest.getPickupAllowed();
+        this.shippingAllowed = updateItemRequest.getShippingAllowed();
+        this.deliveryAllowed = updateItemRequest.getDeliveryAllowed();
     }
 }

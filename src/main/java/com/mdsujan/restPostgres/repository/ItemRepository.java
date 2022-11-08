@@ -15,4 +15,6 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     @Transactional
     @Query("Delete from Item where itemId = :id")
     void deleteById(Long id);
+
+
 }

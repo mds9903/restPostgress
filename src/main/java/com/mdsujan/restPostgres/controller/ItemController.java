@@ -2,6 +2,7 @@ package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.request.CreateItemRequest;
+import com.mdsujan.restPostgres.request.UpdateItemRequest;
 import com.mdsujan.restPostgres.response.ItemResponse;
 import com.mdsujan.restPostgres.service.ItemService;
 import com.mdsujan.restPostgres.service.LocationService;
@@ -47,6 +48,11 @@ public class ItemController {
             return "Item deleted successfully";
         }
         return "Item not deleted";
+    }
+
+    @PutMapping("/{itemId}")
+    public ItemResponse updateItem(@PathVariable Long itemId, @RequestBody UpdateItemRequest updateItemRequest){
+        return itemService.updateItemById(itemId, updateItemRequest);
     }
 
 }

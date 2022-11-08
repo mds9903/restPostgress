@@ -1,9 +1,10 @@
 package com.mdsujan.restPostgres.request;
 
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Data
-
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class CreateItemRequest {
 
     private Long id;

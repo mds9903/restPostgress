@@ -5,10 +5,13 @@ import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.request.CreateItemRequest;
+import com.mdsujan.restPostgres.request.UpdateItemRequest;
+import com.mdsujan.restPostgres.response.ItemResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class ItemService {
@@ -60,8 +63,58 @@ public class ItemService {
 //            itemRepository.deleteById(itemId);
 //            return true;
         } catch (Exception e) {
-            System.out.println("******************* EXCEPTION"+e);
+            System.out.println("******************* EXCEPTION" + e);
             return false;
         }
+    }
+
+    public ItemResponse updateItemById(Long itemId, UpdateItemRequest updateItemRequest) {
+        // find the record matching with the id
+        Item itemToUpdate = itemRepository.findById(itemId).get();
+        // "API must honor the itemId value passed in the input"
+        // if the new item does not have id then we abort;
+        if (!Objects.equals(updateItemRequest.getId(), itemId)) {
+            // cannot change the id of item
+//            return null;
+            return new ItemResponse(itemToUpdate);
+        }
+        try{
+
+            // update the itemToUpdate
+            if (updateItemRequest.getDesc() != null || !updateItemRequest.getDesc().isEmpty()) {
+                itemToUpdate.setItemDesc(updateItemRequest.getDesc());
+            }
+            if (updateItemRequest.getCategory() != null || !updateItemRequest.getCategory().isEmpty()) {
+                itemToUpdate.setCategory(updateItemRequest.getCategory());
+            }
+            if (updateItemRequest.getType() != null || !updateItemRequest.getType().isEmpty()) {
+                itemToUpdate.setType(updateItemRequest.getType());
+            }
+            if (updateItemRequest.getStatus() != null || !updateItemRequest.getStatus().isEmpty()) {
+                itemToUpdate.setStatus(updateItemRequest.getStatus());
+            }
+            if (updateItemRequest.getPrice() != null) {
+                itemToUpdate.setPrice(updateItemRequest.getPrice());
+            }
+            if (updateItemRequest.getPickupAllowed() != null) {
+                itemToUpdate.setPickupAllowed(updateItemRequest.getPickupAllowed());
+            }
+            if (updateItemRequest.getShippingAllowed() != null) {
+                itemToUpdate.setShippingAllowed(updateItemRequest.getShippingAllowed());
+            }
+            if (updateItemRequest.getDeliveryAllowed() != null) {
+                itemToUpdate.setDeliveryAllowed(updateItemRequest.getDeliveryAllowed());
+            }
+
+            // save the new entity
+            itemToUpdate = itemRepository.save(itemToUpdate);
+        }catch (Exception e){
+            System.out.println("Exception occurred: "+e.getMessage());
+        }
+        // anyhow we send itemToUpdate
+        // in case there is any issue with the UpdateRequestItem not having consistency with the oldItem
+        // then itemToUpdate will have old item's details
+        // otherwise it will have updated details
+        return new ItemResponse(itemToUpdate);
     }
 }
