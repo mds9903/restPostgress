@@ -7,7 +7,7 @@ import lombok.experimental.FieldDefaults;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "demand")
+@Table(name = "demand",schema = "public")
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Demand {
@@ -19,7 +19,7 @@ public class Demand {
     String type;
 
     @Column(name = "quantity")
-    int qty;
+    Integer qty;
 
     @OneToOne
     @JoinColumn(name = "item_id")

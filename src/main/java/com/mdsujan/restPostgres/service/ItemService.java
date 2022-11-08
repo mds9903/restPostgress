@@ -48,14 +48,19 @@ public class ItemService {
 
     public boolean deleteItemById(Long itemId) {
         try {
-            if (supplyRepository.findById(itemId).isPresent() || demandRepository.findById(itemId).isPresent()) {
-                System.out.println("** CANNOT DELETE **");
-                return false;
-            }
-            // delete only if no supply or demand exists for this item
             itemRepository.deleteById(itemId);
             return true;
+//            boolean isSupply = supplyRepository.findById(itemId).isPresent();
+//            boolean isDemand = demandRepository.findById(itemId).isPresent();
+//            if (isSupply || isDemand ) {
+//                System.out.println("** CANNOT DELETE **");
+//                return false;
+//            }
+//            // delete only if no supply or demand exists for this item
+//            itemRepository.deleteById(itemId);
+//            return true;
         } catch (Exception e) {
+            System.out.println("******************* EXCEPTION"+e);
             return false;
         }
     }

@@ -42,7 +42,8 @@ public class ItemController {
 
     @DeleteMapping("/{itemId}") // delete a specific item
     public String deleteItem(@PathVariable Long itemId){
-        if(itemService.deleteItemById(itemId)){
+        boolean deleted = itemService.deleteItemById(itemId);
+        if(deleted){
             return "Item deleted successfully";
         }
         return "Item not deleted";
