@@ -1,5 +1,6 @@
 package com.mdsujan.restPostgres.entity;
 
+import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -16,7 +17,7 @@ public class Demand {
     Long id;
 
     @Column(name = "demand_type")
-    String type;
+    AllowedDemandTypes type;
 
     @Column(name = "quantity")
     Integer qty;

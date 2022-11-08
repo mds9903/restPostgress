@@ -45,11 +45,11 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 			<version>2.7.5</version>
 		</dependency>
-		<dependency>
-			<groupId>psq</groupId>
-			<artifactId></artifactId>
-			<version>1.0.0b4</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>psq</groupId>-->
+<!--			<artifactId></artifactId>-->
+<!--			<version>1.0.0b4</version>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
