@@ -49,7 +49,7 @@ public class ItemService {
         return item;
     }
 
-    public boolean deleteItemById(Long itemId) {
+    public Boolean deleteItemById(Long itemId) {
         try {
             itemRepository.deleteById(itemId);
             return true;
@@ -68,7 +68,7 @@ public class ItemService {
         }
     }
 
-    public ItemResponse updateItemById(Long itemId, UpdateItemRequest updateItemRequest) {
+    public Item updateItemById(Long itemId, UpdateItemRequest updateItemRequest) {
         // find the record matching with the id
         Item itemToUpdate = itemRepository.findById(itemId).get();
         // "API must honor the itemId value passed in the input"
@@ -76,7 +76,7 @@ public class ItemService {
         if (!Objects.equals(updateItemRequest.getId(), itemId)) {
             // cannot change the id of item
 //            return null;
-            return new ItemResponse(itemToUpdate);
+            return itemToUpdate;
         }
         try{
 
@@ -115,6 +115,6 @@ public class ItemService {
         // in case there is any issue with the UpdateRequestItem not having consistency with the oldItem
         // then itemToUpdate will have old item's details
         // otherwise it will have updated details
-        return new ItemResponse(itemToUpdate);
+        return itemToUpdate;
     }
 }

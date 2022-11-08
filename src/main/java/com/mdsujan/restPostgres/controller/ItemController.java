@@ -52,7 +52,7 @@ public class ItemController {
 
     @PutMapping("/{itemId}")
     public ItemResponse updateItem(@PathVariable Long itemId, @RequestBody UpdateItemRequest updateItemRequest){
-        return itemService.updateItemById(itemId, updateItemRequest);
+        return new ItemResponse(itemService.updateItemById(itemId, updateItemRequest));
     }
 
 }
