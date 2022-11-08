@@ -1,54 +1,54 @@
 package com.mdsujan.restPostgres.entity;
 
 import com.mdsujan.restPostgres.request.CreateItemRequest;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
 import javax.persistence.*;
 
 @Entity
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 @Table(name = "item")
+@NoArgsConstructor
 public class Item {
     @Id
     @Column(name = "item_id")
     private Long itemId;
 
-    @Setter
+
     @Column(name = "item_desc")
     private String itemDesc;
 
-    @Setter
+
     @Column(name = "category")
     private String category;
 
-    @Setter
-    @Column(name = "item_type")
+
+    @Column(name = "type")
     private String type;
 
-    @Setter
-    @Column(name = "item_status")
+
+    @Column(name = "status")
     private String status;
 
-    @Setter
     @Column(name = "price")
     private Double price;
 
-    @Setter
     @Column(name = "pickup_allowed")
     private Boolean pickupAllowed;
 
-    @Setter
     @Column(name = "shipping_allowed")
     private Boolean shippingAllowed;
 
-    @Setter
     @Column(name = "delivery_allowed")
     private Boolean deliveryAllowed;
+
+////
+//    @OneToOne(mappedBy = "item")
+//    private Supply supply;
+//
+//    @OneToOne(mappedBy = "item")
+//    private Demand demand;
 
     public Item(CreateItemRequest createItemRequest) {
         this.itemId = createItemRequest.getId();
@@ -58,7 +58,7 @@ public class Item {
         this.status = createItemRequest.getStatus();
         this.price = createItemRequest.getPrice();
         this.pickupAllowed = createItemRequest.getPickupAllowed();
-        this.shippingAllowed=createItemRequest.getShippingAllowed();
+        this.shippingAllowed = createItemRequest.getShippingAllowed();
         this.deliveryAllowed = createItemRequest.getDeliveryAllowed();
     }
 }

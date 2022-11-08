@@ -12,7 +12,6 @@ import javax.persistence.*;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Supply {
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "supply_id")
     Long id;
 

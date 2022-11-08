@@ -3,7 +3,6 @@ package com.mdsujan.restPostgres.service;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
-import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.request.CreateItemRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class ItemService {
     }
 
 
-    public Item getStudentById(Long itemId) {
+    public Item getItemById(Long itemId) {
         return itemRepository.findById(itemId).get();
     }
 
@@ -49,7 +48,8 @@ public class ItemService {
 
     public boolean deleteItemById(Long itemId) {
         try {
-            if (supplyRepository.findById(itemId).isPresent() && demandRepository.findById(itemId).isPresent()) {
+            if (supplyRepository.findById(itemId).isPresent() || demandRepository.findById(itemId).isPresent()) {
+                System.out.println("** CANNOT DELETE **");
                 return false;
             }
             // delete only if no supply or demand exists for this item

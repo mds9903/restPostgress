@@ -31,7 +31,7 @@ public class ItemController {
 
     @GetMapping("/{itemId}") // return the details of specific itemId
     public ItemResponse getItemWithId(@PathVariable Long itemId){
-        return new ItemResponse(itemService.getStudentById(itemId));
+        return new ItemResponse(itemService.getItemById(itemId));
     }
 
     @PostMapping("/") // create an item in the table
