@@ -21,7 +21,7 @@ public class Supply {
     @Enumerated(EnumType.STRING)
     AllowedSupplyTypes supplyType;
 
-    @Column(name = "quantity")
+    @Column(name = "qty")
     Integer qty;
 
     @OneToOne

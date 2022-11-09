@@ -48,7 +48,7 @@ public class LocationService {
 
             // update the locationToUpdate
             if (updateLocationRequest.getDesc() != null || !updateLocationRequest.getDesc().isEmpty()) {
-                locationToUpdate.setDesc(updateLocationRequest.getDesc());
+                locationToUpdate.setLocationDesc(updateLocationRequest.getDesc());
             }
 
             if (updateLocationRequest.getType() != null || !updateLocationRequest.getType().isEmpty()) {

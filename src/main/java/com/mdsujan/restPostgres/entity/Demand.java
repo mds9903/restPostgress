@@ -17,7 +17,8 @@ public class Demand {
     Long id;
 
     @Column(name = "demand_type")
-    AllowedDemandTypes type;
+    @Enumerated(EnumType.STRING)
+    AllowedDemandTypes demandType;
 
     @Column(name = "quantity")
     Integer qty;

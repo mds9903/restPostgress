@@ -16,10 +16,10 @@ import javax.persistence.*;
 public class Location {
     @Id
     @Column(name = "location_id")
-    Long id;
+    Long locationId;
 
     @Column(name = "location_desc")
-    String desc;
+    String locationDesc;
 
     @Column(name = "type")
     String type;
@@ -55,8 +55,8 @@ public class Location {
     String pincode;
 
     public Location(CreateLocationRequest createLocationRequest) {
-        this.id=createLocationRequest.getId();
-        this.desc=createLocationRequest.getDesc();
+        this.locationId=createLocationRequest.getId();
+        this.locationDesc=createLocationRequest.getDesc();
         this.type= createLocationRequest.getType();
         this.pickupAllowed = createLocationRequest.getPickupAllowed();
         this.shippingAllowed = createLocationRequest.getShippingAllowed();

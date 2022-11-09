@@ -28,6 +28,6 @@ public class SupplyResponse {
         this.qty = supply.getQty();
 
         this.itemId = supply.getItem().getItemId();
-        this.locationId = supply.getLocation().getId();
+        this.locationId = supply.getLocation().getLocationId();
     }
 }

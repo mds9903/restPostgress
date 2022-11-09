@@ -16,7 +16,7 @@ public class SupplyController {
     SupplyService supplyService;
 
     @GetMapping("/")
-    public List<SupplyResponse> getSupplies() {
+    public List<SupplyResponse> getAllSupplies() {
         List<Supply> supplyList = supplyService.getAllSupplies();
         List<SupplyResponse> supplyResponseList = new ArrayList<>();
 
