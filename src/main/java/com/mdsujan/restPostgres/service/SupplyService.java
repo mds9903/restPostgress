@@ -16,4 +16,8 @@ public class SupplyService {
     public List<Supply> getAllSupplies(){
         return supplyRepository.findAll();
     }
+
+    public Supply getSupplyById(Long supplyId) {
+        return supplyRepository.findById(supplyId).get();
+    }
 }

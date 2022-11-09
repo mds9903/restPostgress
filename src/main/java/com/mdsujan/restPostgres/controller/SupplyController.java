@@ -4,9 +4,7 @@ import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.response.SupplyResponse;
 import com.mdsujan.restPostgres.service.SupplyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,5 +24,9 @@ public class SupplyController {
                 supply -> supplyResponseList.add(new SupplyResponse(supply))
         );
         return supplyResponseList;
+    }
+    @GetMapping("/{supplyId}")
+    public SupplyResponse getSupplyById(@PathVariable Long supplyId){
+        return new SupplyResponse(supplyService.getSupplyById(supplyId));
     }
 }
