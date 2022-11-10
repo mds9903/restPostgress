@@ -1,6 +1,7 @@
 package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Supply;
+import com.mdsujan.restPostgres.request.CreateSupplyRequest;
 import com.mdsujan.restPostgres.response.SupplyResponse;
 import com.mdsujan.restPostgres.service.SupplyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,10 @@ public class SupplyController {
     @GetMapping("/{supplyId}")
     public SupplyResponse getSupplyById(@PathVariable Long supplyId){
         return new SupplyResponse(supplyService.getSupplyById(supplyId));
+    }
+
+    @PostMapping("/")
+    public SupplyResponse createSupply(@RequestBody CreateSupplyRequest createSupplyRequest){
+        return new SupplyResponse(supplyService.createNewSupply(createSupplyRequest));
     }
 }

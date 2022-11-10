@@ -16,7 +16,7 @@ public class SupplyResponse {
 
     AllowedSupplyTypes type;
 
-    Integer qty;
+    Long qty;
 
     Long itemId;
 
