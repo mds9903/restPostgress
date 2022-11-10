@@ -1,5 +1,7 @@
 package com.mdsujan.restPostgres.service;
 
+import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
@@ -23,7 +25,7 @@ public class SupplyService {
     @Autowired
     LocationRepository locationRepository;
 
-    public List<Supply> getAllSupplies(){
+    public List<Supply> getAllSupplies() {
         return supplyRepository.findAll();
     }
 
@@ -35,13 +37,21 @@ public class SupplyService {
         // create a supply for an item on a location (given in the request body)
         // if the itemId and the locationId are present in the items and locations table
         Supply supply = new Supply(createSupplyRequest);
-        if(locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
-            && locationRepository.findById(createSupplyRequest.getItemId()).isPresent()){
-            // create new supply
+        if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
+                && locationRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
+
+            // get the item for this supply
+            Item item = itemRepository.findById(createSupplyRequest.getItemId()).get();
+            // get the location for this supply
+            Location location = locationRepository.findById(createSupplyRequest.getLocationId()).get();
+            supply.setItem(item);
+            supply.setLocation(location);
+
+            // save this new supply
             supply = supplyRepository.save(supply);
+
             return supply;
-        }
-        else{
+        } else {
             return supply;
         }
         // then abort this create request
