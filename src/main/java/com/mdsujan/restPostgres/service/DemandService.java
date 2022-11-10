@@ -62,7 +62,7 @@ public class DemandService {
     }
 
     public List<Demand> getDemandsByItemIdAndLocationId(Long itemId, Long locationId) {
-        return demandRepository.findByItemIdAndLocationId(itemId, locationId);
+        return demandRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
     }
 
     public DemandDetailsResponse getDemandDetailsByItemAndLocation(Long itemId, Long locationId) {

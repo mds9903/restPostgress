@@ -62,7 +62,7 @@ public class SupplyService {
 
 
     public List<Supply> getSuppliesByItemIdAndLocationId(Long itemId, Long locationId) {
-        return supplyRepository.findByItemIdAndLocationId(itemId, locationId);
+        return supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
     }
 
     public SupplyDetailsResponse getSupplDetailsByItemAndLocation(Long itemId, Long locationId) {

@@ -25,9 +25,7 @@ public class DemandResponse {
         this.demandId=demand.getDemandId();
         this.demandType = demand.getDemandType();
         this.demandQty=demand.getDemandQty();
-//        this.itemId= demand.getItem().getItemId();
-        this.itemId= demand.getItem().getId();
-//        this.locationId=demand.getLocation().getLocationId();
-        this.locationId=demand.getLocation().getId();
+        this.itemId= demand.getItem().getItemId();
+        this.locationId=demand.getLocation().getLocationId();
     }
 }

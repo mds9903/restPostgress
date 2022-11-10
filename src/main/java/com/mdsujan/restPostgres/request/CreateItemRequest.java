@@ -7,13 +7,13 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CreateItemRequest {
 
-    private Long id;
+    private Long itemId;
 
-    private String desc;
+    private String itemDesc;
 
     private String category;
 
-    private String type;
+    private String itemType;
 
     private String status;
 

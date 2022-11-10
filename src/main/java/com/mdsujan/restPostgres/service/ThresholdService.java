@@ -51,7 +51,7 @@ public class ThresholdService {
 //    }
 
     private List<Threshold> getThresholdsByItemIdAndLocationId(Long itemId, Long thresholdId) {
-        return thresholdRepository.findByItemIdAndLocationId(itemId, thresholdId);
+        return thresholdRepository.findByItemItemIdAndLocationLocationId(itemId, thresholdId);
     }
 
 

@@ -15,7 +15,7 @@ public class Item {
     @Id
     @Column(name = "item_id")
 //    private Long itemId;
-    private Long id;
+    private Long itemId;
 
 
     @Column(name = "item_desc")
@@ -45,19 +45,11 @@ public class Item {
     @Column(name = "delivery_allowed")
     private Boolean deliveryAllowed;
 
-////
-//    @OneToOne(mappedBy = "item")
-//    private Supply supply;
-//
-//    @OneToOne(mappedBy = "item")
-//    private Demand demand;
-
     public Item(CreateItemRequest createItemRequest) {
-//        this.itemId = createItemRequest.getId();
-        this.id = createItemRequest.getId();
-        this.itemDesc = createItemRequest.getDesc();
+        this.itemId = createItemRequest.getItemId();
+        this.itemDesc = createItemRequest.getItemDesc();
         this.category = createItemRequest.getCategory();
-        this.type = createItemRequest.getType();
+        this.type = createItemRequest.getItemType();
         this.status = createItemRequest.getStatus();
         this.price = createItemRequest.getPrice();
         this.pickupAllowed = createItemRequest.getPickupAllowed();
@@ -67,7 +59,7 @@ public class Item {
 
     public Item(UpdateItemRequest updateItemRequest) {
 //        this.itemId = updateItemRequest.getId();
-        this.id = updateItemRequest.getId();
+        this.itemId = updateItemRequest.getId();
         this.itemDesc=updateItemRequest.getDesc();
         this.category = updateItemRequest.getCategory();
         this.type = updateItemRequest.getType();

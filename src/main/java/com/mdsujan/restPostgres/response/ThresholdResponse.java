@@ -22,8 +22,8 @@ public class ThresholdResponse {
 
     public ThresholdResponse(Threshold threshold) {
         this.thresholdId = threshold.getThresholdId();
-        this.itemId = threshold.getItem().getId();
-        this.locationId = threshold.getLocation().getId();
+        this.itemId = threshold.getItem().getItemId();
+        this.locationId = threshold.getLocation().getLocationId();
         this.minThreshold = threshold.getMinThreshold();
         this.maxThreshold = threshold.getMaxThreshold();
     }

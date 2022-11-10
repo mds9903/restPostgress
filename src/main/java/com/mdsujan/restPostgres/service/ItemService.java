@@ -40,8 +40,8 @@ public class ItemService {
         // new record should not be created if record already exists
 
         // if record with same id exists then simply return it
-        if (itemRepository.findById(createItemRequest.getId()).isPresent()) {
-            return itemRepository.findById(createItemRequest.getId()).get();
+        if (itemRepository.findById(createItemRequest.getItemId()).isPresent()) {
+            return itemRepository.findById(createItemRequest.getItemId()).get();
         }
         // else we create a new item
         Item item = new Item(createItemRequest);
@@ -49,22 +49,23 @@ public class ItemService {
         return item;
     }
 
-    public Boolean deleteItemById(Long itemId) {
+    public String deleteItemById(Long itemId) {
         try {
-            itemRepository.deleteById(itemId);
-            return true;
-//            boolean isSupply = supplyRepository.findById(itemId).isPresent();
-//            boolean isDemand = demandRepository.findById(itemId).isPresent();
-//            if (isSupply || isDemand ) {
-//                System.out.println("** CANNOT DELETE **");
-//                return false;
-//            }
-//            // delete only if no supply or demand exists for this item
-//            itemRepository.deleteById(itemId);
-//            return true;
+            // check if item exists
+            if(itemRepository.findById(itemId).isPresent()){
+                // if any child records depend on this item
+                if(supplyRepository.findByItemItemId(itemId).size() > 0 || demandRepository.findByItemItemId(itemId).size() > 0){
+                    // this item cannot be deleted
+                    return "Cannot delete item; it has child records";
+                }
+                // delete the existing item
+                itemRepository.deleteById(itemId);
+                return "Item with itemId="+itemId+" successfully deleted.";
+            }
+            // else give proper message
+            return "Invalid itemId: no such item present";
         } catch (Exception e) {
-            System.out.println("******************* EXCEPTION" + e);
-            return false;
+            return "EXCEPTION OCCURRED" + e;
         }
     }
 

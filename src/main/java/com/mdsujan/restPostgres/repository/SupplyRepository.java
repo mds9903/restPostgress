@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface SupplyRepository extends JpaRepository<Supply, Long> {
-    List<Supply> findByItemIdAndLocationId(Long itemId, Long locationId);
+    List<Supply> findByItemItemIdAndLocationLocationId(Long itemId, Long locationId);
+
+    List<Supply> findByItemItemId(Long itemId);
 //    List<Supply> getSupplyByLocationId();
 }
