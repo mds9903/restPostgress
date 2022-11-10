@@ -15,20 +15,20 @@ import javax.persistence.OneToOne;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class DemandResponse {
-    Long id;
+    Long demandId;
 
     AllowedDemandTypes demandType;
 
-    Integer qty;
+    Long demandQty;
 
     Long itemId;
 
     Long locationId;
 
     public DemandResponse(Demand demand) {
-        this.id=demand.getId();
+        this.demandId=demand.getDemandId();
         this.demandType = demand.getDemandType();
-        this.qty=demand.getQty();
+        this.demandQty=demand.getDemandQty();
         this.itemId= demand.getItem().getItemId();
         this.locationId=demand.getLocation().getLocationId();
     }

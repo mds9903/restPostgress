@@ -1,8 +1,10 @@
 package com.mdsujan.restPostgres.entity;
 
 import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
+import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
@@ -11,17 +13,18 @@ import javax.persistence.*;
 @Table(name = "demand",schema = "public")
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@NoArgsConstructor
 public class Demand {
     @Id
     @Column(name = "demand_id")
-    Long id;
+    Long demandId;
 
     @Column(name = "demand_type")
     @Enumerated(EnumType.STRING)
     AllowedDemandTypes demandType;
 
     @Column(name = "quantity")
-    Integer qty;
+    Long demandQty;
 
     @OneToOne
     @JoinColumn(name = "item_id")
@@ -30,4 +33,10 @@ public class Demand {
     @OneToOne
     @JoinColumn(name = "location_id")
     Location location;
+
+    public Demand(CreateDemandRequest createDemandRequest) {
+        this.demandId = createDemandRequest.getDemandId();
+        this.demandQty = createDemandRequest.getDemandQty();
+        this.demandType = createDemandRequest.getDemandType();
+    }
 }

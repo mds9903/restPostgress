@@ -2,7 +2,10 @@ package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Demand;
 import com.mdsujan.restPostgres.repository.DemandRepository;
+import com.mdsujan.restPostgres.request.CreateDemandRequest;
+import com.mdsujan.restPostgres.request.CreateSupplyRequest;
 import com.mdsujan.restPostgres.response.DemandResponse;
+import com.mdsujan.restPostgres.response.SupplyResponse;
 import com.mdsujan.restPostgres.service.DemandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,5 +32,10 @@ public class DemandController {
     @GetMapping("/{demandId}")
     public DemandResponse getDemandById(@PathVariable Long demandId){
         return new DemandResponse(demandService.getDemandById(demandId));
+    }
+
+    @PostMapping("/")
+    public DemandResponse createDemand(@RequestBody CreateDemandRequest createDemandRequest){
+        return new DemandResponse(demandService.createNewDemand(createDemandRequest));
     }
 }

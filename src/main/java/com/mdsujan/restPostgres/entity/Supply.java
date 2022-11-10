@@ -37,7 +37,6 @@ public class Supply {
 
     public Supply(CreateSupplyRequest createSupplyRequest) {
         this.id = createSupplyRequest.getSupplyId();
-//        this.supplyType = AllowedSupplyTypes.valueOf(createSupplyRequest.getSupplyType());
         this.supplyType = createSupplyRequest.getSupplyType();
         this.qty = createSupplyRequest.getSupplyQty();
     }
