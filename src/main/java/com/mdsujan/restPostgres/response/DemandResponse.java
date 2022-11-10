@@ -8,10 +8,6 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class DemandResponse {
@@ -29,7 +25,9 @@ public class DemandResponse {
         this.demandId=demand.getDemandId();
         this.demandType = demand.getDemandType();
         this.demandQty=demand.getDemandQty();
-        this.itemId= demand.getItem().getItemId();
-        this.locationId=demand.getLocation().getLocationId();
+//        this.itemId= demand.getItem().getItemId();
+        this.itemId= demand.getItem().getId();
+//        this.locationId=demand.getLocation().getLocationId();
+        this.locationId=demand.getLocation().getId();
     }
 }

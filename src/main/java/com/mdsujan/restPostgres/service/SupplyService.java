@@ -3,10 +3,13 @@ package com.mdsujan.restPostgres.service;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Supply;
+import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
+import com.mdsujan.restPostgres.response.SupplyDetails;
+import com.mdsujan.restPostgres.response.SupplyDetailsResponse;
 import com.mdsujan.restPostgres.response.SupplyResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,5 +59,30 @@ public class SupplyService {
         }
         // then abort this create request
         // else
+    }
+
+
+    public List<Supply> getSuppliesByItemIdAndLocationId(Long itemId, Long locationId){
+        return supplyRepository.findByItemIdAndLocationId(itemId, locationId);
+    }
+
+    public SupplyDetailsResponse getSupplDetailsByItemAndLocation(Long itemId, Long locationId) {
+        // seems a little hard coded; an efficient solution could be updated later
+        // get the list of supplies with matching itemId and locationId
+        List<Supply> supplyList = getSuppliesByItemIdAndLocationId(itemId, locationId);
+        // from this list extract the sum of quantities for ONHAND and INTRANSIT supplies
+        Long onhandQty =  supplyList.stream()
+                .filter(supply -> supply.getSupplyType()== AllowedSupplyTypes.ONHAND)
+                .map(Supply::getQty)
+                .reduce(0L, (a, b) -> a+b);
+        Long intransitQty =  supplyList.stream()
+                .filter(supply -> supply.getSupplyType()==AllowedSupplyTypes.INTRANSIT)
+                .map(Supply::getQty)
+                .reduce(0L, (a, b) -> a+b);
+
+//        System.out.println("\n\nOnhand: "+onhandQty+"\t\tIntransit: "+intransitQty);
+        // form a SupplyDetailsResponse with these values
+        // return the SupplyDetailsResponse
+        return new SupplyDetailsResponse(itemId,locationId,new SupplyDetails(onhandQty, intransitQty));
     }
 }

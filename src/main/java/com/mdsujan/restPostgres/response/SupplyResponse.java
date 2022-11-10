@@ -27,7 +27,8 @@ public class SupplyResponse {
         this.type = supply.getSupplyType();
         this.qty = supply.getQty();
 
-        this.itemId = supply.getItem().getItemId();
-        this.locationId = supply.getLocation().getLocationId();
+//        this.itemId = supply.getItem().getItemId();
+        this.itemId = supply.getItem().getId();
+        this.locationId = supply.getLocation().getId();
     }
 }

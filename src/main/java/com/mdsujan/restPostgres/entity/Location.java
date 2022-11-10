@@ -16,7 +16,8 @@ import javax.persistence.*;
 public class Location {
     @Id
     @Column(name = "location_id")
-    Long locationId;
+//    Long locationId;
+    Long id;
 
     @Column(name = "location_desc")
     String locationDesc;
@@ -55,7 +56,8 @@ public class Location {
     String pincode;
 
     public Location(CreateLocationRequest createLocationRequest) {
-        this.locationId=createLocationRequest.getId();
+//        this.locationId=createLocationRequest.getId();
+        this.id=createLocationRequest.getId();
         this.locationDesc=createLocationRequest.getDesc();
         this.type= createLocationRequest.getType();
         this.pickupAllowed = createLocationRequest.getPickupAllowed();

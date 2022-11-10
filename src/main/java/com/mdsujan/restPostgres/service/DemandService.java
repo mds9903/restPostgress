@@ -1,13 +1,15 @@
 package com.mdsujan.restPostgres.service;
 
+import com.mdsujan.restPostgres.entity.*;
 import com.mdsujan.restPostgres.entity.Demand;
-import com.mdsujan.restPostgres.entity.Item;
-import com.mdsujan.restPostgres.entity.Location;
-import com.mdsujan.restPostgres.entity.Demand;
+import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
+import com.mdsujan.restPostgres.response.DemandDetails;
+import com.mdsujan.restPostgres.response.DemandDetailsResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,7 @@ public class DemandService {
 
     @Autowired
     LocationRepository locationRepository;
+
     public List<Demand> getAll() {
         return demandRepository.findAll();
     }
@@ -54,5 +57,29 @@ public class DemandService {
         }
         // then abort this create request
         // else
+    }
+
+    public List<Demand> getDemandsByItemIdAndLocationId(Long itemId, Long locationId) {
+        return demandRepository.findByItemIdAndLocationId(itemId, locationId);
+    }
+
+    public DemandDetailsResponse getDemandDetailsByItemAndLocation(Long itemId, Long locationId) {
+        // seems a little hard coded; an efficient solution could be updated later
+        // get the list of demands with matching itemId and locationId
+        List<Demand> demandList = getDemandsByItemIdAndLocationId(itemId, locationId);
+        // from this list extract the sum of quantities for ONHAND and INTRANSIT demands
+        Long plannedQty = demandList.stream()
+                .filter(supply -> supply.getDemandType() == AllowedDemandTypes.PLANNED)
+                .map(Demand::getDemandQty)
+                .reduce(0L, (a, b) -> a + b);
+        Long hardPromisedQty = demandList.stream()
+                .filter(supply -> supply.getDemandType() == AllowedDemandTypes.HARD_PROMISED)
+                .map(Demand::getDemandQty)
+                .reduce(0L, (a, b) -> a + b);
+
+//        System.out.println("\n\nOnhand: "+onhandQty+"\t\tIntransit: "+intransitQty);
+        // form a DemandDetailsResponse with these values
+        // return the DemandDetailsResponse
+        return new DemandDetailsResponse(itemId, locationId, new DemandDetails(plannedQty, hardPromisedQty));
     }
 }

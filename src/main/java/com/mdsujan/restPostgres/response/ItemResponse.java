@@ -30,7 +30,8 @@ public class ItemResponse {
     private Boolean deliveryAllowed;
 
     public ItemResponse(Item item) {
-        this.id = item.getItemId();
+//        this.id = item.getItemId();
+        this.id = item.getId();
         this.desc=item.getItemDesc();
         this.category=item.getCategory();
         this.type=item.getType();

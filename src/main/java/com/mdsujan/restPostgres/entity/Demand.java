@@ -23,7 +23,7 @@ public class Demand {
     @Enumerated(EnumType.STRING)
     AllowedDemandTypes demandType;
 
-    @Column(name = "quantity")
+    @Column(name = "qty")
     Long demandQty;
 
     @OneToOne

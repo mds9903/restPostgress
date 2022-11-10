@@ -14,7 +14,8 @@ import javax.persistence.*;
 public class Item {
     @Id
     @Column(name = "item_id")
-    private Long itemId;
+//    private Long itemId;
+    private Long id;
 
 
     @Column(name = "item_desc")
@@ -52,7 +53,8 @@ public class Item {
 //    private Demand demand;
 
     public Item(CreateItemRequest createItemRequest) {
-        this.itemId = createItemRequest.getId();
+//        this.itemId = createItemRequest.getId();
+        this.id = createItemRequest.getId();
         this.itemDesc = createItemRequest.getDesc();
         this.category = createItemRequest.getCategory();
         this.type = createItemRequest.getType();
@@ -64,7 +66,8 @@ public class Item {
     }
 
     public Item(UpdateItemRequest updateItemRequest) {
-        this.itemId = updateItemRequest.getId();
+//        this.itemId = updateItemRequest.getId();
+        this.id = updateItemRequest.getId();
         this.itemDesc=updateItemRequest.getDesc();
         this.category = updateItemRequest.getCategory();
         this.type = updateItemRequest.getType();
