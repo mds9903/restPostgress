@@ -5,9 +5,12 @@ import com.mdsujan.restPostgres.entity.Demand;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
+import com.mdsujan.restPostgres.request.UpdateDemandRequest;
+import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
 import com.mdsujan.restPostgres.response.DemandResponse;
 import com.mdsujan.restPostgres.response.DemandDetailsResponse;
 import com.mdsujan.restPostgres.response.DemandResponse;
+import com.mdsujan.restPostgres.response.SupplyResponse;
 import com.mdsujan.restPostgres.service.DemandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +39,7 @@ public class DemandController {
         return new DemandResponse(demandService.getDemandById(demandId));
     }
 
+    // this is just a test endpoint
     @GetMapping("/getDemandList/{itemId}/{locationId}")
     public List<DemandResponse> getDemandsByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) {
         List<Demand> demandList = demandService.getDemandsByItemIdAndLocationId(itemId, locationId);
@@ -52,9 +56,21 @@ public class DemandController {
         return demandService.getDemandDetailsByItemAndLocation(itemId, locationId);
     }
 
-
     @PostMapping("/")
     public DemandResponse createDemand(@RequestBody CreateDemandRequest createDemandRequest) {
         return new DemandResponse(demandService.createNewDemand(createDemandRequest));
+    }
+
+    @PutMapping("/{demandId}")
+    public DemandResponse updateDemand(@PathVariable Long demandId , @RequestBody UpdateDemandRequest updateDemandRequest){
+        return new DemandResponse(demandService.updateDemand(demandId ,updateDemandRequest));
+    }
+
+    @DeleteMapping("/{demandId}")
+    public String deleteSupply(@PathVariable Long demandId){
+        if(demandService.deleteDemand(demandId)){
+            return "Demand successfully";
+        }
+        return "Demand not deleted";
     }
 }

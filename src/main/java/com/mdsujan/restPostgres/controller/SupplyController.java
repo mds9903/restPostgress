@@ -3,6 +3,7 @@ package com.mdsujan.restPostgres.controller;
 import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
+import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
 import com.mdsujan.restPostgres.response.SupplyDetails;
 import com.mdsujan.restPostgres.response.SupplyDetailsResponse;
 import com.mdsujan.restPostgres.response.SupplyResponse;
@@ -58,5 +59,16 @@ public class SupplyController {
         return new SupplyResponse(supplyService.createNewSupply(createSupplyRequest));
     }
 
+    @PutMapping("/{supplyId}")
+    public SupplyResponse updateSupply(@PathVariable Long supplyId , @RequestBody UpdateSupplyRequest updateSupplyRequest){
+        return new SupplyResponse(supplyService.updateSupply(supplyId ,updateSupplyRequest));
+    }
 
+    @DeleteMapping("/{supplyId}")
+    public String deleteSupply(@PathVariable Long supplyId){
+        if(supplyService.deleteSupply(supplyId)){
+            return "Supply successfully";
+        }
+        return "Supply not deleted";
+    }
 }

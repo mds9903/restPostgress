@@ -8,6 +8,7 @@ import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
+import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
 import com.mdsujan.restPostgres.response.SupplyDetails;
 import com.mdsujan.restPostgres.response.SupplyDetailsResponse;
 import com.mdsujan.restPostgres.response.SupplyResponse;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class SupplyService {
@@ -41,7 +43,7 @@ public class SupplyService {
         // if the itemId and the locationId are present in the items and locations table
         Supply supply = new Supply(createSupplyRequest);
         if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
-                && locationRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
+                && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
 
             // get the item for this supply
             Item item = itemRepository.findById(createSupplyRequest.getItemId()).get();
@@ -52,17 +54,14 @@ public class SupplyService {
 
             // save this new supply
             supply = supplyRepository.save(supply);
-
-            return supply;
-        } else {
-            return supply;
         }
+        return supply;
         // then abort this create request
         // else
     }
 
 
-    public List<Supply> getSuppliesByItemIdAndLocationId(Long itemId, Long locationId){
+    public List<Supply> getSuppliesByItemIdAndLocationId(Long itemId, Long locationId) {
         return supplyRepository.findByItemIdAndLocationId(itemId, locationId);
     }
 
@@ -71,18 +70,50 @@ public class SupplyService {
         // get the list of supplies with matching itemId and locationId
         List<Supply> supplyList = getSuppliesByItemIdAndLocationId(itemId, locationId);
         // from this list extract the sum of quantities for ONHAND and INTRANSIT supplies
-        Long onhandQty =  supplyList.stream()
-                .filter(supply -> supply.getSupplyType()== AllowedSupplyTypes.ONHAND)
+        Long onhandQty = supplyList.stream()
+                .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
                 .map(Supply::getQty)
-                .reduce(0L, (a, b) -> a+b);
-        Long intransitQty =  supplyList.stream()
-                .filter(supply -> supply.getSupplyType()==AllowedSupplyTypes.INTRANSIT)
+                .reduce(0L, (a, b) -> a + b);
+        Long intransitQty = supplyList.stream()
+                .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.INTRANSIT)
                 .map(Supply::getQty)
-                .reduce(0L, (a, b) -> a+b);
+                .reduce(0L, (a, b) -> a + b);
 
 //        System.out.println("\n\nOnhand: "+onhandQty+"\t\tIntransit: "+intransitQty);
         // form a SupplyDetailsResponse with these values
         // return the SupplyDetailsResponse
-        return new SupplyDetailsResponse(itemId,locationId,new SupplyDetails(onhandQty, intransitQty));
+        return new SupplyDetailsResponse(itemId, locationId, new SupplyDetails(onhandQty, intransitQty));
+    }
+
+    public Supply updateSupply(Long supplyId, UpdateSupplyRequest updateSupplyRequest) {
+        // update a supply for given supplyId
+        Supply supplyToUpdate = supplyRepository.findById(supplyId).get();
+        // if there is no such supply of given supplyId
+        if (!Objects.equals(supplyToUpdate.getId(), supplyId)) {
+            // return the old supply as response
+            return supplyToUpdate;
+        }
+        // else perform the update
+        try {
+            // as per given requirement
+            // "update the existing supply qty"; need to confirm later
+            if (updateSupplyRequest.getQty() != null) {
+                supplyToUpdate.setQty(updateSupplyRequest.getQty());
+            }
+            // save the new supply to the db
+            supplyToUpdate = supplyRepository.save(supplyToUpdate);
+        } catch (Exception e) {
+            System.out.println("Exception occurred: " + e.getMessage());
+        }
+        return supplyToUpdate;
+    }
+
+    public Boolean deleteSupply(Long supplyId) {
+        try {
+            supplyRepository.deleteById(supplyId);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
