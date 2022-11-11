@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Threshold {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "threshold_id", nullable = false)
+    @Column(name = "threshold_id")
     Long thresholdId;
 
     @OneToOne
@@ -33,7 +33,7 @@ public class Threshold {
     Long maxThreshold;
 
     public Threshold(CreateThresholdRequest createThresholdRequest) {
-        this.thresholdId = createThresholdRequest.getThresholdId();
+//        this.thresholdId = createThresholdRequest.getThresholdId();
         this.minThreshold = createThresholdRequest.getMinThreshold();
         this.maxThreshold = createThresholdRequest.getMaxThreshold();
     }

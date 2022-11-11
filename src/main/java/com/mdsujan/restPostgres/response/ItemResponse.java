@@ -1,6 +1,5 @@
 package com.mdsujan.restPostgres.response;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mdsujan.restPostgres.entity.Item;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -10,7 +9,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemResponse {
-    @JsonIgnore // do not show id for the item
+//    @JsonIgnore // do not show id for the item
     Long itemId;
     String itemDesc;
     String category;

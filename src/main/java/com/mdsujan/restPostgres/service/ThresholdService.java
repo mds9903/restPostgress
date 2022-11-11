@@ -3,14 +3,17 @@ package com.mdsujan.restPostgres.service;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Threshold;
+import com.mdsujan.restPostgres.entity.Threshold;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.ThresholdRepository;
 import com.mdsujan.restPostgres.request.CreateThresholdRequest;
+import com.mdsujan.restPostgres.request.UpdateThresholdRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class ThresholdService {
@@ -82,5 +85,45 @@ public class ThresholdService {
         }catch (Exception e){
             return false;
         }
+    }
+
+    public String deleteThresholdById(Long thresholdId) {
+        try {
+            // check if threshold exists
+            if(thresholdRepository.findById(thresholdId).isPresent()){
+                // delete the existing threshold
+                thresholdRepository.deleteById(thresholdId);
+                return "Threshold with thresholdId="+thresholdId+" successfully deleted.";
+            }
+            // else give proper message
+            return "Invalid thresholdId: no such threshold present";
+        } catch (Exception e) {
+            return "EXCEPTION OCCURRED" + e;
+        }
+    }
+
+    public Threshold updateThreshold(Long thresholdId, UpdateThresholdRequest updateThresholdRequest) {
+        // this method updates a threshold for given thresholdId
+
+        // if there exists such threshold of given thresholdId
+        if (thresholdRepository.findById(thresholdId).isPresent()) {
+            try {
+                // get the thresholdToUpdate
+                Threshold thresholdToUpdate = thresholdRepository.findById(thresholdId).get();
+                // perform the update
+                if(updateThresholdRequest.getMinThreshold() != null){
+                    thresholdToUpdate.setMinThreshold(updateThresholdRequest.getMinThreshold());
+                }
+                if(updateThresholdRequest.getMaxThreshold() != null){
+                    thresholdToUpdate.setMaxThreshold(updateThresholdRequest.getMaxThreshold());
+                }
+                // save the new threshold to the db
+                thresholdToUpdate = thresholdRepository.save(thresholdToUpdate);
+            } catch (Exception e) {
+                System.out.println("Exception occurred: " + e.getMessage());
+            }
+        }
+        // return the old threshold as response
+        return thresholdRepository.findById(thresholdId).get();
     }
 }

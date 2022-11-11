@@ -3,6 +3,7 @@ package com.mdsujan.restPostgres.controller;
 import com.mdsujan.restPostgres.entity.Threshold;
 import com.mdsujan.restPostgres.repository.ThresholdRepository;
 import com.mdsujan.restPostgres.request.CreateThresholdRequest;
+import com.mdsujan.restPostgres.request.UpdateThresholdRequest;
 import com.mdsujan.restPostgres.response.ThresholdDetails;
 import com.mdsujan.restPostgres.response.ThresholdDetailsResponse;
 import com.mdsujan.restPostgres.response.ThresholdResponse;
@@ -45,12 +46,14 @@ public class ThresholdController {
         return new ThresholdResponse(thresholdService.createThreshold(createThresholdRequest));
     }
 
-    @DeleteMapping("/{thresholdId}")
-    public String deleteThreshold(@PathVariable Long thresholdId){
-        if(thresholdService.deleteThreshold(thresholdId)){
-            return "Threshold deleted successfully";
-        }
-        return "Threshold not deleted";
+    @PutMapping("/{thresholdId}")
+    public ThresholdResponse updateThreshold(@PathVariable Long thresholdId ,@RequestBody UpdateThresholdRequest updateThresholdRequest){
+        return new ThresholdResponse(thresholdService.updateThreshold(thresholdId, updateThresholdRequest));
+    }
+
+    @DeleteMapping("/{thresholdId}") // delete a specific item
+    public String deleteThreshold(@PathVariable Long thresholdId) {
+        return thresholdService.deleteThresholdById(thresholdId);
     }
 
 }
