@@ -115,4 +115,8 @@ public class DemandService {
             return false;
         }
     }
+
+    public List<Demand> getDemandsByItemId(Long itemId) {
+        return demandRepository.findByItemItemId(itemId);
+    }
 }

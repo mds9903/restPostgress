@@ -2,6 +2,7 @@ package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Demand;
 import com.mdsujan.restPostgres.entity.Demand;
+import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
@@ -25,7 +26,7 @@ public class DemandController {
     @Autowired
     DemandService demandService;
 
-    @GetMapping("/")
+    @GetMapping("/") // get all demands
     public List<DemandResponse> getAllDemands() {
         List<Demand> demandList = demandService.getAll();
         List<DemandResponse> demandResponseList = new ArrayList<>();
@@ -34,13 +35,13 @@ public class DemandController {
         return demandResponseList;
     }
 
-    @GetMapping("/{demandId}")
+    @GetMapping("/{demandId}") // get demand by demandId
     public DemandResponse getDemandById(@PathVariable Long demandId) {
         return new DemandResponse(demandService.getDemandById(demandId));
     }
 
-    // this is just a test endpoint
-    @GetMapping("/getDemandList/{itemId}/{locationId}")
+    // not included in the requirements sheet
+    @GetMapping("/demandList/{itemId}/{locationId}") // get list of demands by item and location
     public List<DemandResponse> getDemandsByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) {
         List<Demand> demandList = demandService.getDemandsByItemIdAndLocationId(itemId, locationId);
         List<DemandResponse> demandResponseList = new ArrayList<>();
@@ -51,24 +52,35 @@ public class DemandController {
 
     }
 
-    @GetMapping("/{itemId}/{locationId}")
+    // not included in the requirements sheet
+    @GetMapping("demandList/{itemId}") // get demand for an item in all locations
+    public List<DemandResponse> getDemandsByItem(@PathVariable Long itemId) {
+        List<Demand> demandList = demandService.getDemandsByItemId(itemId);
+        List<DemandResponse> demandResponseList = new ArrayList<>();
+
+        demandList.forEach(demand -> demandResponseList.add(new DemandResponse(demand)));
+
+        return demandResponseList;
+    }
+
+    @GetMapping("/{itemId}/{locationId}") // get demand details by item and location
     public DemandDetailsResponse getDemandDetailsByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) {
         return demandService.getDemandDetailsByItemAndLocation(itemId, locationId);
     }
 
-    @PostMapping("/")
+    @PostMapping("/") // create a new demand
     public DemandResponse createDemand(@RequestBody CreateDemandRequest createDemandRequest) {
         return new DemandResponse(demandService.createNewDemand(createDemandRequest));
     }
 
-    @PutMapping("/{demandId}")
-    public DemandResponse updateDemand(@PathVariable Long demandId , @RequestBody UpdateDemandRequest updateDemandRequest){
-        return new DemandResponse(demandService.updateDemand(demandId ,updateDemandRequest));
+    @PutMapping("/{demandId}") // update a demand (all fields)
+    public DemandResponse updateDemand(@PathVariable Long demandId, @RequestBody UpdateDemandRequest updateDemandRequest) {
+        return new DemandResponse(demandService.updateDemand(demandId, updateDemandRequest));
     }
 
-    @DeleteMapping("/{demandId}")
-    public String deleteSupply(@PathVariable Long demandId){
-        if(demandService.deleteDemand(demandId)){
+    @DeleteMapping("/{demandId}") // delete a demand
+    public String deleteSupply(@PathVariable Long demandId) {
+        if (demandService.deleteDemand(demandId)) {
             return "Demand successfully";
         }
         return "Demand not deleted";

@@ -11,7 +11,6 @@ import com.mdsujan.restPostgres.request.CreateSupplyRequest;
 import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
 import com.mdsujan.restPostgres.response.SupplyDetails;
 import com.mdsujan.restPostgres.response.SupplyDetailsResponse;
-import com.mdsujan.restPostgres.response.SupplyResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,37 +37,19 @@ public class SupplyService {
         return supplyRepository.findById(supplyId).get();
     }
 
-    public Supply createNewSupply(CreateSupplyRequest createSupplyRequest) {
-        // create a supply for an item on a location (given in the request body)
-        // if the itemId and the locationId are present in the items and locations table
-        Supply supply = new Supply(createSupplyRequest);
-        if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
-                && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
-
-            // get the item for this supply
-            Item item = itemRepository.findById(createSupplyRequest.getItemId()).get();
-            // get the location for this supply
-            Location location = locationRepository.findById(createSupplyRequest.getLocationId()).get();
-            supply.setItem(item);
-            supply.setLocation(location);
-
-            // save this new supply
-            supply = supplyRepository.save(supply);
-        }
-        return supply;
-        // then abort this create request
-        // else
+    public List<Supply> getSuppliesByItemIdAndLocationId(Long itemId, Long locationId) {
+        return supplyRepository.findByItemItemIdAndLocationLocationId(itemId,locationId);
     }
 
 
-    public List<Supply> getSuppliesByItemIdAndLocationId(Long itemId, Long locationId) {
-        return supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
+    public List<Supply> getSuppliesByItemId(Long itemId) {
+        return supplyRepository.findByItemItemId(itemId);
     }
 
     public SupplyDetailsResponse getSupplDetailsByItemAndLocation(Long itemId, Long locationId) {
         // seems a little hard coded; an efficient solution could be updated later
         // get the list of supplies with matching itemId and locationId
-        List<Supply> supplyList = getSuppliesByItemIdAndLocationId(itemId, locationId);
+        List<Supply> supplyList = supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
         // from this list extract the sum of quantities for ONHAND and INTRANSIT supplies
         Long onhandQty = supplyList.stream()
                 .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
@@ -106,6 +87,28 @@ public class SupplyService {
             System.out.println("Exception occurred: " + e.getMessage());
         }
         return supplyToUpdate;
+    }
+
+    public Supply createNewSupply(CreateSupplyRequest createSupplyRequest) {
+        // create a supply for an item on a location (given in the request body)
+        // if the itemId and the locationId are present in the items and locations table
+        Supply supply = new Supply(createSupplyRequest);
+        if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
+                && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
+
+            // get the item for this supply
+            Item item = itemRepository.findById(createSupplyRequest.getItemId()).get();
+            // get the location for this supply
+            Location location = locationRepository.findById(createSupplyRequest.getLocationId()).get();
+            supply.setItem(item);
+            supply.setLocation(location);
+
+            // save this new supply
+            supply = supplyRepository.save(supply);
+        }
+        return supply;
+        // then abort this create request
+        // else
     }
 
     public Boolean deleteSupply(Long supplyId) {
