@@ -9,6 +9,8 @@ import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.ThresholdRepository;
 import com.mdsujan.restPostgres.request.CreateThresholdRequest;
 import com.mdsujan.restPostgres.request.UpdateThresholdRequest;
+import com.mdsujan.restPostgres.response.ThresholdDetails;
+import com.mdsujan.restPostgres.response.ThresholdDetailsResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,10 +54,6 @@ public class ThresholdService {
 //        // return the ThresholdDetailsResponse
 //        return new ThresholdDetailsResponse(itemId, thresholdId, new ThresholdDetails(minThreshold, maxThreshold));
 //    }
-
-    private List<Threshold> getThresholdsByItemIdAndLocationId(Long itemId, Long thresholdId) {
-        return thresholdRepository.findByItemItemIdAndLocationLocationId(itemId, thresholdId);
-    }
 
 
     public Threshold createThreshold(CreateThresholdRequest createThresholdRequest) {
@@ -125,5 +123,12 @@ public class ThresholdService {
         }
         // return the old threshold as response
         return thresholdRepository.findById(thresholdId).get();
+    }
+
+    public ThresholdDetailsResponse getThresholdDetailsByItemAndLocation(Long itemId, Long locationId) {
+        // get threshold details
+        // for given itemId and locationId find the min and max thresholds
+        Threshold threshold = thresholdRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
+        return new ThresholdDetailsResponse(itemId, locationId, new ThresholdDetails(threshold.getMinThreshold(), threshold.getMaxThreshold()));
     }
 }

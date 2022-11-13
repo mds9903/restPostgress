@@ -11,5 +11,5 @@ public interface ThresholdRepository extends JpaRepository<Threshold, Long> {
 
 //    List<Threshold> findByItemAndLocation(Long itemId, Long locationId);
 
-    List<Threshold> findByItemItemIdAndLocationLocationId(Long itemId, Long locationId);
+    Threshold findByItemItemIdAndLocationLocationId(Long itemId, Long locationId);
 }

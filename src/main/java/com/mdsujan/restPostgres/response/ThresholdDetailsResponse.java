@@ -13,4 +13,9 @@ public class ThresholdDetailsResponse {
     Long locationId;
     ThresholdDetails thresholdDetails;
 
+    public ThresholdDetailsResponse(Long itemId, Long locationId, ThresholdDetails thresholdDetails){
+        this.itemId = itemId;
+        this.locationId = locationId;
+        this.thresholdDetails = thresholdDetails;
+    }
 }

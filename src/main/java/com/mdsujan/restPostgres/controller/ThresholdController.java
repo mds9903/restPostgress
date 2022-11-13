@@ -36,10 +36,10 @@ public class ThresholdController {
         return new ThresholdResponse(thresholdService.getThreshold(thresholdId));
     }
 
-//    @GetMapping("/{itemId}/{locationId}")
-//    public ThresholdDetailsResponse getThresholdDetails(@PathVariable Long itemId, @PathVariable Long locationId){
-//        return thresholdService.getThresholdDetailsByItemAndLocation(itemId, locationId);
-//    }
+    @GetMapping("/{itemId}/{locationId}")
+    public ThresholdDetailsResponse getThresholdDetails(@PathVariable Long itemId, @PathVariable Long locationId){
+        return thresholdService.getThresholdDetailsByItemAndLocation(itemId, locationId);
+    }
 
     @PostMapping("/")
     public ThresholdResponse createThreshold(@RequestBody CreateThresholdRequest createThresholdRequest){
