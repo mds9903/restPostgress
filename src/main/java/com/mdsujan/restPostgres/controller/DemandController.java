@@ -74,10 +74,14 @@ public class DemandController {
     }
 
     @PutMapping("/{demandId}") // update a demand (all fields)
-    public DemandResponse updateDemand(@PathVariable Long demandId, @RequestBody UpdateDemandRequest updateDemandRequest) {
-        return new DemandResponse(demandService.updateDemand(demandId, updateDemandRequest));
+    public DemandResponse updateDemandPut(@PathVariable Long demandId, @RequestBody UpdateDemandRequest updateDemandRequest) {
+        return new DemandResponse(demandService.updateDemandPut(demandId, updateDemandRequest));
     }
 
+    @PatchMapping("/{demandId}") // update a demand (all fields)
+    public DemandResponse updateDemandPatch(@PathVariable Long demandId, @RequestBody UpdateDemandRequest updateDemandRequest) {
+        return new DemandResponse(demandService.updateDemandPatch(demandId, updateDemandRequest));
+    }
     @DeleteMapping("/{demandId}") // delete a demand
     public String deleteSupply(@PathVariable Long demandId) {
         if (demandService.deleteDemand(demandId)) {

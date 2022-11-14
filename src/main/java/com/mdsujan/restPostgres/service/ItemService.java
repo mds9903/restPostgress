@@ -100,19 +100,21 @@ public class ItemService {
         Item itemToUpdate = itemRepository.findById(itemId).get();
 
         try {
+            // test
+            String statusTest = updateItemRequest.getStatus();
             // update the itemToUpdate
 
             // since this is a path request only present fields shall be updated
-            if (updateItemRequest.getItemDesc() != null || !updateItemRequest.getItemDesc().isEmpty()) {
+            if (updateItemRequest.getItemDesc() != null && !updateItemRequest.getItemDesc().isEmpty()) {
                 itemToUpdate.setItemDesc(updateItemRequest.getItemDesc());
             }
-            if (updateItemRequest.getCategory() != null || !updateItemRequest.getCategory().isEmpty()) {
+            if (updateItemRequest.getCategory() != null && !updateItemRequest.getCategory().isEmpty()) {
                 itemToUpdate.setCategory(updateItemRequest.getCategory());
             }
-            if (updateItemRequest.getItemType() != null || !updateItemRequest.getItemType().isEmpty()) {
+            if (updateItemRequest.getItemType() != null && !updateItemRequest.getItemType().isEmpty()) {
                 itemToUpdate.setType(updateItemRequest.getItemType());
             }
-            if (updateItemRequest.getStatus() != null || !updateItemRequest.getStatus().isEmpty()) {
+            if (updateItemRequest.getStatus() != null && !updateItemRequest.getStatus().isEmpty()) {
                 itemToUpdate.setStatus(updateItemRequest.getStatus());
             }
             if (updateItemRequest.getPrice() != null) {

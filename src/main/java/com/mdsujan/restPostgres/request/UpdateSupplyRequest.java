@@ -15,6 +15,6 @@ public class UpdateSupplyRequest {
     Long supplyId;
     Long itemId;
     Long locationId;
-    Long qty;
+    Long supplyQty;
     AllowedSupplyTypes supplyType;
 }

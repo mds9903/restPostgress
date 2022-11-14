@@ -48,7 +48,12 @@ public class LocationController {
     }
 
     @PutMapping("/{locationId}")
-    public Location updateLocation(@PathVariable Long locationId, @RequestBody UpdateLocationRequest updateLocationRequest) {
-        return locationService.updateLocationById(locationId, updateLocationRequest);
+    public Location updateLocationPut(@PathVariable Long locationId, @RequestBody UpdateLocationRequest updateLocationRequest) {
+        return locationService.updateLocationPut(locationId, updateLocationRequest);
+    }
+
+    @PatchMapping("/{locationId}")
+    public Location updateLocationPatch(@PathVariable Long locationId, @RequestBody UpdateLocationRequest updateLocationRequest) {
+        return locationService.updateLocationPatch(locationId, updateLocationRequest);
     }
 }

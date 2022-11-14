@@ -85,20 +85,34 @@ public class DemandService {
         return new DemandDetailsResponse(itemId, locationId, new DemandDetails(plannedQty, hardPromisedQty));
     }
 
-    public Demand updateDemand(Long demandId, UpdateDemandRequest updateDemandRequest) {
+    public Demand updateDemandPut(Long demandId, UpdateDemandRequest updateDemandRequest) {
         // update a demand for given demandId
         Demand demandToUpdate = demandRepository.findById(demandId).get();
-        // if there is no such demand of given demandId
-        if (!Objects.equals(demandToUpdate.getDemandId(), demandId)) {
-            // return the old demand as response
-            return demandToUpdate;
-        }
+
         // else perform the update
         try {
             // as per given requirement
             // "update the existing demand qty"; need to confirm later
-            if (updateDemandRequest.getQty() != null) {
-                demandToUpdate.setDemandQty((updateDemandRequest.getQty()));
+            demandToUpdate.setDemandQty((updateDemandRequest.getDemandQty()));
+
+            // save the new demand to the db
+            demandToUpdate = demandRepository.save(demandToUpdate);
+        } catch (Exception e) {
+            System.out.println("Exception occurred: " + e.getMessage());
+        }
+        return demandToUpdate;
+    }
+
+    public Demand updateDemandPatch(Long demandId, UpdateDemandRequest updateDemandRequest) {
+        // update a demand for given demandId
+        Demand demandToUpdate = demandRepository.findById(demandId).get();
+
+        // else perform the update
+        try {
+            // as per given requirement
+            // "update the existing demand qty"; need to confirm later
+            if (updateDemandRequest.getDemandQty() != null) {
+                demandToUpdate.setDemandQty((updateDemandRequest.getDemandQty()));
             }
             // save the new demand to the db
             demandToUpdate = demandRepository.save(demandToUpdate);
@@ -107,6 +121,7 @@ public class DemandService {
         }
         return demandToUpdate;
     }
+
     public Boolean deleteDemand(Long demandId) {
         try {
             demandRepository.deleteById(demandId);
@@ -119,4 +134,6 @@ public class DemandService {
     public List<Demand> getDemandsByItemId(Long itemId) {
         return demandRepository.findByItemItemId(itemId);
     }
+
+
 }

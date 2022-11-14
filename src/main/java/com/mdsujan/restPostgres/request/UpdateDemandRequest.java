@@ -15,6 +15,6 @@ public class UpdateDemandRequest {
     Long demandId;
     Long itemId;
     Long locationId;
-    Long qty;
+    Long demandQty;
     AllowedDemandTypes demandType;
 }

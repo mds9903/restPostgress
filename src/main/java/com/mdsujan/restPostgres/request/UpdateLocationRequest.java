@@ -7,9 +7,9 @@ import lombok.experimental.FieldDefaults;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UpdateLocationRequest {
-    Long id;
+    Long locationId;
 
-    String desc;
+    String locationDesc;
 
     String type;
 
@@ -30,4 +30,6 @@ public class UpdateLocationRequest {
     String state;
 
     String country;
+
+    String pincode;
 }

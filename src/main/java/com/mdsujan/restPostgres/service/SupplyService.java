@@ -66,20 +66,31 @@ public class SupplyService {
         return new SupplyDetailsResponse(itemId, locationId, new SupplyDetails(onhandQty, intransitQty));
     }
 
-    public Supply updateSupply(Long supplyId, UpdateSupplyRequest updateSupplyRequest) {
+    public Supply updateSupplyPut(Long supplyId, UpdateSupplyRequest updateSupplyRequest) {
         // update a supply for given supplyId
         Supply supplyToUpdate = supplyRepository.findById(supplyId).get();
-        // if there is no such supply of given supplyId
-        if (!Objects.equals(supplyToUpdate.getId(), supplyId)) {
-            // return the old supply as response
-            return supplyToUpdate;
-        }
+
         // else perform the update
         try {
-            // as per given requirement
             // "update the existing supply qty"; need to confirm later
-            if (updateSupplyRequest.getQty() != null) {
-                supplyToUpdate.setQty(updateSupplyRequest.getQty());
+            supplyToUpdate.setQty(updateSupplyRequest.getSupplyQty());
+            // save the new supply to the db
+            supplyToUpdate = supplyRepository.save(supplyToUpdate);
+        } catch (Exception e) {
+            System.out.println("Exception occurred: " + e.getMessage());
+        }
+        return supplyToUpdate;
+    }
+
+    public Supply updateSupplyPatch(Long supplyId, UpdateSupplyRequest updateSupplyRequest) {
+        // update a supply for given supplyId
+        Supply supplyToUpdate = supplyRepository.findById(supplyId).get();
+
+        // else perform the update
+        try {
+            // "update the existing supply qty"; need to confirm later
+            if(updateSupplyRequest.getSupplyQty() != null){
+                supplyToUpdate.setQty(updateSupplyRequest.getSupplyQty());
             }
             // save the new supply to the db
             supplyToUpdate = supplyRepository.save(supplyToUpdate);
@@ -119,4 +130,6 @@ public class SupplyService {
             return false;
         }
     }
+
+
 }

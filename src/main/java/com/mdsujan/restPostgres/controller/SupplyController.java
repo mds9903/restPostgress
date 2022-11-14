@@ -66,8 +66,13 @@ public class SupplyController {
     }
 
     @PutMapping("/{supplyId}") // update supply (all fields)
-    public SupplyResponse updateSupply(@PathVariable Long supplyId , @RequestBody UpdateSupplyRequest updateSupplyRequest){
-        return new SupplyResponse(supplyService.updateSupply(supplyId ,updateSupplyRequest));
+    public SupplyResponse updateSupplyPut(@PathVariable Long supplyId , @RequestBody UpdateSupplyRequest updateSupplyRequest){
+        return new SupplyResponse(supplyService.updateSupplyPut(supplyId ,updateSupplyRequest));
+    }
+
+    @PatchMapping("/{supplyId}") // update supply (all fields)
+    public SupplyResponse updateSupplyPatch(@PathVariable Long supplyId , @RequestBody UpdateSupplyRequest updateSupplyRequest){
+        return new SupplyResponse(supplyService.updateSupplyPatch(supplyId ,updateSupplyRequest));
     }
 
     @DeleteMapping("/{supplyId}") // delete a supply

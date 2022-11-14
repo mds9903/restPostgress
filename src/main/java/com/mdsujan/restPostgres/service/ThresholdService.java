@@ -100,29 +100,48 @@ public class ThresholdService {
         }
     }
 
-    public Threshold updateThreshold(Long thresholdId, UpdateThresholdRequest updateThresholdRequest) {
+    public Threshold updateThresholdPut(Long thresholdId, UpdateThresholdRequest updateThresholdRequest) {
+        // this method updates a threshold for given thresholdId
+
+        // find the threshold
+        Threshold thresholdToUpdate = thresholdRepository.findById(thresholdId).get();
+
+        try {
+            // perform the update
+            thresholdToUpdate.setMinThreshold(updateThresholdRequest.getMinThreshold());
+            thresholdToUpdate.setMaxThreshold(updateThresholdRequest.getMaxThreshold());
+
+            // save the new threshold to the db
+            thresholdToUpdate = thresholdRepository.save(thresholdToUpdate);
+        } catch (Exception e) {
+            System.out.println("Exception occurred: " + e.getMessage());
+        }
+        // return the old threshold as response
+        return thresholdToUpdate;
+    }
+
+    public Threshold updateThresholdPatch(Long thresholdId, UpdateThresholdRequest updateThresholdRequest) {
         // this method updates a threshold for given thresholdId
 
         // if there exists such threshold of given thresholdId
-        if (thresholdRepository.findById(thresholdId).isPresent()) {
-            try {
-                // get the thresholdToUpdate
-                Threshold thresholdToUpdate = thresholdRepository.findById(thresholdId).get();
-                // perform the update
-                if(updateThresholdRequest.getMinThreshold() != null){
-                    thresholdToUpdate.setMinThreshold(updateThresholdRequest.getMinThreshold());
-                }
-                if(updateThresholdRequest.getMaxThreshold() != null){
-                    thresholdToUpdate.setMaxThreshold(updateThresholdRequest.getMaxThreshold());
-                }
-                // save the new threshold to the db
-                thresholdToUpdate = thresholdRepository.save(thresholdToUpdate);
-            } catch (Exception e) {
-                System.out.println("Exception occurred: " + e.getMessage());
+        // find the threshold
+        Threshold thresholdToUpdate = thresholdRepository.findById(thresholdId).get();
+
+        try {
+            // perform the update
+            if(updateThresholdRequest.getMinThreshold() != null){
+                thresholdToUpdate.setMinThreshold(updateThresholdRequest.getMinThreshold());
             }
+            if(updateThresholdRequest.getMaxThreshold() != null){
+                thresholdToUpdate.setMaxThreshold(updateThresholdRequest.getMaxThreshold());
+            }
+            // save the new threshold to the db
+            thresholdToUpdate = thresholdRepository.save(thresholdToUpdate);
+        } catch (Exception e) {
+            System.out.println("Exception occurred: " + e.getMessage());
         }
         // return the old threshold as response
-        return thresholdRepository.findById(thresholdId).get();
+        return thresholdToUpdate;
     }
 
     public ThresholdDetailsResponse getThresholdDetailsByItemAndLocation(Long itemId, Long locationId) {
@@ -131,4 +150,48 @@ public class ThresholdService {
         Threshold threshold = thresholdRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
         return new ThresholdDetailsResponse(itemId, locationId, new ThresholdDetails(threshold.getMinThreshold(), threshold.getMaxThreshold()));
     }
+
+//    public Threshold updateThresholdDetailsPut(Long itemId, Long locationId, UpdateThresholdRequest updateThresholdRequest) {
+//        // this method updates all thresholds with same item and location
+//
+//        // find the threshold
+//        Threshold thresholdToUpdate = thresholdRepository.findById(thresholdId).get();
+//
+//        try {
+//            // perform the update
+//            thresholdToUpdate.setMinThreshold(updateThresholdRequest.getMinThreshold());
+//            thresholdToUpdate.setMaxThreshold(updateThresholdRequest.getMaxThreshold());
+//
+//            // save the new threshold to the db
+//            thresholdToUpdate = thresholdRepository.save(thresholdToUpdate);
+//        } catch (Exception e) {
+//            System.out.println("Exception occurred: " + e.getMessage());
+//        }
+//        // return the old threshold as response
+//        return thresholdToUpdate;
+//    }
+//
+//    public Threshold updateThresholdDetailsPatch(Long itemId, Long locationId, UpdateThresholdRequest updateThresholdRequest) {
+//        // this method updates a threshold for given thresholdId
+//
+//        // if there exists such threshold of given thresholdId
+//        // find the threshold
+//        Threshold thresholdToUpdate = thresholdRepository.findById(thresholdId).get();
+//
+//        try {
+//            // perform the update
+//            if(updateThresholdRequest.getMinThreshold() != null){
+//                thresholdToUpdate.setMinThreshold(updateThresholdRequest.getMinThreshold());
+//            }
+//            if(updateThresholdRequest.getMaxThreshold() != null){
+//                thresholdToUpdate.setMaxThreshold(updateThresholdRequest.getMaxThreshold());
+//            }
+//            // save the new threshold to the db
+//            thresholdToUpdate = thresholdRepository.save(thresholdToUpdate);
+//        } catch (Exception e) {
+//            System.out.println("Exception occurred: " + e.getMessage());
+//        }
+//        // return the old threshold as response
+//        return thresholdToUpdate;
+//    }
 }

@@ -5,20 +5,33 @@ import com.mdsujan.restPostgres.request.CreateItemRequest;
 import com.mdsujan.restPostgres.request.UpdateItemRequest;
 import com.mdsujan.restPostgres.response.ItemResponse;
 import com.mdsujan.restPostgres.service.ItemService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/items")
 public class ItemController {
+
+    Logger logger = LoggerFactory.getLogger(ItemListener.class);
+
     @Autowired
     ItemService itemService;
 
     @GetMapping("/") // return all items
     public List<ItemResponse> getAllItems() {
+
+        logger.error("Logger Error");
+        logger.warn("Logger Warn");
+        logger.info("Logger Info");
+        logger.debug("Logger Debug");
+        logger.trace("Logger Trace");
+
         List<Item> itemList = itemService.getAllItems();
         List<ItemResponse> itemResponseList = new ArrayList<>();
 
