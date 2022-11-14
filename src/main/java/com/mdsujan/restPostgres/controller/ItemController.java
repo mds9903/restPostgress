@@ -44,8 +44,12 @@ public class ItemController {
     }
 
     @PutMapping("/{itemId}")
-    public ItemResponse updateItem(@PathVariable Long itemId, @RequestBody UpdateItemRequest updateItemRequest) {
-        return new ItemResponse(itemService.updateItemById(itemId, updateItemRequest));
+    public ItemResponse updateItemPut(@PathVariable Long itemId, @RequestBody UpdateItemRequest updateItemRequest) {
+        return new ItemResponse(itemService.updateItemByIdPut(itemId, updateItemRequest));
     }
 
+    @PatchMapping("/{itemId}")
+    public ItemResponse updateItemPatch(@PathVariable Long itemId, @RequestBody UpdateItemRequest updateItemRequest){
+        return new ItemResponse(itemService.updateItemByIdPatch(itemId, updateItemRequest));
+    }
 }

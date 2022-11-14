@@ -59,10 +59,10 @@ public class Item {
 
     public Item(UpdateItemRequest updateItemRequest) {
 //        this.itemId = updateItemRequest.getId();
-        this.itemId = updateItemRequest.getId();
-        this.itemDesc=updateItemRequest.getDesc();
+        this.itemId = updateItemRequest.getItemId();
+        this.itemDesc=updateItemRequest.getItemDesc();
         this.category = updateItemRequest.getCategory();
-        this.type = updateItemRequest.getType();
+        this.type = updateItemRequest.getItemType();
         this.status = updateItemRequest.getStatus();
         this.price = updateItemRequest.getPrice();
         this.pickupAllowed = updateItemRequest.getPickupAllowed();
