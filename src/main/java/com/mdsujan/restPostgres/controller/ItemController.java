@@ -1,6 +1,5 @@
 package com.mdsujan.restPostgres.controller;
 
-import com.mdsujan.restPostgres.app.ExceptionHandler;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.excpetions.DuplicateEntryException;
 import com.mdsujan.restPostgres.request.CreateItemRequest;
@@ -17,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/items")
-public class ItemController extends ExceptionHandler {
+public class ItemController {
 
     Logger logger = LoggerFactory.getLogger(ItemController.class);
 
@@ -48,7 +47,7 @@ public class ItemController extends ExceptionHandler {
     }
 
     @PostMapping("/") // create an item in the table
-    public ItemResponse createItem(@RequestBody CreateItemRequest createItemRequest) throws DuplicateEntryException {
+    public ItemResponse createItem(@RequestBody CreateItemRequest createItemRequest) {
         logger.info("InQueryRequest: " + createItemRequest);
         Item newItem = itemService.createItem(createItemRequest);
         ItemResponse itemResponse = new ItemResponse(newItem);

@@ -43,7 +43,7 @@ public class ItemService {
             // since the same item already exists we throw an excpetion
             // named "DuplicateEntryException" with a message "Item with given itemId already exists"
 
-            throw new DuplicateEntryException("Item with given itemId="+createItemRequest.getItemId()+" already exists");
+            throw new DuplicateEntryException(itemRepository.findById(createItemRequest.getItemId()).get());
 
 //            return itemRepository.findById(createItemRequest.getItemId()).get();
         }
