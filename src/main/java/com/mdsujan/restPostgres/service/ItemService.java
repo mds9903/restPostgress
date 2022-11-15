@@ -1,6 +1,7 @@
 package com.mdsujan.restPostgres.service;
 
 import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.excpetions.DuplicateEntryException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
@@ -36,12 +37,17 @@ public class ItemService {
         return itemRepository.findById(itemId).get();
     }
 
-    public Item createItem(CreateItemRequest createItemRequest) {
+    public Item createItem(CreateItemRequest createItemRequest) throws DuplicateEntryException {
         // new record should not be created if record already exists
 
         // if record with same id exists then simply return it
         if (itemRepository.findById(createItemRequest.getItemId()).isPresent()) {
-            return itemRepository.findById(createItemRequest.getItemId()).get();
+            // since the same item already exists we throw an excpetion
+            // named "DuplicateEntryException" with a message "Item with given itemId already exists"
+
+            throw new DuplicateEntryException("Item with given itemId="+createItemRequest.getItemId()+" already exists");
+
+//            return itemRepository.findById(createItemRequest.getItemId()).get();
         }
         // else we create a new item
         Item item = new Item(createItemRequest);
