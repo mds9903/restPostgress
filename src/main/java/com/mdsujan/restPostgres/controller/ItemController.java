@@ -1,7 +1,7 @@
 package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Item;
-import com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException;
+import com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException;
 import com.mdsujan.restPostgres.request.CreateItemRequest;
 import com.mdsujan.restPostgres.request.UpdateItemRequest;
 import com.mdsujan.restPostgres.response.ItemResponse;
@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,19 +37,18 @@ public class ItemController {
     }
 
     @GetMapping("/{itemId}") // return the details of specific itemId
-    public ItemResponse getItem(@PathVariable @Valid Long itemId) throws EntityNotFoundException {
+    public ItemResponse getItem(@PathVariable Long itemId) throws ItemNotFoundException {
         ItemResponse itemResponse = new ItemResponse(itemService.getItemById(itemId));
         logger.info("Response: " + itemResponse);
-
         return itemResponse;
     }
 
     @PostMapping("/") // create an item in the table
     public ItemResponse createItem(@RequestBody CreateItemRequest createItemRequest) {
-        logger.info("InQueryRequest: "+createItemRequest);
+        logger.info("InQueryRequest: " + createItemRequest);
         Item newItem = itemService.createItem(createItemRequest);
         ItemResponse itemResponse = new ItemResponse(newItem);
-        logger.info("Response: "+itemResponse);
+        logger.info("Response: " + itemResponse);
         return itemResponse;
     }
 
@@ -56,23 +56,23 @@ public class ItemController {
     public String deleteItem(@PathVariable Long itemId) {
 
         String response = itemService.deleteItemById(itemId);
-        logger.info("Response: "+response);
+        logger.info("Response: " + response);
         return response;
     }
 
     @PutMapping("/{itemId}")
     public ItemResponse updateItemPut(@PathVariable Long itemId, @RequestBody UpdateItemRequest updateItemRequest) {
-        logger.info("InQueryRequest: "+updateItemRequest);
+        logger.info("InQueryRequest: " + updateItemRequest);
         ItemResponse itemResponse = new ItemResponse(itemService.updateItemByIdPut(itemId, updateItemRequest));
-        logger.info("Response: "+itemResponse);
+        logger.info("Response: " + itemResponse);
         return itemResponse;
     }
 
     @PatchMapping("/{itemId}")
     public ItemResponse updateItemPatch(@PathVariable Long itemId, @RequestBody UpdateItemRequest updateItemRequest) {
-        logger.info("InQueryRequest: "+updateItemRequest);
+        logger.info("InQueryRequest: " + updateItemRequest);
         ItemResponse itemResponse = new ItemResponse(itemService.updateItemByIdPatch(itemId, updateItemRequest));
-        logger.info("Response: "+itemResponse);
+        logger.info("Response: " + itemResponse);
         return itemResponse;
     }
 }

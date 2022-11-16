@@ -1,7 +1,7 @@
 package com.mdsujan.restPostgres.service;
 
 import com.mdsujan.restPostgres.entity.Item;
-import com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException;
+import com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
@@ -10,9 +10,8 @@ import com.mdsujan.restPostgres.request.UpdateItemRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Field;
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class ItemService {
@@ -34,12 +33,11 @@ public class ItemService {
     }
 
 
-    public Item getItemById(Long itemId) throws EntityNotFoundException {
+    public Item getItemById(Long itemId) throws ItemNotFoundException {
         if (itemRepository.findById(itemId).isPresent()) {
             return itemRepository.findById(itemId).get();
         } else {
-
-            throw new EntityNotFoundException("no such item found");
+                throw new ItemNotFoundException("item not found");
         }
     }
 
