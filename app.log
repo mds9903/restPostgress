@@ -1241,9 +1241,9 @@ java.lang.RuntimeException: No such item found
 2022-11-16 19:03:26.056  INFO 104940 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 19:03:26.058  INFO 104940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 19:03:26.061  INFO 104940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-11-16 19:03:26.174 ERROR 104940 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException] with root cause
+2022-11-16 19:03:26.174 ERROR 104940 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: null
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: null
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:41) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -1297,9 +1297,9 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: null
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
 	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
 
-2022-11-16 19:03:37.454 ERROR 104940 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException] with root cause
+2022-11-16 19:03:37.454 ERROR 104940 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: null
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: null
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:41) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -1379,9 +1379,9 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: null
 2022-11-16 19:04:42.883  INFO 105162 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 19:04:42.885  INFO 105162 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 19:04:42.890  INFO 105162 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2022-11-16 19:04:43.151 ERROR 105162 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException] with root cause
+2022-11-16 19:04:43.151 ERROR 105162 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: null
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: null
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:41) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -1461,9 +1461,9 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: null
 2022-11-16 19:05:49.538  INFO 105291 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 19:05:49.541  INFO 105291 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 19:05:49.546  INFO 105291 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2022-11-16 19:05:49.722 ERROR 105291 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException] with root cause
+2022-11-16 19:05:49.722 ERROR 105291 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: null
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: null
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:41) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -1543,9 +1543,9 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: null
 2022-11-16 19:10:00.152  INFO 105517 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 19:10:00.155  INFO 105517 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 19:10:00.159  INFO 105517 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2022-11-16 19:10:00.343 ERROR 105517 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found] with root cause
+2022-11-16 19:10:00.343 ERROR 105517 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:41) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -1625,9 +1625,9 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item 
 2022-11-16 19:14:22.593  INFO 105784 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 19:14:22.596  INFO 105784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 19:14:22.604  INFO 105784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2022-11-16 19:14:22.742 ERROR 105784 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found] with root cause
+2022-11-16 19:14:22.742 ERROR 105784 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:41) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -1707,9 +1707,9 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item 
 2022-11-16 19:17:52.939  INFO 106001 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 19:17:52.942  INFO 106001 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 19:17:52.951  INFO 106001 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2022-11-16 19:17:53.119 ERROR 106001 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found] with root cause
+2022-11-16 19:17:53.119 ERROR 106001 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:42) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -1763,9 +1763,9 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item 
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
 	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
 
-2022-11-16 19:18:49.641 ERROR 106001 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found] with root cause
+2022-11-16 19:18:49.641 ERROR 106001 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:42) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -1821,9 +1821,9 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item 
 
 2022-11-16 19:18:58.002  INFO 106001 --- [http-nio-8080-exec-3] c.m.r.controller.ItemController          : Response: ItemResponse(itemId=1, itemDesc=some desc3, category=Apparel, itemType=good, status=testStatus3, price=null, pickupAllowed=null, shippingAllowed=null, deliveryAllowed=false)
 2022-11-16 19:19:04.004  WARN 106001 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc"]
-2022-11-16 19:19:10.834 ERROR 106001 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found] with root cause
+2022-11-16 19:19:10.834 ERROR 106001 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:42) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -1903,9 +1903,9 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item 
 2022-11-16 19:30:01.054  INFO 106467 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 19:30:01.056  INFO 106467 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 19:30:01.059  INFO 106467 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2022-11-16 19:30:01.167 ERROR 106467 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found] with root cause
+2022-11-16 19:30:01.167 ERROR 106467 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:42) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -1985,9 +1985,9 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item 
 2022-11-16 19:30:44.613  INFO 106616 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 19:30:44.614  INFO 106616 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 19:30:44.616  INFO 106616 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-11-16 19:30:44.725 ERROR 106616 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found] with root cause
+2022-11-16 19:30:44.725 ERROR 106616 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:42) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -2067,9 +2067,9 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item 
 2022-11-16 19:35:58.923  INFO 106767 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 19:35:58.925  INFO 106767 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 19:35:58.930  INFO 106767 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2022-11-16 19:35:59.231 ERROR 106767 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found] with root cause
+2022-11-16 19:35:59.231 ERROR 106767 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item found
+com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException: no such item found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:42) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:40) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -2175,10 +2175,10 @@ com.mdsujan.restPostgres.customExceptions.EntityNotFoundException: no such item 
 2022-11-16 20:15:41.146  INFO 108179 --- [http-nio-8080-exec-1] c.m.r.controller.ItemController          : Response: ItemResponse(itemId=1, itemDesc=some desc3, category=Apparel, itemType=good, status=testStatus3, price=null, pickupAllowed=null, shippingAllowed=null, deliveryAllowed=false)
 2022-11-16 20:15:44.549 ERROR 108179 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: no such item found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: no such item found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:41) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -2257,10 +2257,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: no such item fo
 2022-11-16 20:17:09.523  INFO 108321 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2022-11-16 20:17:09.634 ERROR 108321 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: no such item found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: no such item found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:40) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -2342,10 +2342,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: no such item fo
 2022-11-16 20:24:50.720  INFO 109046 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2022-11-16 20:24:50.919 ERROR 109046 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:46) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
@@ -2426,10 +2426,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 20:27:16.798  INFO 109186 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2022-11-16 20:27:16.939 ERROR 109186 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:46) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
@@ -2510,10 +2510,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 20:28:07.062  INFO 109341 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2022-11-16 20:28:07.218 ERROR 109341 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:46) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
@@ -2594,10 +2594,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 20:28:28.903  INFO 109460 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2022-11-16 20:28:29.025 ERROR 109460 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:46) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
@@ -2678,10 +2678,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 20:29:04.524  INFO 109580 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 2022-11-16 20:29:04.634 ERROR 109580 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:46) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
@@ -2762,10 +2762,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 20:31:11.043  INFO 109775 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
 2022-11-16 20:31:11.264 ERROR 109775 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:40) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -2847,10 +2847,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 20:31:37.808  INFO 109897 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2022-11-16 20:31:38.005 ERROR 109897 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:40) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -2955,10 +2955,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 20:33:14.440  INFO 110168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2022-11-16 20:33:14.562 ERROR 110168 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:40) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -3071,10 +3071,10 @@ Update your application's configuration. The following values are valid:
 2022-11-16 20:35:46.027  INFO 110407 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 2022-11-16 20:35:46.143 ERROR 110407 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:40) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -3156,10 +3156,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 20:36:11.883  INFO 110522 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2022-11-16 20:36:11.993 ERROR 110522 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:40) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -3217,10 +3217,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 20:36:21.340  INFO 110522 --- [http-nio-8080-exec-3] c.m.r.controller.ItemController          : Response: [ItemResponse(itemId=6383728, itemDesc=Blue Jeans, category=Apparel, itemType=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true), ItemResponse(itemId=2, itemDesc=Maroone Shirt, category=Apparel, itemType=good, status=testStatus, price=899.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true), ItemResponse(itemId=3, itemDesc=Black Hat, category=null, itemType=null, status=null, price=null, pickupAllowed=null, shippingAllowed=null, deliveryAllowed=null), ItemResponse(itemId=1112, itemDesc=Black Jeans, category=Apparel, itemType=HSN001, status=00/01, price=123.0, pickupAllowed=false, shippingAllowed=false, deliveryAllowed=true), ItemResponse(itemId=991, itemDesc=some new desc, category=Apparel, itemType=good, status=testStatus, price=399.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=false), ItemResponse(itemId=6383, itemDesc=testDesc, category=Apparel, itemType=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true), ItemResponse(itemId=1, itemDesc=some desc3, category=Apparel, itemType=good, status=testStatus3, price=null, pickupAllowed=null, shippingAllowed=null, deliveryAllowed=false)]
 2022-11-16 20:36:23.751 ERROR 110522 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121212] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:40) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -3302,10 +3302,10 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 20:39:00.601  INFO 110675 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2022-11-16 20:39:00.850 ERROR 110675 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Invocation failure
 Controller [com.mdsujan.restPostgres.controller.ItemController]
-Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.customExceptions.ItemNotFoundException] with argument values:
+Method [public com.mdsujan.restPostgres.response.ItemResponse com.mdsujan.restPostgres.controller.ItemController.getItem(java.lang.Long) throws com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException] with argument values:
  [0] [type=java.lang.Long] [value=121212] ] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:40) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -3486,9 +3486,9 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 21:39:17.405  INFO 112912 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 21:39:17.408  INFO 112912 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 21:39:17.413  INFO 112912 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2022-11-16 21:39:17.603 ERROR 112912 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found] with root cause
+2022-11-16 21:39:17.603 ERROR 112912 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:40) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -3696,9 +3696,9 @@ java.lang.RuntimeException: item not found
 2022-11-16 22:11:43.241  INFO 114478 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 22:11:43.243  INFO 114478 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 22:11:43.247  INFO 114478 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2022-11-16 22:11:43.535 ERROR 114478 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found] with root cause
+2022-11-16 22:11:43.535 ERROR 114478 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:40) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -3752,9 +3752,9 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
 	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
 
-2022-11-16 22:12:14.415 ERROR 114478 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found] with root cause
+2022-11-16 22:12:14.415 ERROR 114478 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:40) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -3961,9 +3961,9 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: item not found
 2022-11-16 22:47:51.552  INFO 115743 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 22:47:51.555  INFO 115743 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 22:47:51.560  INFO 115743 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2022-11-16 22:47:51.831 ERROR 115743 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: 121212; item not found] with root cause
+2022-11-16 22:47:51.831 ERROR 115743 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: give itemId: 121212; item not found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: 121212; item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: give itemId: 121212; item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:41) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -4043,9 +4043,9 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: 12
 2022-11-16 22:50:15.058  INFO 115909 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 22:50:15.059  INFO 115909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 22:50:15.061  INFO 115909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-11-16 22:50:15.179 ERROR 115909 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: 121212; item not found] with root cause
+2022-11-16 22:50:15.179 ERROR 115909 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: give itemId: 121212; item not found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: 121212; item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: give itemId: 121212; item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:41) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -4125,9 +4125,9 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: 12
 2022-11-16 22:51:12.570  INFO 116028 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 22:51:12.573  INFO 116028 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 22:51:12.580  INFO 116028 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2022-11-16 22:51:12.838 ERROR 116028 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: 121212; item not found] with root cause
+2022-11-16 22:51:12.838 ERROR 116028 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: give itemId: 121212; item not found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: 121212; item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: give itemId: 121212; item not found
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:41) ~[classes/:na]
 	at com.mdsujan.restPostgres.controller.ItemController.getItem(ItemController.java:41) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -4207,9 +4207,9 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: 12
 2022-11-16 22:53:50.717  INFO 116168 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 22:53:50.718  INFO 116168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 22:53:50.720  INFO 116168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-11-16 22:53:50.824 ERROR 116168 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: "+itemId+"; item not found] with root cause
+2022-11-16 22:53:50.824 ERROR 116168 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: give itemId: "+itemId+"; item not found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: "+itemId+"; item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: give itemId: "+itemId+"; item not found
 	at com.mdsujan.restPostgres.service.ItemService.lambda$getItemById$0(ItemService.java:37) ~[classes/:na]
 	at java.base/java.util.Optional.orElseThrow(Optional.java:408) ~[na:na]
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:37) ~[classes/:na]
@@ -4291,9 +4291,9 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: "+
 2022-11-16 22:54:40.768  INFO 116291 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-11-16 22:54:40.769  INFO 116291 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-11-16 22:54:40.772  INFO 116291 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-11-16 22:54:40.899 ERROR 116291 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: '121212'; item not found] with root cause
+2022-11-16 22:54:40.899 ERROR 116291 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: give itemId: '121212'; item not found] with root cause
 
-com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: '121212'; item not found
+com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException: give itemId: '121212'; item not found
 	at com.mdsujan.restPostgres.service.ItemService.lambda$getItemById$0(ItemService.java:37) ~[classes/:na]
 	at java.base/java.util.Optional.orElseThrow(Optional.java:408) ~[na:na]
 	at com.mdsujan.restPostgres.service.ItemService.getItemById(ItemService.java:37) ~[classes/:na]
@@ -4404,3 +4404,671 @@ com.mdsujan.restPostgres.customExceptions.ItemNotFoundException: give itemId: '1
 2022-11-16 23:09:38.831  INFO 116847 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-11-16 23:09:38.834  INFO 116847 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-11-16 23:09:38.846  INFO 116847 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:11:02.737  INFO 117247 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 117247 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:11:02.741  INFO 117247 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:11:03.649  INFO 117247 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:11:03.743  INFO 117247 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:11:04.712  INFO 117247 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:11:04.728  INFO 117247 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:11:04.728  INFO 117247 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:11:04.858  INFO 117247 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:11:04.859  INFO 117247 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2012 ms
+2022-11-16 23:11:05.054  INFO 117247 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:11:05.187  INFO 117247 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:11:05.270  INFO 117247 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:11:05.371  INFO 117247 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:11:05.609  INFO 117247 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:11:05.756  INFO 117247 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:11:06.661  INFO 117247 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:11:06.672  INFO 117247 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:11:07.517  WARN 117247 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:11:08.008  INFO 117247 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:11:08.024  INFO 117247 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.077 seconds (JVM running for 6.801)
+2022-11-16 23:11:20.163  INFO 117247 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:11:20.165  INFO 117247 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:11:20.168  INFO 117247 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-11-16 23:11:47.221  INFO 117247 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:11:47.224  INFO 117247 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:11:47.239  INFO 117247 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:11:52.598  INFO 117380 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 117380 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:11:52.602  INFO 117380 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:11:53.564  INFO 117380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:11:53.659  INFO 117380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:11:54.662  INFO 117380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:11:54.678  INFO 117380 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:11:54.678  INFO 117380 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:11:54.808  INFO 117380 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:11:54.808  INFO 117380 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2092 ms
+2022-11-16 23:11:54.996  INFO 117380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:11:55.115  INFO 117380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:11:55.204  INFO 117380 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:11:55.321  INFO 117380 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:11:55.543  INFO 117380 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:11:55.688  INFO 117380 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:11:56.563  INFO 117380 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:11:56.575  INFO 117380 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:11:57.548  WARN 117380 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:11:58.020  INFO 117380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:11:58.038  INFO 117380 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.285 seconds (JVM running for 6.906)
+2022-11-16 23:13:03.978  INFO 117380 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:13:03.980  INFO 117380 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:13:03.983  INFO 117380 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-11-16 23:13:11.214  WARN 117380 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "asdasdasd"]
+2022-11-16 23:16:55.567  INFO 117380 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:16:55.570  INFO 117380 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:16:55.582  INFO 117380 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:17:01.186  INFO 117688 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 117688 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:17:01.191  INFO 117688 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:17:02.067  INFO 117688 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:17:02.153  INFO 117688 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:17:03.220  INFO 117688 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:17:03.241  INFO 117688 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:17:03.242  INFO 117688 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:17:03.384  INFO 117688 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:17:03.385  INFO 117688 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2082 ms
+2022-11-16 23:17:03.570  INFO 117688 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:17:03.705  INFO 117688 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:17:03.783  INFO 117688 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:17:03.893  INFO 117688 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:17:04.120  INFO 117688 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:17:04.273  INFO 117688 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:17:05.144  INFO 117688 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:17:05.155  INFO 117688 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:17:06.150  WARN 117688 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:17:06.588  INFO 117688 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:17:06.603  INFO 117688 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.175 seconds (JVM running for 6.921)
+2022-11-16 23:17:11.426  INFO 117688 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:17:11.427  INFO 117688 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:17:11.431  INFO 117688 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-11-16 23:17:11.484  WARN 117688 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "asdasdasd"]
+2022-11-16 23:17:27.220  WARN 117688 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: ""asdasdasd""]
+2022-11-16 23:17:38.200  INFO 117688 --- [http-nio-8080-exec-4] c.m.r.controller.ItemController          : Response: ItemResponse(itemId=1, itemDesc=some desc3, category=Apparel, itemType=good, status=testStatus3, price=null, pickupAllowed=null, shippingAllowed=null, deliveryAllowed=false)
+2022-11-16 23:19:44.294  INFO 117688 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:19:44.297  INFO 117688 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:19:44.309  INFO 117688 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:19:49.210  INFO 118410 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 118410 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:19:49.216  INFO 118410 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:19:50.184  INFO 118410 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:19:50.301  INFO 118410 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:19:51.538  INFO 118410 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:19:51.560  INFO 118410 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:19:51.561  INFO 118410 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:19:51.707  INFO 118410 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:19:51.707  INFO 118410 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2363 ms
+2022-11-16 23:19:51.935  INFO 118410 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:19:52.076  INFO 118410 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:19:52.153  INFO 118410 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:19:52.257  INFO 118410 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:19:52.479  INFO 118410 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:19:52.622  INFO 118410 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:19:53.475  INFO 118410 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:19:53.486  INFO 118410 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:19:54.358  WARN 118410 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:19:54.820  INFO 118410 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:19:54.835  INFO 118410 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.38 seconds (JVM running for 7.087)
+2022-11-16 23:24:23.921  INFO 118410 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:24:23.924  INFO 118410 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:24:23.935  INFO 118410 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:24:28.650  INFO 118658 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 118658 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:24:28.656  INFO 118658 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:24:29.566  INFO 118658 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:24:29.657  INFO 118658 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:24:30.689  INFO 118658 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:24:30.705  INFO 118658 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:24:30.706  INFO 118658 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:24:30.860  INFO 118658 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:24:30.861  INFO 118658 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2091 ms
+2022-11-16 23:24:31.105  INFO 118658 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:24:31.239  INFO 118658 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:24:31.309  INFO 118658 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:24:31.419  INFO 118658 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:24:31.669  INFO 118658 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:24:31.818  INFO 118658 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:24:32.732  INFO 118658 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:24:32.743  INFO 118658 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:24:33.610  WARN 118658 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:24:34.087  INFO 118658 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:24:34.105  INFO 118658 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.33 seconds (JVM running for 7.061)
+2022-11-16 23:27:20.124  INFO 118658 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:27:20.127  INFO 118658 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:27:20.138  INFO 118658 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:27:36.105  INFO 118852 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 118852 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:27:36.111  INFO 118852 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:27:36.981  INFO 118852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:27:37.068  INFO 118852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:27:38.063  INFO 118852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:27:38.078  INFO 118852 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:27:38.078  INFO 118852 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:27:38.223  INFO 118852 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:27:38.224  INFO 118852 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1994 ms
+2022-11-16 23:27:38.431  INFO 118852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:27:38.555  INFO 118852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:27:38.687  INFO 118852 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:27:38.773  INFO 118852 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:27:38.991  INFO 118852 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:27:39.148  INFO 118852 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:27:40.050  INFO 118852 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:27:40.061  INFO 118852 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:27:41.050  WARN 118852 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:27:41.488  INFO 118852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:27:41.503  INFO 118852 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.167 seconds (JVM running for 6.907)
+2022-11-16 23:27:52.089  INFO 118852 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:27:52.091  INFO 118852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:27:52.095  INFO 118852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-11-16 23:27:52.224  WARN 118852 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.mdsujan.restPostgres.exceptionHandling.GlobalExceptionHandler#handleItemIdInvalidException(ItemIdInvalidException)
+
+java.lang.IllegalStateException: Could not resolve parameter [0] in public com.mdsujan.restPostgres.exceptionHandling.ErrorResponse com.mdsujan.restPostgres.exceptionHandling.GlobalExceptionHandler.handleItemIdInvalidException(com.mdsujan.restPostgres.exceptionHandling.ItemIdInvalidException): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:176) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:142) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1331) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1142) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2022-11-16 23:27:52.229  WARN 118852 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc1"]
+2022-11-16 23:29:55.576  INFO 118852 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:29:55.578  INFO 118852 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:29:55.590  INFO 118852 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:30:00.475  INFO 118999 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 118999 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:30:00.481  INFO 118999 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:30:01.470  INFO 118999 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:30:01.555  INFO 118999 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:30:02.607  INFO 118999 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:30:02.621  INFO 118999 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:30:02.622  INFO 118999 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:30:02.757  INFO 118999 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:30:02.758  INFO 118999 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2136 ms
+2022-11-16 23:30:02.967  INFO 118999 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:30:03.089  INFO 118999 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:30:03.170  INFO 118999 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:30:03.297  INFO 118999 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:30:03.506  INFO 118999 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:30:03.652  INFO 118999 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:30:04.587  INFO 118999 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:30:04.598  INFO 118999 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:30:05.583  WARN 118999 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:30:06.080  INFO 118999 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:30:06.094  INFO 118999 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.362 seconds (JVM running for 6.965)
+2022-11-16 23:30:10.213  INFO 118999 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:30:10.214  INFO 118999 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:30:10.216  INFO 118999 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-11-16 23:30:10.273  WARN 118999 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.mdsujan.restPostgres.exceptionHandling.GlobalExceptionHandler#handleItemIdInvalidException(ItemIdInvalidException)
+
+java.lang.IllegalStateException: Could not resolve parameter [0] in public com.mdsujan.restPostgres.exceptionHandling.ErrorResponse com.mdsujan.restPostgres.exceptionHandling.GlobalExceptionHandler.handleItemIdInvalidException(com.mdsujan.restPostgres.exceptionHandling.ItemIdInvalidException): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:176) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:142) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1331) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1142) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2022-11-16 23:30:10.275  WARN 118999 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc1"]
+2022-11-16 23:30:33.181  INFO 118999 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:30:33.184  INFO 118999 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:30:33.202  INFO 118999 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:30:37.936  INFO 119137 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 119137 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:30:37.941  INFO 119137 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:30:38.900  INFO 119137 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:30:38.988  INFO 119137 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:30:40.111  INFO 119137 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:30:40.125  INFO 119137 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:30:40.126  INFO 119137 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:30:40.267  INFO 119137 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:30:40.268  INFO 119137 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2213 ms
+2022-11-16 23:30:40.507  INFO 119137 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:30:40.671  INFO 119137 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:30:40.822  INFO 119137 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:30:40.895  INFO 119137 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:30:41.094  INFO 119137 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:30:41.232  INFO 119137 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:30:42.066  INFO 119137 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:30:42.076  INFO 119137 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:30:43.014  WARN 119137 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:30:43.505  INFO 119137 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:30:43.520  INFO 119137 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.338 seconds (JVM running for 7.104)
+2022-11-16 23:30:48.409  INFO 119137 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:30:48.411  INFO 119137 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:30:48.418  INFO 119137 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-11-16 23:30:48.533  WARN 119137 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc1"]
+2022-11-16 23:31:38.972  INFO 119137 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:31:38.975  INFO 119137 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:31:38.989  INFO 119137 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:31:43.828  INFO 119268 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 119268 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:31:43.834  INFO 119268 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:31:44.811  INFO 119268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:31:44.918  INFO 119268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:31:45.871  INFO 119268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:31:45.887  INFO 119268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:31:45.888  INFO 119268 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:31:46.026  INFO 119268 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:31:46.026  INFO 119268 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2082 ms
+2022-11-16 23:31:46.240  INFO 119268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:31:46.359  INFO 119268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:31:46.437  INFO 119268 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:31:46.554  INFO 119268 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:31:46.763  INFO 119268 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:31:46.909  INFO 119268 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:31:47.950  INFO 119268 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:31:47.961  INFO 119268 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:31:48.962  WARN 119268 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:31:49.527  INFO 119268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:31:49.549  INFO 119268 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.545 seconds (JVM running for 7.251)
+2022-11-16 23:31:53.709  INFO 119268 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:31:53.712  INFO 119268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:31:53.716  INFO 119268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-11-16 23:32:00.301  WARN 119268 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc1"]
+2022-11-16 23:32:56.662  INFO 119268 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:32:56.665  INFO 119268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:32:56.677  INFO 119268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:33:01.827  INFO 119399 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 119399 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:33:01.833  INFO 119399 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:33:02.719  INFO 119399 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:33:02.803  INFO 119399 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:33:03.860  INFO 119399 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:33:03.875  INFO 119399 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:33:03.875  INFO 119399 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:33:04.020  INFO 119399 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:33:04.020  INFO 119399 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2071 ms
+2022-11-16 23:33:04.232  INFO 119399 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:33:04.344  INFO 119399 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:33:04.419  INFO 119399 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:33:04.533  INFO 119399 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:33:04.752  INFO 119399 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:33:04.905  INFO 119399 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:33:05.807  INFO 119399 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:33:05.818  INFO 119399 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:33:06.717  WARN 119399 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:33:07.272  INFO 119399 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:33:07.292  INFO 119399 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.218 seconds (JVM running for 6.97)
+2022-11-16 23:33:14.481  INFO 119399 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:33:14.483  INFO 119399 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:33:14.485  INFO 119399 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-11-16 23:33:14.541  WARN 119399 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc1"]
+2022-11-16 23:34:25.162  INFO 119399 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:34:25.183  INFO 119399 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:34:25.202  INFO 119399 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:34:30.153  INFO 119531 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 119531 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:34:30.159  INFO 119531 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:34:31.081  INFO 119531 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:34:31.175  INFO 119531 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:34:32.325  INFO 119531 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:34:32.344  INFO 119531 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:34:32.344  INFO 119531 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:34:32.518  INFO 119531 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:34:32.519  INFO 119531 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2242 ms
+2022-11-16 23:34:32.743  INFO 119531 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:34:32.885  INFO 119531 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:34:32.976  INFO 119531 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:34:33.092  INFO 119531 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:34:33.364  INFO 119531 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:34:33.535  INFO 119531 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:34:34.475  INFO 119531 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:34:34.489  INFO 119531 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:34:35.679  WARN 119531 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:34:36.185  INFO 119531 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:34:36.199  INFO 119531 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.825 seconds (JVM running for 7.405)
+2022-11-16 23:35:05.050  INFO 119531 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:35:05.051  INFO 119531 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:35:05.054  INFO 119531 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-11-16 23:35:05.113  WARN 119531 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc1"]
+2022-11-16 23:37:02.767  INFO 119531 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:37:02.769  INFO 119531 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:37:02.782  INFO 119531 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:37:07.687  INFO 119887 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 119887 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:37:07.692  INFO 119887 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:37:08.566  INFO 119887 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:37:08.666  INFO 119887 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:37:09.737  INFO 119887 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:37:09.753  INFO 119887 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:37:09.753  INFO 119887 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:37:09.893  INFO 119887 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:37:09.894  INFO 119887 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2089 ms
+2022-11-16 23:37:10.139  INFO 119887 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:37:10.283  INFO 119887 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:37:10.376  INFO 119887 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:37:10.496  INFO 119887 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:37:10.709  INFO 119887 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:37:10.951  INFO 119887 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:37:11.874  INFO 119887 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:37:11.885  INFO 119887 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:37:12.869  WARN 119887 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:37:13.374  INFO 119887 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:37:13.389  INFO 119887 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.472 seconds (JVM running for 7.231)
+2022-11-16 23:37:17.510  INFO 119887 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:37:17.512  INFO 119887 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:37:17.516  INFO 119887 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-11-16 23:38:20.595  INFO 119887 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:38:20.597  INFO 119887 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:38:20.609  INFO 119887 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:38:25.384  INFO 120021 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 120021 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:38:25.390  INFO 120021 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:38:26.298  INFO 120021 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:38:26.386  INFO 120021 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:38:27.369  INFO 120021 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:38:27.383  INFO 120021 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:38:27.383  INFO 120021 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:38:27.561  INFO 120021 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:38:27.562  INFO 120021 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2061 ms
+2022-11-16 23:38:27.730  INFO 120021 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:38:27.864  INFO 120021 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:38:27.969  INFO 120021 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:38:28.078  INFO 120021 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:38:28.294  INFO 120021 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:38:28.436  INFO 120021 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:38:29.396  INFO 120021 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:38:29.407  INFO 120021 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:38:30.570  WARN 120021 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:38:31.097  INFO 120021 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:38:31.112  INFO 120021 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.499 seconds (JVM running for 7.195)
+2022-11-16 23:38:32.277  INFO 120021 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:38:32.278  INFO 120021 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:38:32.280  INFO 120021 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-16 23:39:10.162 ERROR 120021 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.NoSuchElementException: No value present] with root cause
+
+java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:148) ~[na:na]
+	at com.mdsujan.restPostgres.service.SupplyService.getSupplyById(SupplyService.java:37) ~[classes/:na]
+	at com.mdsujan.restPostgres.controller.SupplyController.getSupplyById(SupplyController.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2022-11-16 23:41:03.929  INFO 120021 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:41:03.937  INFO 120021 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:41:03.966  INFO 120021 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:42:54.070  INFO 120235 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 120235 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:42:54.074  INFO 120235 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:42:54.966  INFO 120235 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:42:55.064  INFO 120235 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:42:56.013  INFO 120235 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:42:56.029  INFO 120235 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:42:56.029  INFO 120235 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:42:56.173  INFO 120235 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:42:56.174  INFO 120235 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1993 ms
+2022-11-16 23:42:56.359  INFO 120235 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:42:56.503  INFO 120235 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:42:56.620  INFO 120235 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:42:56.715  INFO 120235 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:42:56.926  INFO 120235 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:42:57.069  INFO 120235 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:42:57.963  INFO 120235 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:42:57.974  INFO 120235 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:42:58.900  WARN 120235 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:42:59.332  INFO 120235 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:42:59.347  INFO 120235 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.085 seconds (JVM running for 6.835)
+2022-11-16 23:43:08.204  INFO 120235 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:43:08.206  INFO 120235 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:43:08.207  INFO 120235 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-16 23:43:13.570  WARN 120235 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "dasdasdasda"]
+2022-11-16 23:43:56.819  INFO 120235 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:43:56.822  INFO 120235 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:43:56.833  INFO 120235 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:44:01.650  INFO 120372 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 120372 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:44:01.654  INFO 120372 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:44:02.585  INFO 120372 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:44:02.686  INFO 120372 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:44:03.626  INFO 120372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:44:03.642  INFO 120372 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:44:03.642  INFO 120372 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:44:03.768  INFO 120372 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:44:03.768  INFO 120372 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2000 ms
+2022-11-16 23:44:03.935  INFO 120372 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:44:04.059  INFO 120372 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:44:04.147  INFO 120372 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:44:04.267  INFO 120372 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:44:04.498  INFO 120372 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:44:04.637  INFO 120372 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:44:05.690  INFO 120372 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:44:05.702  INFO 120372 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:44:06.622  WARN 120372 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:44:07.072  INFO 120372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:44:07.087  INFO 120372 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.204 seconds (JVM running for 6.916)
+2022-11-16 23:44:14.826  INFO 120372 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:44:14.827  INFO 120372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:44:14.831  INFO 120372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-11-16 23:44:14.883  WARN 120372 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "dasdasdasda"]
+2022-11-16 23:45:19.310  INFO 120372 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:45:19.315  INFO 120372 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:45:19.350  INFO 120372 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:45:46.036  INFO 120537 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 120537 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:45:46.040  INFO 120537 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:45:46.920  INFO 120537 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:45:47.004  INFO 120537 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:45:47.992  INFO 120537 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:45:48.011  INFO 120537 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:45:48.012  INFO 120537 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:45:48.152  INFO 120537 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:45:48.153  INFO 120537 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2001 ms
+2022-11-16 23:45:48.383  INFO 120537 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:45:48.534  INFO 120537 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:45:48.609  INFO 120537 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:45:48.706  INFO 120537 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:45:48.919  INFO 120537 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:45:49.072  INFO 120537 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:45:49.960  INFO 120537 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:45:49.971  INFO 120537 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:45:50.921  WARN 120537 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:45:51.448  INFO 120537 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:45:51.466  INFO 120537 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.218 seconds (JVM running for 6.954)
+2022-11-16 23:45:57.360  INFO 120537 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:45:57.362  INFO 120537 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:45:57.366  INFO 120537 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-11-16 23:45:57.455  WARN 120537 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "dasdasdasda"]
+2022-11-16 23:46:17.355  WARN 120537 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "dasdasdasda"]
+2022-11-16 23:46:32.758  INFO 120537 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:46:32.803  INFO 120537 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:46:32.831  INFO 120537 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:46:36.252  INFO 120659 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 120659 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:46:36.258  INFO 120659 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:46:37.335  INFO 120659 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:46:37.493  INFO 120659 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:46:38.748  INFO 120659 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:46:38.764  INFO 120659 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:46:38.765  INFO 120659 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:46:38.928  INFO 120659 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:46:38.928  INFO 120659 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2531 ms
+2022-11-16 23:46:39.147  INFO 120659 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:46:39.279  INFO 120659 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:46:39.409  INFO 120659 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:46:39.505  INFO 120659 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:46:39.809  INFO 120659 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:46:39.999  INFO 120659 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:46:41.025  INFO 120659 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:46:41.039  INFO 120659 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:46:42.117  WARN 120659 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:46:42.666  INFO 120659 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:46:42.688  INFO 120659 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 7.327 seconds (JVM running for 8.054)
+2022-11-16 23:46:46.048  INFO 120659 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:46:46.056  INFO 120659 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:46:46.062  INFO 120659 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2022-11-16 23:46:46.179  WARN 120659 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "dasdasdasda"]
+2022-11-16 23:47:13.365  INFO 120659 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:47:13.368  INFO 120659 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:47:13.381  INFO 120659 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:47:16.473  INFO 120777 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 120777 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:47:16.479  INFO 120777 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:47:17.547  INFO 120777 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:47:17.661  INFO 120777 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:47:18.960  INFO 120777 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:47:18.982  INFO 120777 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:47:18.983  INFO 120777 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:47:19.170  INFO 120777 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:47:19.170  INFO 120777 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2544 ms
+2022-11-16 23:47:19.381  INFO 120777 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:47:19.556  INFO 120777 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:47:19.692  INFO 120777 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:47:19.832  INFO 120777 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:47:20.214  INFO 120777 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:47:20.554  INFO 120777 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:47:21.651  INFO 120777 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:47:21.665  INFO 120777 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:47:23.256  WARN 120777 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:47:24.271  INFO 120777 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:47:24.300  INFO 120777 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 8.688 seconds (JVM running for 9.446)
+2022-11-16 23:47:27.082  INFO 120777 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:47:27.083  INFO 120777 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:47:27.084  INFO 120777 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-16 23:47:27.173  WARN 120777 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "dasdasdasda"]
+2022-11-16 23:49:28.397  INFO 120777 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:49:28.401  INFO 120777 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:49:28.416  INFO 120777 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-16 23:49:33.042  INFO 120942 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 120942 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-16 23:49:33.047  INFO 120942 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-16 23:49:33.990  INFO 120942 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-16 23:49:34.089  INFO 120942 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 5 JPA repository interfaces.
+2022-11-16 23:49:35.037  INFO 120942 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-16 23:49:35.053  INFO 120942 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-16 23:49:35.053  INFO 120942 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-16 23:49:35.201  INFO 120942 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-16 23:49:35.202  INFO 120942 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2021 ms
+2022-11-16 23:49:35.449  INFO 120942 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-16 23:49:35.584  INFO 120942 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-16 23:49:35.660  INFO 120942 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-16 23:49:35.776  INFO 120942 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-16 23:49:35.989  INFO 120942 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-16 23:49:36.133  INFO 120942 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-16 23:49:37.114  INFO 120942 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-16 23:49:37.126  INFO 120942 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:49:38.017  WARN 120942 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-16 23:49:38.454  INFO 120942 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-16 23:49:38.468  INFO 120942 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.18 seconds (JVM running for 6.865)
+2022-11-16 23:49:45.786  INFO 120942 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-16 23:49:45.788  INFO 120942 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-16 23:49:45.792  INFO 120942 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-11-16 23:49:45.909  WARN 120942 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "dasdasdasda"]
+2022-11-16 23:49:58.402  INFO 120942 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-16 23:49:58.405  INFO 120942 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-16 23:49:58.417  INFO 120942 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

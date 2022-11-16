@@ -1,4 +1,4 @@
-package com.mdsujan.restPostgres.customExceptions;
+package com.mdsujan.restPostgres.exceptionHandling;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

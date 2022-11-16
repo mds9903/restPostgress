@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({"com.mdsujan.restPostgres.service", "com.mdsujan.restPostgres.controller"})
+@ComponentScan({"com.mdsujan.restPostgres.service", "com.mdsujan.restPostgres.controller", "com.mdsujan.restPostgres.exceptionHandling"})
 @EntityScan("com.mdsujan.restPostgres.entity")
 @EnableJpaRepositories("com.mdsujan.restPostgres.repository")
 public class MyApp {

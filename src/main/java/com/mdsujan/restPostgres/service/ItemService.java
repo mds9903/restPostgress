@@ -1,7 +1,7 @@
 package com.mdsujan.restPostgres.service;
 
 import com.mdsujan.restPostgres.entity.Item;
-import com.mdsujan.restPostgres.customExceptions.ItemNotFoundException;
+import com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
@@ -34,7 +34,7 @@ public class ItemService {
 
     public Item getItemById(Long itemId) throws ItemNotFoundException {
         return itemRepository.findById(itemId)
-                .orElseThrow(()-> new ItemNotFoundException("item not found for given itemId: \""+itemId+"\"; please check itemId entered"));
+                .orElseThrow(()-> new ItemNotFoundException("item not found for given itemId: '"+itemId+"'; please check itemId entered"));
     }
 
     public Item createItem(CreateItemRequest createItemRequest) {
