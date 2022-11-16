@@ -1,7 +1,6 @@
 package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Item;
-import com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException;
 import com.mdsujan.restPostgres.request.CreateItemRequest;
 import com.mdsujan.restPostgres.request.UpdateItemRequest;
 import com.mdsujan.restPostgres.response.ItemResponse;
@@ -11,8 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.EntityNotFoundException;
-import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +34,7 @@ public class ItemController {
     }
 
     @GetMapping("/{itemId}") // return the details of specific itemId
-    public ItemResponse getItem(@PathVariable Long itemId) throws ItemNotFoundException {
+    public ItemResponse getItem(@PathVariable Long itemId) throws RuntimeException {
         ItemResponse itemResponse = new ItemResponse(itemService.getItemById(itemId));
         logger.info("Response: " + itemResponse);
         return itemResponse;
