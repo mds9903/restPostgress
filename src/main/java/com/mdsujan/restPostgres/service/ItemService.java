@@ -1,6 +1,7 @@
 package com.mdsujan.restPostgres.service;
 
 import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
@@ -28,12 +29,18 @@ public class ItemService {
     DemandRepository demandRepository;
 
     public List<Item> getAllItems() {
+
         return itemRepository.findAll();
     }
 
 
-    public Item getItemById(Long itemId) {
-        return itemRepository.findById(itemId).get();
+    public Item getItemById(Long itemId) throws EntityNotFoundException {
+        if (itemRepository.findById(itemId).isPresent()) {
+            return itemRepository.findById(itemId).get();
+        } else {
+
+            throw new EntityNotFoundException("no such item found");
+        }
     }
 
     public Item createItem(CreateItemRequest createItemRequest) {

@@ -1,6 +1,7 @@
 package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.exceptionHandling.EntityNotFoundException;
 import com.mdsujan.restPostgres.request.CreateItemRequest;
 import com.mdsujan.restPostgres.request.UpdateItemRequest;
 import com.mdsujan.restPostgres.response.ItemResponse;
@@ -10,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,16 +24,8 @@ public class ItemController {
     @Autowired
     ItemService itemService;
 
-    @GetMapping("/") // return all items
+    @GetMapping("/") // retrieve all all items
     public List<ItemResponse> getAllItems() {
-
-//        logger.error("Logger Error");
-//        logger.warn("Logger Warn");
-//        logger.info("Logger Info");
-//        logger.debug("Logger Debug");
-//        logger.trace("Logger Trace");
-
-
         List<Item> itemList = itemService.getAllItems();
         List<ItemResponse> itemResponseList = new ArrayList<>();
 
@@ -39,12 +33,10 @@ public class ItemController {
         itemList.forEach(item -> itemResponseList.add(new ItemResponse(item)));
         logger.info("Response: " + itemResponseList); // log the response being sent
         return itemResponseList;
-
-
     }
 
     @GetMapping("/{itemId}") // return the details of specific itemId
-    public ItemResponse getItem(@PathVariable Long itemId) {
+    public ItemResponse getItem(@PathVariable @Valid Long itemId) throws EntityNotFoundException {
         ItemResponse itemResponse = new ItemResponse(itemService.getItemById(itemId));
         logger.info("Response: " + itemResponse);
 
