@@ -1,6 +1,8 @@
 package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.exceptionHandling.DuplicateItemException;
+import com.mdsujan.restPostgres.exceptionHandling.ItemConflictException;
 import com.mdsujan.restPostgres.exceptionHandling.ItemIdInvalidException;
 import com.mdsujan.restPostgres.request.CreateItemRequest;
 import com.mdsujan.restPostgres.request.UpdateItemRequest;
@@ -36,7 +38,7 @@ public class ItemController {
     }
 
     @GetMapping(value = "/{itemId}") // return the details of specific itemId
-    public ItemResponse getItem(@PathVariable Long itemId) throws RuntimeException {
+    public ItemResponse getItem(@PathVariable Long itemId) throws Throwable {
 
         ItemResponse itemResponse = new ItemResponse(itemService.getItemById(itemId));
         logger.info("Response: " + itemResponse);
@@ -53,7 +55,7 @@ public class ItemController {
     }
 
     @PostMapping("/") // create an item in the table
-    public ItemResponse createItem(@RequestBody CreateItemRequest createItemRequest) {
+    public ItemResponse createItem(@RequestBody CreateItemRequest createItemRequest) throws Throwable {
         logger.info("InQueryRequest: " + createItemRequest);
         Item newItem = itemService.createItem(createItemRequest);
         ItemResponse itemResponse = new ItemResponse(newItem);
@@ -62,15 +64,14 @@ public class ItemController {
     }
 
     @DeleteMapping("/{itemId}") // delete a specific item
-    public String deleteItem(@PathVariable Long itemId) {
-
+    public String deleteItem(@PathVariable Long itemId) throws Throwable {
         String response = itemService.deleteItemById(itemId);
         logger.info("Response: " + response);
         return response;
     }
 
     @PutMapping("/{itemId}")
-    public ItemResponse updateItemPut(@PathVariable Long itemId, @RequestBody UpdateItemRequest updateItemRequest) {
+    public ItemResponse updateItemPut(@PathVariable Long itemId, @RequestBody UpdateItemRequest updateItemRequest) throws Throwable {
         logger.info("InQueryRequest: " + updateItemRequest);
         ItemResponse itemResponse = new ItemResponse(itemService.updateItemByIdPut(itemId, updateItemRequest));
         logger.info("Response: " + itemResponse);
@@ -78,7 +79,7 @@ public class ItemController {
     }
 
     @PatchMapping("/{itemId}")
-    public ItemResponse updateItemPatch(@PathVariable Long itemId, @RequestBody UpdateItemRequest updateItemRequest) {
+    public ItemResponse updateItemPatch(@PathVariable Long itemId, @RequestBody UpdateItemRequest updateItemRequest) throws Throwable {
         logger.info("InQueryRequest: " + updateItemRequest);
         ItemResponse itemResponse = new ItemResponse(itemService.updateItemByIdPatch(itemId, updateItemRequest));
         logger.info("Response: " + itemResponse);

@@ -12,8 +12,8 @@ public class GlobalExceptionHandler{
 
     @ExceptionHandler(value = ItemNotFoundException.class)
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    public @ResponseBody ErrorResponse handleItemNotFoundException(ItemNotFoundException itemNotFoundException) {
-        return new ErrorResponse(HttpStatus.NOT_FOUND.value(), itemNotFoundException.getMessage());
+    public @ResponseBody ErrorResponse handleItemNotFoundException(ItemNotFoundException exception) {
+        return new ErrorResponse(HttpStatus.NOT_FOUND.value(), exception.getMessage());
     }
 
     // Note:
@@ -25,4 +25,22 @@ public class GlobalExceptionHandler{
 //    public @ResponseBody ErrorResponse handleItemIdInvalidException(MethodArgumentTypeMismatchException methodArgumentTypeMismatchException) {
 //        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), new ItemIdInvalidException("itemId should be a number; not a string").getMessage());
 //    }
+
+    @ExceptionHandler(value = DuplicateItemException.class)
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    public @ResponseBody ErrorResponse handleDuplicateItemException(DuplicateItemException exception){
+        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), exception.getMessage());
+    }
+
+    @ExceptionHandler(value = ItemConflictException.class)
+    @ResponseStatus(value = HttpStatus.CONFLICT)
+    public @ResponseBody ErrorResponse handleItemConflictException(ItemConflictException exception){
+        return new ErrorResponse(HttpStatus.CONFLICT.value(), exception.getMessage());
+    }
+
+    @ExceptionHandler(value = UpdateItemRequestBodyInvalidException.class)
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    public @ResponseBody ErrorResponse handleUpdateItemRequestBodyInvalidException(UpdateItemRequestBodyInvalidException exception){
+        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), exception.getMessage());
+    }
 }

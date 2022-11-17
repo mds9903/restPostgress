@@ -1,7 +1,10 @@
 package com.mdsujan.restPostgres.service;
 
 import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.exceptionHandling.DuplicateItemException;
+import com.mdsujan.restPostgres.exceptionHandling.ItemConflictException;
 import com.mdsujan.restPostgres.exceptionHandling.ItemNotFoundException;
+import com.mdsujan.restPostgres.exceptionHandling.UpdateItemRequestBodyInvalidException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
@@ -27,22 +30,22 @@ public class ItemService {
     DemandRepository demandRepository;
 
     public List<Item> getAllItems() {
-
         return itemRepository.findAll();
     }
 
 
     public Item getItemById(Long itemId) throws ItemNotFoundException {
         return itemRepository.findById(itemId)
-                .orElseThrow(()-> new ItemNotFoundException("item not found for given itemId: '"+itemId+"'; please check itemId entered"));
+                .orElseThrow(() -> new ItemNotFoundException("item not found for given itemId: '" + itemId + "'; please check itemId entered"));
     }
 
-    public Item createItem(CreateItemRequest createItemRequest) {
+    public Item createItem(CreateItemRequest createItemRequest) throws DuplicateItemException {
         // new record should not be created if record already exists
 
         // if record with same id exists then simply return it
         if (itemRepository.findById(createItemRequest.getItemId()).isPresent()) {
-            return itemRepository.findById(createItemRequest.getItemId()).get();
+            throw new DuplicateItemException("an item with same itemId already exists; please provide a unique itemId in the request body");
+//            return itemRepository.findById(createItemRequest.getItemId()).get();
         }
         // else we create a new item
         Item item = new Item(createItemRequest);
@@ -50,62 +53,85 @@ public class ItemService {
         return item;
     }
 
-    public String deleteItemById(Long itemId) {
-        try {
-            // check if item exists
-            if (itemRepository.findById(itemId).isPresent()) {
-                // if any child records depend on this item
-                if (supplyRepository.findByItemItemId(itemId).size() > 0 || demandRepository.findByItemItemId(itemId).size() > 0) {
-                    // this item cannot be deleted
-                    return "Cannot delete item; it has child records";
-                }
-                // delete the existing item
-                itemRepository.deleteById(itemId);
-                return "Item with itemId=" + itemId + " successfully deleted.";
+    public String deleteItemById(Long itemId) throws ItemConflictException {
+        // check if item exists
+        if (itemRepository.findById(itemId).isPresent()) {
+            // if any child records depend on this item
+            if (supplyRepository.findByItemItemId(itemId).size() > 0 || demandRepository.findByItemItemId(itemId).size() > 0) {
+                // this item cannot be deleted
+//                return "Cannot delete item; it has child records";
+                throw new ItemConflictException("this item cannot be deleted; has child dependencies");
             }
-            // else give proper message
-            return "Invalid itemId: no such item present";
-        } catch (Exception e) {
-            return "EXCEPTION OCCURRED" + e;
+            // else delete the existing item
+            itemRepository.deleteById(itemId);
+            return "Item with itemId=" + itemId + " successfully deleted.";
         }
+        // else give proper message
+//        return "Invalid itemId: no such item present";
+        throw new ItemNotFoundException("cannot delete; no such item found");
     }
 
-    public Item updateItemByIdPut(Long itemId, UpdateItemRequest updateItemRequest) {
-
+    public Item updateItemByIdPut(Long itemId, UpdateItemRequest updateItemRequest) throws Throwable {
         // "API must honor the itemId value passed in the input"
-
-        // find the record matching with the id
-        Item itemToUpdate = itemRepository.findById(itemId).get();
-        try {
-
-            // update the itemToUpdate
-            itemToUpdate.setItemDesc(updateItemRequest.getItemDesc());
-            itemToUpdate.setCategory(updateItemRequest.getCategory());
-            itemToUpdate.setType(updateItemRequest.getItemType());
-            itemToUpdate.setStatus(updateItemRequest.getStatus());
-            itemToUpdate.setPrice(updateItemRequest.getPrice());
-            itemToUpdate.setPickupAllowed(updateItemRequest.getPickupAllowed());
-            itemToUpdate.setShippingAllowed(updateItemRequest.getShippingAllowed());
-            itemToUpdate.setDeliveryAllowed(updateItemRequest.getDeliveryAllowed());
-
-            // save the new entity
-            itemToUpdate = itemRepository.save(itemToUpdate);
-        } catch (Exception e) {
-            System.out.println("Exception occurred: " + e.getMessage());
+        if (!itemId.equals(updateItemRequest.getItemId())) {
+            // itemId in the body is not matching the itemId in the path variable
+            throw new UpdateItemRequestBodyInvalidException("itemId in the body is not matching the itemId in the path variable; " +
+                    "please provide the right itemId to avoid confusion");
         }
-        return itemToUpdate;
+        if (itemRepository.findById(itemId).isPresent()) {
+            // find the record matching with the id
+            Item itemToUpdate = itemRepository.findById(itemId).get();
+            // update the itemToUpdate
+//            itemToUpdate.setItemDesc(updateItemRequest.getItemDesc());
+//            itemToUpdate.setCategory(updateItemRequest.getCategory());
+//            itemToUpdate.setType(updateItemRequest.getItemType());
+//            itemToUpdate.setStatus(updateItemRequest.getStatus());
+//            itemToUpdate.setPrice(updateItemRequest.getPrice());
+//            itemToUpdate.setPickupAllowed(updateItemRequest.getPickupAllowed());
+//            itemToUpdate.setShippingAllowed(updateItemRequest.getShippingAllowed());
+//            itemToUpdate.setDeliveryAllowed(updateItemRequest.getDeliveryAllowed());
+            // since a PUT request body must have all fields required for the entity
+            if (updateItemRequest.getItemDesc() == null
+                    || updateItemRequest.getCategory() == null
+                    || updateItemRequest.getItemType() == null
+                    || updateItemRequest.getStatus() == null
+                    || updateItemRequest.getPrice() != null
+                    || updateItemRequest.getPickupAllowed() != null
+                    || updateItemRequest.getShippingAllowed() != null
+                    || updateItemRequest.getDeliveryAllowed() != null) {
+                throw new UpdateItemRequestBodyInvalidException("some of the fields in the request body is missing; " +
+                        "please send full request body for updating item");
+            } else {
+                // update the itemToUpdate
+                itemToUpdate.setItemDesc(updateItemRequest.getItemDesc());
+                itemToUpdate.setCategory(updateItemRequest.getCategory());
+                itemToUpdate.setType(updateItemRequest.getItemType());
+                itemToUpdate.setStatus(updateItemRequest.getStatus());
+                itemToUpdate.setPrice(updateItemRequest.getPrice());
+                itemToUpdate.setPickupAllowed(updateItemRequest.getPickupAllowed());
+                itemToUpdate.setShippingAllowed(updateItemRequest.getShippingAllowed());
+                itemToUpdate.setDeliveryAllowed(updateItemRequest.getDeliveryAllowed());
+                // save the new entity
+                itemToUpdate = itemRepository.save(itemToUpdate);
+                return itemToUpdate;
+            }
+        } else {
+            throw new ItemNotFoundException("cannot update this item; item not found; try entering a correct itemId");
+        }
     }
 
-    public Item updateItemByIdPatch(Long itemId, UpdateItemRequest updateItemRequest) {
-        // find the record matching with the id
-        Item itemToUpdate = itemRepository.findById(itemId).get();
-
-        try {
-            // test
-            String statusTest = updateItemRequest.getStatus();
+    public Item updateItemByIdPatch(Long itemId, UpdateItemRequest updateItemRequest) throws Throwable {
+        // "API must honor the itemId value passed in the input"
+        if (!itemId.equals(updateItemRequest.getItemId())) {
+            // itemId in the body is not matching the itemId in the path variable
+            throw new UpdateItemRequestBodyInvalidException("itemId in the body is not matching the itemId in the path variable; " +
+                    "please provide the right itemId to avoid confusion");
+        }
+        if (itemRepository.findById(itemId).isPresent()) {
+            // find the record matching with the id
+            Item itemToUpdate = itemRepository.findById(itemId).get();
             // update the itemToUpdate
-
-            // since this is a path request only present fields shall be updated
+            // since this is a patch request only present fields shall be updated
             if (updateItemRequest.getItemDesc() != null && !updateItemRequest.getItemDesc().isEmpty()) {
                 itemToUpdate.setItemDesc(updateItemRequest.getItemDesc());
             }
@@ -132,9 +158,9 @@ public class ItemService {
             }
             // save the new entity
             itemToUpdate = itemRepository.save(itemToUpdate);
-        } catch (Exception e) {
-            System.out.println("Exception occurred: " + e);
+            return itemToUpdate;
+        } else {
+            throw new ItemNotFoundException("cannot update item; item not found; please provide the correct itemId");
         }
-        return itemToUpdate;
     }
 }
