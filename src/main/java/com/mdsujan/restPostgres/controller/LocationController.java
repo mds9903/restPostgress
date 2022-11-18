@@ -1,6 +1,7 @@
 package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Location;
+import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
 import com.mdsujan.restPostgres.request.CreateLocationRequest;
 import com.mdsujan.restPostgres.request.UpdateLocationRequest;
 import com.mdsujan.restPostgres.response.LocationResponse;
@@ -19,41 +20,37 @@ public class LocationController {
 
     @GetMapping("/") // return all locations from table location
     public List<LocationResponse> getLocations() {
-        List<Location> itemList = locationService.getAllLocations();
+        List<Location> locationList = locationService.getAllLocations();
         List<LocationResponse> itemResponseList = new ArrayList<>();
 
         // convert each Location obj to LocationResponse
-        itemList.stream().forEach(item -> itemResponseList.add(new LocationResponse(item)));
+        locationList.forEach(item -> itemResponseList.add(new LocationResponse(item)));
         return itemResponseList;
     }
 
     @GetMapping("/{locationId}") // return the details of specific locationId
-    public LocationResponse getLocationWithId(@PathVariable Long locationId) {
+    public LocationResponse getLocationWithId(@PathVariable Long locationId) throws Throwable {
         return new LocationResponse(locationService.getLocationById(locationId));
     }
 
     @PostMapping("/") // create an item in the table
-    public LocationResponse createLocation(@RequestBody CreateLocationRequest createLocationRequest) {
+    public LocationResponse createLocation(@RequestBody CreateLocationRequest createLocationRequest) throws Throwable {
         Location newLocation = locationService.createLocation(createLocationRequest);
         return new LocationResponse(newLocation);
     }
 
     @DeleteMapping("/{locationId}") // delete a specific item
-    public String deleteLocation(@PathVariable Long locationId) {
-        boolean deleted = locationService.deleteLocationById(locationId);
-        if (deleted) {
-            return "Location deleted successfully";
-        }
-        return "Location not deleted";
+    public String deleteLocation(@PathVariable Long locationId) throws Throwable {
+        return locationService.deleteLocationById(locationId);
     }
 
     @PutMapping("/{locationId}")
-    public Location updateLocationPut(@PathVariable Long locationId, @RequestBody UpdateLocationRequest updateLocationRequest) {
+    public Location updateLocationPut(@PathVariable Long locationId, @RequestBody UpdateLocationRequest updateLocationRequest) throws Throwable {
         return locationService.updateLocationPut(locationId, updateLocationRequest);
     }
 
     @PatchMapping("/{locationId}")
-    public Location updateLocationPatch(@PathVariable Long locationId, @RequestBody UpdateLocationRequest updateLocationRequest) {
+    public Location updateLocationPatch(@PathVariable Long locationId, @RequestBody UpdateLocationRequest updateLocationRequest) throws Throwable {
         return locationService.updateLocationPatch(locationId, updateLocationRequest);
     }
 }

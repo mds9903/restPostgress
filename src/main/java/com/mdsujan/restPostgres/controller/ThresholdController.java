@@ -32,7 +32,7 @@ public class ThresholdController {
     }
 
     @GetMapping("/{thresholdId}")
-    public ThresholdResponse getThreshold(@PathVariable Long thresholdId){
+    public ThresholdResponse getThreshold(@PathVariable Long thresholdId) throws Throwable {
         return new ThresholdResponse(thresholdService.getThreshold(thresholdId));
     }
 

@@ -10,7 +10,7 @@ import net.bytebuddy.utility.dispatcher.JavaDispatcher;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class LocationResponse {
 
-    Long id;
+    Long locationId;
 
     String desc;
 
@@ -36,7 +36,7 @@ public class LocationResponse {
     String pincode;
 
     public LocationResponse(Location location) {
-        this.id=location.getLocationId();
+        this.locationId=location.getLocationId();
 //        this.id=location.getId();
         this.desc=location.getLocationDesc();
         this.type= location.getType();

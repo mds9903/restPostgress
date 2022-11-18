@@ -30,56 +30,54 @@ public class SupplyController {
     }
 
     @GetMapping("/{supplyId}") // get supply by id
-    public SupplyResponse getSupplyById(@PathVariable Long supplyId) {
+    public SupplyResponse getSupplyById(@PathVariable Long supplyId) throws Throwable {
         return new SupplyResponse(supplyService.getSupplyById(supplyId));
     }
 
-    // not included in the requirements sheet
-    @GetMapping("supplyList/{itemId}/{locationId}") // get list of supplies by item and location
-    public List<SupplyResponse> getSuppliesByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) {
-        List<Supply> supplyList = supplyService.getSuppliesByItemIdAndLocationId(itemId, locationId);
-        List<SupplyResponse> supplyResponseList = new ArrayList<>();
+//    // not included in the requirements sheet
+//    @GetMapping("supplyList/{itemId}/{locationId}") // get list of supplies by item and location
+//    public List<SupplyResponse> getSuppliesByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) {
+//        List<Supply> supplyList = supplyService.getSuppliesByItemIdAndLocationId(itemId, locationId);
+//        List<SupplyResponse> supplyResponseList = new ArrayList<>();
+//
+//        supplyList.forEach(supply -> supplyResponseList.add(new SupplyResponse(supply)));
+//
+//        return supplyResponseList;
+//
+//    }
 
-        supplyList.forEach(supply -> supplyResponseList.add(new SupplyResponse(supply)));
-
-        return supplyResponseList;
-
-    }
-    // not included in the requirements sheet
-    @GetMapping("supplyList/{itemId}") // get supply for an item in all locations
-    public List<SupplyResponse> getSuppliesByItem(@PathVariable Long itemId) {
-        List<Supply> supplyList = supplyService.getSuppliesByItemId(itemId);
-        List<SupplyResponse> supplyResponseList = new ArrayList<>();
-
-        supplyList.forEach(supply -> supplyResponseList.add(new SupplyResponse(supply)));
-
-        return supplyResponseList;
-    }
+//    // not included in the requirements sheet
+//    @GetMapping("supplyList/{itemId}") // get supply for an item in all locations
+//    public List<SupplyResponse> getSuppliesByItem(@PathVariable Long itemId) {
+//        List<Supply> supplyList = supplyService.getSuppliesByItemId(itemId);
+//        List<SupplyResponse> supplyResponseList = new ArrayList<>();
+//
+//        supplyList.forEach(supply -> supplyResponseList.add(new SupplyResponse(supply)));
+//
+//        return supplyResponseList;
+//    }
     @GetMapping("/{itemId}/{locationId}") // get supply details for an item at a location
-    public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) {
-        return supplyService.getSupplDetailsByItemAndLocation(itemId, locationId);
+    public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) throws Throwable {
+        return supplyService.getSupplyDetailsByItemAndLocation(itemId, locationId);
     }
 
     @PostMapping("/") // create a new supply
-    public SupplyResponse createSupply(@RequestBody CreateSupplyRequest createSupplyRequest) {
+    public SupplyResponse createSupply(@RequestBody CreateSupplyRequest createSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.createNewSupply(createSupplyRequest));
     }
 
     @PutMapping("/{supplyId}") // update supply (all fields)
-    public SupplyResponse updateSupplyPut(@PathVariable Long supplyId , @RequestBody UpdateSupplyRequest updateSupplyRequest){
+    public SupplyResponse updateSupplyPut(@PathVariable Long supplyId , @RequestBody UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.updateSupplyPut(supplyId ,updateSupplyRequest));
     }
 
     @PatchMapping("/{supplyId}") // update supply (all fields)
-    public SupplyResponse updateSupplyPatch(@PathVariable Long supplyId , @RequestBody UpdateSupplyRequest updateSupplyRequest){
+    public SupplyResponse updateSupplyPatch(@PathVariable Long supplyId , @RequestBody UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.updateSupplyPatch(supplyId ,updateSupplyRequest));
     }
 
     @DeleteMapping("/{supplyId}") // delete a supply
-    public String deleteSupply(@PathVariable Long supplyId){
-        if(supplyService.deleteSupply(supplyId)){
-            return "Supply successfully";
-        }
-        return "Supply not deleted";
+    public String deleteSupply(@PathVariable Long supplyId) throws Throwable {
+        return supplyService.deleteSupply(supplyId);
     }
 }

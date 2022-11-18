@@ -3,14 +3,22 @@ package com.mdsujan.restPostgres.service;
 import com.mdsujan.restPostgres.entity.*;
 import com.mdsujan.restPostgres.entity.Demand;
 import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
+import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
+import com.mdsujan.restPostgres.exceptionHandling.CreateResourceOperationNotAllowed;
+import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
+import com.mdsujan.restPostgres.exceptionHandling.UpdateResourceRequestBodyInvalidException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
+import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import com.mdsujan.restPostgres.request.UpdateDemandRequest;
 import com.mdsujan.restPostgres.response.DemandDetails;
 import com.mdsujan.restPostgres.response.DemandDetailsResponse;
 
+import com.mdsujan.restPostgres.response.DemandDetails;
+import com.mdsujan.restPostgres.response.DemandDetailsResponse;
+import com.sun.jdi.request.DuplicateRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,102 +40,92 @@ public class DemandService {
         return demandRepository.findAll();
     }
 
-    public Demand getDemandById(Long demandId) {
-        return demandRepository.findById(demandId).get();
+    public Demand getDemandById(Long demand) throws Throwable {
+        if (demandRepository.findById(demand).isPresent()) {
+            return demandRepository.findById(demand).get();
+        } else {
+            throw new ResourceNotFoundException("no demand found for given demandId; " +
+                    "please enter correct demandId");
+        }
     }
 
-    public Demand createNewDemand(CreateDemandRequest createDemandRequest) {
-        // create a demand for an item on a location (given in the request body)
-        // if the itemId and the locationId are present in the items and locations table
-        Demand demand = new Demand(createDemandRequest);
-        if (locationRepository.findById(createDemandRequest.getLocationId()).isPresent()
-                && locationRepository.findById(createDemandRequest.getItemId()).isPresent()) {
+    public DemandDetailsResponse getDemandDetailsByItemAndLocation(Long itemId, Long locationId) throws Throwable {
+        List<Demand> demandList = demandRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
+        if (demandList != null && demandList.size() > 0) {
+            // from this list extract the sum of quantities for ONHAND and INTRANSIT supplies
+            Long planned = demandList.stream()
+                    .filter(demand -> demand.getDemandType() == AllowedDemandTypes.PLANNED)
+                    .map(Demand::getDemandQty)
+                    .reduce(0L, Long::sum);
+            Long hardPromised = demandList.stream()
+                    .filter(demand -> demand.getDemandType() == AllowedDemandTypes.HARD_PROMISED)
+                    .map(Demand::getDemandQty)
+                    .reduce(0L, Long::sum);
 
-            // get the item for this demand
-            Item item = itemRepository.findById(createDemandRequest.getItemId()).get();
-            // get the location for this demand
-            Location location = locationRepository.findById(createDemandRequest.getLocationId()).get();
-            demand.setItem(item);
-            demand.setLocation(location);
-
-            // save this new demand
-            demand = demandRepository.save(demand);
-
-            return demand;
+            return new DemandDetailsResponse(itemId, locationId, new DemandDetails(planned, hardPromised));
         } else {
-            return demand;
+            throw new ResourceNotFoundException("no supplies found for given itemId and locationId;" +
+                    "please give correct itemId and/or locationId");
         }
-        // then abort this create request
-        // else
     }
 
     public List<Demand> getDemandsByItemIdAndLocationId(Long itemId, Long locationId) {
         return demandRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
     }
 
-    public DemandDetailsResponse getDemandDetailsByItemAndLocation(Long itemId, Long locationId) {
-        // seems a little hard coded; an efficient solution could be updated later
-        // get the list of demands with matching itemId and locationId
-        List<Demand> demandList = getDemandsByItemIdAndLocationId(itemId, locationId);
-        // from this list extract the sum of quantities for ONHAND and INTRANSIT demands
-        Long plannedQty = demandList.stream()
-                .filter(demand -> demand.getDemandType() == AllowedDemandTypes.PLANNED)
-                .map(Demand::getDemandQty)
-                .reduce(0L, (a, b) -> a + b);
-        Long hardPromisedQty = demandList.stream()
-                .filter(demand -> demand.getDemandType() == AllowedDemandTypes.HARD_PROMISED)
-                .map(Demand::getDemandQty)
-                .reduce(0L, (a, b) -> a + b);
 
-//        System.out.println("\n\nOnhand: "+onhandQty+"\t\tIntransit: "+intransitQty);
-        // form a DemandDetailsResponse with these values
-        // return the DemandDetailsResponse
-        return new DemandDetailsResponse(itemId, locationId, new DemandDetails(plannedQty, hardPromisedQty));
-    }
 
-    public Demand updateDemandPut(Long demandId, UpdateDemandRequest updateDemandRequest) {
-        // update a demand for given demandId
-        Demand demandToUpdate = demandRepository.findById(demandId).get();
-
-        // else perform the update
-        try {
-            // as per given requirement
-            // "update the existing demand qty"; need to confirm later
-            demandToUpdate.setDemandQty((updateDemandRequest.getDemandQty()));
-
-            // save the new demand to the db
-            demandToUpdate = demandRepository.save(demandToUpdate);
-        } catch (Exception e) {
-            System.out.println("Exception occurred: " + e.getMessage());
+    public Demand updateDemandPatch(Long demandId, UpdateDemandRequest updateDemandRequest) throws Throwable {
+        if (!Objects.equals(updateDemandRequest.getDemandId(), demandId)) {
+            throw new UpdateResourceRequestBodyInvalidException("demandId in the body is not matching the demandId in the path variable; " +
+                    "please provide the right demandId");
         }
-        return demandToUpdate;
-    }
-
-    public Demand updateDemandPatch(Long demandId, UpdateDemandRequest updateDemandRequest) {
-        // update a demand for given demandId
-        Demand demandToUpdate = demandRepository.findById(demandId).get();
-
-        // else perform the update
-        try {
-            // as per given requirement
-            // "update the existing demand qty"; need to confirm later
+        if (demandRepository.findById(demandId).isPresent()) {
+            // update a demand for given demandId
+            Demand demandToUpdate = demandRepository.findById(demandId).get();
             if (updateDemandRequest.getDemandQty() != null) {
-                demandToUpdate.setDemandQty((updateDemandRequest.getDemandQty()));
+                demandToUpdate.setDemandQty(updateDemandRequest.getDemandQty());
             }
             // save the new demand to the db
             demandToUpdate = demandRepository.save(demandToUpdate);
-        } catch (Exception e) {
-            System.out.println("Exception occurred: " + e.getMessage());
+            return demandToUpdate;
+        } else {
+            throw new ResourceNotFoundException("cannot update demand; demand not found with given demandId; " +
+                    "please provide correct demandId");
         }
-        return demandToUpdate;
     }
 
-    public Boolean deleteDemand(Long demandId) {
-        try {
+    public Demand updateDemandPut(Long demandId, UpdateDemandRequest updateDemandRequest) throws Throwable {
+        if (!Objects.equals(updateDemandRequest.getDemandId(), demandId)) {
+            throw new UpdateResourceRequestBodyInvalidException("demandId in the body is not matching the demandId in the path variable; " +
+                    "please provide the right demandId");
+        }
+        if (demandRepository.findById(demandId).isPresent()) {
+            if (updateDemandRequest.getDemandType() == null
+                    || updateDemandRequest.getDemandQty() == null) {
+                throw new UpdateResourceRequestBodyInvalidException("some fields of the update demand request are missing;" +
+                        " please provide all the fields for a demand resource to do an update");
+            } else {
+                // update a demand for given demandId
+                Demand demandToUpdate = demandRepository.findById(demandId).get();
+                demandToUpdate.setDemandQty(updateDemandRequest.getDemandQty());
+                // save the new demand to the db
+                demandToUpdate = demandRepository.save(demandToUpdate);
+                return demandToUpdate;
+            }
+        } else {
+            throw new ResourceNotFoundException("cannot update demand; demand not found with given demandId; " +
+                    "please provide correct demandId");
+        }
+    }
+
+    public String deleteDemand(Long demandId) throws Throwable {
+        if(demandRepository.findById(demandId).isPresent()){
             demandRepository.deleteById(demandId);
-            return true;
-        } catch (Exception e) {
-            return false;
+            return "demand with demandId = '"+demandId+"' deleted successfully";
+        }else{
+            throw new ResourceNotFoundException("cannot delete; no demand found with given demandId;" +
+                    "please provide correct demandId");
         }
     }
 
@@ -135,5 +133,33 @@ public class DemandService {
         return demandRepository.findByItemItemId(itemId);
     }
 
+    public Demand createNewDemand(CreateDemandRequest createDemandRequest) throws Throwable {
+        // create a demand for an item on a location (given in the request body)
+        if (demandRepository.findById(createDemandRequest.getDemandId()).isPresent()) {
+            // demand id is not unique
+            throw new DuplicateRequestException("a demand with same demandId already exists; please provide a unique demand id");
+        } else {
+            // the demandId is unique
+            // if the itemId and the locationId are present in the items and locations table
+            if (locationRepository.findById(createDemandRequest.getLocationId()).isPresent()
+                    && itemRepository.findById(createDemandRequest.getItemId()).isPresent()) {
+                // create the demand
+                Demand demand = new Demand(createDemandRequest);
+                // get the item for this demand
+                Item item = itemRepository.findById(createDemandRequest.getItemId()).get();
+                // get the location for this demand
+                Location location = locationRepository.findById(createDemandRequest.getLocationId()).get();
+                demand.setItem(item);
+                demand.setLocation(location);
+                // save this new demand
+                demand = demandRepository.save(demand);
+                return demand;
+            } else {
+                throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create demand; " +
+                        "please provide an item id and a location id that exists");
+            }
+        }
+
+    }
 
 }

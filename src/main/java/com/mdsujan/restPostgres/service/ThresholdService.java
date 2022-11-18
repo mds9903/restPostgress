@@ -4,6 +4,7 @@ import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Threshold;
 import com.mdsujan.restPostgres.entity.Threshold;
+import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.ThresholdRepository;
@@ -31,8 +32,12 @@ public class ThresholdService {
         return thresholdRepository.findAll();
     }
 
-    public Threshold getThreshold(Long thresholdId) {
-        return thresholdRepository.findById(thresholdId).get();
+    public Threshold getThreshold(Long thresholdId) throws Throwable {
+        if(thresholdRepository.findById(thresholdId).isPresent()){
+            return thresholdRepository.findById(thresholdId).get();
+        }else{
+            throw new ResourceNotFoundException("threshold not found; please provide correct thresholdId");
+        }
     }
 
 //    public ThresholdDetailsResponse getThresholdDetailsByItemAndLocation(Long itemId, Long thresholdId) {

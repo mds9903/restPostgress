@@ -1,14 +1,17 @@
 package com.mdsujan.restPostgres.service;
 
+import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
+import com.mdsujan.restPostgres.exceptionHandling.*;
+import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
+import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.request.CreateLocationRequest;
 import com.mdsujan.restPostgres.request.UpdateLocationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class LocationService {
@@ -16,72 +19,116 @@ public class LocationService {
     @Autowired
     LocationRepository locationRepository;
 
+    @Autowired
+    SupplyRepository supplyRepository;
+
+    @Autowired
+    DemandRepository demandRepository;
+
     public List<Location> getAllLocations() {
         return locationRepository.findAll();
     }
 
-    public Location getLocationById(Long locationId) {
-        return locationRepository.findById(locationId).get();
-    }
-
-    public Boolean deleteLocationById(Long locationId) {
-        try {
-            locationRepository.deleteById(locationId);
-            return true;
-        } catch (Exception e) {
-            System.out.println("******************* EXCEPTION" + e);
-            return false;
+    public Location getLocationById(Long locationId) throws Throwable {
+        if (locationRepository.findById(locationId).isPresent()) {
+            return locationRepository.findById(locationId).get();
+        } else {
+            throw new ResourceNotFoundException("no such location with given locationId; " +
+                    "please enter correct locationId");
         }
     }
 
-    public Location createLocation(CreateLocationRequest createLocationRequest) {
+    public String deleteLocationById(Long locationId) throws Throwable {
+        // check if item exists
+        if (locationRepository.findById(locationId).isPresent()) {
+            // if any child records depend on this location
+            if (supplyRepository.findByLocationLocationId(locationId).size() > 0
+                    || demandRepository.findByLocationLocationId(locationId).size() > 0) {
+                // this location cannot be deleted
+//                return "Cannot delete location; it has child records";
+                throw new ResourceConflictException("this location cannot be deleted; has child dependencies");
+            }
+            // else delete the existing location
+            locationRepository.deleteById(locationId);
+            return "Location with locationId=" + locationId + " successfully deleted.";
+        }
+        // else give proper message
+        throw new ResourceNotFoundException("cannot delete; no such location found");
+    }
+
+    public Location createLocation(CreateLocationRequest createLocationRequest) throws Throwable {
         // new record should not be created if record already exists
 
         // if record with same id exists then simply return it
         if (locationRepository.findById(createLocationRequest.getId()).isPresent()) {
-            return locationRepository.findById(createLocationRequest.getId()).get();
+            throw new DuplicateResourceException("an location with same locationId already exists; " +
+                    "please provide a unique locationId in the request body");
         }
-        // else we create a new record
+        // else we create a new location
         Location location = new Location(createLocationRequest);
-        locationRepository.save(location);
+        location = locationRepository.save(location);
         return location;
     }
 
-    public Location updateLocationPut(Long locationId, UpdateLocationRequest updateLocationRequest) {
-        // find the record matching with the id
-        Location locationToUpdate = locationRepository.findById(locationId).get();
-        // "API must honor the locationId value passed in the input"
-        // if the new item does not have id then we abort;
-
-        try {
-            locationToUpdate.setLocationDesc(updateLocationRequest.getLocationDesc());
-            locationToUpdate.setType(updateLocationRequest.getType());
-            locationToUpdate.setPickupAllowed(updateLocationRequest.getPickupAllowed());
-            locationToUpdate.setShippingAllowed(updateLocationRequest.getShippingAllowed());
-            locationToUpdate.setDeliveryAllowed(updateLocationRequest.getDeliveryAllowed());
-            locationToUpdate.setAddrLine1(updateLocationRequest.getAddrLine1());
-            locationToUpdate.setAddrLine2(updateLocationRequest.getAddrLine2());
-            locationToUpdate.setAddrLine3(updateLocationRequest.getAddrLine3());
-            locationToUpdate.setCity(updateLocationRequest.getCity());
-            locationToUpdate.setState(updateLocationRequest.getState());
-            locationToUpdate.setCountry(updateLocationRequest.getCountry());
-            locationToUpdate.setPincode(updateLocationRequest.getPincode());
-
-            // save the new entity
-            locationToUpdate = locationRepository.save(locationToUpdate);
-        } catch (Exception e) {
-            System.out.println("Exception occurred: " + e.getMessage());
+    public Location updateLocationPut(Long locationId, UpdateLocationRequest updateLocationRequest) throws Throwable {
+        if (!locationId.equals(updateLocationRequest.getLocationId())) {
+            // locationId in the body should match the locationId in the path variable
+            throw new UpdateResourceRequestBodyInvalidException("locationId in the body is not matching the locationId in the path variable; " +
+                    "please provide the right locationId");
         }
-        return locationToUpdate;
+        if (locationRepository.findById(locationId).isPresent()) {
+            // a PUT request body must have all fields required for the entity
+            if (updateLocationRequest.getLocationDesc() == null
+                    || updateLocationRequest.getType() == null
+                    || updateLocationRequest.getPickupAllowed() == null
+                    || updateLocationRequest.getShippingAllowed() == null
+                    || updateLocationRequest.getDeliveryAllowed() == null
+                    || updateLocationRequest.getAddrLine1() == null
+                    || updateLocationRequest.getAddrLine2() == null
+                    || updateLocationRequest.getAddrLine3() == null
+                    || updateLocationRequest.getCity() == null
+                    || updateLocationRequest.getState() == null
+                    || updateLocationRequest.getCountry() == null
+                    || updateLocationRequest.getPincode() == null) {
+                throw new UpdateResourceRequestBodyInvalidException("some of the fields in the request body is missing; " +
+                        "please send full request body for updating item");
+            } else {
+                // find the record matching with the id
+                Location locationToUpdate = locationRepository.findById(locationId).get();
+
+                // update the locationToUpdate
+                locationToUpdate.setLocationDesc(updateLocationRequest.getLocationDesc());
+                locationToUpdate.setType(updateLocationRequest.getType());
+                locationToUpdate.setPickupAllowed(updateLocationRequest.getPickupAllowed());
+                locationToUpdate.setShippingAllowed(updateLocationRequest.getShippingAllowed());
+                locationToUpdate.setDeliveryAllowed(updateLocationRequest.getDeliveryAllowed());
+                locationToUpdate.setAddrLine1(updateLocationRequest.getAddrLine1());
+                locationToUpdate.setAddrLine2(updateLocationRequest.getAddrLine2());
+                locationToUpdate.setAddrLine3(updateLocationRequest.getAddrLine3());
+                locationToUpdate.setCity(updateLocationRequest.getCity());
+                locationToUpdate.setState(updateLocationRequest.getState());
+                locationToUpdate.setCountry(updateLocationRequest.getCountry());
+                locationToUpdate.setPincode(updateLocationRequest.getPincode());
+
+                // save the new entity
+                locationToUpdate = locationRepository.save(locationToUpdate);
+                // return the updated location as response
+                return locationToUpdate;
+            }
+        } else {
+            throw new ResourceNotFoundException("cannot update this location; location not found; please enter a correct locationId");
+        }
     }
 
-    public Location updateLocationPatch(Long locationId, UpdateLocationRequest updateLocationRequest) {
-        // find the record matching with the id
-        Location locationToUpdate = locationRepository.findById(locationId).get();
-        // "API must honor the locationId value passed in the input"
-        // if the new item does not have id then we abort;
-
-        try {
+    public Location updateLocationPatch(Long locationId, UpdateLocationRequest updateLocationRequest) throws Throwable {
+        if (!locationId.equals(updateLocationRequest.getLocationId())) {
+            // itemId in the body is not matching the itemId in the path variable
+            throw new UpdateResourceRequestBodyInvalidException("itemId in the body is not matching the itemId in the path variable; " +
+                    "please provide the right itemId to avoid confusion");
+        }
+        if (locationRepository.findById(locationId).isPresent()) {
+            // find the record matching with the id
+            Location locationToUpdate = locationRepository.findById(locationId).get();
 
             // update the locationToUpdate
             if (updateLocationRequest.getLocationDesc() != null && !updateLocationRequest.getLocationDesc().isEmpty()) {
@@ -121,9 +168,10 @@ public class LocationService {
 
             // save the new entity
             locationToUpdate = locationRepository.save(locationToUpdate);
-        } catch (Exception e) {
-            System.out.println("Exception occurred: " + e.getMessage());
+            // return the updated location as response
+            return locationToUpdate;
+        } else {
+            throw new ResourceNotFoundException("cannot update this location; location not found; please enter a correct locationId");
         }
-        return locationToUpdate;
     }
 }

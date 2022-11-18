@@ -1,9 +1,6 @@
 package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Item;
-import com.mdsujan.restPostgres.exceptionHandling.DuplicateItemException;
-import com.mdsujan.restPostgres.exceptionHandling.ItemConflictException;
-import com.mdsujan.restPostgres.exceptionHandling.ItemIdInvalidException;
 import com.mdsujan.restPostgres.request.CreateItemRequest;
 import com.mdsujan.restPostgres.request.UpdateItemRequest;
 import com.mdsujan.restPostgres.response.ItemResponse;
@@ -12,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +46,7 @@ public class ItemController {
 //            logger.info("Response: " + itemResponse);
 //            return itemResponse;
 //        }catch (MethodArgumentTypeMismatchException e){
-//            throw new ItemIdInvalidException("itemId should not be a string; itemId is a number");
+//            throw new ReourceIdInvalidException("itemId should not be a string; itemId is a number");
 //        }
     }
 

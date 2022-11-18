@@ -13,4 +13,5 @@ public interface DemandRepository extends JpaRepository<Demand, Long> {
 
     List<Demand> findByItemItemId(Long itemId);
 
+    Collection<Demand> findByLocationLocationId(Long locationId);
 }

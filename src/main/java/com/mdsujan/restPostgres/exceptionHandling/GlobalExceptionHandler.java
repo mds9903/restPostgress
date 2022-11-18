@@ -5,14 +5,13 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 @ControllerAdvice
-public class GlobalExceptionHandler{
+public class GlobalExceptionHandler {
 
-    @ExceptionHandler(value = ItemNotFoundException.class)
+    @ExceptionHandler(value = ResourceNotFoundException.class)
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    public @ResponseBody ErrorResponse handleItemNotFoundException(ItemNotFoundException exception) {
+    public @ResponseBody ErrorResponse handleResourceNotFoundException(ResourceNotFoundException exception) {
         return new ErrorResponse(HttpStatus.NOT_FOUND.value(), exception.getMessage());
     }
 
@@ -22,25 +21,31 @@ public class GlobalExceptionHandler{
     // need to find a way to catch this exception specifically for GET/items/{itemId} endpoint
 //    @ExceptionHandler(value = MethodArgumentTypeMismatchException.class)
 //    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-//    public @ResponseBody ErrorResponse handleItemIdInvalidException(MethodArgumentTypeMismatchException methodArgumentTypeMismatchException) {
-//        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), new ItemIdInvalidException("itemId should be a number; not a string").getMessage());
+//    public @ResponseBody ErrorResponse handleResourceIdInvalidException(MethodArgumentTypeMismatchException methodArgumentTypeMismatchException) {
+//        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), new ReourceIdInvalidException("itemId should be a number; not a string").getMessage());
 //    }
 
-    @ExceptionHandler(value = DuplicateItemException.class)
+    @ExceptionHandler(value = DuplicateResourceException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    public @ResponseBody ErrorResponse handleDuplicateItemException(DuplicateItemException exception){
+    public @ResponseBody ErrorResponse handleDuplicateResourceException(DuplicateResourceException exception) {
         return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), exception.getMessage());
     }
 
-    @ExceptionHandler(value = ItemConflictException.class)
+    @ExceptionHandler(value = ResourceConflictException.class)
     @ResponseStatus(value = HttpStatus.CONFLICT)
-    public @ResponseBody ErrorResponse handleItemConflictException(ItemConflictException exception){
+    public @ResponseBody ErrorResponse handleResourceConflictException(ResourceConflictException exception) {
         return new ErrorResponse(HttpStatus.CONFLICT.value(), exception.getMessage());
     }
 
-    @ExceptionHandler(value = UpdateItemRequestBodyInvalidException.class)
+    @ExceptionHandler(value = UpdateResourceRequestBodyInvalidException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    public @ResponseBody ErrorResponse handleUpdateItemRequestBodyInvalidException(UpdateItemRequestBodyInvalidException exception){
+    public @ResponseBody ErrorResponse handleUpdateResourceRequestBodyInvalidException(UpdateResourceRequestBodyInvalidException exception) {
+        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), exception.getMessage());
+    }
+
+    @ExceptionHandler(value = CreateResourceOperationNotAllowed.class)
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    public @ResponseBody ErrorResponse handleCreateResourceOperationNotAllowed(CreateResourceOperationNotAllowed exception) {
         return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), exception.getMessage());
     }
 }
