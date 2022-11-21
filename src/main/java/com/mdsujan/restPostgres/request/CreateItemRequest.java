@@ -3,25 +3,30 @@ package com.mdsujan.restPostgres.request;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import javax.management.Query;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CreateItemRequest {
 
-    private Long itemId;
+    @NotNull
+    Long itemId;
 
-    private String itemDesc;
+    String itemDesc;
 
-    private String category;
+    String category;
 
-    private String itemType;
+    String itemType;
 
-    private String status;
+    String status;
 
-    private Double price;
+    Double price;
 
-    private Boolean pickupAllowed;
+    Boolean pickupAllowed;
 
-    private Boolean shippingAllowed;
+    Boolean shippingAllowed;
 
-    private Boolean deliveryAllowed;
+    Boolean deliveryAllowed;
 }

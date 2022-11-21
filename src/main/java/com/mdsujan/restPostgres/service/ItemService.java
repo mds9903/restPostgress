@@ -10,7 +10,10 @@ import com.mdsujan.restPostgres.request.UpdateItemRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ItemService {
@@ -25,6 +28,20 @@ public class ItemService {
 
     @Autowired
     DemandRepository demandRepository;
+
+    // Validator to validate programmatically
+    private Validator validator;
+
+    ItemService(Validator validator){
+        this.validator = validator;
+    }
+
+    void validateUpdateItemRequest(UpdateItemRequest updateItemRequest) throws Throwable {
+        Set<ConstraintViolation<UpdateItemRequest>> violationSet = validator.validate(updateItemRequest);
+        if(!violationSet.isEmpty()){
+            throw new UpdateResourceRequestBodyInvalidException("updateItemRequest is invalid; please check the body of request");
+        }
+    }
 
     public List<Item> getAllItems() {
         return itemRepository.findAll();
@@ -69,6 +86,8 @@ public class ItemService {
     }
 
     public Item updateItemByIdPut(Long itemId, UpdateItemRequest updateItemRequest) throws Throwable {
+        validateUpdateItemRequest(updateItemRequest);
+
         // "API must honor the itemId value passed in the input"
         if (!itemId.equals(updateItemRequest.getItemId())) {
             // itemId in the body is not matching the itemId in the path variable
@@ -78,17 +97,18 @@ public class ItemService {
         if (itemRepository.findById(itemId).isPresent()) {
             // since a PUT request body must have all fields required for the entity
 
-            if (updateItemRequest.getItemDesc() == null
-                    || updateItemRequest.getCategory() == null
-                    || updateItemRequest.getItemType() == null
-                    || updateItemRequest.getStatus() == null
-                    || updateItemRequest.getPrice() == null
-                    || updateItemRequest.getPickupAllowed() == null
-                    || updateItemRequest.getShippingAllowed() == null
-                    || updateItemRequest.getDeliveryAllowed() == null) {
-                throw new UpdateResourceRequestBodyInvalidException("some of the fields in the request body is missing; " +
-                        "please send full request body for updating item");
-            } else {
+
+//            if (updateItemRequest.getItemDesc() == null
+//                    || updateItemRequest.getCategory() == null
+//                    || updateItemRequest.getItemType() == null
+//                    || updateItemRequest.getStatus() == null
+//                    || updateItemRequest.getPrice() == null
+//                    || updateItemRequest.getPickupAllowed() == null
+//                    || updateItemRequest.getShippingAllowed() == null
+//                    || updateItemRequest.getDeliveryAllowed() == null) {
+//                throw new UpdateResourceRequestBodyInvalidException("some of the fields in the request body is missing; " +
+//                        "please send full request body for updating item");
+//            } else {
                 // find the record matching with the id
                 Item itemToUpdate = itemRepository.findById(itemId).get();
 
@@ -104,7 +124,7 @@ public class ItemService {
                 // save the new entity
                 itemToUpdate = itemRepository.save(itemToUpdate);
                 return itemToUpdate;
-            }
+//            }
         } else {
             throw new ResourceNotFoundException("cannot update this item; item not found; please a correct itemId");
         }
