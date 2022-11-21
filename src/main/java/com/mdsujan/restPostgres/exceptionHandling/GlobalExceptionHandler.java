@@ -15,16 +15,6 @@ public class GlobalExceptionHandler {
         return new ErrorResponse(HttpStatus.NOT_FOUND.value(), exception.getMessage());
     }
 
-    // Note:
-    // this is for when itemId passed is not a number;
-    // however this will happen for every MethodArgumentTypeMismatchException
-    // need to find a way to catch this exception specifically for GET/items/{itemId} endpoint
-//    @ExceptionHandler(value = MethodArgumentTypeMismatchException.class)
-//    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-//    public @ResponseBody ErrorResponse handleResourceIdInvalidException(MethodArgumentTypeMismatchException methodArgumentTypeMismatchException) {
-//        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), new ReourceIdInvalidException("itemId should be a number; not a string").getMessage());
-//    }
-
     @ExceptionHandler(value = DuplicateResourceException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public @ResponseBody ErrorResponse handleDuplicateResourceException(DuplicateResourceException exception) {

@@ -1,17 +1,20 @@
 package com.mdsujan.restPostgres.service;
 
-import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.exceptionHandling.*;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.request.CreateLocationRequest;
+import com.mdsujan.restPostgres.request.UpdateItemRequest;
 import com.mdsujan.restPostgres.request.UpdateLocationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class LocationService {
@@ -25,11 +28,36 @@ public class LocationService {
     @Autowired
     DemandRepository demandRepository;
 
+    // Validator to validate programmatically
+    private final Validator validator;
+
+    public LocationService(Validator validator) {
+        this.validator = validator;
+    }
+
+    private void validateUpdateLocationRequest(UpdateLocationRequest updateLocationRequest) throws Throwable {
+        // validates the request body to have all the fields are there; for PUT methods
+        Set<ConstraintViolation<UpdateLocationRequest>> violationSet = validator.validate(updateLocationRequest);
+        if (!violationSet.isEmpty()) {
+            throw new UpdateResourceRequestBodyInvalidException("some of the fields in the request body is missing; " +
+                    "please send full request body for updating location");
+        }
+    }
+
+    private void validateLocationId(Long locationId) throws Throwable {
+        // validates the itemId (passed in path-var)
+        Set<ConstraintViolation<Long>> violationSet = validator.validate(locationId);
+        if (!violationSet.isEmpty()) {
+            throw new InvalidResourceIdException("locationId not valid; please provide a valid locationId of type Long");
+        }
+    }
+
     public List<Location> getAllLocations() {
         return locationRepository.findAll();
     }
 
     public Location getLocationById(Long locationId) throws Throwable {
+        validateLocationId(locationId);
         if (locationRepository.findById(locationId).isPresent()) {
             return locationRepository.findById(locationId).get();
         } else {
@@ -39,6 +67,7 @@ public class LocationService {
     }
 
     public String deleteLocationById(Long locationId) throws Throwable {
+        validateLocationId(locationId);
         // check if item exists
         if (locationRepository.findById(locationId).isPresent()) {
             // if any child records depend on this location
@@ -57,6 +86,7 @@ public class LocationService {
     }
 
     public Location createLocation(CreateLocationRequest createLocationRequest) throws Throwable {
+
         // new record should not be created if record already exists
 
         // if record with same id exists then simply return it
@@ -71,56 +101,54 @@ public class LocationService {
     }
 
     public Location updateLocationPut(Long locationId, UpdateLocationRequest updateLocationRequest) throws Throwable {
+
+        // perform validations
+
+        // throws exception for when the request body is missing fields
+        // for a put method the complete request body with all required fields must be present
+        validateUpdateLocationRequest(updateLocationRequest);
+
+        // throws an exception for when the locationId is not of correct type; ie, Long
+        validateLocationId(locationId);
+
+        // proceed with update
         if (!locationId.equals(updateLocationRequest.getLocationId())) {
             // locationId in the body should match the locationId in the path variable
             throw new UpdateResourceRequestBodyInvalidException("locationId in the body is not matching the locationId in the path variable; " +
                     "please provide the right locationId");
         }
         if (locationRepository.findById(locationId).isPresent()) {
-            // a PUT request body must have all fields required for the entity
-            if (updateLocationRequest.getLocationDesc() == null
-                    || updateLocationRequest.getType() == null
-                    || updateLocationRequest.getPickupAllowed() == null
-                    || updateLocationRequest.getShippingAllowed() == null
-                    || updateLocationRequest.getDeliveryAllowed() == null
-                    || updateLocationRequest.getAddrLine1() == null
-                    || updateLocationRequest.getAddrLine2() == null
-                    || updateLocationRequest.getAddrLine3() == null
-                    || updateLocationRequest.getCity() == null
-                    || updateLocationRequest.getState() == null
-                    || updateLocationRequest.getCountry() == null
-                    || updateLocationRequest.getPincode() == null) {
-                throw new UpdateResourceRequestBodyInvalidException("some of the fields in the request body is missing; " +
-                        "please send full request body for updating item");
-            } else {
-                // find the record matching with the id
-                Location locationToUpdate = locationRepository.findById(locationId).get();
 
-                // update the locationToUpdate
-                locationToUpdate.setLocationDesc(updateLocationRequest.getLocationDesc());
-                locationToUpdate.setType(updateLocationRequest.getType());
-                locationToUpdate.setPickupAllowed(updateLocationRequest.getPickupAllowed());
-                locationToUpdate.setShippingAllowed(updateLocationRequest.getShippingAllowed());
-                locationToUpdate.setDeliveryAllowed(updateLocationRequest.getDeliveryAllowed());
-                locationToUpdate.setAddrLine1(updateLocationRequest.getAddrLine1());
-                locationToUpdate.setAddrLine2(updateLocationRequest.getAddrLine2());
-                locationToUpdate.setAddrLine3(updateLocationRequest.getAddrLine3());
-                locationToUpdate.setCity(updateLocationRequest.getCity());
-                locationToUpdate.setState(updateLocationRequest.getState());
-                locationToUpdate.setCountry(updateLocationRequest.getCountry());
-                locationToUpdate.setPincode(updateLocationRequest.getPincode());
+            // find the record matching with the id
+            Location locationToUpdate = locationRepository.findById(locationId).get();
 
-                // save the new entity
-                locationToUpdate = locationRepository.save(locationToUpdate);
-                // return the updated location as response
-                return locationToUpdate;
-            }
+            // update the locationToUpdate
+            locationToUpdate.setLocationDesc(updateLocationRequest.getLocationDesc());
+            locationToUpdate.setType(updateLocationRequest.getType());
+            locationToUpdate.setPickupAllowed(updateLocationRequest.getPickupAllowed());
+            locationToUpdate.setShippingAllowed(updateLocationRequest.getShippingAllowed());
+            locationToUpdate.setDeliveryAllowed(updateLocationRequest.getDeliveryAllowed());
+            locationToUpdate.setAddrLine1(updateLocationRequest.getAddrLine1());
+            locationToUpdate.setAddrLine2(updateLocationRequest.getAddrLine2());
+            locationToUpdate.setAddrLine3(updateLocationRequest.getAddrLine3());
+            locationToUpdate.setCity(updateLocationRequest.getCity());
+            locationToUpdate.setState(updateLocationRequest.getState());
+            locationToUpdate.setCountry(updateLocationRequest.getCountry());
+            locationToUpdate.setPincode(updateLocationRequest.getPincode());
+
+            // save the new entity
+            locationToUpdate = locationRepository.save(locationToUpdate);
+            // return the updated location as response
+            return locationToUpdate;
         } else {
             throw new ResourceNotFoundException("cannot update this location; location not found; please enter a correct locationId");
         }
     }
 
     public Location updateLocationPatch(Long locationId, UpdateLocationRequest updateLocationRequest) throws Throwable {
+        // validate locationId for type
+        validateLocationId(locationId);
+
         if (!locationId.equals(updateLocationRequest.getLocationId())) {
             // itemId in the body is not matching the itemId in the path variable
             throw new UpdateResourceRequestBodyInvalidException("itemId in the body is not matching the itemId in the path variable; " +

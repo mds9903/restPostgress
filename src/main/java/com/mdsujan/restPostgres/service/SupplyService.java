@@ -5,22 +5,26 @@ import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
 import com.mdsujan.restPostgres.exceptionHandling.CreateResourceOperationNotAllowed;
+import com.mdsujan.restPostgres.exceptionHandling.InvalidResourceIdException;
 import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
 import com.mdsujan.restPostgres.exceptionHandling.UpdateResourceRequestBodyInvalidException;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
+import com.mdsujan.restPostgres.request.UpdateLocationRequest;
 import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
 import com.mdsujan.restPostgres.response.SupplyDetails;
 import com.mdsujan.restPostgres.response.SupplyDetailsResponse;
 import com.sun.jdi.request.DuplicateRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.ResourceAccessException;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Service
 public class SupplyService {
@@ -34,11 +38,37 @@ public class SupplyService {
     @Autowired
     LocationRepository locationRepository;
 
+    private Validator validator;
+
+    public SupplyService(Validator validator) {
+        this.validator = validator;
+    }
+
+    private void validateUpdateLocationRequest(UpdateSupplyRequest updateSupplyRequest) throws Throwable {
+        // validates the request body to have all the fields are there; for PUT methods
+        Set<ConstraintViolation<UpdateSupplyRequest>> violationSet = validator.validate(updateSupplyRequest);
+        if (!violationSet.isEmpty()) {
+            throw new UpdateResourceRequestBodyInvalidException("some of the fields in the request body is missing; " +
+                    "please send full request body for updating supply");
+        }
+    }
+
+    private void validateResourceIdLong(Long resourceId) throws Throwable {
+        // validates the resource id (passed in path-var)
+        Set<ConstraintViolation<Long>> violationSet = validator.validate(resourceId);
+        if (!violationSet.isEmpty()) {
+            throw new InvalidResourceIdException("resourceId not valid; please provide a valid resourceId of type Long");
+        }
+    }
+
+
     public List<Supply> getAllSupplies() {
         return supplyRepository.findAll();
     }
 
     public Supply getSupplyById(Long supplyId) throws Throwable {
+        validateSupplyId(supplyId);
+
 //        return supplyRepository.findById(supplyId).get();
         if (supplyRepository.findById(supplyId).isPresent()) {
             return supplyRepository.findById(supplyId).get();
@@ -63,6 +93,7 @@ public class SupplyService {
 //    }
 
     public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(Long itemId, Long locationId) throws Throwable {
+        validateSupplyId();
         List<Supply> supplyList = supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
         if (supplyList != null && supplyList.size() > 0) {
             // from this list extract the sum of quantities for ONHAND and INTRANSIT supplies

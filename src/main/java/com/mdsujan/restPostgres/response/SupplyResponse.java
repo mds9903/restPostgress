@@ -12,7 +12,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SupplyResponse {
 
-    Long id;
+    Long supplyId;
 
     AllowedSupplyTypes type;
 
@@ -23,11 +23,9 @@ public class SupplyResponse {
     Long locationId;
 
     public SupplyResponse(Supply supply) {
-        this.id = supply.getId();
+        this.supplyId = supply.getId();
         this.type = supply.getSupplyType();
         this.qty = supply.getQty();
-
-//        this.itemId = supply.getItem().getItemId();
         this.itemId = supply.getItem().getItemId();
         this.locationId = supply.getLocation().getLocationId();
     }

@@ -30,16 +30,26 @@ public class ItemService {
     DemandRepository demandRepository;
 
     // Validator to validate programmatically
-    private Validator validator;
+    private final Validator validator;
 
-    ItemService(Validator validator){
+    ItemService(Validator validator) {
         this.validator = validator;
     }
 
-    void validateUpdateItemRequest(UpdateItemRequest updateItemRequest) throws Throwable {
+    private void validateUpdateItemRequest(UpdateItemRequest updateItemRequest) throws Throwable {
+        // validates the request body to have all the fields are there; for PUT methods
         Set<ConstraintViolation<UpdateItemRequest>> violationSet = validator.validate(updateItemRequest);
-        if(!violationSet.isEmpty()){
-            throw new UpdateResourceRequestBodyInvalidException("updateItemRequest is invalid; please check the body of request");
+        if (!violationSet.isEmpty()) {
+            throw new UpdateResourceRequestBodyInvalidException("some of the fields in the request body is missing; " +
+                    "please send full request body for updating item");
+        }
+    }
+
+    private void validateItemId(Long itemId) throws Throwable {
+        // validates the itemId (passed in path-var)
+        Set<ConstraintViolation<Long>> violationSet = validator.validate(itemId);
+        if (!violationSet.isEmpty()) {
+            throw new InvalidResourceIdException("itemId not valid; please provide a valid itemId of type Long");
         }
     }
 
@@ -47,8 +57,8 @@ public class ItemService {
         return itemRepository.findAll();
     }
 
-
     public Item getItemById(Long itemId) throws Throwable {
+        validateItemId(itemId);
         return itemRepository.findById(itemId)
                 .orElseThrow(() -> new ResourceNotFoundException("item not found for given itemId: '" + itemId + "'; please check itemId entered"));
     }
@@ -68,6 +78,8 @@ public class ItemService {
     }
 
     public String deleteItemById(Long itemId) throws Throwable {
+        validateItemId(itemId);
+
         // check if item exists
         if (itemRepository.findById(itemId).isPresent()) {
             // if any child records depend on this item
@@ -86,6 +98,8 @@ public class ItemService {
     }
 
     public Item updateItemByIdPut(Long itemId, UpdateItemRequest updateItemRequest) throws Throwable {
+        // perform validations
+        validateItemId(itemId);
         validateUpdateItemRequest(updateItemRequest);
 
         // "API must honor the itemId value passed in the input"
@@ -95,42 +109,32 @@ public class ItemService {
                     "please provide the right itemId to avoid confusion");
         }
         if (itemRepository.findById(itemId).isPresent()) {
-            // since a PUT request body must have all fields required for the entity
 
+            Item itemToUpdate = itemRepository.findById(itemId).get();
 
-//            if (updateItemRequest.getItemDesc() == null
-//                    || updateItemRequest.getCategory() == null
-//                    || updateItemRequest.getItemType() == null
-//                    || updateItemRequest.getStatus() == null
-//                    || updateItemRequest.getPrice() == null
-//                    || updateItemRequest.getPickupAllowed() == null
-//                    || updateItemRequest.getShippingAllowed() == null
-//                    || updateItemRequest.getDeliveryAllowed() == null) {
-//                throw new UpdateResourceRequestBodyInvalidException("some of the fields in the request body is missing; " +
-//                        "please send full request body for updating item");
-//            } else {
-                // find the record matching with the id
-                Item itemToUpdate = itemRepository.findById(itemId).get();
-
-                // update the itemToUpdate
-                itemToUpdate.setItemDesc(updateItemRequest.getItemDesc());
-                itemToUpdate.setCategory(updateItemRequest.getCategory());
-                itemToUpdate.setType(updateItemRequest.getItemType());
-                itemToUpdate.setStatus(updateItemRequest.getStatus());
-                itemToUpdate.setPrice(updateItemRequest.getPrice());
-                itemToUpdate.setPickupAllowed(updateItemRequest.getPickupAllowed());
-                itemToUpdate.setShippingAllowed(updateItemRequest.getShippingAllowed());
-                itemToUpdate.setDeliveryAllowed(updateItemRequest.getDeliveryAllowed());
-                // save the new entity
-                itemToUpdate = itemRepository.save(itemToUpdate);
-                return itemToUpdate;
+            // update the itemToUpdate
+            itemToUpdate.setItemDesc(updateItemRequest.getItemDesc());
+            itemToUpdate.setCategory(updateItemRequest.getCategory());
+            itemToUpdate.setType(updateItemRequest.getItemType());
+            itemToUpdate.setStatus(updateItemRequest.getStatus());
+            itemToUpdate.setPrice(updateItemRequest.getPrice());
+            itemToUpdate.setPickupAllowed(updateItemRequest.getPickupAllowed());
+            itemToUpdate.setShippingAllowed(updateItemRequest.getShippingAllowed());
+            itemToUpdate.setDeliveryAllowed(updateItemRequest.getDeliveryAllowed());
+            // save the new entity
+            itemToUpdate = itemRepository.save(itemToUpdate);
+            return itemToUpdate;
 //            }
         } else {
             throw new ResourceNotFoundException("cannot update this item; item not found; please a correct itemId");
         }
     }
 
+
     public Item updateItemByIdPatch(Long itemId, UpdateItemRequest updateItemRequest) throws Throwable {
+
+        validateItemId(itemId);
+
         // "API must honor the itemId value passed in the input"
         if (!itemId.equals(updateItemRequest.getItemId())) {
             // itemId in the body is not matching the itemId in the path variable
