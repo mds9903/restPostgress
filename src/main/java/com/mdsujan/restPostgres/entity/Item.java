@@ -45,28 +45,28 @@ public class Item {
     @Column(name = "delivery_allowed")
     private Boolean deliveryAllowed;
 
-    public Item(CreateItemRequest createItemRequest) {
-        this.itemId = createItemRequest.getItemId();
-        this.itemDesc = createItemRequest.getItemDesc();
-        this.category = createItemRequest.getCategory();
-        this.type = createItemRequest.getItemType();
-        this.status = createItemRequest.getStatus();
-        this.price = createItemRequest.getPrice();
-        this.pickupAllowed = createItemRequest.getPickupAllowed();
-        this.shippingAllowed = createItemRequest.getShippingAllowed();
-        this.deliveryAllowed = createItemRequest.getDeliveryAllowed();
-    }
-
-    public Item(UpdateItemRequest updateItemRequest) {
-//        this.itemId = updateItemRequest.getId();
-        this.itemId = updateItemRequest.getItemId();
-        this.itemDesc=updateItemRequest.getItemDesc();
-        this.category = updateItemRequest.getCategory();
-        this.type = updateItemRequest.getItemType();
-        this.status = updateItemRequest.getStatus();
-        this.price = updateItemRequest.getPrice();
-        this.pickupAllowed = updateItemRequest.getPickupAllowed();
-        this.shippingAllowed = updateItemRequest.getShippingAllowed();
-        this.deliveryAllowed = updateItemRequest.getDeliveryAllowed();
-    }
+//    public Item(CreateItemRequest createItemRequest) {
+//        this.itemId = createItemRequest.getItemId();
+//        this.itemDesc = createItemRequest.getItemDesc();
+//        this.category = createItemRequest.getCategory();
+//        this.type = createItemRequest.getItemType();
+//        this.status = createItemRequest.getStatus();
+//        this.price = createItemRequest.getPrice();
+//        this.pickupAllowed = createItemRequest.getPickupAllowed();
+//        this.shippingAllowed = createItemRequest.getShippingAllowed();
+//        this.deliveryAllowed = createItemRequest.getDeliveryAllowed();
+//    }
+//
+//    public Item(UpdateItemRequest updateItemRequest) {
+////        this.itemId = updateItemRequest.getId();
+//        this.itemId = updateItemRequest.getItemId();
+//        this.itemDesc=updateItemRequest.getItemDesc();
+//        this.category = updateItemRequest.getCategory();
+//        this.type = updateItemRequest.getItemType();
+//        this.status = updateItemRequest.getStatus();
+//        this.price = updateItemRequest.getPrice();
+//        this.pickupAllowed = updateItemRequest.getPickupAllowed();
+//        this.shippingAllowed = updateItemRequest.getShippingAllowed();
+//        this.deliveryAllowed = updateItemRequest.getDeliveryAllowed();
+//    }
 }

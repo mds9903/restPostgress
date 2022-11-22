@@ -10,5 +10,4 @@ public interface SupplyRepository extends JpaRepository<Supply, Long> {
     List<Supply> findByItemItemIdAndLocationLocationId(Long itemId, Long locationId);
 
     List<Supply> findByItemItemId(Long itemId);
-//    List<Supply> getSupplyByLocationId();
 }

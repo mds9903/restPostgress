@@ -1450,3 +1450,88 @@ com.mdsujan.restPostgres.excpetions.DuplicateEntryException: null
 2022-11-15 18:01:37.794  INFO 75001 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-11-15 18:01:37.797  INFO 75001 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-11-15 18:01:37.808  INFO 75001 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-22 14:07:56.930  INFO 132026 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 132026 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-22 14:07:56.935  INFO 132026 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-22 14:07:57.918  INFO 132026 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-22 14:07:58.016  INFO 132026 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 5 JPA repository interfaces.
+2022-11-22 14:07:59.065  INFO 132026 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-22 14:07:59.080  INFO 132026 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-22 14:07:59.081  INFO 132026 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-22 14:07:59.208  INFO 132026 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-22 14:07:59.208  INFO 132026 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2154 ms
+2022-11-22 14:07:59.407  INFO 132026 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-22 14:07:59.544  INFO 132026 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-22 14:07:59.619  INFO 132026 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-22 14:07:59.733  INFO 132026 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-22 14:07:59.941  INFO 132026 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-22 14:08:00.073  INFO 132026 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-22 14:08:00.917  INFO 132026 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-22 14:08:00.928  INFO 132026 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-22 14:08:01.853  WARN 132026 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-22 14:08:02.363  INFO 132026 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-22 14:08:02.380  INFO 132026 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.208 seconds (JVM running for 6.874)
+2022-11-22 14:08:31.234  INFO 132026 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-22 14:08:31.235  INFO 132026 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-22 14:08:31.237  INFO 132026 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-11-22 14:08:31.473  INFO 132026 --- [http-nio-8080-exec-1] c.m.r.controller.ItemController          : Response: [Item(itemId=6383728, itemDesc=Blue Jeans, category=Apparel, type=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true), Item(itemId=2, itemDesc=Maroone Shirt, category=Apparel, type=good, status=testStatus, price=899.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true), Item(itemId=3, itemDesc=Black Hat, category=null, type=null, status=null, price=null, pickupAllowed=null, shippingAllowed=null, deliveryAllowed=null), Item(itemId=1112, itemDesc=Black Jeans, category=Apparel, type=HSN001, status=00/01, price=123.0, pickupAllowed=false, shippingAllowed=false, deliveryAllowed=true), Item(itemId=991, itemDesc=some new desc, category=Apparel, type=good, status=testStatus, price=399.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=false), Item(itemId=6383, itemDesc=testDesc, category=Apparel, type=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true), Item(itemId=1, itemDesc=new new item desc2, category=Apparel, type=good, status=testStatus, price=null, pickupAllowed=null, shippingAllowed=null, deliveryAllowed=null), Item(itemId=123123, itemDesc=, category=Furniture, type=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true)]
+2022-11-22 14:14:37.581  INFO 132026 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-22 14:14:37.585  INFO 132026 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-22 14:14:37.602  INFO 132026 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-22 14:14:43.877  INFO 132490 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 132490 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-22 14:14:43.882  INFO 132490 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-22 14:14:44.964  INFO 132490 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-22 14:14:45.076  INFO 132490 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 5 JPA repository interfaces.
+2022-11-22 14:14:46.150  INFO 132490 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-22 14:14:46.167  INFO 132490 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-22 14:14:46.168  INFO 132490 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-22 14:14:46.310  INFO 132490 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-22 14:14:46.311  INFO 132490 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2240 ms
+2022-11-22 14:14:46.555  INFO 132490 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-22 14:14:46.735  INFO 132490 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-22 14:14:46.891  INFO 132490 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-22 14:14:47.022  INFO 132490 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-22 14:14:47.321  INFO 132490 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-22 14:14:47.525  INFO 132490 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-22 14:14:48.473  INFO 132490 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-22 14:14:48.484  INFO 132490 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-22 14:14:49.842  WARN 132490 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-22 14:14:50.522  INFO 132490 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-22 14:14:50.543  INFO 132490 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 7.657 seconds (JVM running for 8.427)
+2022-11-22 14:14:55.000  INFO 132490 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-22 14:14:55.004  INFO 132490 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-22 14:14:55.016  INFO 132490 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-22 14:15:00.341  INFO 132607 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 132607 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-22 14:15:00.346  INFO 132607 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-11-22 14:15:01.226  INFO 132607 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-22 14:15:01.334  INFO 132607 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 5 JPA repository interfaces.
+2022-11-22 14:15:02.317  INFO 132607 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-22 14:15:02.334  INFO 132607 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-22 14:15:02.334  INFO 132607 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-22 14:15:02.460  INFO 132607 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-22 14:15:02.461  INFO 132607 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2004 ms
+2022-11-22 14:15:02.655  INFO 132607 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-22 14:15:02.792  INFO 132607 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-22 14:15:02.890  INFO 132607 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-22 14:15:03.011  INFO 132607 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-22 14:15:03.224  INFO 132607 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-22 14:15:03.378  INFO 132607 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-11-22 14:15:04.271  INFO 132607 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-22 14:15:04.283  INFO 132607 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-22 14:15:05.247  WARN 132607 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-22 14:15:05.731  INFO 132607 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-22 14:15:05.747  INFO 132607 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 6.29 seconds (JVM running for 7.043)
+2022-11-22 14:15:17.106  INFO 132607 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-22 14:15:17.107  INFO 132607 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-22 14:15:17.109  INFO 132607 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-11-22 14:15:17.339  INFO 132607 --- [http-nio-8080-exec-1] c.m.r.controller.ItemController          : Response: [Item(itemId=6383728, itemDesc=Blue Jeans, category=Apparel, type=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true), Item(itemId=2, itemDesc=Maroone Shirt, category=Apparel, type=good, status=testStatus, price=899.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true), Item(itemId=3, itemDesc=Black Hat, category=null, type=null, status=null, price=null, pickupAllowed=null, shippingAllowed=null, deliveryAllowed=null), Item(itemId=1112, itemDesc=Black Jeans, category=Apparel, type=HSN001, status=00/01, price=123.0, pickupAllowed=false, shippingAllowed=false, deliveryAllowed=true), Item(itemId=991, itemDesc=some new desc, category=Apparel, type=good, status=testStatus, price=399.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=false), Item(itemId=6383, itemDesc=testDesc, category=Apparel, type=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true), Item(itemId=1, itemDesc=new new item desc2, category=Apparel, type=good, status=testStatus, price=null, pickupAllowed=null, shippingAllowed=null, deliveryAllowed=null), Item(itemId=123123, itemDesc=, category=Furniture, type=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true)]
+2022-11-22 14:15:22.017  INFO 132607 --- [http-nio-8080-exec-2] c.m.r.controller.ItemController          : Response: Item(itemId=123123, itemDesc=, category=Furniture, type=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true)
+2022-11-22 14:16:28.146  INFO 132607 --- [http-nio-8080-exec-4] c.m.r.controller.ItemController          : InQueryRequest: UpdateItemRequest(itemId=123123, itemDesc=, category=Home Decor, itemType=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true)
+2022-11-22 14:16:28.218  INFO 132607 --- [http-nio-8080-exec-4] c.m.r.controller.ItemController          : Response: Item(itemId=123123, itemDesc=, category=Home Decor, type=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true)
+2022-11-22 14:16:54.170  WARN 132607 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'itemId' for method parameter type Long is present but converted to null]
+2022-11-22 14:17:00.355  INFO 132607 --- [http-nio-8080-exec-6] c.m.r.controller.ItemController          : InQueryRequest: UpdateItemRequest(itemId=123123, itemDesc=New Test Desc, category=null, itemType=null, status=null, price=null, pickupAllowed=true, shippingAllowed=null, deliveryAllowed=true)
+2022-11-22 14:17:00.381  INFO 132607 --- [http-nio-8080-exec-6] c.m.r.controller.ItemController          : Response: Item(itemId=123123, itemDesc=New Test Desc, category=Home Decor, type=HSN001, status=00/01, price=100.0, pickupAllowed=true, shippingAllowed=true, deliveryAllowed=true)
+2022-11-22 14:17:18.714  INFO 132607 --- [http-nio-8080-exec-7] c.m.r.controller.ItemController          : Response: Invalid itemId: no such item present
+2022-11-22 14:18:29.499  INFO 132607 --- [http-nio-8080-exec-9] c.m.r.controller.ItemController          : Response: Item with itemId=123123 successfully deleted.
+2022-11-22 14:18:49.533  INFO 132607 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-22 14:18:49.535  INFO 132607 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-22 14:18:49.545  INFO 132607 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

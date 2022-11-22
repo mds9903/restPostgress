@@ -37,7 +37,7 @@ public class ItemService {
         return itemRepository.findById(itemId).get();
     }
 
-    public Item createItem(CreateItemRequest createItemRequest) throws DuplicateEntryException {
+    public Item createItem(Item createItemRequest) throws DuplicateEntryException {
         // new record should not be created if record already exists
 
         // if record with same id exists then simply return it
@@ -50,9 +50,7 @@ public class ItemService {
 //            return itemRepository.findById(createItemRequest.getItemId()).get();
         }
         // else we create a new item
-        Item item = new Item(createItemRequest);
-        itemRepository.save(item);
-        return item;
+        return itemRepository.save(createItemRequest);
     }
 
     public String deleteItemById(Long itemId) {
