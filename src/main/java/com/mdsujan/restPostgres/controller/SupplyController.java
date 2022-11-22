@@ -3,6 +3,7 @@ package com.mdsujan.restPostgres.controller;
 import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
 import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
+import com.mdsujan.restPostgres.response.DemandDetailsResponse;
 import com.mdsujan.restPostgres.response.SupplyDetailsResponse;
 import com.mdsujan.restPostgres.response.SupplyResponse;
 import com.mdsujan.restPostgres.service.SupplyService;
@@ -60,6 +61,13 @@ public class SupplyController {
     public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) throws Throwable {
         return supplyService.getSupplyDetailsByItemAndLocation(itemId, locationId);
     }
+
+    // creates ambiguity
+//    @GetMapping("/{supplyType}/{locationId}") // get demand details by itemType and location
+////    public SupplyDetailsResponse getSupplyDetailsBySupplyTypeAndLocation(@PathVariable Long supplyType, @PathVariable Long locationId) throws Throwable {
+//    public List<Supply> getSupplyDetailsBySupplyTypeAndLocation(@PathVariable Long supplyType, @PathVariable Long locationId) throws Throwable {
+//        return supplyService.getSupplyDetailsBySupplyTypeAndLocation(supplyType, locationId);
+//    }
 
     @PostMapping("/") // create a new supply
     public SupplyResponse createSupply(@RequestBody CreateSupplyRequest createSupplyRequest) throws Throwable {

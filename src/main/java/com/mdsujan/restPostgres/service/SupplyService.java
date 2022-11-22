@@ -4,16 +4,14 @@ import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
-import com.mdsujan.restPostgres.exceptionHandling.CreateResourceOperationNotAllowed;
-import com.mdsujan.restPostgres.exceptionHandling.InvalidResourceIdException;
-import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
-import com.mdsujan.restPostgres.exceptionHandling.UpdateResourceRequestBodyInvalidException;
+import com.mdsujan.restPostgres.exceptionHandling.*;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
 import com.mdsujan.restPostgres.request.UpdateLocationRequest;
 import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
+import com.mdsujan.restPostgres.response.DemandDetailsResponse;
 import com.mdsujan.restPostgres.response.SupplyDetails;
 import com.mdsujan.restPostgres.response.SupplyDetailsResponse;
 import com.sun.jdi.request.DuplicateRequestException;
@@ -38,7 +36,7 @@ public class SupplyService {
     @Autowired
     LocationRepository locationRepository;
 
-    private Validator validator;
+    private final Validator validator;
 
     public SupplyService(Validator validator) {
         this.validator = validator;
@@ -67,7 +65,7 @@ public class SupplyService {
     }
 
     public Supply getSupplyById(Long supplyId) throws Throwable {
-        validateSupplyId(supplyId);
+        validateResourceIdLong(supplyId);
 
 //        return supplyRepository.findById(supplyId).get();
         if (supplyRepository.findById(supplyId).isPresent()) {
@@ -93,7 +91,8 @@ public class SupplyService {
 //    }
 
     public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(Long itemId, Long locationId) throws Throwable {
-        validateSupplyId();
+        validateResourceIdLong(itemId);
+        validateResourceIdLong(locationId);
         List<Supply> supplyList = supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
         if (supplyList != null && supplyList.size() > 0) {
             // from this list extract the sum of quantities for ONHAND and INTRANSIT supplies
@@ -112,6 +111,32 @@ public class SupplyService {
                     "please give correct itemId and/or locationId");
         }
     }
+
+
+//    public SupplyDetailsResponse getSupplyDetailsBySupplyTypeAndLocation(Long supplyType, Long locationId) throws Throwable {
+    public List<Supply> getSupplyDetailsBySupplyTypeAndLocation(Long supplyType, Long locationId) throws Throwable {
+        validateResourceIdLong(supplyType);
+        validateResourceIdLong(locationId);
+
+        return supplyRepository.findBySupplyTypeAndLocationLocationId(supplyType, locationId);
+//        if (supplyList != null && supplyList.size() > 0) {
+//            // from this list extract the sum of quantities for ONHAND and INTRANSIT supplies
+//            Long onhandQty = supplyList.stream()
+//                    .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
+//                    .map(Supply::getQty)
+//                    .reduce(0L, Long::sum);
+//            Long intransitQty = supplyList.stream()
+//                    .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.INTRANSIT)
+//                    .map(Supply::getQty)
+//                    .reduce(0L, Long::sum);
+//
+//            return new SupplyDetailsResponse(supplyType, locationId, new SupplyDetails(onhandQty, intransitQty));
+//        } else {
+//            throw new ResourceNotFoundException("no supplies found for given supplyType and locationId;" +
+//                    "please give correct supplyType and/or locationId");
+//        }
+    }
+
 
     public Supply updateSupplyPut(Long supplyId, UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         if (!Objects.equals(updateSupplyRequest.getSupplyId(), supplyId)) {
@@ -161,7 +186,7 @@ public class SupplyService {
         // create a supply for an item on a location (given in the request body)
         if (supplyRepository.findById(createSupplyRequest.getSupplyId()).isPresent()) {
             // supply id is not unique
-            throw new DuplicateRequestException("a supply with same supplyId already exists; please provide a unique supply id");
+            throw new DuplicateResourceException("a supply with same supplyId already exists; please provide a unique supply id");
         } else {
             // the supplyId is unique
             // if the itemId and the locationId are present in the items and locations table
@@ -194,5 +219,6 @@ public class SupplyService {
             throw new ResourceNotFoundException("cannot delete; supply not found");
         }
     }
+
 
 }

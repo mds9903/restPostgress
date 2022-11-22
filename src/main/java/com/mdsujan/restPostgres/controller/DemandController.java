@@ -68,6 +68,8 @@ public class DemandController {
         return demandService.getDemandDetailsByItemAndLocation(itemId, locationId);
     }
 
+
+
     @PostMapping("/") // create a new demand
     public DemandResponse createDemand(@RequestBody CreateDemandRequest createDemandRequest) throws Throwable {
         return new DemandResponse(demandService.createNewDemand(createDemandRequest));
