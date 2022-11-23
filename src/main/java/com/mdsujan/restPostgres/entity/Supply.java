@@ -1,43 +1,50 @@
 package com.mdsujan.restPostgres.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "supply", schema = "public")
-@Data
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "supply", schema = "public")
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Supply {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "supply_id")
-    Long id;
+    @NotNull
+    @JsonIgnore
+    Long supplyId;
 
     @Column(name = "supply_type")
     @Enumerated(EnumType.STRING)
+    @NotNull
     AllowedSupplyTypes supplyType;
 
     @Column(name = "qty")
-    Long qty;
+    @NotNull
+    Long supplyQty;
 
     @OneToOne
     @JoinColumn(name = "item_id")
+    @NotNull
     Item item;
 
     @OneToOne
     @JoinColumn(name = "location_id")
+    @NotNull
     Location location;
 
     public Supply(CreateSupplyRequest createSupplyRequest) {
-        this.id = createSupplyRequest.getSupplyId();
         this.supplyType = createSupplyRequest.getSupplyType();
-        this.qty = createSupplyRequest.getSupplyQty();
+        this.supplyQty = createSupplyRequest.getSupplyQty();
     }
 }

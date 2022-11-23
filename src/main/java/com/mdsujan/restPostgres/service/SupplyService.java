@@ -36,37 +36,11 @@ public class SupplyService {
     @Autowired
     LocationRepository locationRepository;
 
-    private final Validator validator;
-
-    public SupplyService(Validator validator) {
-        this.validator = validator;
-    }
-
-    private void validateUpdateLocationRequest(UpdateSupplyRequest updateSupplyRequest) throws Throwable {
-        // validates the request body to have all the fields are there; for PUT methods
-        Set<ConstraintViolation<UpdateSupplyRequest>> violationSet = validator.validate(updateSupplyRequest);
-        if (!violationSet.isEmpty()) {
-            throw new UpdateResourceRequestBodyInvalidException("some of the fields in the request body is missing; " +
-                    "please send full request body for updating supply");
-        }
-    }
-
-    private void validateResourceIdLong(Long resourceId) throws Throwable {
-        // validates the resource id (passed in path-var)
-        Set<ConstraintViolation<Long>> violationSet = validator.validate(resourceId);
-        if (!violationSet.isEmpty()) {
-            throw new InvalidResourceIdException("resourceId not valid; please provide a valid resourceId of type Long");
-        }
-    }
-
-
     public List<Supply> getAllSupplies() {
         return supplyRepository.findAll();
     }
 
     public Supply getSupplyById(Long supplyId) throws Throwable {
-        validateResourceIdLong(supplyId);
-
 //        return supplyRepository.findById(supplyId).get();
         if (supplyRepository.findById(supplyId).isPresent()) {
             return supplyRepository.findById(supplyId).get();
@@ -91,18 +65,16 @@ public class SupplyService {
 //    }
 
     public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(Long itemId, Long locationId) throws Throwable {
-        validateResourceIdLong(itemId);
-        validateResourceIdLong(locationId);
         List<Supply> supplyList = supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
         if (supplyList != null && supplyList.size() > 0) {
             // from this list extract the sum of quantities for ONHAND and INTRANSIT supplies
             Long onhandQty = supplyList.stream()
                     .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
-                    .map(Supply::getQty)
+                    .map(Supply::getSupplyQty)
                     .reduce(0L, Long::sum);
             Long intransitQty = supplyList.stream()
                     .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.INTRANSIT)
-                    .map(Supply::getQty)
+                    .map(Supply::getSupplyQty)
                     .reduce(0L, Long::sum);
 
             return new SupplyDetailsResponse(itemId, locationId, new SupplyDetails(onhandQty, intransitQty));
@@ -112,50 +84,24 @@ public class SupplyService {
         }
     }
 
-
-//    public SupplyDetailsResponse getSupplyDetailsBySupplyTypeAndLocation(Long supplyType, Long locationId) throws Throwable {
-    public List<Supply> getSupplyDetailsBySupplyTypeAndLocation(Long supplyType, Long locationId) throws Throwable {
-        validateResourceIdLong(supplyType);
-        validateResourceIdLong(locationId);
-
+    public List<Supply> getSupplyDetailsBySupplyTypeAndLocation(Long supplyType, Long locationId) {
         return supplyRepository.findBySupplyTypeAndLocationLocationId(supplyType, locationId);
-//        if (supplyList != null && supplyList.size() > 0) {
-//            // from this list extract the sum of quantities for ONHAND and INTRANSIT supplies
-//            Long onhandQty = supplyList.stream()
-//                    .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
-//                    .map(Supply::getQty)
-//                    .reduce(0L, Long::sum);
-//            Long intransitQty = supplyList.stream()
-//                    .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.INTRANSIT)
-//                    .map(Supply::getQty)
-//                    .reduce(0L, Long::sum);
-//
-//            return new SupplyDetailsResponse(supplyType, locationId, new SupplyDetails(onhandQty, intransitQty));
-//        } else {
-//            throw new ResourceNotFoundException("no supplies found for given supplyType and locationId;" +
-//                    "please give correct supplyType and/or locationId");
-//        }
     }
 
 
     public Supply updateSupplyPut(Long supplyId, UpdateSupplyRequest updateSupplyRequest) throws Throwable {
+        // PUT Update the existing supply qty
         if (!Objects.equals(updateSupplyRequest.getSupplyId(), supplyId)) {
             throw new UpdateResourceRequestBodyInvalidException("supplyId in the body is not matching the supplyId in the path variable; " +
                     "please provide the right supplyId");
         }
         if (supplyRepository.findById(supplyId).isPresent()) {
-            if (updateSupplyRequest.getSupplyType() == null
-                    || updateSupplyRequest.getSupplyQty() == null) {
-                throw new UpdateResourceRequestBodyInvalidException("some fields of the update supply request are missing;" +
-                        " please provide all the fields for a supply resource to do an update");
-            } else {
-                // update a supply for given supplyId
-                Supply supplyToUpdate = supplyRepository.findById(supplyId).get();
-                supplyToUpdate.setQty(updateSupplyRequest.getSupplyQty());
-                // save the new supply to the db
-                supplyToUpdate = supplyRepository.save(supplyToUpdate);
-                return supplyToUpdate;
-            }
+            // update a supply for given supplyId
+            Supply supplyToUpdate = supplyRepository.findById(supplyId).get();
+            supplyToUpdate.setSupplyQty(updateSupplyRequest.getSupplyQty());
+            // save the new supply to the db
+            supplyToUpdate = supplyRepository.save(supplyToUpdate);
+            return supplyToUpdate;
         } else {
             throw new ResourceNotFoundException("cannot update supply; supply not found with given supplyId; " +
                     "please provide correct supplyId");
@@ -163,6 +109,7 @@ public class SupplyService {
     }
 
     public Supply updateSupplyPatch(Long supplyId, UpdateSupplyRequest updateSupplyRequest) throws Throwable {
+        // PATCH Update the existing supply qty
         if (!Objects.equals(updateSupplyRequest.getSupplyId(), supplyId)) {
             throw new UpdateResourceRequestBodyInvalidException("supplyId in the body is not matching the supplyId in the path variable; " +
                     "please provide the right supplyId");
@@ -171,7 +118,7 @@ public class SupplyService {
             // update a supply for given supplyId
             Supply supplyToUpdate = supplyRepository.findById(supplyId).get();
             if (updateSupplyRequest.getSupplyQty() != null) {
-                supplyToUpdate.setQty(updateSupplyRequest.getSupplyQty());
+                supplyToUpdate.setSupplyId(updateSupplyRequest.getSupplyQty());
             }
             // save the new supply to the db
             supplyToUpdate = supplyRepository.save(supplyToUpdate);

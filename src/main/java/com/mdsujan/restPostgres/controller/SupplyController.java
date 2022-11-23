@@ -3,13 +3,13 @@ package com.mdsujan.restPostgres.controller;
 import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
 import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
-import com.mdsujan.restPostgres.response.DemandDetailsResponse;
 import com.mdsujan.restPostgres.response.SupplyDetailsResponse;
 import com.mdsujan.restPostgres.response.SupplyResponse;
 import com.mdsujan.restPostgres.service.SupplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +58,7 @@ public class SupplyController {
 //        return supplyResponseList;
 //    }
     @GetMapping("/{itemId}/{locationId}") // get supply details for an item at a location
-    public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) throws Throwable {
+    public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(@PathVariable @Valid Long itemId, @PathVariable @Valid Long locationId) throws Throwable {
         return supplyService.getSupplyDetailsByItemAndLocation(itemId, locationId);
     }
 
@@ -70,17 +70,17 @@ public class SupplyController {
 //    }
 
     @PostMapping("/") // create a new supply
-    public SupplyResponse createSupply(@RequestBody CreateSupplyRequest createSupplyRequest) throws Throwable {
+    public SupplyResponse createSupply(@RequestBody @Valid CreateSupplyRequest createSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.createNewSupply(createSupplyRequest));
     }
 
     @PutMapping("/{supplyId}") // update supply (all fields)
-    public SupplyResponse updateSupplyPut(@PathVariable Long supplyId , @RequestBody UpdateSupplyRequest updateSupplyRequest) throws Throwable {
+    public SupplyResponse updateSupplyPut(@PathVariable @Valid Long supplyId , @RequestBody @Valid UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.updateSupplyPut(supplyId ,updateSupplyRequest));
     }
 
     @PatchMapping("/{supplyId}") // update supply (all fields)
-    public SupplyResponse updateSupplyPatch(@PathVariable Long supplyId , @RequestBody UpdateSupplyRequest updateSupplyRequest) throws Throwable {
+    public SupplyResponse updateSupplyPatch(@PathVariable @Valid Long supplyId , @RequestBody @Valid UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.updateSupplyPatch(supplyId ,updateSupplyRequest));
     }
 

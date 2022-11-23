@@ -8,7 +8,6 @@ import lombok.experimental.FieldDefaults;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CreateSupplyRequest {
-    Long supplyId;
     Long itemId;
     Long locationId;
     AllowedSupplyTypes supplyType;

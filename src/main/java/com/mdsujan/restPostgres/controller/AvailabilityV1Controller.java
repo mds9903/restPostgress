@@ -46,7 +46,7 @@ public class AvailabilityV1Controller {
         Long onhandQty = supplyList
                 .stream()
                 .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
-                .map(Supply::getQty)
+                .map(Supply::getSupplyId)
                 .reduce(0L, Long::sum);
         // get the hardPromised qty for the demand of the given item and location
         List<Demand> demandList = demandRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
@@ -81,7 +81,7 @@ public class AvailabilityV1Controller {
         Long onhandQty = supplyList
                 .stream()
                 .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
-                .map(Supply::getQty)
+                .map(Supply::getSupplyId)
                 .reduce(0L, Long::sum);
         // get the hardPromised qty for the demand of the given item on all locations
         Long hardPromisedQty = demandRepository.findByItemItemId(itemId)

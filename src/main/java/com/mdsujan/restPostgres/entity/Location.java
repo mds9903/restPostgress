@@ -1,75 +1,71 @@
 package com.mdsujan.restPostgres.entity;
 
-import com.mdsujan.restPostgres.request.CreateLocationRequest;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "location", schema = "public")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@NoArgsConstructor
 public class Location {
     @Id
     @Column(name = "location_id")
+    @NotNull
     Long locationId;
-//    Long id;
 
     @Column(name = "location_desc")
+    @NotNull
     String locationDesc;
 
     @Column(name = "type")
+    @NotNull
     String type;
 
     @Column(name = "pickup_allowed")
+    @NotNull
     boolean pickupAllowed;
 
     @Column(name = "shipping_allowed")
+    @NotNull
     boolean shippingAllowed;
 
     @Column(name = "delivery_allowed")
+    @NotNull
     boolean deliveryAllowed;
 
     @Column(name = "address_line_1")
+    @NotNull
     String addrLine1;
 
     @Column(name = "address_line_2")
+    @NotNull
     String addrLine2;
 
     @Column(name = "address_line_3")
+    @NotNull
     String addrLine3;
 
     @Column(name = "city")
+    @NotNull
     String city;
 
     @Column(name = "state")
+    @NotNull
     String state;
 
     @Column(name = "country")
+    @NotNull
     String country;
 
     @Column(name = "pincode")
+    @NotNull
     String pincode;
 
-    public Location(CreateLocationRequest createLocationRequest) {
-        this.locationId=createLocationRequest.getId();
-//        this.id=createLocationRequest.getId();
-        this.locationDesc=createLocationRequest.getDesc();
-        this.type= createLocationRequest.getType();
-        this.pickupAllowed = createLocationRequest.getPickupAllowed();
-        this.shippingAllowed = createLocationRequest.getShippingAllowed();
-        this.deliveryAllowed = createLocationRequest.getDeliveryAllowed();
-        this.addrLine1=createLocationRequest.getAddrLine1();
-        this.addrLine2=createLocationRequest.getAddrLine2();
-        this.addrLine3=createLocationRequest.getAddrLine3();
-        this.city=createLocationRequest.getCity();
-        this.state=createLocationRequest.getState();
-        this.country=createLocationRequest.getCountry();
-        this.pincode = createLocationRequest.getPincode();
-
-    }
 }

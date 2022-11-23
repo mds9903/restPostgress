@@ -1,72 +1,53 @@
 package com.mdsujan.restPostgres.entity;
 
-import com.mdsujan.restPostgres.request.CreateItemRequest;
-import com.mdsujan.restPostgres.request.UpdateItemRequest;
 import lombok.*;
-import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Data
-@Table(name = "item",schema = "public")
-@NoArgsConstructor
+@Getter
+@Setter
+@Table(name = "item", schema = "public")
 public class Item {
+
     @Id
     @Column(name = "item_id")
-//    private Long itemId;
+    @NotNull
     private Long itemId;
 
-
     @Column(name = "item_desc")
+    @NotNull
     private String itemDesc;
 
-
     @Column(name = "category")
+    @NotNull
     private String category;
 
-
     @Column(name = "type")
-    private String type;
-
+    @NotNull
+    private String itemType;
 
     @Column(name = "status")
+    @NotNull
     private String status;
 
     @Column(name = "price")
+    @NotNull
     private Double price;
 
     @Column(name = "pickup_allowed")
+    @NotNull
     private Boolean pickupAllowed;
 
     @Column(name = "shipping_allowed")
+    @NotNull
     private Boolean shippingAllowed;
 
     @Column(name = "delivery_allowed")
+    @NotNull
     private Boolean deliveryAllowed;
-
-    public Item(CreateItemRequest createItemRequest) {
-        this.itemId = createItemRequest.getItemId();
-        this.itemDesc = createItemRequest.getItemDesc();
-        this.category = createItemRequest.getCategory();
-        this.type = createItemRequest.getItemType();
-        this.status = createItemRequest.getStatus();
-        this.price = createItemRequest.getPrice();
-        this.pickupAllowed = createItemRequest.getPickupAllowed();
-        this.shippingAllowed = createItemRequest.getShippingAllowed();
-        this.deliveryAllowed = createItemRequest.getDeliveryAllowed();
-    }
-
-    public Item(UpdateItemRequest updateItemRequest) {
-//        this.itemId = updateItemRequest.getId();
-        this.itemId = updateItemRequest.getItemId();
-        this.itemDesc=updateItemRequest.getItemDesc();
-        this.category = updateItemRequest.getCategory();
-        this.type = updateItemRequest.getItemType();
-        this.status = updateItemRequest.getStatus();
-        this.price = updateItemRequest.getPrice();
-        this.pickupAllowed = updateItemRequest.getPickupAllowed();
-        this.shippingAllowed = updateItemRequest.getShippingAllowed();
-        this.deliveryAllowed = updateItemRequest.getDeliveryAllowed();
-    }
 }

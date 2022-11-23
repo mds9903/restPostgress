@@ -56,8 +56,8 @@ public class AvailabilityV3Controller {
                 supplyQty += supplyList
                         .stream()
                         .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.valueOf(supplyType))
-                        .map(Supply::getQty)
-                        .reduce(0L, (a, b) -> a + b);
+                        .map(Supply::getSupplyQty)
+                        .reduce(0L, Long::sum);
             }
             Long demandQty = 0L;
             List<String> demandTypes = List.of(prop.getProperty("demands").split(","));
