@@ -73,33 +73,44 @@ public class DemandService {
         return demandRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
     }
 
-
-
-    public Demand updateDemandPatch(Long demandId, UpdateDemandRequest updateDemandRequest) throws Throwable {
-        if (!Objects.equals(updateDemandRequest.getDemandId(), demandId)) {
-            throw new UpdateResourceRequestBodyInvalidException("demandId in the body is not matching the demandId in the path variable; " +
-                    "please provide the right demandId");
-        }
+    public String deleteDemand(Long demandId) throws Throwable {
         if (demandRepository.findById(demandId).isPresent()) {
-            // update a demand for given demandId
-            Demand demandToUpdate = demandRepository.findById(demandId).get();
-            if (updateDemandRequest.getDemandQty() != null) {
-                demandToUpdate.setDemandQty(updateDemandRequest.getDemandQty());
-            }
-            // save the new demand to the db
-            demandToUpdate = demandRepository.save(demandToUpdate);
-            return demandToUpdate;
+            demandRepository.deleteById(demandId);
+            return "demand with demandId = '" + demandId + "' deleted successfully";
         } else {
-            throw new ResourceNotFoundException("cannot update demand; demand not found with given demandId; " +
+            throw new ResourceNotFoundException("cannot delete; no demand found with given demandId;" +
                     "please provide correct demandId");
         }
     }
 
-    public Demand updateDemandPut(Long demandId, UpdateDemandRequest updateDemandRequest) throws Throwable {
-        if (!Objects.equals(updateDemandRequest.getDemandId(), demandId)) {
-            throw new UpdateResourceRequestBodyInvalidException("demandId in the body is not matching the demandId in the path variable; " +
-                    "please provide the right demandId");
+    public List<Demand> getDemandsByItemId(Long itemId) {
+        return demandRepository.findByItemItemId(itemId);
+    }
+
+    public Demand createNewDemand(CreateDemandRequest createDemandRequest) throws Throwable {
+        // create a demand for an item on a location (given in the request body)
+
+        // if the itemId and the locationId are present in the items and locations table
+        if (locationRepository.findById(createDemandRequest.getLocationId()).isPresent()
+                && itemRepository.findById(createDemandRequest.getItemId()).isPresent()) {
+            // create the demand
+            Demand demand = new Demand(createDemandRequest);
+            // get the item for this demand
+            Item item = itemRepository.findById(createDemandRequest.getItemId()).get();
+            // get the location for this demand
+            Location location = locationRepository.findById(createDemandRequest.getLocationId()).get();
+            demand.setItem(item);
+            demand.setLocation(location);
+            // save this new demand
+            demand = demandRepository.save(demand);
+            return demand;
+        } else {
+            throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create demand; " +
+                    "please provide an item id and a location id that exists");
         }
+    }
+
+    public Demand updateDemandPut(Long demandId, UpdateDemandRequest updateDemandRequest) throws Throwable {
         if (demandRepository.findById(demandId).isPresent()) {
             if (updateDemandRequest.getDemandType() == null
                     || updateDemandRequest.getDemandQty() == null) {
@@ -119,47 +130,19 @@ public class DemandService {
         }
     }
 
-    public String deleteDemand(Long demandId) throws Throwable {
-        if(demandRepository.findById(demandId).isPresent()){
-            demandRepository.deleteById(demandId);
-            return "demand with demandId = '"+demandId+"' deleted successfully";
-        }else{
-            throw new ResourceNotFoundException("cannot delete; no demand found with given demandId;" +
+    public Demand updateDemandPatch(Long demandId, UpdateDemandRequest updateDemandRequest) throws Throwable {
+        if (demandRepository.findById(demandId).isPresent()) {
+            // update a demand for given demandId
+            Demand demandToUpdate = demandRepository.findById(demandId).get();
+            if (updateDemandRequest.getDemandQty() != null) {
+                demandToUpdate.setDemandQty(updateDemandRequest.getDemandQty());
+            }
+            // save the new demand to the db
+            demandToUpdate = demandRepository.save(demandToUpdate);
+            return demandToUpdate;
+        } else {
+            throw new ResourceNotFoundException("cannot update demand; demand not found with given demandId; " +
                     "please provide correct demandId");
         }
     }
-
-    public List<Demand> getDemandsByItemId(Long itemId) {
-        return demandRepository.findByItemItemId(itemId);
-    }
-
-    public Demand createNewDemand(CreateDemandRequest createDemandRequest) throws Throwable {
-        // create a demand for an item on a location (given in the request body)
-        if (demandRepository.findById(createDemandRequest.getDemandId()).isPresent()) {
-            // demand id is not unique
-            throw new DuplicateRequestException("a demand with same demandId already exists; please provide a unique demand id");
-        } else {
-            // the demandId is unique
-            // if the itemId and the locationId are present in the items and locations table
-            if (locationRepository.findById(createDemandRequest.getLocationId()).isPresent()
-                    && itemRepository.findById(createDemandRequest.getItemId()).isPresent()) {
-                // create the demand
-                Demand demand = new Demand(createDemandRequest);
-                // get the item for this demand
-                Item item = itemRepository.findById(createDemandRequest.getItemId()).get();
-                // get the location for this demand
-                Location location = locationRepository.findById(createDemandRequest.getLocationId()).get();
-                demand.setItem(item);
-                demand.setLocation(location);
-                // save this new demand
-                demand = demandRepository.save(demand);
-                return demand;
-            } else {
-                throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create demand; " +
-                        "please provide an item id and a location id that exists");
-            }
-        }
-
-    }
-
 }

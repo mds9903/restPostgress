@@ -47,7 +47,7 @@ public class SupplyController {
 //
 //    }
 
-//    // not included in the requirements sheet
+    //    // not included in the requirements sheet
 //    @GetMapping("supplyList/{itemId}") // get supply for an item in all locations
 //    public List<SupplyResponse> getSuppliesByItem(@PathVariable Long itemId) {
 //        List<Supply> supplyList = supplyService.getSuppliesByItemId(itemId);
@@ -70,18 +70,18 @@ public class SupplyController {
 //    }
 
     @PostMapping("/") // create a new supply
-    public SupplyResponse createSupply(@RequestBody @Valid CreateSupplyRequest createSupplyRequest) throws Throwable {
+    public SupplyResponse createSupply(@RequestBody CreateSupplyRequest createSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.createNewSupply(createSupplyRequest));
     }
 
     @PutMapping("/{supplyId}") // update supply (all fields)
-    public SupplyResponse updateSupplyPut(@PathVariable @Valid Long supplyId , @RequestBody @Valid UpdateSupplyRequest updateSupplyRequest) throws Throwable {
-        return new SupplyResponse(supplyService.updateSupplyPut(supplyId ,updateSupplyRequest));
+    public SupplyResponse updateSupplyPut(@PathVariable @Valid Long supplyId, @RequestBody @Valid UpdateSupplyRequest updateSupplyRequest) throws Throwable {
+        return new SupplyResponse(supplyService.updateSupplyPut(supplyId, updateSupplyRequest));
     }
 
     @PatchMapping("/{supplyId}") // update supply (all fields)
-    public SupplyResponse updateSupplyPatch(@PathVariable @Valid Long supplyId , @RequestBody @Valid UpdateSupplyRequest updateSupplyRequest) throws Throwable {
-        return new SupplyResponse(supplyService.updateSupplyPatch(supplyId ,updateSupplyRequest));
+    public SupplyResponse updateSupplyPatch(@PathVariable @Valid Long supplyId, @RequestBody UpdateSupplyRequest updateSupplyRequest) throws Throwable {
+        return new SupplyResponse(supplyService.updateSupplyPatch(supplyId, updateSupplyRequest));
     }
 
     @DeleteMapping("/{supplyId}") // delete a supply

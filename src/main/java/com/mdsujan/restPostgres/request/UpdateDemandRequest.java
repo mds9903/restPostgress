@@ -7,14 +7,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
+import javax.validation.constraints.NotNull;
+
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
 public class UpdateDemandRequest {
-    Long demandId;
+    @NotNull
     Long itemId;
+    @NotNull
     Long locationId;
+    @NotNull
     Long demandQty;
+    @NotNull
     AllowedDemandTypes demandType;
 }

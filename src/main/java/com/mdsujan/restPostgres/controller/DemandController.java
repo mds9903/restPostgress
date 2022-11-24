@@ -16,6 +16,7 @@ import com.mdsujan.restPostgres.service.DemandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,13 +37,13 @@ public class DemandController {
     }
 
     @GetMapping("/{demandId}") // get demand by demandId
-    public DemandResponse getDemandById(@PathVariable Long demandId) throws Throwable {
+    public DemandResponse getDemandById(@PathVariable @Valid Long demandId) throws Throwable {
         return new DemandResponse(demandService.getDemandById(demandId));
     }
 
 //    // not included in the requirements sheet
 //    @GetMapping("/demandList/{itemId}/{locationId}") // get list of demands by item and location
-//    public List<DemandResponse> getDemandsByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) {
+//    public List<DemandResponse> getDemandsByItemAndLocation(@PathVariable @Valid Long itemId, @PathVariable @Valid Long locationId) {
 //        List<Demand> demandList = demandService.getDemandsByItemIdAndLocationId(itemId, locationId);
 //        List<DemandResponse> demandResponseList = new ArrayList<>();
 //
@@ -54,7 +55,7 @@ public class DemandController {
 
     // not included in the requirements sheet
     @GetMapping("demandList/{itemId}") // get demand for an item in all locations
-    public List<DemandResponse> getDemandsByItem(@PathVariable Long itemId) {
+    public List<DemandResponse> getDemandsByItem(@PathVariable @Valid Long itemId) {
         List<Demand> demandList = demandService.getDemandsByItemId(itemId);
         List<DemandResponse> demandResponseList = new ArrayList<>();
 
@@ -64,10 +65,10 @@ public class DemandController {
     }
 
     @GetMapping("/{itemId}/{locationId}") // get demand details by item and location
-    public DemandDetailsResponse getDemandDetailsByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) throws Throwable {
+    public DemandDetailsResponse getDemandDetailsByItemAndLocation(@PathVariable @Valid Long itemId,
+                                                                   @PathVariable @Valid Long locationId) throws Throwable {
         return demandService.getDemandDetailsByItemAndLocation(itemId, locationId);
     }
-
 
 
     @PostMapping("/") // create a new demand
@@ -76,17 +77,19 @@ public class DemandController {
     }
 
     @PutMapping("/{demandId}") // update a demand (all fields)
-    public DemandResponse updateDemandPut(@PathVariable Long demandId, @RequestBody UpdateDemandRequest updateDemandRequest) throws Throwable {
+    public DemandResponse updateDemandPut(@PathVariable @Valid Long demandId,
+                                          @RequestBody @Valid UpdateDemandRequest updateDemandRequest) throws Throwable {
         return new DemandResponse(demandService.updateDemandPut(demandId, updateDemandRequest));
     }
 
     @PatchMapping("/{demandId}") // update a demand (all fields)
-    public DemandResponse updateDemandPatch(@PathVariable Long demandId, @RequestBody UpdateDemandRequest updateDemandRequest) throws Throwable {
+    public DemandResponse updateDemandPatch(@PathVariable @Valid Long demandId,
+                                            @RequestBody UpdateDemandRequest updateDemandRequest) throws Throwable {
         return new DemandResponse(demandService.updateDemandPatch(demandId, updateDemandRequest));
     }
 
     @DeleteMapping("/{demandId}") // delete a demand
-    public String deleteSupply(@PathVariable Long demandId) throws Throwable {
+    public String deleteSupply(@PathVariable @Valid Long demandId) throws Throwable {
         return demandService.deleteDemand(demandId);
     }
 }

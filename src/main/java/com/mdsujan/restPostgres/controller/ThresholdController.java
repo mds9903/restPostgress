@@ -11,6 +11,7 @@ import com.mdsujan.restPostgres.service.ThresholdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,21 +38,24 @@ public class ThresholdController {
     }
 
     @GetMapping("/{itemId}/{locationId}")
-    public ThresholdDetailsResponse getThresholdDetails(@PathVariable Long itemId, @PathVariable Long locationId){
+    public ThresholdDetailsResponse getThresholdDetails(@PathVariable @Valid Long itemId,
+                                                        @PathVariable @Valid Long locationId){
         return thresholdService.getThresholdDetailsByItemAndLocation(itemId, locationId);
     }
 
     @PostMapping("/")
-    public ThresholdResponse createThreshold(@RequestBody CreateThresholdRequest createThresholdRequest){
+    public ThresholdResponse createThreshold(@RequestBody @Valid CreateThresholdRequest createThresholdRequest) throws Throwable{
         return new ThresholdResponse(thresholdService.createThreshold(createThresholdRequest));
     }
 
     @PutMapping("/{thresholdId}")
-    public ThresholdResponse updateThresholdPut(@PathVariable Long thresholdId ,@RequestBody UpdateThresholdRequest updateThresholdRequest){
+    public ThresholdResponse updateThresholdPut(@PathVariable @Valid Long thresholdId,
+                                                @RequestBody @Valid UpdateThresholdRequest updateThresholdRequest) throws Throwable {
         return new ThresholdResponse(thresholdService.updateThresholdPut(thresholdId, updateThresholdRequest));
     }
     @PatchMapping("/{thresholdId}")
-    public ThresholdResponse updateThresholdPatch(@PathVariable Long thresholdId ,@RequestBody UpdateThresholdRequest updateThresholdRequest){
+    public ThresholdResponse updateThresholdPatch(@PathVariable @Valid Long thresholdId,
+                                                  @RequestBody UpdateThresholdRequest updateThresholdRequest) throws Throwable {
         return new ThresholdResponse(thresholdService.updateThresholdPatch(thresholdId, updateThresholdRequest));
     }
 
@@ -64,7 +68,7 @@ public class ThresholdController {
 //        return new ThresholdResponse(thresholdService.updateThresholdDetailsPatch(itemId, locationId,updateThresholdRequest));
 //    }
     @DeleteMapping("/{thresholdId}") // delete a specific item
-    public String deleteThreshold(@PathVariable Long thresholdId) {
+    public String deleteThreshold(@PathVariable @Valid Long thresholdId) throws Throwable {
         return thresholdService.deleteThresholdById(thresholdId);
     }
 

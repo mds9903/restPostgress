@@ -15,10 +15,6 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class UpdateSupplyRequest {
     @NotNull
-    Long supplyId;
-    @NotNull
-    Long itemId;
-    @NotNull
     Long locationId;
     @NotNull
     Long supplyQty;

@@ -9,20 +9,14 @@ import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
-import com.mdsujan.restPostgres.request.UpdateLocationRequest;
 import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
-import com.mdsujan.restPostgres.response.DemandDetailsResponse;
 import com.mdsujan.restPostgres.response.SupplyDetails;
 import com.mdsujan.restPostgres.response.SupplyDetailsResponse;
-import com.sun.jdi.request.DuplicateRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+import javax.persistence.EntityManager;
 import java.util.List;
-import java.util.Objects;
-import java.util.Set;
 
 @Service
 public class SupplyService {
@@ -35,6 +29,12 @@ public class SupplyService {
 
     @Autowired
     LocationRepository locationRepository;
+
+    EntityManager entityManager;
+
+    public SupplyService(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
     public List<Supply> getAllSupplies() {
         return supplyRepository.findAll();
@@ -88,13 +88,31 @@ public class SupplyService {
         return supplyRepository.findBySupplyTypeAndLocationLocationId(supplyType, locationId);
     }
 
+    public Supply createNewSupply(CreateSupplyRequest createSupplyRequest) throws Throwable {
+        // create a supply for an item on a location (given in the request body)
+        // if the itemId and the locationId are present in the items and locations table
+        if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
+                && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
+            // create the supply
+            Supply supply = new Supply(createSupplyRequest);
+            // get the item for this supply
+            Item item = itemRepository.findById(createSupplyRequest.getItemId()).get();
+            // get the location for this supply
+            Location location = locationRepository.findById(createSupplyRequest.getLocationId()).get();
+            supply.setItem(item);
+            supply.setLocation(location);
+            // save this new supply
+            supply = supplyRepository.save(supply);
+            return supply;
+        } else {
+            throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create supply; " +
+                    "please provide an item id and a location id that exists");
+        }
+
+    }
 
     public Supply updateSupplyPut(Long supplyId, UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         // PUT Update the existing supply qty
-        if (!Objects.equals(updateSupplyRequest.getSupplyId(), supplyId)) {
-            throw new UpdateResourceRequestBodyInvalidException("supplyId in the body is not matching the supplyId in the path variable; " +
-                    "please provide the right supplyId");
-        }
         if (supplyRepository.findById(supplyId).isPresent()) {
             // update a supply for given supplyId
             Supply supplyToUpdate = supplyRepository.findById(supplyId).get();
@@ -110,52 +128,18 @@ public class SupplyService {
 
     public Supply updateSupplyPatch(Long supplyId, UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         // PATCH Update the existing supply qty
-        if (!Objects.equals(updateSupplyRequest.getSupplyId(), supplyId)) {
-            throw new UpdateResourceRequestBodyInvalidException("supplyId in the body is not matching the supplyId in the path variable; " +
-                    "please provide the right supplyId");
-        }
         if (supplyRepository.findById(supplyId).isPresent()) {
             // update a supply for given supplyId
             Supply supplyToUpdate = supplyRepository.findById(supplyId).get();
             if (updateSupplyRequest.getSupplyQty() != null) {
-                supplyToUpdate.setSupplyId(updateSupplyRequest.getSupplyQty());
+                supplyToUpdate.setSupplyQty(updateSupplyRequest.getSupplyQty());
             }
             // save the new supply to the db
-            supplyToUpdate = supplyRepository.save(supplyToUpdate);
-            return supplyToUpdate;
+            return supplyRepository.save(supplyToUpdate);
         } else {
             throw new ResourceNotFoundException("cannot update supply; supply not found with given supplyId; " +
                     "please provide correct supplyId");
         }
-    }
-
-    public Supply createNewSupply(CreateSupplyRequest createSupplyRequest) throws Throwable {
-        // create a supply for an item on a location (given in the request body)
-        if (supplyRepository.findById(createSupplyRequest.getSupplyId()).isPresent()) {
-            // supply id is not unique
-            throw new DuplicateResourceException("a supply with same supplyId already exists; please provide a unique supply id");
-        } else {
-            // the supplyId is unique
-            // if the itemId and the locationId are present in the items and locations table
-            if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
-                    && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
-                // create the supply
-                Supply supply = new Supply(createSupplyRequest);
-                // get the item for this supply
-                Item item = itemRepository.findById(createSupplyRequest.getItemId()).get();
-                // get the location for this supply
-                Location location = locationRepository.findById(createSupplyRequest.getLocationId()).get();
-                supply.setItem(item);
-                supply.setLocation(location);
-                // save this new supply
-                supply = supplyRepository.save(supply);
-                return supply;
-            } else {
-                throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create supply; " +
-                        "please provide an item id and a location id that exists");
-            }
-        }
-
     }
 
     public String deleteSupply(Long supplyId) throws Throwable {

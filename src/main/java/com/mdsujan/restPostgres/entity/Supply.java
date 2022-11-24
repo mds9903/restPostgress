@@ -18,9 +18,8 @@ import javax.validation.constraints.NotNull;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Supply {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // use GenerationType.IDENTITY for "serial" id in psql table
     @Column(name = "supply_id")
-    @NotNull
     @JsonIgnore
     Long supplyId;
 

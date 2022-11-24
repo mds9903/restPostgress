@@ -2,20 +2,22 @@ package com.mdsujan.restPostgres.entity;
 
 import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "demand",schema = "public")
-@Data
+@Getter
+@Setter
+@RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@NoArgsConstructor
 public class Demand {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "demand_id")
     Long demandId;
 
@@ -35,7 +37,6 @@ public class Demand {
     Location location;
 
     public Demand(CreateDemandRequest createDemandRequest) {
-        this.demandId = createDemandRequest.getDemandId();
         this.demandQty = createDemandRequest.getDemandQty();
         this.demandType = createDemandRequest.getDemandType();
     }

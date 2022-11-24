@@ -1,19 +1,18 @@
 package com.mdsujan.restPostgres.entity;
 
 import com.mdsujan.restPostgres.request.CreateThresholdRequest;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@NoArgsConstructor
 public class Threshold {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

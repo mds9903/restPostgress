@@ -5,15 +5,11 @@ import com.mdsujan.restPostgres.exceptionHandling.*;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
-import com.mdsujan.restPostgres.request.UpdateLocationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.validation.ConstraintViolation;
 import javax.validation.Valid;
-import javax.validation.Validator;
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class LocationService {
