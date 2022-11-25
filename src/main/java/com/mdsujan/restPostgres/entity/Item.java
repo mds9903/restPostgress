@@ -12,6 +12,8 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @Table(name = "item", schema = "public")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Item {
 
     @Id
@@ -50,4 +52,5 @@ public class Item {
     @Column(name = "delivery_allowed")
     @NotNull
     private Boolean deliveryAllowed;
+
 }
