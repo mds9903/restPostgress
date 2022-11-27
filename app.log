@@ -4240,3 +4240,6 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 2022-11-27 22:09:15.402  INFO 52642 --- [main] c.mdsujan.restPostgres.ItemServiceTest   : Starting ItemServiceTest using Java 11.0.17 on U-Sujan with PID 52642 (started by sujan in /home/sujan/Documents/restPostgres)
 2022-11-27 22:09:15.405  INFO 52642 --- [main] c.mdsujan.restPostgres.ItemServiceTest   : No active profile set, falling back to 1 default profile: "default"
 2022-11-27 22:09:16.611  INFO 52642 --- [main] c.mdsujan.restPostgres.ItemServiceTest   : Started ItemServiceTest in 1.86 seconds (JVM running for 3.179)
+2022-11-27 22:24:30.222  INFO 82074 --- [main] c.mdsujan.restPostgres.ItemServiceTest   : Starting ItemServiceTest using Java 11.0.17 on U-Sujan with PID 82074 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-11-27 22:24:30.224  INFO 82074 --- [main] c.mdsujan.restPostgres.ItemServiceTest   : No active profile set, falling back to 1 default profile: "default"
+2022-11-27 22:24:31.318  INFO 82074 --- [main] c.mdsujan.restPostgres.ItemServiceTest   : Started ItemServiceTest in 1.811 seconds (JVM running for 3.127)
