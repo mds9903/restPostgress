@@ -1,27 +1,27 @@
 package com.mdsujan.restPostgres;
-import com.mdsujan.restPostgres.repository.DemandRepository;
-import com.mdsujan.restPostgres.repository.SupplyRepository;
-import org.junit.Test;
 
 import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
+import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.service.ItemService;
-//import org.assertj.core.api.Assertions;
-//import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
 
-import static org.mockito.BDDMockito.given;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-//@DataJpaTest
+@RunWith(SpringRunner.class)
+//@Import(ItemServiceTestContextConfig.class)
 @SpringBootTest(classes = ItemService.class)
-//@SpringBootTest
-@RunWith(SpringJUnit4ClassRunner.class)
 public class ItemServiceTest {
 
     @Autowired
@@ -33,27 +33,36 @@ public class ItemServiceTest {
     @MockBean
     private SupplyRepository supplyRepository;
 
-
     @MockBean
     private DemandRepository demandRepository;
 
-    @Test
-    public void getItemTest(){
-        Item item = new Item(
-                123456L,
-                "testDesc",
-                "testCategory",
-                "testType",
-                "testStatus",
-                99.99,
-                false,
-                false,
-                false);
+    @Before
+    public void setUp() {
+        Item item = new Item(123456L, "testDesc", "testCategory", "testType", "testStatus", 99.99, false, false, false);
 
-        itemRepository.save(item);
-
-        given(itemRepository.findById(123456L)).willReturn(Optional.of(item));
-//        Assertions.assertThat(item.getItemId()).isEqualTo(123456L);
+        // stub ; when a method to our mock itemRepository is called we can specify the outcome
+        // in this case whenever the service (which we are testing) has a method call of
+        // findById() then our mock itemRepository will (mocking the real ItemRepositor)
+        // will return an item
+        Mockito.when(itemRepository.findById(item.getItemId())).thenReturn(Optional.of(item));
     }
 
+    @Test
+    public void whenValidItemId_thenItemShouldBeFound() throws Throwable {
+        Long itemId = 123456L;
+        Item found = itemService.getItemById(itemId);
+
+        assertThat(found.getItemId()).isEqualTo(itemId);
+    }
+
+    @Test
+    public void whenValidItemId_thenItemShouldBeDeleted() throws Throwable{
+        Long itemId = 123456L;
+
+        String actual = itemService.deleteItemById(itemId);
+
+        String expected = "Item with itemId=" + itemId + " successfully deleted.";
+
+        assertEquals(actual, expected);
+    }
 }
