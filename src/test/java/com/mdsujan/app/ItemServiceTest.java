@@ -1,5 +1,6 @@
-package com.mdsujan.restPostgres;
+package com.mdsujan.app;
 
+import com.mdsujan.restPostgres.app.MyApp;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
@@ -21,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
 //@Import(ItemServiceTestContextConfig.class)
-@SpringBootTest(classes = ItemService.class)
+@SpringBootTest(classes = MyApp.class)
 public class ItemServiceTest {
 
     @Autowired

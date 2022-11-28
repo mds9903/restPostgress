@@ -1,5 +1,6 @@
-package com.mdsujan.restPostgres;
+package com.mdsujan.app;
 
+import com.mdsujan.restPostgres.app.MyApp;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
@@ -23,7 +24,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @RunWith(SpringRunner.class)
 //@Import(LocationServiceTestContextConfig.class)
-@SpringBootTest(classes = LocationService.class)
+@SpringBootTest(classes = MyApp.class)
 public class LocationServiceTest {
 
     @Autowired

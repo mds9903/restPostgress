@@ -1,5 +1,6 @@
-package com.mdsujan.restPostgres;
+package com.mdsujan.app;
 
+import com.mdsujan.restPostgres.app.MyApp;
 import com.mdsujan.restPostgres.controller.ItemController;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.service.ItemService;
@@ -32,7 +33,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 //@ExtendWith({RestDocumentationExtension.class, SpringExtension.class})
 @RunWith(SpringRunner.class)
 @AutoConfigureMockMvc
-@SpringBootTest(classes = ItemController.class)
+@SpringBootTest(classes = MyApp.class)
 public class ItemControllerTest {
 
     @Autowired
@@ -62,7 +63,7 @@ public class ItemControllerTest {
     @Test
     public void getItemHttpRequestTest() throws Throwable {
         // perform the web request
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/"))
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/items/123456"))
                 // define the expectations
                 .andExpect(status().isOk()).andReturn();
 
