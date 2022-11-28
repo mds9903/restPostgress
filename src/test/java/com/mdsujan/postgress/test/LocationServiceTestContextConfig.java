@@ -1,4 +1,4 @@
-package com.mdsujan.app;
+package com.mdsujan.postgress.test;
 
 import com.mdsujan.restPostgres.service.ItemService;
 import com.mdsujan.restPostgres.service.LocationService;

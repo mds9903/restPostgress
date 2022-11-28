@@ -1,4 +1,4 @@
-package com.mdsujan.app;
+package com.mdsujan.postgress.test;
 
 import com.mdsujan.restPostgres.app.MyApp;
 import com.mdsujan.restPostgres.entity.Item;
@@ -21,7 +21,6 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
-//@Import(ItemServiceTestContextConfig.class)
 @SpringBootTest(classes = MyApp.class)
 public class ItemServiceTest {
 

@@ -1,4 +1,4 @@
-package com.mdsujan.app;
+package com.mdsujan.postgress.test;
 
 import com.mdsujan.restPostgres.app.MyApp;
 import com.mdsujan.restPostgres.entity.Location;
