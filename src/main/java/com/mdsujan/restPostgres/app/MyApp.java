@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConf
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-//@SpringBootApplication
-@SpringBootApplication(exclude = SqlInitializationAutoConfiguration.class)
+@SpringBootApplication
+//@SpringBootApplication(exclude = SqlInitializationAutoConfiguration.class)
 @ComponentScan("com.mdsujan.restPostgres")
 @EntityScan("com.mdsujan.restPostgres.entity")
 @EnableJpaRepositories("com.mdsujan.restPostgres.repository")
