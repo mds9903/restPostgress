@@ -21,48 +21,53 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = MyApp.class)
+@SpringBootTest(classes = ItemService.class)
 public class ItemServiceTest {
 
     @Autowired
     private ItemService itemService;
 
     @MockBean
-    private ItemRepository itemRepository;
+    private ItemRepository mockItemRepository;
 
     @MockBean
-    private SupplyRepository supplyRepository;
+    private SupplyRepository mockSupplyRepository;
 
     @MockBean
-    private DemandRepository demandRepository;
+    private DemandRepository mockDemandRepository;
 
-    @Before
-    public void setUp() {
-        Item item = new Item(123456L, "testDesc", "testCategory", "testType", "testStatus", 99.99, false, false, false);
+    private final Item mockItem = new Item(
+            1L,
+            "testDesc",
+            "testCategory",
+            "testType",
+            "testStatus",
+            99.99,
+            false,
+            false,
+            false);
 
-        // stub ; when a method to our mock itemRepository is called we can specify the outcome
-        // in this case whenever the service (which we are testing) has a method call of
-        // findById() then our mock itemRepository will (mocking the real ItemRepositor)
-        // will return an item
-        Mockito.when(itemRepository.findById(item.getItemId())).thenReturn(Optional.of(item));
+    @Test
+    public void getItemByIdTest() throws Throwable {
+        // stub
+        Mockito.when(mockItemRepository.findById(1L)).thenReturn(Optional.of(mockItem));
+
+        // when
+        Item itemResponse = itemService.getItemById(1L);
+
+        // test
+        assertThat(itemResponse).isEqualTo(mockItem);
     }
 
     @Test
-    public void whenValidItemId_thenItemShouldBeFound() throws Throwable {
-        Long itemId = 123456L;
-        Item found = itemService.getItemById(itemId);
+    public void whenInvalidItemId_getItemByIdTest() throws Throwable{
+        // stub
+        Mockito.when(mockItemRepository.findById(1L)).thenReturn(Optional.of(mockItem));
 
-        assertThat(found.getItemId()).isEqualTo(itemId);
-    }
+        // when
+        Item itemResponse = itemService.getItemById(1L);
 
-    @Test
-    public void whenValidItemId_thenItemShouldBeDeleted() throws Throwable{
-        Long itemId = 123456L;
-
-        String actual = itemService.deleteItemById(itemId);
-
-        String expected = "Item with itemId=" + itemId + " successfully deleted.";
-
-        assertEquals(actual, expected);
+        // test
+        assertThat(itemResponse).isEqualTo(mockItem);
     }
 }

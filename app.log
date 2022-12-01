@@ -1,51 +1,41 @@
-2022-11-30 10:08:41.593  INFO 601508 --- [main] c.m.postgress.test.ItemControllerTest    : Starting ItemControllerTest using Java 11.0.17 on U-Sujan with PID 601508 (started by sujan in /home/sujan/Documents/restPostgres)
-2022-11-30 10:08:41.603  INFO 601508 --- [main] c.m.postgress.test.ItemControllerTest    : No active profile set, falling back to 1 default profile: "default"
-2022-11-30 10:08:42.574  INFO 601508 --- [main] c.m.postgress.test.ItemControllerTest    : Started ItemControllerTest in 1.634 seconds (JVM running for 3.221)
-2022-11-30 10:08:42.724  INFO 601508 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@2e060819
-2022-11-30 10:08:50.940  INFO 601663 --- [main] c.m.postgress.test.ItemControllerTest    : Starting ItemControllerTest using Java 11.0.17 on U-Sujan with PID 601663 (started by sujan in /home/sujan/Documents/restPostgres)
-2022-11-30 10:08:50.943  INFO 601663 --- [main] c.m.postgress.test.ItemControllerTest    : No active profile set, falling back to 1 default profile: "default"
-2022-11-30 10:08:51.925  INFO 601663 --- [main] c.m.postgress.test.ItemControllerTest    : Started ItemControllerTest in 1.72 seconds (JVM running for 3.083)
-2022-11-30 10:08:52.061  INFO 601663 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@1d75e7af
-2022-11-30 10:12:24.220  INFO 602445 --- [main] c.m.postgress.test.ItemControllerTest    : Starting ItemControllerTest using Java 11.0.17 on U-Sujan with PID 602445 (started by sujan in /home/sujan/Documents/restPostgres)
-2022-11-30 10:12:24.222  INFO 602445 --- [main] c.m.postgress.test.ItemControllerTest    : No active profile set, falling back to 1 default profile: "default"
-2022-11-30 10:12:25.194  INFO 602445 --- [main] c.m.postgress.test.ItemControllerTest    : Started ItemControllerTest in 1.637 seconds (JVM running for 3.023)
-2022-11-30 10:12:25.340  INFO 602445 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@1d75e7af
-2022-11-30 10:20:10.288  INFO 605778 --- [main] c.m.postgress.test.ItemControllerTest    : Starting ItemControllerTest using Java 11.0.17 on U-Sujan with PID 605778 (started by sujan in /home/sujan/Documents/restPostgres)
-2022-11-30 10:20:10.292  INFO 605778 --- [main] c.m.postgress.test.ItemControllerTest    : No active profile set, falling back to 1 default profile: "default"
-2022-11-30 10:20:12.309  INFO 605778 --- [main] c.m.postgress.test.ItemControllerTest    : Started ItemControllerTest in 3.145 seconds (JVM running for 5.945)
-2022-11-30 10:20:12.616  INFO 605778 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@109a2025
-2022-11-30 14:09:36.836  INFO 621757 --- [main] c.m.postgress.test.ItemControllerTest    : Starting ItemControllerTest using Java 11.0.17 on U-Sujan with PID 621757 (started by sujan in /home/sujan/Documents/restPostgres)
-2022-11-30 14:09:36.841  INFO 621757 --- [main] c.m.postgress.test.ItemControllerTest    : No active profile set, falling back to 1 default profile: "default"
-2022-11-30 14:09:38.538  INFO 621757 --- [main] c.m.postgress.test.ItemControllerTest    : Started ItemControllerTest in 2.642 seconds (JVM running for 5.055)
-2022-11-30 14:09:38.665  INFO 621757 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@6631cb64
-2022-11-30 14:09:38.667  INFO 621757 --- [main] c.m.r.controller.ItemController          : Response: null
-2022-11-30 14:09:38.894  INFO 621757 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@7c36db44
-2022-11-30 14:09:38.906  INFO 621757 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@4e08acf9
-2022-11-30 14:09:38.906  INFO 621757 --- [main] c.m.r.controller.ItemController          : Response: null
-2022-11-30 14:09:38.936  INFO 621757 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@fcc6023
-2022-11-30 14:09:38.937  INFO 621757 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@fcc6023
-2022-11-30 14:09:38.954  INFO 621757 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@6726cc69
-2022-11-30 14:09:38.954  INFO 621757 --- [main] c.m.r.controller.ItemController          : Response: null
-2022-11-30 14:13:32.329  INFO 621892 --- [main] c.m.postgress.test.ItemControllerTest    : Starting ItemControllerTest using Java 11.0.17 on U-Sujan with PID 621892 (started by sujan in /home/sujan/Documents/restPostgres)
-2022-11-30 14:13:32.332  INFO 621892 --- [main] c.m.postgress.test.ItemControllerTest    : No active profile set, falling back to 1 default profile: "default"
-2022-11-30 14:13:33.211  INFO 621892 --- [main] c.m.postgress.test.ItemControllerTest    : Started ItemControllerTest in 1.599 seconds (JVM running for 3.058)
-2022-11-30 14:13:33.277  INFO 621892 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@65b66b08
-2022-11-30 14:13:33.281  INFO 621892 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@65b66b08
-2022-11-30 14:13:33.351  INFO 621892 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@5bb51241
-2022-11-30 14:13:33.361  INFO 621892 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@74dbb1ee
-2022-11-30 14:13:33.362  INFO 621892 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@74dbb1ee
-2022-11-30 14:13:33.395  INFO 621892 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@161f6623
-2022-11-30 14:13:33.396  INFO 621892 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@161f6623
-2022-11-30 14:13:33.410  INFO 621892 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@bfc14b9
-2022-11-30 14:13:33.411  INFO 621892 --- [main] c.m.r.controller.ItemController          : Response: null
-2022-11-30 14:28:02.428  INFO 622137 --- [main] c.m.postgress.test.ItemControllerTest    : Starting ItemControllerTest using Java 11.0.17 on U-Sujan with PID 622137 (started by sujan in /home/sujan/Documents/restPostgres)
-2022-11-30 14:28:02.430  INFO 622137 --- [main] c.m.postgress.test.ItemControllerTest    : No active profile set, falling back to 1 default profile: "default"
-2022-11-30 14:28:03.336  INFO 622137 --- [main] c.m.postgress.test.ItemControllerTest    : Started ItemControllerTest in 1.555 seconds (JVM running for 2.877)
-2022-11-30 14:28:03.412  INFO 622137 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@65b66b08
-2022-11-30 14:28:03.418  INFO 622137 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@65b66b08
-2022-11-30 14:28:03.494  INFO 622137 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@5bb51241
-2022-11-30 14:28:03.501  INFO 622137 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@74dbb1ee
-2022-11-30 14:28:03.502  INFO 622137 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@74dbb1ee
-2022-11-30 14:28:03.517  INFO 622137 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@3e1a3801
-2022-11-30 14:28:03.518  INFO 622137 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@3e1a3801
-2022-11-30 14:28:03.530  INFO 622137 --- [main] c.m.r.controller.ItemController          : Response: Item with itemId=1 successfully deleted.
+2022-12-01 10:58:45.644  INFO 626620 --- [main] c.m.postgress.test.ItemServiceTest       : Starting ItemServiceTest using Java 11.0.17 on U-Sujan with PID 626620 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-01 10:58:45.656  INFO 626620 --- [main] c.m.postgress.test.ItemServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 10:58:46.769  INFO 626620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-01 10:58:46.865  INFO 626620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 5 JPA repository interfaces.
+2022-12-01 10:58:48.883  INFO 626620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-01 10:58:49.020  INFO 626620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-01 10:58:49.111  INFO 626620 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-01 10:58:49.182  INFO 626620 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-01 10:58:49.233  INFO 626620 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-01 10:58:49.415  INFO 626620 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-01 10:58:50.101  INFO 626620 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-01 10:58:50.112  INFO 626620 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-01 10:58:51.192  WARN 626620 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-01 10:58:52.155  INFO 626620 --- [main] c.m.postgress.test.ItemServiceTest       : Started ItemServiceTest in 7.234 seconds (JVM running for 8.756)
+2022-12-01 10:58:52.326  INFO 626620 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-01 10:58:52.331  INFO 626620 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-01 10:58:52.343  INFO 626620 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-01 11:03:16.800  INFO 627072 --- [main] c.m.postgress.test.ItemServiceTest       : Starting ItemServiceTest using Java 11.0.17 on U-Sujan with PID 627072 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-01 11:03:16.802  INFO 627072 --- [main] c.m.postgress.test.ItemServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 11:03:17.959  INFO 627072 --- [main] c.m.postgress.test.ItemServiceTest       : Started ItemServiceTest in 1.816 seconds (JVM running for 3.141)
+2022-12-01 11:14:53.536  INFO 627366 --- [main] c.m.p.test.LocationControllerTest        : Starting LocationControllerTest using Java 11.0.17 on U-Sujan with PID 627366 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-01 11:14:53.539  INFO 627366 --- [main] c.m.p.test.LocationControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 11:14:54.418  INFO 627366 --- [main] c.m.p.test.LocationControllerTest        : Started LocationControllerTest in 1.547 seconds (JVM running for 2.924)
+2022-12-01 12:58:43.836  INFO 660958 --- [main] c.m.p.test.LocationControllerTest        : Starting LocationControllerTest using Java 11.0.17 on U-Sujan with PID 660958 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-01 12:58:43.839  INFO 660958 --- [main] c.m.p.test.LocationControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 12:58:44.838  INFO 660958 --- [main] c.m.p.test.LocationControllerTest        : Started LocationControllerTest in 1.711 seconds (JVM running for 3.198)
+2022-12-01 12:59:43.869  INFO 661088 --- [main] c.m.p.test.LocationControllerTest        : Starting LocationControllerTest using Java 11.0.17 on U-Sujan with PID 661088 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-01 12:59:43.871  INFO 661088 --- [main] c.m.p.test.LocationControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 12:59:44.884  INFO 661088 --- [main] c.m.p.test.LocationControllerTest        : Started LocationControllerTest in 1.733 seconds (JVM running for 3.232)
+2022-12-01 12:59:55.985  INFO 661174 --- [main] c.m.p.test.LocationControllerTest        : Starting LocationControllerTest using Java 11.0.17 on U-Sujan with PID 661174 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-01 12:59:55.988  INFO 661174 --- [main] c.m.p.test.LocationControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 12:59:56.944  INFO 661174 --- [main] c.m.p.test.LocationControllerTest        : Started LocationControllerTest in 1.722 seconds (JVM running for 3.271)
+2022-12-01 13:00:35.710  INFO 661302 --- [main] c.m.p.test.LocationControllerTest        : Starting LocationControllerTest using Java 11.0.17 on U-Sujan with PID 661302 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-01 13:00:35.713  INFO 661302 --- [main] c.m.p.test.LocationControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 13:00:36.547  INFO 661302 --- [main] c.m.p.test.LocationControllerTest        : Started LocationControllerTest in 1.511 seconds (JVM running for 2.915)
+2022-12-01 13:01:08.744  INFO 661373 --- [main] c.m.p.test.LocationControllerTest        : Starting LocationControllerTest using Java 11.0.17 on U-Sujan with PID 661373 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-01 13:01:08.746  INFO 661373 --- [main] c.m.p.test.LocationControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 13:01:09.635  INFO 661373 --- [main] c.m.p.test.LocationControllerTest        : Started LocationControllerTest in 1.53 seconds (JVM running for 2.943)
+2022-12-01 13:01:18.648  INFO 661453 --- [main] c.m.p.test.LocationControllerTest        : Starting LocationControllerTest using Java 11.0.17 on U-Sujan with PID 661453 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-01 13:01:18.651  INFO 661453 --- [main] c.m.p.test.LocationControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2022-12-01 13:01:19.574  INFO 661453 --- [main] c.m.p.test.LocationControllerTest        : Started LocationControllerTest in 1.583 seconds (JVM running for 3.092)
