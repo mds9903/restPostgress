@@ -3,12 +3,15 @@ package com.mdsujan.restPostgres.response;
 
 import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.springframework.data.annotation.AccessType;
 
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SupplyResponse {
     Long supplyId;

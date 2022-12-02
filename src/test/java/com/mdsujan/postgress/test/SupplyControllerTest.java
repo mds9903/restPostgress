@@ -2,8 +2,15 @@ package com.mdsujan.postgress.test;
 
 
 import com.mdsujan.restPostgres.controller.ItemController;
+import com.mdsujan.restPostgres.controller.SupplyController;
 import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.entity.Location;
+import com.mdsujan.restPostgres.entity.Supply;
+import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
+import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
+import com.mdsujan.restPostgres.response.SupplyResponse;
 import com.mdsujan.restPostgres.service.ItemService;
+import com.mdsujan.restPostgres.service.SupplyService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -17,137 +24,114 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = ItemController.class)
+@SpringBootTest(classes = SupplyController.class)
 public class SupplyControllerTest {
 
     @Autowired
-    private ItemController itemController;
+    private SupplyController supplyController;
 
     @MockBean
-    private ItemService mockItemService;
+    private SupplyService mockSupplyService;
 
-    // a single item for testing
-    private final Item mockItem = new Item(
+//    // a single item (dependency) for testing supply
+//    private final Item mockItem = );
+
+//    // a single location (dependency) for testing supply
+//    private final Location mockLocation = ;
+
+    // a single supplyResponse for testing
+    private final Supply mockSupply = new Supply(
             1L,
-            "testDesc",
-            "testCategory",
-            "testType",
-            "testStatus",
-            99.99,
-            false,
-            false,
-            false);
+            AllowedSupplyTypes.ONHAND,
+            10L,
+            new Item(
+                    1L,
+                    "testDesc",
+                    "testCategory",
+                    "testType",
+                    "testStatus",
+                    11.99,
+                    false,
+                    false,
+                    false),
+            new Location(
+                    1L,
+                    "testLocationDesc",
+                    "testType",
+                    true,
+                    true,
+                    true,
+                    "testCity",
+                    "testState",
+                    "testCountry",
+                    "testPincode"));
 
-    private final Item mockItemUpdatePut = new Item(
-            1L,
-            "testDescPut",
-            "testCategoryPut",
-            "testTypePut",
-            "testStatusPut",
-            199.99,
-            true,
-            true,
-            true);
-
-    private final Item mockItemUpdatePatch = new Item(
-            1L,
-            "testDescPatch",
-            "testCategoryPatch",
-            null,
-            null,
-            null,
-            null,
-            null,
-            true);
-
-    // a list of items for testing
-    private final List<Item> mockItemList = List.of(mockItem ,new Item(
+    private final Supply mockSupply2 = new Supply(
             2L,
-            "testDesc",
-            "testCategory",
-            "testType",
-            "testStatus",
-            99.99,
-            false,
-            false,
-            false));
+            AllowedSupplyTypes.ONHAND,
+            10L,
+            new Item(
+                    2L,
+                    "testDesc2",
+                    "testCategory2",
+                    "testType2",
+                    "testStatus2",
+                    22.99,
+                    false,
+                    false,
+                    false),
+            new Location(
+                    2L,
+                    "testLocationDesc2",
+                    "testType2",
+                    true,
+                    true,
+                    true,
+                    "testCity2",
+                    "testState2",
+                    "testCountry2",
+                    "testPincode2"));
+
+//    // a single supplyResponse for testing
+//    private final SupplyResponse mockSupplyResponse = new SupplyResponse(
+//            1L,
+//            AllowedSupplyTypes.ONHAND,
+//            10L,
+//            1L,
+//            1L);
+
+    private final List<Supply> mockSupplyList = List.of(mockSupply, mockSupply2);
+
+//    // a single supply for testing
+//    private final UpdateSupplyRequest mockUpdateSupplyRequestPut = new UpdateSupplyRequest(
+//            AllowedSupplyTypes.ONHAND,
+//            10L,
+//            1L,
+//            1L);
+
 
     @Test
-    public void testGetAllItems() {
+    public void testGetAllSupplies(){
         // stub
-        Mockito.when(mockItemService.getAllItems()).thenReturn(mockItemList);
+        Mockito.when(mockSupplyService.getAllSupplies()).thenReturn(mockSupplyList);
 
         // when
-        List<Item> itemResponse = itemController.getAllItems();
+        List<SupplyResponse> supplyResponse = supplyController.getAllSupplies();
 
         // then
-        assertThat(itemResponse.size()).isEqualTo(mockItemList.size());
+        assertThat(supplyResponse.size()).isEqualTo(mockSupplyList.size());
     }
 
     @Test
-    public void testGetItemById() throws Throwable {
+    public void testGetSupplyById() throws Throwable {
         // stub
-        Mockito.when(mockItemService.getItemById(1L)).thenReturn(mockItem);
+        Mockito.when(mockSupplyService.getSupplyById(mockSupply.getSupplyId())).thenReturn(mockSupply);
 
+        SupplyResponse mockSupplyResponse = new SupplyResponse(mockSupply);
         // when
-        Item itemResponse = itemController.getItem(1L);
+        SupplyResponse supplyResponse = supplyController.getSupplyById(mockSupply.getSupplyId());
 
         // then
-        assertThat(itemResponse).isEqualTo(mockItem);
+        assertThat(supplyResponse).isEqualTo(mockSupplyResponse);
     }
-
-    @Test
-    public void testCreateItem() throws Throwable {
-        // stub
-        Mockito.when(mockItemService.createItem(mockItem)).thenReturn(mockItem);
-
-        // when
-        Item itemResponse = itemController.createItem(mockItem);
-
-        // then
-        assertThat(itemResponse).isEqualTo(mockItem);
-    }
-
-    // deleteItem
-    @Test
-    public void testDeleteItem() throws Throwable {
-        // stub
-        Mockito.when(mockItemService.deleteItemById(mockItem.getItemId()))
-                .thenReturn("Item with itemId=" + mockItem.getItemId() + " successfully deleted.");
-
-        // when
-        String deleteItemResponse = itemController.deleteItem(mockItem.getItemId());
-
-        // then
-        assertThat(deleteItemResponse).isEqualTo("Item with itemId=" + mockItem.getItemId() + " successfully deleted.");
-    }
-
-    // updateItem put
-    @Test
-    public void testUpdateItemPut() throws Throwable {
-        // stub
-        Mockito.when(mockItemService.updateItemByIdPut(mockItem.getItemId(), mockItemUpdatePut))
-                .thenReturn(mockItemUpdatePut);
-
-        // when
-        Item itemResponse = itemController.updateItemPut(mockItem.getItemId(), mockItemUpdatePut);
-
-        // then
-        assertThat(itemResponse).isEqualTo(mockItemUpdatePut);
-    }
-
-    // updateItem patch
-    @Test
-    public void testUpdateItemPatch() throws Throwable {
-        // stub
-        Mockito.when(mockItemService.updateItemByIdPatch(mockItem.getItemId(), mockItemUpdatePatch))
-                .thenReturn(mockItemUpdatePatch);
-
-        // when
-        Item itemResponse = itemController.updateItemPatch(mockItem.getItemId(), mockItemUpdatePatch);
-
-        // then
-        assertThat(itemResponse).isEqualTo(mockItemUpdatePatch);
-    }
-
 }

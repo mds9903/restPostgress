@@ -141,7 +141,7 @@ public class LocationControllerTest {
 
     // updateLocation put
     @Test
-    public void mockLocationUpdatePatch() throws Throwable {
+    public void testUpdateLocationPatch() throws Throwable {
         // stub
         Mockito.when(mockLocationService.updateLocationPatch(mockLocationUpdatePatch.getLocationId(), mockLocationUpdatePatch)).thenReturn(mockLocationUpdatePatch);
 
