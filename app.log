@@ -49,3 +49,6 @@
 2022-12-02 11:26:47.789  INFO 679673 --- [main] c.m.postgress.test.SupplyControllerTest  : Starting SupplyControllerTest using Java 11.0.17 on U-Sujan with PID 679673 (started by sujan in /home/sujan/Documents/restPostgres)
 2022-12-02 11:26:47.793  INFO 679673 --- [main] c.m.postgress.test.SupplyControllerTest  : No active profile set, falling back to 1 default profile: "default"
 2022-12-02 11:26:48.761  INFO 679673 --- [main] c.m.postgress.test.SupplyControllerTest  : Started SupplyControllerTest in 1.634 seconds (JVM running for 2.971)
+2022-12-02 11:29:14.213  INFO 679825 --- [main] c.m.postgress.test.SupplyControllerTest  : Starting SupplyControllerTest using Java 11.0.17 on U-Sujan with PID 679825 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-02 11:29:14.217  INFO 679825 --- [main] c.m.postgress.test.SupplyControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-02 11:29:15.204  INFO 679825 --- [main] c.m.postgress.test.SupplyControllerTest  : Started SupplyControllerTest in 1.63 seconds (JVM running for 2.842)

@@ -132,6 +132,12 @@ public class SupplyControllerTest {
         SupplyResponse supplyResponse = supplyController.getSupplyById(mockSupply.getSupplyId());
 
         // then
-        assertThat(supplyResponse).isEqualTo(mockSupplyResponse);
+//        assertThat(supplyResponse).isEqualTo(mockSupplyResponse);
+
+        assertThat(supplyResponse.getSupplyId()).isEqualTo(mockSupplyResponse.getSupplyId());
+        assertThat(supplyResponse.getType()).isEqualTo(mockSupplyResponse.getType());
+        assertThat(supplyResponse.getSupplyQty()).isEqualTo(mockSupplyResponse.getSupplyQty());
+        assertThat(supplyResponse.getItemId()).isEqualTo(mockSupplyResponse.getItemId());
+        assertThat(supplyResponse.getLocationId()).isEqualTo(mockSupplyResponse.getLocationId());
     }
 }
