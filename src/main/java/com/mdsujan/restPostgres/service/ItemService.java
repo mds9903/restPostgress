@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ItemService {
@@ -78,13 +79,12 @@ public class ItemService {
             itemToUpdate.setDeliveryAllowed(updateItemRequest.getDeliveryAllowed());
             // save the new entity
             itemToUpdate = itemRepository.save(itemToUpdate);
-            return itemToUpdate;
+            return updateItemRequest;
 //            }
         } else {
             throw new ResourceNotFoundException("cannot update this item; item not found; please a correct itemId");
         }
     }
-
 
     public Item updateItemByIdPatch(Long itemId, Item updateItemRequest) throws Throwable {
         // "API must honor the itemId value passed in the input"
