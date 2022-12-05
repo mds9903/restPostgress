@@ -119,17 +119,4 @@ public class ItemServiceTest {
 
         assertThat(deleteResponse).isEqualTo("Item with itemId=" + mockItem.getItemId() + " successfully deleted.");
     }
-
-
-//    @Test
-//    public void whenInvalidItemId_getItemByIdTest() throws Throwable{
-//        // stub
-//        Mockito.when(mockItemRepository.findById("abc123")).thenReturn(Optional.of(mockItem));
-//
-//        // when
-//        Item itemResponse = itemService.getItemById(1L);
-//
-//        // test
-//        assertThat(itemResponse).isEqualTo(mockItem);
-//    }
 }

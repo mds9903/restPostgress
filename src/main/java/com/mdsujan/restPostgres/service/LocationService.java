@@ -83,9 +83,9 @@ public class LocationService {
             // update the locationToUpdate
             locationToUpdate.setLocationDesc(updateLocationRequest.getLocationDesc());
             locationToUpdate.setType(updateLocationRequest.getType());
-            locationToUpdate.setPickupAllowed(updateLocationRequest.isPickupAllowed());
-            locationToUpdate.setShippingAllowed(updateLocationRequest.isShippingAllowed());
-            locationToUpdate.setDeliveryAllowed(updateLocationRequest.isDeliveryAllowed());
+            locationToUpdate.setPickupAllowed(updateLocationRequest.getPickupAllowed());
+            locationToUpdate.setShippingAllowed(updateLocationRequest.getShippingAllowed());
+            locationToUpdate.setDeliveryAllowed(updateLocationRequest.getDeliveryAllowed());
             locationToUpdate.setAddrLine1(updateLocationRequest.getAddrLine1());
             locationToUpdate.setAddrLine2(updateLocationRequest.getAddrLine2());
             locationToUpdate.setAddrLine3(updateLocationRequest.getAddrLine3());
@@ -97,7 +97,7 @@ public class LocationService {
             // save the new entity
             locationToUpdate = locationRepository.save(locationToUpdate);
             // return the updated location as response
-            return locationToUpdate;
+            return updateLocationRequest;
         } else {
             throw new ResourceNotFoundException("cannot update this location; location not found; please enter a correct locationId");
         }
@@ -120,9 +120,9 @@ public class LocationService {
             if (updateLocationRequest.getType() != null && !updateLocationRequest.getType().isEmpty()) {
                 locationToUpdate.setType(updateLocationRequest.getType());
             }
-            locationToUpdate.setPickupAllowed(updateLocationRequest.isPickupAllowed());
-            locationToUpdate.setShippingAllowed(updateLocationRequest.isShippingAllowed());
-            locationToUpdate.setDeliveryAllowed(updateLocationRequest.isDeliveryAllowed());
+            locationToUpdate.setPickupAllowed(updateLocationRequest.getPickupAllowed());
+            locationToUpdate.setShippingAllowed(updateLocationRequest.getShippingAllowed());
+            locationToUpdate.setDeliveryAllowed(updateLocationRequest.getDeliveryAllowed());
             if (updateLocationRequest.getAddrLine1() != null && !updateLocationRequest.getAddrLine1().isEmpty()) {
                 locationToUpdate.setAddrLine1(updateLocationRequest.getAddrLine1());
             }
@@ -143,7 +143,9 @@ public class LocationService {
             }
 
             // save the new entity
-            return locationRepository.save(locationToUpdate);
+            locationToUpdate = locationRepository.save(locationToUpdate);
+            // return the updated location as response
+            return updateLocationRequest;
         } else {
             throw new ResourceNotFoundException("cannot update this location; location not found; please enter a correct locationId");
         }

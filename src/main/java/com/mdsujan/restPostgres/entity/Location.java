@@ -15,6 +15,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "location", schema = "public")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
+@AllArgsConstructor
 public class Location {
     @Id
     @Column(name = "location_id")
@@ -31,15 +32,15 @@ public class Location {
 
     @Column(name = "pickup_allowed")
     @NotNull
-    boolean pickupAllowed;
+    Boolean pickupAllowed;
 
     @Column(name = "shipping_allowed")
     @NotNull
-    boolean shippingAllowed;
+    Boolean shippingAllowed;
 
     @Column(name = "delivery_allowed")
     @NotNull
-    boolean deliveryAllowed;
+    Boolean deliveryAllowed;
 
     @Column(name = "address_line_1")
     @NotNull

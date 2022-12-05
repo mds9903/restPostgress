@@ -34,3 +34,35 @@
 2022-12-05 12:34:32.997  INFO 168926 --- [main] c.m.postgress.test.ItemServiceTest       : Starting ItemServiceTest using Java 11.0.17 on U-Sujan with PID 168926 (started by sujan in /home/sujan/Documents/restPostgres)
 2022-12-05 12:34:32.999  INFO 168926 --- [main] c.m.postgress.test.ItemServiceTest       : No active profile set, falling back to 1 default profile: "default"
 2022-12-05 12:34:34.246  INFO 168926 --- [main] c.m.postgress.test.ItemServiceTest       : Started ItemServiceTest in 1.988 seconds (JVM running for 3.373)
+2022-12-05 12:37:35.947  INFO 169564 --- [main] c.m.postgress.test.LocationServiceTest   : Starting LocationServiceTest using Java 11.0.17 on U-Sujan with PID 169564 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-05 12:37:35.951  INFO 169564 --- [main] c.m.postgress.test.LocationServiceTest   : No active profile set, falling back to 1 default profile: "default"
+2022-12-05 12:37:38.750  INFO 169564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-05 12:37:39.136  INFO 169564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 337 ms. Found 5 JPA repository interfaces.
+2022-12-05 12:37:43.614  INFO 169564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-05 12:37:44.056  INFO 169564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-05 12:37:44.262  INFO 169564 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-05 12:37:44.429  INFO 169564 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-05 12:37:44.560  INFO 169564 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-05 12:37:44.990  INFO 169564 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-05 12:37:46.525  INFO 169564 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-05 12:37:46.548  INFO 169564 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-05 12:37:49.166  WARN 169564 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-05 12:37:51.434  INFO 169564 --- [main] c.m.postgress.test.LocationServiceTest   : Started LocationServiceTest in 16.802 seconds (JVM running for 19.148)
+2022-12-05 12:37:51.446  INFO 169564 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-05 12:37:51.458  INFO 169564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-05 12:37:51.546  INFO 169564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-05 13:05:25.571  INFO 171135 --- [main] c.m.postgress.test.LocationServiceTest   : Starting LocationServiceTest using Java 11.0.17 on U-Sujan with PID 171135 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-05 13:05:25.575  INFO 171135 --- [main] c.m.postgress.test.LocationServiceTest   : No active profile set, falling back to 1 default profile: "default"
+2022-12-05 13:05:27.030  INFO 171135 --- [main] c.m.postgress.test.LocationServiceTest   : Started LocationServiceTest in 2.186 seconds (JVM running for 3.571)
+2022-12-05 13:06:07.005  INFO 171222 --- [main] c.m.postgress.test.LocationServiceTest   : Starting LocationServiceTest using Java 11.0.17 on U-Sujan with PID 171222 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-05 13:06:07.009  INFO 171222 --- [main] c.m.postgress.test.LocationServiceTest   : No active profile set, falling back to 1 default profile: "default"
+2022-12-05 13:06:08.243  INFO 171222 --- [main] c.m.postgress.test.LocationServiceTest   : Started LocationServiceTest in 1.984 seconds (JVM running for 3.416)
+2022-12-05 13:06:45.198  INFO 171287 --- [main] c.m.postgress.test.LocationServiceTest   : Starting LocationServiceTest using Java 11.0.17 on U-Sujan with PID 171287 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-05 13:06:45.202  INFO 171287 --- [main] c.m.postgress.test.LocationServiceTest   : No active profile set, falling back to 1 default profile: "default"
+2022-12-05 13:06:46.568  INFO 171287 --- [main] c.m.postgress.test.LocationServiceTest   : Started LocationServiceTest in 2.09 seconds (JVM running for 3.561)
+2022-12-05 13:06:51.919  INFO 171356 --- [main] c.m.postgress.test.LocationServiceTest   : Starting LocationServiceTest using Java 11.0.17 on U-Sujan with PID 171356 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-05 13:06:51.922  INFO 171356 --- [main] c.m.postgress.test.LocationServiceTest   : No active profile set, falling back to 1 default profile: "default"
+2022-12-05 13:06:53.141  INFO 171356 --- [main] c.m.postgress.test.LocationServiceTest   : Started LocationServiceTest in 1.937 seconds (JVM running for 3.342)
+2022-12-05 13:07:00.028  INFO 171431 --- [main] c.m.postgress.test.LocationServiceTest   : Starting LocationServiceTest using Java 11.0.17 on U-Sujan with PID 171431 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-05 13:07:00.031  INFO 171431 --- [main] c.m.postgress.test.LocationServiceTest   : No active profile set, falling back to 1 default profile: "default"
+2022-12-05 13:07:01.302  INFO 171431 --- [main] c.m.postgress.test.LocationServiceTest   : Started LocationServiceTest in 2.013 seconds (JVM running for 3.438)
