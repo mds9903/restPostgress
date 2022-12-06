@@ -30,11 +30,11 @@ public class SupplyService {
     @Autowired
     LocationRepository locationRepository;
 
-    EntityManager entityManager;
-
-    public SupplyService(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
+//    EntityManager entityManager;
+//
+//    public SupplyService(EntityManager entityManager) {
+//        this.entityManager = entityManager;
+//    }
 
     public List<Supply> getAllSupplies() {
         return supplyRepository.findAll();
@@ -118,6 +118,7 @@ public class SupplyService {
             Supply supplyToUpdate = supplyRepository.findById(supplyId).get();
             supplyToUpdate.setSupplyQty(updateSupplyRequest.getSupplyQty());
             // save the new supply to the db
+//            return supplyRepository.save(supplyToUpdate);
             supplyToUpdate = supplyRepository.save(supplyToUpdate);
             return supplyToUpdate;
         } else {

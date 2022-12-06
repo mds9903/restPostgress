@@ -13,7 +13,9 @@ import java.util.Objects;
 @Table(name = "demand",schema = "public")
 @Getter
 @Setter
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Demand {
     @Id

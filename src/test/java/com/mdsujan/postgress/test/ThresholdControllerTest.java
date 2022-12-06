@@ -1,15 +1,12 @@
 package com.mdsujan.postgress.test;
 
 
-import com.mdsujan.restPostgres.controller.ItemController;
 import com.mdsujan.restPostgres.controller.SupplyController;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
-import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
 import com.mdsujan.restPostgres.response.SupplyResponse;
-import com.mdsujan.restPostgres.service.ItemService;
 import com.mdsujan.restPostgres.service.SupplyService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +22,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SupplyController.class)
-public class SupplyControllerTest {
+public class ThresholdControllerTest {
 
     @Autowired
     private SupplyController supplyController;

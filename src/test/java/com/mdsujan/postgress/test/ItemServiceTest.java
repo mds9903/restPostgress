@@ -90,7 +90,7 @@ public class ItemServiceTest {
     public void updateItemPutTest() throws Throwable {
         Mockito.when(mockItemRepository.findById(mockItemUpdatePut.getItemId())).thenReturn(Optional.of(mockItem));
 
-        Mockito.when(mockItemRepository.save(mockItemUpdatePut)).thenReturn(mockItemUpdatePut);
+//        Mockito.when(mockItemRepository.save(mockItemUpdatePut)).thenReturn(mockItemUpdatePut);
 
         Item itemResponse = itemService.updateItemByIdPut(mockItemUpdatePut.getItemId(), mockItemUpdatePut);
 

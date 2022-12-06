@@ -39,7 +39,8 @@ public class AvailabilityV1Controller {
          * */
         // get the onhand qty for the supply of given item and location
         List<Supply> supplyList = supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
-        if(supplyList == null){
+        List<Demand> demandList = demandRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
+        if(supplyList == null || demandList == null){
             throw new ResourceNotFoundException("no supplies for this itemId and locationId; please enter correct itemId and locationId");
         }
 
@@ -49,7 +50,6 @@ public class AvailabilityV1Controller {
                 .map(Supply::getSupplyId)
                 .reduce(0L, Long::sum);
         // get the hardPromised qty for the demand of the given item and location
-        List<Demand> demandList = demandRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
         Long hardPromisedQty = demandList
                 .stream()
                 .filter(demand -> demand.getDemandType() == AllowedDemandTypes.HARD_PROMISED)
@@ -74,8 +74,9 @@ public class AvailabilityV1Controller {
          * Note: consider only ONHAND supply and HARD_PROMISED demand
          * */
         List<Supply> supplyList = supplyRepository.findByItemItemId(itemId);
-        if(supplyList == null){
-            throw new ResourceNotFoundException("no supplies for this itemId and locationId; please enter correct itemId and locationId");
+        List<Demand> demandList = demandRepository.findByItemItemId(itemId);
+        if(supplyList == null || demandList == null){
+            throw new ResourceNotFoundException("no supplies and/or demands for this itemId and locationId; please enter correct itemId and locationId");
         }
         // get the onhand qty for the supply of given item on all locations
         Long onhandQty = supplyList
@@ -84,7 +85,7 @@ public class AvailabilityV1Controller {
                 .map(Supply::getSupplyId)
                 .reduce(0L, Long::sum);
         // get the hardPromised qty for the demand of the given item on all locations
-        Long hardPromisedQty = demandRepository.findByItemItemId(itemId)
+        Long hardPromisedQty = demandList
                 .stream()
                 .filter(demand -> demand.getDemandType() == AllowedDemandTypes.HARD_PROMISED)
                 .map(Demand::getDemandQty)
