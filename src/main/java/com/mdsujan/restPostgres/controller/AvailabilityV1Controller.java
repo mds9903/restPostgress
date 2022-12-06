@@ -26,7 +26,7 @@ public class AvailabilityV1Controller {
     DemandRepository demandRepository;
 
     @GetMapping("/{itemId}/{locationId}") // get availability qty of item at a given location
-    public AvailabilityV1Response getAvailabilityQty(@PathVariable Long itemId, @PathVariable Long locationId) throws Throwable {
+    public AvailabilityV1Response getAvailabilityQtyByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) throws Throwable {
         /*sample response
          * {
          *   "itemId":123,
@@ -43,7 +43,6 @@ public class AvailabilityV1Controller {
         if(supplyList == null || demandList == null){
             throw new ResourceNotFoundException("no supplies for this itemId and locationId; please enter correct itemId and locationId");
         }
-
         Long onhandQty = supplyList
                 .stream()
                 .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)

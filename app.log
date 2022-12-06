@@ -517,3 +517,30 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 2022-12-06 15:18:44.987  INFO 200621 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Starting AvailabilityV1ControllerTest using Java 11.0.17 on U-Sujan with PID 200621 (started by sujan in /home/sujan/Documents/restPostgres)
 2022-12-06 15:18:44.989  INFO 200621 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : No active profile set, falling back to 1 default profile: "default"
 2022-12-06 15:18:46.210  INFO 200621 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Started AvailabilityV1ControllerTest in 1.958 seconds (JVM running for 3.38)
+2022-12-06 15:30:22.551  INFO 209823 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Starting AvailabilityV1ControllerTest using Java 11.0.17 on U-Sujan with PID 209823 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-06 15:30:22.555  INFO 209823 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-06 15:30:23.898  INFO 209823 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Started AvailabilityV1ControllerTest in 2.202 seconds (JVM running for 4.05)
+2022-12-06 15:35:09.055  INFO 211691 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Starting AvailabilityV1ControllerTest using Java 11.0.17 on U-Sujan with PID 211691 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-06 15:35:09.059  INFO 211691 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-06 15:35:10.358  INFO 211691 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Started AvailabilityV1ControllerTest in 1.987 seconds (JVM running for 4.143)
+2022-12-06 15:35:32.914  INFO 211853 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Starting AvailabilityV1ControllerTest using Java 11.0.17 on U-Sujan with PID 211853 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-06 15:35:32.917  INFO 211853 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-06 15:35:34.269  INFO 211853 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Started AvailabilityV1ControllerTest in 2.176 seconds (JVM running for 3.927)
+2022-12-06 15:36:19.771  INFO 212039 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Starting AvailabilityV1ControllerTest using Java 11.0.17 on U-Sujan with PID 212039 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-06 15:36:19.774  INFO 212039 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-06 15:36:21.035  INFO 212039 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Started AvailabilityV1ControllerTest in 2.075 seconds (JVM running for 3.759)
+2022-12-06 15:37:34.016  INFO 212273 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Starting AvailabilityV1ControllerTest using Java 11.0.17 on U-Sujan with PID 212273 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-06 15:37:34.020  INFO 212273 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-06 15:37:35.253  INFO 212273 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Started AvailabilityV1ControllerTest in 1.995 seconds (JVM running for 3.549)
+2022-12-06 15:58:48.585  INFO 213943 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Starting AvailabilityV1ControllerTest using Java 11.0.17 on U-Sujan with PID 213943 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-06 15:58:48.588  INFO 213943 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-06 15:58:49.720  INFO 213943 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Started AvailabilityV1ControllerTest in 1.896 seconds (JVM running for 3.36)
+2022-12-06 16:29:18.684  INFO 214480 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Starting AvailabilityV1ControllerTest using Java 11.0.17 on U-Sujan with PID 214480 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-06 16:29:18.687  INFO 214480 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-06 16:29:19.775  INFO 214480 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Started AvailabilityV1ControllerTest in 1.805 seconds (JVM running for 3.244)
+2022-12-06 16:29:51.164  INFO 214553 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Starting AvailabilityV1ControllerTest using Java 11.0.17 on U-Sujan with PID 214553 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-06 16:29:51.167  INFO 214553 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-06 16:29:52.273  INFO 214553 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Started AvailabilityV1ControllerTest in 1.813 seconds (JVM running for 3.162)
+2022-12-06 16:29:58.214  INFO 214624 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Starting AvailabilityV1ControllerTest using Java 11.0.17 on U-Sujan with PID 214624 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-06 16:29:58.217  INFO 214624 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-06 16:29:59.336  INFO 214624 --- [main] c.m.p.test.AvailabilityV1ControllerTest  : Started AvailabilityV1ControllerTest in 1.908 seconds (JVM running for 3.183)
