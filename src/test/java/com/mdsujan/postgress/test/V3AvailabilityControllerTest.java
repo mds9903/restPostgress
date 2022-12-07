@@ -16,6 +16,7 @@ import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -43,17 +44,14 @@ public class V3AvailabilityControllerTest {
     DemandRepository mockDemandRepository;
 
     final Item mockItem1 = new Item(1L, "testDesc", "testCategory", "testType", "testStatus", 99.99, false, false, false);
-    final Item mockItem2 = new Item(2L, "testDesc", "testCategory", "testType", "testStatus", 99.99, false, false, false);
     final Location mockLocation1 = new Location(1L, "testLocationDesc", "testType", true, true, true, "testCity", "testState", "testCountry", "testPincode");
     final Location mockLocation2 = new Location(2L, "testLocationDesc", "testType", true, true, true, "testCity", "testState", "testCountry", "testPincode");
     final Demand mockDemand11 = new Demand(1L, AllowedDemandTypes.HARD_PROMISED, 1L, mockItem1, mockLocation1);
     final Demand mockDemand12 = new Demand(2L, AllowedDemandTypes.PLANNED, 1L, mockItem1, mockLocation2);
     final List<Demand> mockDemandList11 = List.of(mockDemand11);
-    final List<Demand> mockDemandList12 = List.of(mockDemand12);
     final Supply mockSupply11 = new Supply(1L, AllowedSupplyTypes.ONHAND, 1L, mockItem1, mockLocation1);
     final Supply mockSupply12 = new Supply(2L, AllowedSupplyTypes.INTRANSIT, 1L, mockItem1, mockLocation2);
     final List<Supply> mockSupplyList11 = List.of(mockSupply11);
-    final List<Supply> mockSupplyList12 = List.of(mockSupply12);
     final Threshold mockThreshold11 =  new Threshold(
             1L,
             mockItem1,
@@ -66,6 +64,11 @@ public class V3AvailabilityControllerTest {
             2L,
             "Green");
 
+    @Autowired
+    private String supplyTypes = "INTRANSIT";
+    @Autowired
+    private String demandTypes = "PLANNED";
+//    private String locationsExclude;
 
 
     @Test
@@ -85,6 +88,7 @@ public class V3AvailabilityControllerTest {
                 .when(mockThresholdRepository
                         .findByItemItemIdAndLocationLocationId(1L, 1L))
                 .thenReturn(mockThreshold11);
+
 
         // when
         AvailabilityV3Response actualResponse = availabilityV3Controller.getAvailabilityStockLevel(
