@@ -204,19 +204,20 @@ public class SupplyServiceTest {
         assertThat(supplyResponse).isEqualTo(mockSupplyUpdatePut11);
     }
 
-//    @Test
-//    public void updateSupplyPatchTest() throws Throwable {
-//        Mockito.when(mockSupplyRepository.findById(mockSupplyUpdatePatch.getSupplyId()))
-//                .thenReturn(Optional.of(mockSupplyUpdatePatch));
-//
-//        Mockito.when(mockSupplyRepository.save(mockSupplyUpdatePatch)).thenReturn(mockSupplyUpdatePatch);
-//
-//        Supply supplyResponse = mockSupplyService
-//                .updateSupplyPut(mockSupplyUpdatePatch.getSupplyId(),
-//                        mockUpdateSupplyRequest);
-//
-//        assertThat(supplyResponse.getSupplyId()).isEqualTo(mockSupplyUpdatePut.getSupplyId());
-//    }
+    @Test
+    public void updateSupplyPatchTest() throws Throwable {
+        Mockito.when(mockSupplyRepository.findById(mockSupplyUpdatePatch11.getSupplyId()))
+                .thenReturn(Optional.of(mockSupplyUpdatePatch11));
+
+        Mockito.when(mockSupplyRepository.save(any())).thenReturn(mockSupplyUpdatePatch11);
+
+        Supply supplyResponse = mockSupplyService
+                .updateSupplyPatch(mockSupplyUpdatePatch11.getSupplyId(),
+                        mockUpdateSupplyRequest11Patch);
+
+//        assertThat(supplyResponse.getSupplyId()).isEqualTo(mockSupplyUpdatePatch11.getSupplyId());
+        assertThat(supplyResponse).isEqualTo(mockSupplyUpdatePatch11);
+    }
 
     @Test
     public void deleteSupplyTest() throws Throwable {
