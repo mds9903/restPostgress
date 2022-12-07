@@ -19,6 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 import java.util.Optional;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 
 
 @RunWith(SpringRunner.class)
@@ -188,19 +189,20 @@ public class SupplyServiceTest {
         assertThat(supplyResponse.getSupplyType()).isEqualTo(mockSupply11.getSupplyType());
     }
 
-//    @Test
-//    public void updateSupplyPutTest() throws Throwable {
-//        Mockito.when(mockSupplyRepository.findById(mockSupplyUpdatePut.getSupplyId()))
-//                .thenReturn(Optional.of(mockSupplyUpdatePut));
-//
-//        Mockito.when(mockSupplyRepository.save(mockSupplyUpdatePut)).thenReturn(mockSupplyUpdatePut);
-//
-//        Supply supplyResponse = mockSupplyService
-//                .updateSupplyPut(mockSupplyUpdatePut.getSupplyId(),
-//                        mockUpdateSupplyRequest);
-//
-//        assertThat(supplyResponse.getSupplyId()).isEqualTo(mockSupplyUpdatePut.getSupplyId());
-//    }
+    @Test
+    public void updateSupplyPutTest() throws Throwable {
+        Mockito.when(mockSupplyRepository.findById(mockSupplyUpdatePut11.getSupplyId()))
+                .thenReturn(Optional.of(mockSupplyUpdatePut11));
+
+        Mockito.when(mockSupplyRepository.save(any())).thenReturn(mockSupplyUpdatePut11);
+
+        Supply supplyResponse = mockSupplyService
+                .updateSupplyPut(mockSupplyUpdatePut11.getSupplyId(),
+                        mockUpdateSupplyRequest11Put);
+
+//        assertThat(supplyResponse.getSupplyId()).isEqualTo(mockSupplyUpdatePut11.getSupplyId());
+        assertThat(supplyResponse).isEqualTo(mockSupplyUpdatePut11);
+    }
 
 //    @Test
 //    public void updateSupplyPatchTest() throws Throwable {
