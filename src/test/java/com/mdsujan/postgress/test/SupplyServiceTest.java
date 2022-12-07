@@ -179,7 +179,7 @@ public class SupplyServiceTest {
                 .thenReturn(mockSupply11);
 
         // test
-        Supply supplyResponse = mockSupplyService.createNewSupply(mockCreateSupplyRequest11);
+        Supply supplyResponse = mockSupplyService.createNewSupply(mockCreateSupplyRequest11, mockSupply11);
         System.out.println("Supply Response: "+supplyResponse);
         // assert
         assertThat(supplyResponse.getItem().getItemId()).isEqualTo(mockSupply11.getItem().getItemId());

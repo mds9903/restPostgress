@@ -15,7 +15,6 @@ import com.mdsujan.restPostgres.response.SupplyDetailsResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 
 @Service
@@ -88,13 +87,12 @@ public class SupplyService {
 //        return supplyRepository.findBySupplyTypeAndLocationLocationId(supplyType, locationId);
 //    }
 
-    public Supply createNewSupply(CreateSupplyRequest createSupplyRequest) throws Throwable {
+    public Supply createNewSupply(CreateSupplyRequest createSupplyRequest, Supply supply) throws Throwable {
         // create a supply for an item on a location (given in the request body)
         // if the itemId and the locationId are present in the items and locations table
         if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
                 && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
             // create the supply
-            Supply supply = new Supply(createSupplyRequest);
             // get the item for this supply
             Item item = itemRepository.findById(createSupplyRequest.getItemId()).get();
             // get the location for this supply
