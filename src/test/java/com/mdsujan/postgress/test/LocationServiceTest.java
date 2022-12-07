@@ -32,13 +32,13 @@ public class LocationServiceTest {
     @Autowired
     private LocationService locationService;
 
-    @MockBean
+    @Mock
     private LocationRepository mockLocationRepository;
 
-    @MockBean
+    @Mock
     private SupplyRepository mockSupplyRepository;
 
-    @MockBean
+    @Mock
     private DemandRepository mockDemandRepository;
 
     private final Location mockLocation = new Location(
