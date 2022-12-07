@@ -9,7 +9,6 @@ import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import com.mdsujan.restPostgres.request.UpdateDemandRequest;
 import com.mdsujan.restPostgres.service.DemandService;
-import com.mdsujan.restPostgres.service.DemandService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -17,11 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.util.List;
 import java.util.Optional;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 
 
 @RunWith(SpringRunner.class)
@@ -111,7 +109,7 @@ public class DemandServiceTest {
     );
     private final Demand mockDemandUpdatePut11 = new Demand(
             mockDemand11.getDemandId(),
-            AllowedDemandTypes.HARD_PROMISED,
+            AllowedDemandTypes.PLANNED,
             1L,
             mockItem1,
             mockLocation1);
@@ -123,16 +121,16 @@ public class DemandServiceTest {
             mockLocation1);
 
     private final UpdateDemandRequest mockUpdateDemandRequest11Put = new UpdateDemandRequest(
+            AllowedDemandTypes.HARD_PROMISED,
+            10L,
             1L,
-            1L,
-            1L,
-            AllowedDemandTypes.HARD_PROMISED);
+            1L);
 
     private final UpdateDemandRequest mockUpdateDemandRequest11Patch = new UpdateDemandRequest(
+            AllowedDemandTypes.HARD_PROMISED,
+            10L,
             1L,
-            1L,
-            null,
-            AllowedDemandTypes.HARD_PROMISED);
+            1L);
 
     @Test
     public void getDemandByIdTest() throws Throwable {
@@ -142,24 +140,24 @@ public class DemandServiceTest {
                 .thenReturn(Optional.of(mockDemand11));
 
         // when
-        Demand supplyResponse = mockDemandService.getDemandById(1L);
+        Demand demandResponse = mockDemandService.getDemandById(1L);
 
         // test
-        assertThat(supplyResponse).isEqualTo(mockDemand11);
+        assertThat(demandResponse).isEqualTo(mockDemand11);
     }
 
     @Test
-    public void getAllSuppliesTest() throws Throwable {
+    public void getAllDemandsTest() throws Throwable {
         // stub
         Mockito
                 .when(mockDemandRepository.findAll())
                 .thenReturn(mockDemandListAll);
 
         // when
-        List<Demand> supplyResponseList = mockDemandService.getAll();
+        List<Demand> demandResponseList = mockDemandService.getAll();
 
         // test
-        assertThat(supplyResponseList).isEqualTo(mockDemandListAll);
+        assertThat(demandResponseList).isEqualTo(mockDemandListAll);
     }
 
     @Test
@@ -178,43 +176,49 @@ public class DemandServiceTest {
                 .thenReturn(Optional.of(mockItem1));
 
         Mockito
-                .when(mockDemandRepository.save(mockDemand11))
+                .when(mockDemandRepository.save(any()))
                 .thenReturn(mockDemand11);
 
         // test
-        Demand supplyResponse = mockDemandService.createNewDemand(mockCreateDemandRequest11);
-        System.out.println("Demand Response: " + supplyResponse);
+        Demand demandResponse = mockDemandService.createNewDemand(mockCreateDemandRequest11);
+        System.out.println("Demand Response: "+demandResponse);
         // assert
-        assertThat(supplyResponse).isEqualTo(mockDemand11);
+        assertThat(demandResponse).isEqualTo(mockDemand11);
+//        assertThat(demandResponse.getItem().getItemId()).isEqualTo(mockDemand11.getItem().getItemId());
+//        assertThat(demandResponse.getLocation().getLocationId()).isEqualTo(mockDemand11.getLocation().getLocationId());
+//        assertThat(demandResponse.getDemandQty()).isEqualTo(mockDemand11.getDemandQty());
+//        assertThat(demandResponse.getDemandType()).isEqualTo(mockDemand11.getDemandType());
     }
 
-//    @Test
-//    public void updateDemandPutTest() throws Throwable {
-//        Mockito.when(mockDemandRepository.findById(mockDemandUpdatePut.getDemandId()))
-//                .thenReturn(Optional.of(mockDemandUpdatePut));
-//
-//        Mockito.when(mockDemandRepository.save(mockDemandUpdatePut)).thenReturn(mockDemandUpdatePut);
-//
-//        Demand supplyResponse = mockDemandService
-//                .updateDemandPut(mockDemandUpdatePut.getDemandId(),
-//                        mockUpdateDemandRequest);
-//
-//        assertThat(supplyResponse.getDemandId()).isEqualTo(mockDemandUpdatePut.getDemandId());
-//    }
+    @Test
+    public void updateDemandPutTest() throws Throwable {
+        Mockito.when(mockDemandRepository.findById(mockDemandUpdatePut11.getDemandId()))
+                .thenReturn(Optional.of(mockDemandUpdatePut11));
 
-//    @Test
-//    public void updateDemandPatchTest() throws Throwable {
-//        Mockito.when(mockDemandRepository.findById(mockDemandUpdatePatch.getDemandId()))
-//                .thenReturn(Optional.of(mockDemandUpdatePatch));
-//
-//        Mockito.when(mockDemandRepository.save(mockDemandUpdatePatch)).thenReturn(mockDemandUpdatePatch);
-//
-//        Demand supplyResponse = mockDemandService
-//                .updateDemandPut(mockDemandUpdatePatch.getDemandId(),
-//                        mockUpdateDemandRequest);
-//
-//        assertThat(supplyResponse.getDemandId()).isEqualTo(mockDemandUpdatePut.getDemandId());
-//    }
+        Mockito.when(mockDemandRepository.save(any())).thenReturn(mockDemandUpdatePut11);
+
+        Demand demandResponse = mockDemandService
+                .updateDemandPut(mockDemandUpdatePut11.getDemandId(),
+                        mockUpdateDemandRequest11Put);
+
+//        assertThat(demandResponse.getDemandId()).isEqualTo(mockDemandUpdatePut11.getDemandId());
+        assertThat(demandResponse).isEqualTo(mockDemandUpdatePut11);
+    }
+
+    @Test
+    public void updateDemandPatchTest() throws Throwable {
+        Mockito.when(mockDemandRepository.findById(mockDemandUpdatePatch11.getDemandId()))
+                .thenReturn(Optional.of(mockDemandUpdatePatch11));
+
+        Mockito.when(mockDemandRepository.save(any())).thenReturn(mockDemandUpdatePatch11);
+
+        Demand demandResponse = mockDemandService
+                .updateDemandPatch(mockDemandUpdatePatch11.getDemandId(),
+                        mockUpdateDemandRequest11Patch);
+
+//        assertThat(demandResponse.getDemandId()).isEqualTo(mockDemandUpdatePatch11.getDemandId());
+        assertThat(demandResponse).isEqualTo(mockDemandUpdatePatch11);
+    }
 
     @Test
     public void deleteDemandTest() throws Throwable {
