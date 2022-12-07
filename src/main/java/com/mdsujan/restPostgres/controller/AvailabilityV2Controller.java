@@ -23,9 +23,6 @@ import java.util.List;
 @RequestMapping("/v2/availability")
 public class AvailabilityV2Controller {
     @Autowired
-    ItemRepository itemRepository;
-
-    @Autowired
     SupplyRepository supplyRepository;
 
     @Autowired

@@ -29,9 +29,6 @@ import java.util.Properties;
 @RequestMapping("/v3/availability")
 public class AvailabilityV3Controller {
     @Autowired
-    ItemRepository itemRepository;
-
-    @Autowired
     SupplyRepository supplyRepository;
 
     @Autowired

@@ -7,3 +7,27 @@
 2022-12-08 00:31:18.266  INFO 253391 --- [main] c.m.postgress.test.ThresholdServiceTest  : Starting ThresholdServiceTest using Java 11.0.17 on U-Sujan with PID 253391 (started by sujan in /home/sujan/Documents/restPostgres)
 2022-12-08 00:31:18.269  INFO 253391 --- [main] c.m.postgress.test.ThresholdServiceTest  : No active profile set, falling back to 1 default profile: "default"
 2022-12-08 00:31:19.393  INFO 253391 --- [main] c.m.postgress.test.ThresholdServiceTest  : Started ThresholdServiceTest in 1.846 seconds (JVM running for 3.261)
+2022-12-08 00:49:13.701  INFO 253916 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Starting V1AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 253916 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-08 00:49:13.704  INFO 253916 --- [main] c.m.p.test.V1AvailabilityControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-08 00:49:14.854  INFO 253916 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Started V1AvailabilityControllerTest in 1.847 seconds (JVM running for 3.179)
+2022-12-08 00:49:51.405  INFO 254830 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Starting V1AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 254830 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-08 00:49:51.408  INFO 254830 --- [main] c.m.p.test.V1AvailabilityControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-08 00:49:52.654  INFO 254830 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Started V1AvailabilityControllerTest in 2.011 seconds (JVM running for 3.529)
+2022-12-08 00:57:10.137  INFO 256756 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Starting V1AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 256756 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-08 00:57:10.140  INFO 256756 --- [main] c.m.p.test.V1AvailabilityControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-08 00:57:11.260  INFO 256756 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Started V1AvailabilityControllerTest in 1.842 seconds (JVM running for 3.196)
+2022-12-08 01:02:06.258  INFO 256944 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Starting V1AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 256944 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-08 01:02:06.261  INFO 256944 --- [main] c.m.p.test.V1AvailabilityControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-08 01:02:07.526  INFO 256944 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Started V1AvailabilityControllerTest in 2.114 seconds (JVM running for 3.634)
+2022-12-08 01:03:14.754  INFO 257034 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Starting V1AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 257034 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-08 01:03:14.758  INFO 257034 --- [main] c.m.p.test.V1AvailabilityControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-08 01:03:15.866  INFO 257034 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Started V1AvailabilityControllerTest in 1.823 seconds (JVM running for 3.132)
+2022-12-08 01:04:24.767  INFO 257122 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Starting V1AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 257122 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-08 01:04:24.770  INFO 257122 --- [main] c.m.p.test.V1AvailabilityControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-08 01:04:25.818  INFO 257122 --- [main] c.m.p.test.V1AvailabilityControllerTest  : Started V1AvailabilityControllerTest in 1.746 seconds (JVM running for 3.145)
+2022-12-08 01:14:47.971  INFO 257395 --- [main] c.m.p.test.V2AvailabilityControllerTest  : Starting V2AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 257395 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-08 01:14:47.973  INFO 257395 --- [main] c.m.p.test.V2AvailabilityControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-08 01:14:49.131  INFO 257395 --- [main] c.m.p.test.V2AvailabilityControllerTest  : Started V2AvailabilityControllerTest in 1.872 seconds (JVM running for 3.241)
+2022-12-08 01:15:07.089  INFO 257467 --- [main] c.m.p.test.V2AvailabilityControllerTest  : Starting V2AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 257467 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-08 01:15:07.092  INFO 257467 --- [main] c.m.p.test.V2AvailabilityControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-08 01:15:08.281  INFO 257467 --- [main] c.m.p.test.V2AvailabilityControllerTest  : Started V2AvailabilityControllerTest in 1.864 seconds (JVM running for 3.231)
