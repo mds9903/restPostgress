@@ -1,15 +1,23 @@
 package com.mdsujan.postgress.test;
 
+
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Supply;
+import com.mdsujan.restPostgres.entity.Threshold;
 import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
-import com.mdsujan.restPostgres.request.CreateSupplyRequest;
-import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
+import com.mdsujan.restPostgres.repository.ThresholdRepository;
+import com.mdsujan.restPostgres.request.CreateThresholdRequest;
+import com.mdsujan.restPostgres.request.UpdateThresholdRequest;
+import com.mdsujan.restPostgres.response.SupplyResponse;
+import com.mdsujan.restPostgres.response.ThresholdDetails;
+import com.mdsujan.restPostgres.response.ThresholdDetailsResponse;
+import com.mdsujan.restPostgres.response.ThresholdResponse;
 import com.mdsujan.restPostgres.service.SupplyService;
+import com.mdsujan.restPostgres.service.ThresholdService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -17,21 +25,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = SupplyService.class)
+@SpringBootTest(classes = ThresholdService.class)
 public class ThresholdServiceTest {
 
     @Autowired
-    private SupplyService mockSupplyService;
-
+    private ThresholdService thresholdService;
     @MockBean
-    private SupplyRepository mockSupplyRepository;
+    private ThresholdRepository mockThresholdRepository;
+
     @MockBean
     private ItemRepository mockItemRepository;
 
@@ -44,142 +56,212 @@ public class ThresholdServiceTest {
             "testCategory",
             "testType",
             "testStatus",
-            19.99,
+            99.99,
             false,
             false,
             false);
+
     private final Location mockLocation = new Location(
-            2L,
-            "testDesc",
+            1L,
+            "testLocationDesc",
             "testType",
-            false,
-            false,
-            false,
-            "testLine1",
-            "testLine2",
-            "testLine3",
+            true,
+            true,
+            true,
             "testCity",
             "testState",
             "testCountry",
-            "111111");
-    private final Supply mockSupply = new Supply(
-            1L,
-            AllowedSupplyTypes.ONHAND,
+            "testPincode");
+    private final Threshold mockThreshold = new Threshold(
             1L,
             mockItem,
-            mockLocation);
-    private final Supply mockSupply2 = new Supply(
-            2L,
-            AllowedSupplyTypes.INTRANSIT,
-            2L,
-            mockItem,
-            mockLocation);
-    private final List<Supply> mockSupplyList = List.of(mockSupply, mockSupply2);
-    private final CreateSupplyRequest mockCreateSupplyRequest = new CreateSupplyRequest(
-            mockItem.getItemId(),
-            mockLocation.getLocationId(),
-            mockSupply.getSupplyType(),
-            mockSupply.getSupplyQty()
-    );
-    private final Supply mockSupplyUpdatePut = new Supply(
-            1L,
-            AllowedSupplyTypes.INTRANSIT,
-            11L,
-            mockItem,
-            mockLocation);
-    private final Supply mockSupplyUpdatePatch = new Supply(
-            1L,
-            AllowedSupplyTypes.ONHAND,
-            22L,
-            mockItem,
-            mockLocation);
-
-    private final UpdateSupplyRequest mockUpdateSupplyRequest = new UpdateSupplyRequest(
-            AllowedSupplyTypes.ONHAND,
-            10L,
+            mockLocation,
             1L,
             1L);
 
+    private final List<Threshold> mockThresholdList = List.of(mockThreshold);
+    private final ThresholdResponse mockThresholdResponse = new ThresholdResponse(
+            1L,
+            1L,
+            1L,
+            1L,
+            1L);
+
+    private final List<ThresholdResponse> mockThresholdResponseList = List.of(mockThresholdResponse);
+
+    private final CreateThresholdRequest mockCreateThresholdRequest = new CreateThresholdRequest(
+            1L,
+            1L,
+            1L,
+            1L);
+
+    private final UpdateThresholdRequest mockUpdateThresholdRequestPut = new UpdateThresholdRequest(
+            1L,
+            1L,
+            0L,
+            0L);
+
+    private final Threshold mockThresholdUpdatePut = new Threshold(
+            1L,
+            mockItem,
+            mockLocation,
+            0L,
+            0L);
+    private final ThresholdResponse mockThresholdResponseUpdatePut = new ThresholdResponse(
+            1L,
+            1L,
+            1L,
+            0L,
+            0L);
+
+    private final UpdateThresholdRequest mockUpdateThresholdRequestPatch = new UpdateThresholdRequest(
+            1L,
+            1L,
+            2L,
+            2L);
+
+    private final Threshold mockThresholdUpdatePatch = new Threshold(
+            1L,
+            mockItem,
+            mockLocation,
+            null,
+            2L);
+    private final ThresholdResponse mockThresholdResponseUpdatePatch = new ThresholdResponse(
+            1L,
+            1L,
+            1L,
+            2L,
+            2L);
+
+    private final ThresholdDetailsResponse mockThresholdDetails = new ThresholdDetailsResponse(
+            1L,
+            1L,
+            new ThresholdDetails(1L, 1L));
+
     @Test
-    public void getSupplyByIdTest() throws Throwable {
-        // stub
-        Mockito.when(mockSupplyRepository.findById(1L)).thenReturn(Optional.of(mockSupply));
+    public void testGetAllThresholds() {
+        // stubs
+        Mockito
+                .when(mockThresholdRepository.findAll())
+                .thenReturn(mockThresholdList);
 
         // when
-        Supply supplyResponse = mockSupplyService.getSupplyById(1L);
+        List<Threshold> thresholdResponseList = thresholdService.getAllThresholds();
 
-        // test
-        assertThat(supplyResponse).isEqualTo(mockSupply);
+        // assert
+        assertThat(thresholdResponseList.size()).isEqualTo(mockThresholdResponseList.size());
+
     }
 
     @Test
-    public void getAllSuppliesTest() throws Throwable {
-        // stub
-        Mockito.when(mockSupplyRepository.findAll()).thenReturn(mockSupplyList);
+    public void testGetThreshold() throws Throwable {
+        // stubs
+        Mockito
+                .when(mockThresholdRepository.findById(mockThreshold.getThresholdId()))
+                .thenReturn(Optional.of(mockThreshold));
 
         // when
-        List<Supply> supplyResponseList = mockSupplyService.getAllSupplies();
+        Threshold thresholdResponse = thresholdService.getThreshold(mockThreshold.getThresholdId());
 
-        // test
-        assertThat(supplyResponseList).isEqualTo(mockSupplyList);
-    }
-
-//    @Test
-//    public void createSupplyTest() throws Throwable {
-//        // stubs
-//        Mockito
-//                .when(mockItemRepository.findById(mockCreateSupplyRequest.getItemId()))
-//                .thenReturn(Optional.of(mockItem));
-//
-//        Mockito
-//                .when(mockLocationRepository.findById(mockCreateSupplyRequest.getLocationId()))
-//                .thenReturn(Optional.of(mockLocation));
-//
-//        Mockito
-//                .when(mockSupplyRepository.save(mockSupply))
-//                .thenReturn(mockSupply);
-//
-//        // test
-//        Supply supplyResponse = mockSupplyService.createNewSupply(mockCreateSupplyRequest, newSupply);
-//        System.out.println("Supply Response: "+supplyResponse);
-//        // assert
-//        assertThat(supplyResponse).isEqualTo(mockSupply);
-//    }
-
-    @Test
-    public void updateSupplyPutTest() throws Throwable {
-        Mockito.when(mockSupplyRepository.findById(mockSupplyUpdatePut.getSupplyId()))
-                .thenReturn(Optional.of(mockSupplyUpdatePut));
-
-        Mockito.when(mockSupplyRepository.save(mockSupplyUpdatePut)).thenReturn(mockSupplyUpdatePut);
-
-        Supply supplyResponse = mockSupplyService
-                .updateSupplyPut(mockSupplyUpdatePut.getSupplyId(),
-                        mockUpdateSupplyRequest);
-
-        assertThat(supplyResponse.getSupplyId()).isEqualTo(mockSupplyUpdatePut.getSupplyId());
+        // assert
+        assertThat(thresholdResponse).isEqualTo(mockThreshold);
     }
 
     @Test
-    public void updateSupplyPatchTest() throws Throwable {
-        Mockito.when(mockSupplyRepository.findById(mockSupplyUpdatePatch.getSupplyId()))
-                .thenReturn(Optional.of(mockSupplyUpdatePatch));
+    public void testGetThresholdDetails() {
+        // stubs
+        Mockito
+                .when(mockThresholdRepository.findByItemItemIdAndLocationLocationId(
+                        mockThreshold.getItem().getItemId(),
+                        mockThreshold.getLocation().getLocationId()))
+                .thenReturn(mockThreshold);
 
-        Mockito.when(mockSupplyRepository.save(mockSupplyUpdatePatch)).thenReturn(mockSupplyUpdatePatch);
+        // when
+        ThresholdDetailsResponse thresholdResponse = thresholdService.getThresholdDetailsByItemAndLocation(
+                mockThreshold.getItem().getItemId(),
+                mockThreshold.getLocation().getLocationId());
 
-        Supply supplyResponse = mockSupplyService
-                .updateSupplyPut(mockSupplyUpdatePatch.getSupplyId(),
-                        mockUpdateSupplyRequest);
-
-        assertThat(supplyResponse.getSupplyId()).isEqualTo(mockSupplyUpdatePut.getSupplyId());
+        // assert
+        assertThat(thresholdResponse).isEqualTo(mockThresholdDetails);
     }
 
     @Test
-    public void deleteSupplyTest() throws Throwable {
-        Mockito.when(mockSupplyRepository.findById(mockSupply.getSupplyId())).thenReturn(Optional.of(mockSupply));
+    public void testCreateThreshold() throws Throwable {
+        // stubs
+        Mockito
+                .when(mockThresholdRepository.save(any()))
+                .thenReturn(mockThreshold);
 
-        String deleteResponse = mockSupplyService.deleteSupply(mockSupply.getSupplyId());
+        Mockito
+                .when(mockItemRepository.findById(mockCreateThresholdRequest.getItemId()))
+                .thenReturn(Optional.of(mockItem));
+        Mockito
+                .when(mockLocationRepository.findById(mockCreateThresholdRequest.getLocationId()))
+                .thenReturn(Optional.of(mockLocation));
 
-        assertThat(deleteResponse).isEqualTo("supply with supplyId = '" + mockSupply.getSupplyId() + "' deleted successfully");
+        // when
+        Threshold thresholdResponse = thresholdService.createThreshold(mockCreateThresholdRequest);
+
+        // assert
+
+        assertThat(thresholdResponse).isEqualTo(mockThreshold);
     }
+
+    @Test
+    public void testUpdateThresholdPut() throws Throwable {
+        // stubs
+        Mockito
+                .when(mockThresholdRepository.findById(mockThreshold.getThresholdId()))
+                .thenReturn(Optional.of(mockThreshold));
+        Mockito
+                .when(mockThresholdRepository.save(any()))
+                .thenReturn(mockThresholdUpdatePut);
+
+
+        // when
+        Threshold thresholdResponse = thresholdService.updateThresholdPut(
+                mockThreshold.getThresholdId(),
+                mockUpdateThresholdRequestPut);
+
+        // assert
+
+        assertThat(thresholdResponse).isEqualTo(mockThresholdUpdatePut);
+
+    }
+
+    @Test
+    public void testUpdateThresholdPatch() throws Throwable {
+        // stubs
+        Mockito
+                .when(mockThresholdRepository.findById(mockThreshold.getThresholdId()))
+                .thenReturn(Optional.of(mockThreshold));
+        Mockito
+                .when(mockThresholdRepository.save(any()))
+                .thenReturn(mockThresholdUpdatePatch);
+
+
+        // when
+        Threshold thresholdResponse = thresholdService.updateThresholdPatch(
+                mockThreshold.getThresholdId(),
+                mockUpdateThresholdRequestPatch);
+
+        // assert
+
+        assertThat(thresholdResponse).isEqualTo(mockThresholdUpdatePatch);
+    }
+
+    @Test
+    public void testDeleteThreshold() throws Throwable {
+        // stubs
+        Mockito
+                .when(mockThresholdRepository.findById(mockThreshold.getThresholdId()))
+                .thenReturn(Optional.of(mockThreshold));
+
+        // when
+        String thresholdResponse = thresholdService.deleteThresholdById(mockThreshold.getThresholdId());
+
+        // assert
+        assertThat(thresholdResponse).isEqualTo("Threshold with thresholdId=" + mockThreshold.getThresholdId() + " successfully deleted.");
+    }
+
 }

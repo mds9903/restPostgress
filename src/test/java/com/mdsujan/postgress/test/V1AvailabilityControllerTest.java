@@ -1,6 +1,7 @@
 package com.mdsujan.postgress.test;
 
 
+import com.mdsujan.restPostgres.controller.AvailabilityV1Controller;
 import com.mdsujan.restPostgres.controller.SupplyController;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
@@ -21,7 +22,7 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = SupplyController.class)
+@SpringBootTest(classes = AvailabilityV1Controller.class)
 public class V1AvailabilityControllerTest {
 
     @Autowired
