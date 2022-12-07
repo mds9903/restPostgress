@@ -13,6 +13,7 @@ import java.util.Objects;
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
+@AllArgsConstructor
 public class Threshold {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -84,9 +84,9 @@ public class SupplyService {
         }
     }
 
-    public List<Supply> getSupplyDetailsBySupplyTypeAndLocation(Long supplyType, Long locationId) {
-        return supplyRepository.findBySupplyTypeAndLocationLocationId(supplyType, locationId);
-    }
+//    public List<Supply> getSupplyDetailsBySupplyTypeAndLocation(Long supplyType, Long locationId) {
+//        return supplyRepository.findBySupplyTypeAndLocationLocationId(supplyType, locationId);
+//    }
 
     public Supply createNewSupply(CreateSupplyRequest createSupplyRequest) throws Throwable {
         // create a supply for an item on a location (given in the request body)
@@ -102,6 +102,7 @@ public class SupplyService {
             supply.setItem(item);
             supply.setLocation(location);
             // save this new supply
+//            return supplyRepository.save(supply);
             supply = supplyRepository.save(supply);
             return supply;
         } else {

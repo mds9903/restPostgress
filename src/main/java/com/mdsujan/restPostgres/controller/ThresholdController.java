@@ -59,14 +59,6 @@ public class ThresholdController {
         return new ThresholdResponse(thresholdService.updateThresholdPatch(thresholdId, updateThresholdRequest));
     }
 
-//    @PutMapping("/{itemId}/{locationId}")
-//    public ThresholdResponse updateThresholdPut(@PathVariable Long itemId, @PathVariable Long locationId,@RequestBody UpdateThresholdRequest updateThresholdRequest){
-//        return new ThresholdResponse(thresholdService.updateThresholdDetailsPut(itemId, locationId, updateThresholdRequest));
-//    }
-//    @PatchMapping("/{itemId}/{locationId}")
-//    public ThresholdResponse updateThresholdPatch(@PathVariable Long itemId, @PathVariable Long locationId ,@RequestBody UpdateThresholdRequest updateThresholdRequest){
-//        return new ThresholdResponse(thresholdService.updateThresholdDetailsPatch(itemId, locationId,updateThresholdRequest));
-//    }
     @DeleteMapping("/{thresholdId}") // delete a specific item
     public String deleteThreshold(@PathVariable @Valid Long thresholdId) throws Throwable {
         return thresholdService.deleteThresholdById(thresholdId);

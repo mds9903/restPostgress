@@ -1,6 +1,5 @@
 package com.mdsujan.postgress.test;
 
-import com.mdsujan.restPostgres.app.MyApp;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Supply;
@@ -10,24 +9,17 @@ import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
 import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
 import com.mdsujan.restPostgres.service.SupplyService;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import javax.swing.text.html.Option;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SupplyService.class)
@@ -40,11 +32,10 @@ public class SupplyServiceTest {
     private SupplyRepository mockSupplyRepository;
     @MockBean
     private ItemRepository mockItemRepository;
-
     @MockBean
     private LocationRepository mockLocationRepository;
 
-    private final Item mockItem = new Item(
+    private final Item mockItem1 = new Item(
             1L,
             "testDesc",
             "testCategory",
@@ -54,8 +45,18 @@ public class SupplyServiceTest {
             false,
             false,
             false);
-    private final Location mockLocation = new Location(
+    private final Item mockItem2 = new Item(
             2L,
+            "testDesc2",
+            "testCategory2",
+            "testType2",
+            "testStatus2",
+            29.99,
+            true,
+            true,
+            true);
+    private final Location mockLocation1 = new Location(
+            1L,
             "testDesc",
             "testType",
             false,
@@ -68,39 +69,63 @@ public class SupplyServiceTest {
             "testState",
             "testCountry",
             "111111");
-    private final Supply mockSupply = new Supply(
+    private final Location mockLocation2 = new Location(
+            2L,
+            "testDesc2",
+            "testType2",
+            false,
+            false,
+            false,
+            "testLine12",
+            "testLine22",
+            "testLine32",
+            "testCity2",
+            "testState2",
+            "testCountry2",
+            "222222");
+    private final Supply mockSupply11 = new Supply(
             1L,
             AllowedSupplyTypes.ONHAND,
             1L,
-            mockItem,
-            mockLocation);
-    private final Supply mockSupply2 = new Supply(
+            mockItem1,
+            mockLocation1);
+    private final Supply mockSupply12 = new Supply(
             2L,
             AllowedSupplyTypes.INTRANSIT,
-            2L,
-            mockItem,
-            mockLocation);
-    private final List<Supply> mockSupplyList = List.of(mockSupply, mockSupply2);
-    private final CreateSupplyRequest mockCreateSupplyRequest = new CreateSupplyRequest(
-            mockItem.getItemId(),
-            mockLocation.getLocationId(),
-            mockSupply.getSupplyType(),
-            mockSupply.getSupplyQty()
-    );
-    private final Supply mockSupplyUpdatePut = new Supply(
             1L,
-            AllowedSupplyTypes.INTRANSIT,
-            11L,
-            mockItem,
-            mockLocation);
-    private final Supply mockSupplyUpdatePatch = new Supply(
-            1L,
-            AllowedSupplyTypes.ONHAND,
-            22L,
-            mockItem,
-            mockLocation);
+            mockItem1,
+            mockLocation2);
+    private final List<Supply> mockSupplyListAll = List.of(
+            mockSupply11,
+            mockSupply12);
 
-    private final UpdateSupplyRequest mockUpdateSupplyRequest = new UpdateSupplyRequest(
+    private final List<Supply> getMockSupplyListItem1LocationAll = List.of(mockSupply11, mockSupply12);
+    private final CreateSupplyRequest mockCreateSupplyRequest11 = new CreateSupplyRequest(
+            mockItem1.getItemId(),
+            mockLocation1.getLocationId(),
+            mockSupply11.getSupplyType(),
+            mockSupply11.getSupplyQty()
+    );
+    private final Supply mockSupplyUpdatePut11 = new Supply(
+            mockSupply11.getSupplyId(),
+            AllowedSupplyTypes.INTRANSIT,
+            1L,
+            mockItem1,
+            mockLocation1);
+    private final Supply mockSupplyUpdatePatch11 = new Supply(
+            mockSupply11.getSupplyId(),
+            AllowedSupplyTypes.ONHAND,
+            null,
+            mockItem1,
+            mockLocation1);
+
+    private final UpdateSupplyRequest mockUpdateSupplyRequest11Put = new UpdateSupplyRequest(
+            AllowedSupplyTypes.ONHAND,
+            10L,
+            1L,
+            1L);
+
+    private final UpdateSupplyRequest mockUpdateSupplyRequest11Patch = new UpdateSupplyRequest(
             AllowedSupplyTypes.ONHAND,
             10L,
             1L,
@@ -109,83 +134,93 @@ public class SupplyServiceTest {
     @Test
     public void getSupplyByIdTest() throws Throwable {
         // stub
-        Mockito.when(mockSupplyRepository.findById(1L)).thenReturn(Optional.of(mockSupply));
+        Mockito
+                .when(mockSupplyRepository.findById(1L))
+                .thenReturn(Optional.of(mockSupply11));
 
         // when
         Supply supplyResponse = mockSupplyService.getSupplyById(1L);
 
         // test
-        assertThat(supplyResponse).isEqualTo(mockSupply);
+        assertThat(supplyResponse).isEqualTo(mockSupply11);
     }
 
     @Test
     public void getAllSuppliesTest() throws Throwable {
         // stub
-        Mockito.when(mockSupplyRepository.findAll()).thenReturn(mockSupplyList);
+        Mockito
+                .when(mockSupplyRepository.findAll())
+                .thenReturn(mockSupplyListAll);
 
         // when
         List<Supply> supplyResponseList = mockSupplyService.getAllSupplies();
 
         // test
-        assertThat(supplyResponseList).isEqualTo(mockSupplyList);
+        assertThat(supplyResponseList).isEqualTo(mockSupplyListAll);
     }
 
     @Test
     public void createSupplyTest() throws Throwable {
         // stubs
         Mockito
-                .when(mockItemRepository.findById(mockCreateSupplyRequest.getItemId()))
-                .thenReturn(Optional.of(mockItem));
+                .when(mockLocationRepository.findById(
+                        mockCreateSupplyRequest11.getLocationId()
+                ))
+                .thenReturn(Optional.of(mockLocation1));
 
         Mockito
-                .when(mockLocationRepository.findById(mockCreateSupplyRequest.getLocationId()))
-                .thenReturn(Optional.of(mockLocation));
+                .when(mockItemRepository.findById(
+                        mockCreateSupplyRequest11.getItemId()
+                ))
+                .thenReturn(Optional.of(mockItem1));
 
         Mockito
-                .when(mockSupplyRepository.save(mockSupply))
-                .thenReturn(mockSupply);
+                .when(mockSupplyRepository.save(mockSupply11))
+                .thenReturn(mockSupply11);
 
         // test
-        Supply supplyResponse = mockSupplyService.createNewSupply(mockCreateSupplyRequest);
+        Supply supplyResponse = mockSupplyService.createNewSupply(mockCreateSupplyRequest11);
         System.out.println("Supply Response: "+supplyResponse);
         // assert
-        assertThat(supplyResponse).isEqualTo(mockSupply);
+        assertThat(supplyResponse).isEqualTo(mockSupply11);
     }
 
-    @Test
-    public void updateSupplyPutTest() throws Throwable {
-        Mockito.when(mockSupplyRepository.findById(mockSupplyUpdatePut.getSupplyId()))
-                .thenReturn(Optional.of(mockSupplyUpdatePut));
+//    @Test
+//    public void updateSupplyPutTest() throws Throwable {
+//        Mockito.when(mockSupplyRepository.findById(mockSupplyUpdatePut.getSupplyId()))
+//                .thenReturn(Optional.of(mockSupplyUpdatePut));
+//
+//        Mockito.when(mockSupplyRepository.save(mockSupplyUpdatePut)).thenReturn(mockSupplyUpdatePut);
+//
+//        Supply supplyResponse = mockSupplyService
+//                .updateSupplyPut(mockSupplyUpdatePut.getSupplyId(),
+//                        mockUpdateSupplyRequest);
+//
+//        assertThat(supplyResponse.getSupplyId()).isEqualTo(mockSupplyUpdatePut.getSupplyId());
+//    }
 
-        Mockito.when(mockSupplyRepository.save(mockSupplyUpdatePut)).thenReturn(mockSupplyUpdatePut);
-
-        Supply supplyResponse = mockSupplyService
-                .updateSupplyPut(mockSupplyUpdatePut.getSupplyId(),
-                        mockUpdateSupplyRequest);
-
-        assertThat(supplyResponse.getSupplyId()).isEqualTo(mockSupplyUpdatePut.getSupplyId());
-    }
-
-    @Test
-    public void updateSupplyPatchTest() throws Throwable {
-        Mockito.when(mockSupplyRepository.findById(mockSupplyUpdatePatch.getSupplyId()))
-                .thenReturn(Optional.of(mockSupplyUpdatePatch));
-
-        Mockito.when(mockSupplyRepository.save(mockSupplyUpdatePatch)).thenReturn(mockSupplyUpdatePatch);
-
-        Supply supplyResponse = mockSupplyService
-                .updateSupplyPut(mockSupplyUpdatePatch.getSupplyId(),
-                        mockUpdateSupplyRequest);
-
-        assertThat(supplyResponse.getSupplyId()).isEqualTo(mockSupplyUpdatePut.getSupplyId());
-    }
+//    @Test
+//    public void updateSupplyPatchTest() throws Throwable {
+//        Mockito.when(mockSupplyRepository.findById(mockSupplyUpdatePatch.getSupplyId()))
+//                .thenReturn(Optional.of(mockSupplyUpdatePatch));
+//
+//        Mockito.when(mockSupplyRepository.save(mockSupplyUpdatePatch)).thenReturn(mockSupplyUpdatePatch);
+//
+//        Supply supplyResponse = mockSupplyService
+//                .updateSupplyPut(mockSupplyUpdatePatch.getSupplyId(),
+//                        mockUpdateSupplyRequest);
+//
+//        assertThat(supplyResponse.getSupplyId()).isEqualTo(mockSupplyUpdatePut.getSupplyId());
+//    }
 
     @Test
     public void deleteSupplyTest() throws Throwable {
-        Mockito.when(mockSupplyRepository.findById(mockSupply.getSupplyId())).thenReturn(Optional.of(mockSupply));
+        Mockito
+                .when(mockSupplyRepository.findById(mockSupply11.getSupplyId()))
+                .thenReturn(Optional.of(mockSupply11));
 
-        String deleteResponse = mockSupplyService.deleteSupply(mockSupply.getSupplyId());
+        String deleteResponse = mockSupplyService.deleteSupply(mockSupply11.getSupplyId());
 
-        assertThat(deleteResponse).isEqualTo("supply with supplyId = '" + mockSupply.getSupplyId() + "' deleted successfully");
+        assertThat(deleteResponse).isEqualTo("supply with supplyId = '" + mockSupply11.getSupplyId() + "' deleted successfully");
     }
 }
