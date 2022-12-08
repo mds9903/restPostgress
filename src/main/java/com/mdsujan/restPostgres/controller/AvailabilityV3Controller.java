@@ -41,9 +41,11 @@ public class AvailabilityV3Controller {
 //    @Value("#${V3Availability.config}")
 //    private Map<String, String> configMap;
 
+//    @Autowired
     @Value("${supplyTypes}")
     private String supplyTypes;
 
+//    @Autowired
     @Value("${demandTypes}")
     private String demandTypes;
 

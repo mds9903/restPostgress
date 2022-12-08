@@ -22,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.List;
 
@@ -62,17 +63,15 @@ public class V3AvailabilityControllerTest {
             1L,
             1L,
             2L,
-            "Green");
-
-    @Autowired
-    private String supplyTypes = "INTRANSIT";
-    @Autowired
-    private String demandTypes = "PLANNED";
-//    private String locationsExclude;
+            "Red");
 
 
     @Test
-    public void testgetAvailabilityStockLevel() throws Throwable {
+    public void testGetAvailabilityStockLevel() throws Throwable {
+//        ReflectionTestUtils.setField(availabilityV3Controller, "supplyTypes", "INTRANSIT");
+//        ReflectionTestUtils.setField(availabilityV3Controller, "demandTypes", "HARD_PROMISED");
+//        ReflectionTestUtils.setField(availabilityV3Controller, "locations.exclude", "18100");
+
         // stubs
         Mockito
                 .when(mockDemandRepository
