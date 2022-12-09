@@ -26,6 +26,8 @@ public class ItemService {
 
     @Cacheable("items")
     public List<Item> getAllItems() {
+
+        System.out.println("getting all items..");
         return itemRepository.findAll();
     }
 
