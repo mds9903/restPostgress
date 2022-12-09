@@ -6,6 +6,7 @@ import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +36,7 @@ public class ItemService {
         return itemRepository.findById(itemId).orElseThrow(() -> new ResourceNotFoundException("item not found for given itemId: '" + itemId + "'; please check itemId entered"));
     }
 
+    @CacheEvict(value = "items", allEntries = true)
     public Item createItem(Item createItemRequest) throws Throwable {
         // new record should not be created if record already exists
 
