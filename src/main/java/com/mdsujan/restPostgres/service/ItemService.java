@@ -6,6 +6,7 @@ import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,6 +23,8 @@ public class ItemService {
     @Autowired
     DemandRepository demandRepository;
 
+
+    @Cacheable
     public List<Item> getAllItems() {
         return itemRepository.findAll();
     }
