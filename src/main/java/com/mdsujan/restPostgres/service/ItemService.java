@@ -24,7 +24,7 @@ public class ItemService {
     DemandRepository demandRepository;
 
 
-    @Cacheable
+    @Cacheable("items")
     public List<Item> getAllItems() {
         return itemRepository.findAll();
     }
