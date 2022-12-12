@@ -36,7 +36,7 @@ public class AvailabilityController {
     @GetMapping("/v1/availability/{itemId}") // get availability qty of item in all locations (total)
     public AvailabilityV1Response getAllLocationAvailabilityQtyV1(@PathVariable Long itemId) throws Throwable {
         // get availability quantity by item for all locations
-        return availabilityService.getAvlQtyByItem(itemId);
+        return availabilityService.getAvlQtyByItemV1(itemId);
     }
 
     @GetMapping("/v2/availability/{itemId}/{locationId}")

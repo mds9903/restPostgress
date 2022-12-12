@@ -104,3 +104,30 @@ com.mdsujan.restPostgres.controller.AvailabilityController#getAvlQtyByItemAndLoc
 2022-12-12 13:59:04.078  INFO 174824 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-12-12 13:59:04.081  INFO 174824 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-12-12 13:59:04.093  INFO 174824 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-12 14:24:41.906  INFO 176641 --- [main] c.m.p.test.AvailabilityControllerTest    : Starting AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 176641 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-12 14:24:41.908  INFO 176641 --- [main] c.m.p.test.AvailabilityControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-12-12 14:24:42.693  INFO 176641 --- [main] c.m.p.test.AvailabilityControllerTest    : Started AvailabilityControllerTest in 1.444 seconds (JVM running for 2.879)
+2022-12-12 14:30:34.330  INFO 176933 --- [main] c.m.p.test.AvailabilityControllerTest    : Starting AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 176933 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-12 14:30:34.332  INFO 176933 --- [main] c.m.p.test.AvailabilityControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-12-12 14:30:35.199  INFO 176933 --- [main] c.m.p.test.AvailabilityControllerTest    : Started AvailabilityControllerTest in 1.577 seconds (JVM running for 3.068)
+2022-12-12 14:52:08.676  INFO 177787 --- [main] c.m.p.test.AvailabilityControllerTest    : Starting AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 177787 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-12 14:52:08.679  INFO 177787 --- [main] c.m.p.test.AvailabilityControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-12-12 14:52:09.562  INFO 177787 --- [main] c.m.p.test.AvailabilityControllerTest    : Started AvailabilityControllerTest in 1.566 seconds (JVM running for 2.984)
+2022-12-12 14:52:34.711  INFO 177864 --- [main] c.m.p.test.AvailabilityServiceTest       : Starting AvailabilityServiceTest using Java 11.0.17 on U-Sujan with PID 177864 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-12 14:52:34.713  INFO 177864 --- [main] c.m.p.test.AvailabilityServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-12 14:52:35.838  INFO 177864 --- [main] c.m.p.test.AvailabilityServiceTest       : Started AvailabilityServiceTest in 1.794 seconds (JVM running for 3.238)
+2022-12-12 14:55:16.592  INFO 178015 --- [main] c.m.p.test.AvailabilityServiceTest       : Starting AvailabilityServiceTest using Java 11.0.17 on U-Sujan with PID 178015 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-12 14:55:16.595  INFO 178015 --- [main] c.m.p.test.AvailabilityServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-12 14:55:17.659  INFO 178015 --- [main] c.m.p.test.AvailabilityServiceTest       : Started AvailabilityServiceTest in 1.75 seconds (JVM running for 3.106)
+2022-12-12 14:56:44.699  INFO 178161 --- [main] c.m.p.test.AvailabilityServiceTest       : Starting AvailabilityServiceTest using Java 11.0.17 on U-Sujan with PID 178161 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-12 14:56:44.701  INFO 178161 --- [main] c.m.p.test.AvailabilityServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-12 14:56:45.730  INFO 178161 --- [main] c.m.p.test.AvailabilityServiceTest       : Started AvailabilityServiceTest in 1.724 seconds (JVM running for 3.143)
+2022-12-12 14:57:05.782  INFO 178236 --- [main] c.m.p.test.AvailabilityServiceTest       : Starting AvailabilityServiceTest using Java 11.0.17 on U-Sujan with PID 178236 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-12 14:57:05.785  INFO 178236 --- [main] c.m.p.test.AvailabilityServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-12 14:57:06.861  INFO 178236 --- [main] c.m.p.test.AvailabilityServiceTest       : Started AvailabilityServiceTest in 1.798 seconds (JVM running for 3.468)
+2022-12-12 14:59:50.655  INFO 178380 --- [main] c.m.p.test.AvailabilityServiceTest       : Starting AvailabilityServiceTest using Java 11.0.17 on U-Sujan with PID 178380 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-12 14:59:50.658  INFO 178380 --- [main] c.m.p.test.AvailabilityServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-12 14:59:51.814  INFO 178380 --- [main] c.m.p.test.AvailabilityServiceTest       : Started AvailabilityServiceTest in 1.867 seconds (JVM running for 3.285)
+2022-12-12 15:01:30.530  INFO 178558 --- [main] c.m.p.test.AvailabilityServiceTest       : Starting AvailabilityServiceTest using Java 11.0.17 on U-Sujan with PID 178558 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-12 15:01:30.532  INFO 178558 --- [main] c.m.p.test.AvailabilityServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-12 15:01:31.608  INFO 178558 --- [main] c.m.p.test.AvailabilityServiceTest       : Started AvailabilityServiceTest in 1.748 seconds (JVM running for 3.158)

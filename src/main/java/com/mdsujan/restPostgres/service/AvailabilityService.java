@@ -81,7 +81,7 @@ public class AvailabilityService {
         return new AvailabilityV1Response(itemId, locationId, availableQty);
     }
 
-    public AvailabilityV1Response getAvlQtyByItem(Long itemId) throws Throwable {
+    public AvailabilityV1Response getAvlQtyByItemV1(Long itemId) throws Throwable {
         // sample response
         /*
          * {
