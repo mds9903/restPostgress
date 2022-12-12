@@ -16,6 +16,9 @@
     <properties>
         <java.version>11</java.version>
     </properties>
+    <build>
+    </build>
+
     <dependencies>
         <!--		spring starter for jdbc-->
         <dependency>
@@ -46,12 +49,21 @@
             <artifactId>okhttp</artifactId>
             <version>4.9.3</version>
         </dependency>
-        <!--  /caching -->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>2.7.5</version>
         </dependency>
+        <!--        redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>2.7.6</version>
+        </dependency>
+        <!--        /redis-->
+        <!--  /caching -->
+
         <!--		for validation-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -84,17 +96,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-<!--            <scope>test</scope>-->
         </dependency>
     </dependencies>
-
-    <build>
-        <!--		<plugins>-->
-        <!--			<plugin>-->
-        <!--				<groupId>org.springframework.boot</groupId>-->
-        <!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
-        <!--			</plugin>-->
-        <!--		</plugins>-->
-    </build>
 
 </project>
