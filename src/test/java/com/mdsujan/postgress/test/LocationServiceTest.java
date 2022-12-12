@@ -1,12 +1,10 @@
 package com.mdsujan.postgress.test;
 
-import com.mdsujan.restPostgres.app.MyApp;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.service.LocationService;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -16,29 +14,25 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = LocationService.class)
 public class LocationServiceTest {
-
     @Autowired
     private LocationService locationService;
 
-    @Mock
+    @MockBean
     private LocationRepository mockLocationRepository;
 
-    @Mock
+    @MockBean
     private SupplyRepository mockSupplyRepository;
 
-    @Mock
+    @MockBean
     private DemandRepository mockDemandRepository;
 
     private final Location mockLocation = new Location(
@@ -165,7 +159,6 @@ public class LocationServiceTest {
         Mockito.when(mockLocationRepository.findById(mockLocation.getLocationId())).thenReturn(Optional.of(mockLocation));
         Mockito.when(mockSupplyRepository.findByLocationLocationId(mockLocation.getLocationId())).thenReturn(new ArrayList<>()); // empty list => no supply dependencies of location
         Mockito.when(mockDemandRepository.findByLocationLocationId(mockLocation.getLocationId())).thenReturn(new ArrayList<>()); // empty list => no demand dependencies of location
-//        Mockito.doNothing().when(mockLocationRepository.deleteById(mockLocation.getLocationId()));
 
         String deleteResponse = locationService.deleteLocationById(mockLocation.getLocationId());
 
