@@ -2,6 +2,7 @@ package com.mdsujan.postgress.test;
 
 import com.mdsujan.restPostgres.app.MyApp;
 import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
@@ -61,6 +62,17 @@ public class ItemServiceTest {
 
         // test
         assertThat(itemResponse).isEqualTo(mockItem);
+    }
+
+    @Test(expected = ResourceNotFoundException.class)
+    public void getItemByIdExceptionTest() throws Throwable {
+        long wrongId = 112211L;
+        // stub
+//        Mockito.when(mockItemRepository.findById(wrongId)).thenReturn(Optional.of(mockItem));
+
+        // testing that exceptions occurs
+        Item itemResponse = itemService.getItemById(wrongId);
+
     }
 
     @Test

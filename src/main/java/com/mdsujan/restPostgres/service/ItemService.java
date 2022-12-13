@@ -33,7 +33,10 @@ public class ItemService {
     }
 
     public Item getItemById(Long itemId) throws Throwable {
-        return itemRepository.findById(itemId).orElseThrow(() -> new ResourceNotFoundException("item not found for given itemId: '" + itemId + "'; please check itemId entered"));
+        return itemRepository.findById(itemId)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "item not found for given itemId: '"
+                                + itemId + "'; please check itemId entered"));
     }
 
     @CacheEvict(value = "items", allEntries = true)
