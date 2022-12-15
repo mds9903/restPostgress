@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @Entity
 @Getter
@@ -14,7 +15,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "item", schema = "public")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Item {
+public class Item implements Serializable {
 
     @Id
     @Column(name = "item_id")
