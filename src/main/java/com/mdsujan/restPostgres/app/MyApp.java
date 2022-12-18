@@ -8,8 +8,8 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
-@ComponentScan("com.mdsujan.restPostgres")
+@SpringBootApplication // defines it as the main class for running the app
+@ComponentScan("com.mdsujan.restPostgres") // the pkg that contain components
 @EntityScan("com.mdsujan.restPostgres.entity")
 @EnableJpaRepositories("com.mdsujan.restPostgres.repository")
 @EnableCaching

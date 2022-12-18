@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
+    @ExceptionHandler(value = org.springframework.web.method.annotation.MethodArgumentTypeMismatchException.class)
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    public @ResponseBody ErrorResponse typeMismatch() {
+        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), "invalid itemId; please enter a valid number for itemId");
+    }
+
     @ExceptionHandler(value = ResourceNotFoundException.class)
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
     public @ResponseBody ErrorResponse handleResourceNotFoundException(ResourceNotFoundException exception) {

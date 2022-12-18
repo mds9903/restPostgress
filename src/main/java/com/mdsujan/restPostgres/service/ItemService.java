@@ -6,12 +6,10 @@ import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ItemService {
@@ -25,12 +23,13 @@ public class ItemService {
     DemandRepository demandRepository;
 
 
-    @Cacheable("items")
+//    @Cacheable("items")
     public List<Item> getAllItems() {
 
         System.out.println("getting all items..");
         return itemRepository.findAll();
     }
+
 
     public Item getItemById(Long itemId) throws Throwable {
         return itemRepository.findById(itemId)
@@ -39,7 +38,7 @@ public class ItemService {
                                 + itemId + "'; please check itemId entered"));
     }
 
-    @CacheEvict(value = "items", allEntries = true)
+//    @CacheEvict(value = "items", allEntries = true)
     public Item createItem(Item createItemRequest) throws Throwable {
         // new record should not be created if record already exists
 
@@ -136,5 +135,9 @@ public class ItemService {
         } else {
             throw new ResourceNotFoundException("cannot update item; item not found; please provide the correct itemId");
         }
+    }
+
+    public List<Item> getAllItemsPaginated(int pageSize, int pageNum) {
+        return itemRepository.findAll(PageRequest.of(pageNum - 1, pageSize)).getContent();
     }
 }

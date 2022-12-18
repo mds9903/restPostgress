@@ -20,34 +20,35 @@
     </build>
 
     <dependencies>
-        <!--		spring starter for jdbc-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-        <!--		for web apps-->
+        <!--for web apps-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--		lombok for easy creation of classes-->
+        <!--lombok for reduction of boilerplate code-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>maven-lombok-plugin</artifactId>
             <version>0.9.3.1</version>
         </dependency>
-        <!--		for postgres sql -->
+        <!--for db-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
-
+        <!--for jdbc-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+<!--        jpa for orm support-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>2.7.5</version>
         </dependency>
+        <!--/for db-->
         <!-- caching -->
 
                 <dependency>

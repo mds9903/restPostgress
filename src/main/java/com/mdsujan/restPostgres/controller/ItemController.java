@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@RestController
-@RequestMapping("/items")
+@RestController // controller and response body combo
+@RequestMapping("/items") // the uri this controller should be mapped to
 public class ItemController {
 
     Logger logger = LoggerFactory.getLogger(ItemController.class);
@@ -19,10 +19,16 @@ public class ItemController {
     @Autowired
     ItemService itemService;
 
-    @GetMapping("/") // retrieve all all items
+    @GetMapping(value = "/") // retrieve all all items
     public List<Item> getAllItems() {
         return itemService.getAllItems();
     }
+
+    @GetMapping(value = "/paginated") // retrieve all items with pagination
+    public List<Item> getAllItemsPaginated(@RequestParam int pageSize, @RequestParam int pageNum) {
+        return itemService.getAllItemsPaginated(pageSize, pageNum);
+    }
+
 
     @GetMapping(value = "/{itemId}") // return the details of specific itemId
     public Item getItem(@PathVariable @Valid Long itemId) throws Throwable {
