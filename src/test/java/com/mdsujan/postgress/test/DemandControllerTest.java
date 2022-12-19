@@ -32,7 +32,7 @@ public class DemandControllerTest {
     private DemandService mockDemandService;
 
     private final Item mockItem = new Item(1L, "testDesc", "testCategory", "testType", "testStatus", 99.99, false, false, false);
-    private final Location mockLocation = new Location(1L, "testLocationDesc", "testType", true, true, true, "testCity", "testState", "testCountry", "testPincode");
+    private final Location mockLocation = new Location(1L, "testLocationDesc", "testType", true, true, true,"addr1","addr2","addr2", "testCity", "testState", "testCountry", "testPincode");
     private final Demand mockDemand = new Demand(1L, AllowedDemandTypes.PLANNED, 10L, mockItem, mockLocation);
     private final Demand mockDemand2 = new Demand(2L, AllowedDemandTypes.HARD_PROMISED, 20L, mockItem, mockLocation);
     private final List<Demand> mockDemandList = List.of(mockDemand, mockDemand2);

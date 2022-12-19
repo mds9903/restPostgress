@@ -58,6 +58,7 @@ public class ThresholdControllerTest {
             true,
             true,
             true,
+            "addr1","addr2","addr2",
             "testCity",
             "testState",
             "testCountry",

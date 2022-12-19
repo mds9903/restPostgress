@@ -40,9 +40,9 @@ public class SupplyControllerTest {
 //    private final Location mockLocation = ;
 
     // a single supplyResponse for testing
-    private final Supply mockSupply = new Supply(1L, AllowedSupplyTypes.ONHAND, 10L, new Item(1L, "testDesc", "testCategory", "testType", "testStatus", 11.99, false, false, false), new Location(1L, "testLocationDesc", "testType", true, true, true, "testCity", "testState", "testCountry", "testPincode"));
+    private final Supply mockSupply = new Supply(1L, AllowedSupplyTypes.ONHAND, 10L, new Item(1L, "testDesc", "testCategory", "testType", "testStatus", 11.99, false, false, false), new Location(1L, "testLocationDesc", "testType", true, true, true,"addr1","addr2","addr2", "testCity", "testState", "testCountry", "testPincode"));
 
-    private final Supply mockSupply2 = new Supply(2L, AllowedSupplyTypes.ONHAND, 10L, new Item(2L, "testDesc2", "testCategory2", "testType2", "testStatus2", 22.99, false, false, false), new Location(2L, "testLocationDesc2", "testType2", true, true, true, "testCity2", "testState2", "testCountry2", "testPincode2"));
+    private final Supply mockSupply2 = new Supply(2L, AllowedSupplyTypes.ONHAND, 10L, new Item(2L, "testDesc2", "testCategory2", "testType2", "testStatus2", 22.99, false, false, false), new Location(2L, "testLocationDesc2", "testType2", true, true, true,"addr1","addr2","addr2", "testCity2", "testState2", "testCountry2", "testPincode2"));
 
 
     private final List<Supply> mockSupplyList = List.of(mockSupply, mockSupply2);

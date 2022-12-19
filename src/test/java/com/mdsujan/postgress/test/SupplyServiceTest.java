@@ -184,12 +184,6 @@ public class SupplyServiceTest {
         System.out.println("Supply Response: "+supplyResponse);
         // assert
         assertThat(supplyResponse).isEqualTo(mockSupply11);
-
-
-//        assertThat(supplyResponse.getItem().getItemId()).isEqualTo(mockSupply11.getItem().getItemId());
-//        assertThat(supplyResponse.getLocation().getLocationId()).isEqualTo(mockSupply11.getLocation().getLocationId());
-//        assertThat(supplyResponse.getSupplyQty()).isEqualTo(mockSupply11.getSupplyQty());
-//        assertThat(supplyResponse.getSupplyType()).isEqualTo(mockSupply11.getSupplyType());
     }
 
     @Test

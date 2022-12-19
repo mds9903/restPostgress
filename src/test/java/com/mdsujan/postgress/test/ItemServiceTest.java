@@ -113,9 +113,9 @@ public class ItemServiceTest {
     public void updateItemPatchTest() throws Throwable {
         Mockito.when(mockItemRepository.findById(mockItemUpdatePut.getItemId())).thenReturn(Optional.of(mockItem));
 
-        Mockito.when(mockItemRepository.save(mockItemUpdatePut)).thenReturn(mockItemUpdatePut);
+        Mockito.when(mockItemRepository.save(any())).thenReturn(mockItemUpdatePut);
 
-        Item itemResponse = itemService.updateItemByIdPut(mockItemUpdatePut.getItemId(), mockItemUpdatePut);
+        Item itemResponse = itemService.updateItemByIdPatch(mockItemUpdatePut.getItemId(), mockItemUpdatePut);
 
         assertThat(itemResponse).isEqualTo(mockItemUpdatePut);
     }

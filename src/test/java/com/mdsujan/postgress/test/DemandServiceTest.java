@@ -216,7 +216,6 @@ public class DemandServiceTest {
                 .updateDemandPatch(mockDemandUpdatePatch11.getDemandId(),
                         mockUpdateDemandRequest11Patch);
 
-//        assertThat(demandResponse.getDemandId()).isEqualTo(mockDemandUpdatePatch11.getDemandId());
         assertThat(demandResponse).isEqualTo(mockDemandUpdatePatch11);
     }
 

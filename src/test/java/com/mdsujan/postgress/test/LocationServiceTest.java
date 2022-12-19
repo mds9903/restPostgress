@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = LocationService.class)
@@ -147,11 +148,11 @@ public class LocationServiceTest {
     public void updateLocationPatchTest() throws Throwable {
         Mockito.when(mockLocationRepository.findById(mockLocationUpdatePut.getLocationId())).thenReturn(Optional.of(mockLocation));
 
-        Mockito.when(mockLocationRepository.save(mockLocationUpdatePut)).thenReturn(mockLocationUpdatePut);
+        Mockito.when(mockLocationRepository.save(any())).thenReturn(mockLocationUpdatePatch);
 
-        Location locationResponse = locationService.updateLocationPatch(mockLocationUpdatePut.getLocationId(), mockLocationUpdatePut);
+        Location locationResponse = locationService.updateLocationPatch(mockLocationUpdatePatch.getLocationId(), mockLocationUpdatePatch);
 
-        assertThat(locationResponse).isEqualTo(mockLocationUpdatePut);
+        assertThat(locationResponse).isEqualTo(mockLocationUpdatePatch);
     }
 
     @Test
