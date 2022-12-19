@@ -41,29 +41,6 @@ public class DemandController {
         return new DemandResponse(demandService.getDemandById(demandId));
     }
 
-//    // not included in the requirements sheet
-//    @GetMapping("/demandList/{itemId}/{locationId}") // get list of demands by item and location
-//    public List<DemandResponse> getDemandsByItemAndLocation(@PathVariable @Valid Long itemId, @PathVariable @Valid Long locationId) {
-//        List<Demand> demandList = demandService.getDemandsByItemIdAndLocationId(itemId, locationId);
-//        List<DemandResponse> demandResponseList = new ArrayList<>();
-//
-//        demandList.forEach(demand -> demandResponseList.add(new DemandResponse(demand)));
-//
-//        return demandResponseList;
-//
-//    }
-
-    // not included in the requirements sheet
-    @GetMapping("demandList/{itemId}") // get demand for an item in all locations
-    public List<DemandResponse> getDemandsByItem(@PathVariable @Valid Long itemId) {
-        List<Demand> demandList = demandService.getDemandsByItemId(itemId);
-        List<DemandResponse> demandResponseList = new ArrayList<>();
-
-        demandList.forEach(demand -> demandResponseList.add(new DemandResponse(demand)));
-
-        return demandResponseList;
-    }
-
     @GetMapping("/{itemId}/{locationId}") // get demand details by item and location
     public DemandDetailsResponse getDemandDetailsByItemAndLocation(@PathVariable @Valid Long itemId,
                                                                    @PathVariable @Valid Long locationId) throws Throwable {
@@ -76,13 +53,13 @@ public class DemandController {
         return new DemandResponse(demandService.createNewDemand(createDemandRequest));
     }
 
-    @PutMapping("/{demandId}") // update a demand (all fields)
+    @PutMapping("/{demandId}") // update a demand using PUT
     public DemandResponse updateDemandPut(@PathVariable @Valid Long demandId,
                                           @RequestBody @Valid UpdateDemandRequest updateDemandRequest) throws Throwable {
         return new DemandResponse(demandService.updateDemandPut(demandId, updateDemandRequest));
     }
 
-    @PatchMapping("/{demandId}") // update a demand (all fields)
+    @PatchMapping("/{demandId}") // update a demand using PATCH
     public DemandResponse updateDemandPatch(@PathVariable @Valid Long demandId,
                                             @RequestBody UpdateDemandRequest updateDemandRequest) throws Throwable {
         return new DemandResponse(demandService.updateDemandPatch(demandId, updateDemandRequest));

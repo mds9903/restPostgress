@@ -52,15 +52,15 @@ public class ItemController {
         return itemResponse;
     }
 
-    @PutMapping("/{itemId}")
-    public Item updateItemPut(@PathVariable @Valid Long itemId, @RequestBody @Valid Item updateItemRequest) throws Throwable {
-        logger.info("InQueryRequest: " + updateItemRequest);
-        Item itemResponse = itemService.updateItemByIdPut(itemId, updateItemRequest);
+    @PutMapping("/{itemId}") // update an item using PUT
+    public Item updateItemPut(@PathVariable @Valid Long itemId, @RequestBody @Valid Item updateItem) throws Throwable {
+        logger.info("InQueryRequest: " + updateItem);
+        Item itemResponse = itemService.updateItemByIdPut(itemId, updateItem);
         logger.info("Response: " + itemResponse);
         return itemResponse;
     }
 
-    @PatchMapping("/{itemId}")
+    @PatchMapping("/{itemId}") // update an item using PATCH
     public Item updateItemPatch(@PathVariable @Valid Long itemId, @RequestBody Item updateItemRequest) throws Throwable {
         logger.info("InQueryRequest: " + updateItemRequest);
         Item itemResponse = itemService.updateItemByIdPatch(itemId, updateItemRequest);

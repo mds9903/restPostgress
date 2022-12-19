@@ -25,23 +25,23 @@ public class LocationController {
         return locationService.getLocationById(locationId);
     }
 
-    @PostMapping("/") // create an item in the table
+    @PostMapping("/") // create a location in the table
     public Location createLocation(@RequestBody Location createLocationRequest) throws Throwable {
         return locationService.createLocation(createLocationRequest);
     }
 
-    @DeleteMapping("/{locationId}") // delete a specific item
+    @DeleteMapping("/{locationId}") // delete a specific location
     public String deleteLocation(@PathVariable Long locationId) throws Throwable {
         return locationService.deleteLocationById(locationId);
     }
 
-    @PutMapping("/{locationId}")
-    public Location updateLocationPut(@PathVariable @Valid Long locationId, @RequestBody @Valid Location updateLocationRequest) throws Throwable {
-        return locationService.updateLocationPut(locationId, updateLocationRequest);
+    @PutMapping("/{locationId}") // update a location using PUT
+    public Location updateLocationPut(@PathVariable @Valid Long locationId, @RequestBody @Valid Location updateLocation) throws Throwable {
+        return locationService.updateLocationPut(locationId, updateLocation);
     }
 
-    @PatchMapping("/{locationId}")
-    public Location updateLocationPatch(@PathVariable @Valid Long locationId, @RequestBody Location updateLocationRequest) throws Throwable {
-        return locationService.updateLocationPatch(locationId, updateLocationRequest);
+    @PatchMapping("/{locationId}") // update a location using PATCH
+    public Location updateLocationPatch(@PathVariable @Valid Long locationId, @RequestBody Location updateLocation) throws Throwable {
+        return locationService.updateLocationPatch(locationId, updateLocation);
     }
 }

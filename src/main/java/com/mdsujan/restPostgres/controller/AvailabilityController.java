@@ -39,13 +39,13 @@ public class AvailabilityController {
         return availabilityService.getAvlQtyByItemV1(itemId);
     }
 
-    @GetMapping("/v2/availability/{itemId}/{locationId}")
+    @GetMapping("/v2/availability/{itemId}/{locationId}") // get the stock level for an item at a location v2
     public AvailabilityV2Response getAvailabilityStockLevelV2(@PathVariable Long itemId, @PathVariable Long locationId) {
         // get the stock level "red", "yellow" or "green" for an item and a location
         return availabilityService.getStockLevelV2(itemId, locationId);
     }
 
-    @GetMapping("/v3/availability/{itemId}/{locationId}")
+    @GetMapping("/v3/availability/{itemId}/{locationId}") // get the stock level for an item at a location v3
     public AvailabilityV3Response getAvailabilityStockLevelV3(@PathVariable Long itemId, @PathVariable Long locationId) {
         // get the stock level but only as mentioned in the config file (properties file)
         return availabilityService.getStockLevelV3(itemId, locationId);

@@ -105,28 +105,35 @@ public class ItemService {
             // find the record matching with the id
             Item itemToUpdate = itemRepository.findById(itemId).get();
             // update the itemToUpdate
-            // since this is a patch request only present fields shall be updated
+
             if (updateItemRequest.getItemDesc() != null && !updateItemRequest.getItemDesc().isEmpty()) {
                 itemToUpdate.setItemDesc(updateItemRequest.getItemDesc());
             }
+
             if (updateItemRequest.getCategory() != null && !updateItemRequest.getCategory().isEmpty()) {
                 itemToUpdate.setCategory(updateItemRequest.getCategory());
             }
+
             if (updateItemRequest.getItemType() != null && !updateItemRequest.getItemType().isEmpty()) {
                 itemToUpdate.setItemType(updateItemRequest.getItemType());
             }
+
             if (updateItemRequest.getStatus() != null && !updateItemRequest.getStatus().isEmpty()) {
                 itemToUpdate.setStatus(updateItemRequest.getStatus());
             }
+
             if (updateItemRequest.getPrice() != null) {
                 itemToUpdate.setPrice(updateItemRequest.getPrice());
             }
+
             if (updateItemRequest.getPickupAllowed() != null) {
                 itemToUpdate.setPickupAllowed(updateItemRequest.getPickupAllowed());
             }
+
             if (updateItemRequest.getShippingAllowed() != null) {
                 itemToUpdate.setShippingAllowed(updateItemRequest.getShippingAllowed());
             }
+
             if (updateItemRequest.getDeliveryAllowed() != null) {
                 itemToUpdate.setDeliveryAllowed(updateItemRequest.getDeliveryAllowed());
             }

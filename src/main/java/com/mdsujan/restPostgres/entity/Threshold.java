@@ -20,11 +20,11 @@ public class Threshold {
     @Column(name = "threshold_id")
     Long thresholdId;
 
-    @OneToOne
+    @OneToOne // relation with items table via the fk itemId
     @JoinColumn(name = "item_id")
     Item item;
 
-    @OneToOne
+    @OneToOne // relation with items table via the fk locationId
     @JoinColumn(name = "location_id")
     Location location;
 

@@ -77,12 +77,12 @@ public class SupplyController {
         return new SupplyResponse(supplyService.createNewSupply(createSupplyRequest, newSupply));
     }
 
-    @PutMapping("/{supplyId}") // update supply (all fields)
+    @PutMapping("/{supplyId}") // update supply using PUT
     public SupplyResponse updateSupplyPut(@PathVariable @Valid Long supplyId, @RequestBody @Valid UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.updateSupplyPut(supplyId, updateSupplyRequest));
     }
 
-    @PatchMapping("/{supplyId}") // update supply (all fields)
+    @PatchMapping("/{supplyId}") // update supply using PATCH
     public SupplyResponse updateSupplyPatch(@PathVariable @Valid Long supplyId, @RequestBody UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.updateSupplyPatch(supplyId, updateSupplyRequest));
     }

@@ -32,12 +32,12 @@ public class Supply {
     @NotNull
     Long supplyQty;
 
-    @OneToOne
+    @OneToOne // relation with items table via the fk itemId
     @JoinColumn(name = "item_id")
     @NotNull
     Item item;
 
-    @OneToOne
+    @OneToOne // relation with locations table via the fk locationId
     @JoinColumn(name = "location_id")
     @NotNull
     Location location;

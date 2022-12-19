@@ -117,27 +117,42 @@ public class LocationService {
             if (updateLocationRequest.getLocationDesc() != null && !updateLocationRequest.getLocationDesc().isEmpty()) {
                 locationToUpdate.setLocationDesc(updateLocationRequest.getLocationDesc());
             }
+
             if (updateLocationRequest.getType() != null && !updateLocationRequest.getType().isEmpty()) {
                 locationToUpdate.setType(updateLocationRequest.getType());
             }
-            locationToUpdate.setPickupAllowed(updateLocationRequest.getPickupAllowed());
-            locationToUpdate.setShippingAllowed(updateLocationRequest.getShippingAllowed());
-            locationToUpdate.setDeliveryAllowed(updateLocationRequest.getDeliveryAllowed());
+            if (updateLocationRequest.getPickupAllowed() != null) {
+                locationToUpdate.setPickupAllowed(updateLocationRequest.getPickupAllowed());
+            }
+
+            if (updateLocationRequest.getShippingAllowed() != null) {
+                locationToUpdate.setShippingAllowed(updateLocationRequest.getShippingAllowed());
+            }
+
+            if (updateLocationRequest.getDeliveryAllowed() != null) {
+                locationToUpdate.setDeliveryAllowed(updateLocationRequest.getDeliveryAllowed());
+            }
+
             if (updateLocationRequest.getAddrLine1() != null && !updateLocationRequest.getAddrLine1().isEmpty()) {
                 locationToUpdate.setAddrLine1(updateLocationRequest.getAddrLine1());
             }
+
             if (updateLocationRequest.getAddrLine2() != null && !updateLocationRequest.getAddrLine2().isEmpty()) {
                 locationToUpdate.setAddrLine2(updateLocationRequest.getAddrLine2());
             }
+
             if (updateLocationRequest.getAddrLine3() != null && !updateLocationRequest.getAddrLine3().isEmpty()) {
                 locationToUpdate.setAddrLine3(updateLocationRequest.getAddrLine3());
             }
+
             if (updateLocationRequest.getCity() != null && !updateLocationRequest.getCity().isEmpty()) {
                 locationToUpdate.setCity(updateLocationRequest.getCity());
             }
+
             if (updateLocationRequest.getState() != null && !updateLocationRequest.getState().isEmpty()) {
                 locationToUpdate.setState(updateLocationRequest.getState());
             }
+
             if (updateLocationRequest.getCountry() != null && !updateLocationRequest.getCountry().isEmpty()) {
                 locationToUpdate.setCountry(updateLocationRequest.getCountry());
             }
@@ -145,7 +160,7 @@ public class LocationService {
             // save the new entity
             locationToUpdate = locationRepository.save(locationToUpdate);
             // return the updated location as response
-            return updateLocationRequest;
+            return locationToUpdate;
         } else {
             throw new ResourceNotFoundException("cannot update this location; location not found; please enter a correct locationId");
         }

@@ -22,7 +22,7 @@ public class ThresholdController {
     @Autowired
     ThresholdService thresholdService;
 
-    @GetMapping("/")
+    @GetMapping("/") // get all thresholds
     public List<ThresholdResponse> getAllThresholds(){
         List<Threshold> thresholdList = thresholdService.getAllThresholds();
         List<ThresholdResponse> thresholdResponseList = new ArrayList<>();
