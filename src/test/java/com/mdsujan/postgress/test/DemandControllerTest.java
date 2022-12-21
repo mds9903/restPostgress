@@ -2,7 +2,6 @@ package com.mdsujan.postgress.test;
 
 
 import com.mdsujan.restPostgres.controller.DemandController;
-import com.mdsujan.restPostgres.controller.SupplyController;
 import com.mdsujan.restPostgres.entity.Demand;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
