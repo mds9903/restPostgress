@@ -71,10 +71,10 @@ public class SupplyController {
 
     @PostMapping("/") // create a new supply
     public SupplyResponse createSupply(@RequestBody CreateSupplyRequest createSupplyRequest) throws Throwable {
-        // send the supply entity itself that should be created
-        Supply newSupply = new Supply(createSupplyRequest); // without the details of the (dependency) item and location entities
-        // pass the request body to help assign item and location as well as pass the supply object for creating
-        return new SupplyResponse(supplyService.createNewSupply(createSupplyRequest, newSupply));
+//        // send the supply entity itself that should be created
+//        Supply newSupply = new Supply(createSupplyRequest); // without the details of the (dependency) item and location entities
+//        // pass the request body to help assign item and location as well as pass the supply object for creating
+        return new SupplyResponse(supplyService.createNewSupply(createSupplyRequest));
     }
 
     @PutMapping("/{supplyId}") // update supply using PUT

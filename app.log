@@ -1257,3 +1257,89 @@ List of constraint violations:[
 2022-12-19 14:50:47.236  INFO 479108 --- [main] c.m.postgress.test.ItemServiceTest       : Starting ItemServiceTest using Java 11.0.17 on U-Sujan with PID 479108 (started by sujan in /home/sujan/Documents/restPostgres)
 2022-12-19 14:50:47.237  INFO 479108 --- [main] c.m.postgress.test.ItemServiceTest       : No active profile set, falling back to 1 default profile: "default"
 2022-12-19 14:50:47.264  INFO 479108 --- [main] c.m.postgress.test.ItemServiceTest       : Started ItemServiceTest in 0.059 seconds (JVM running for 9.31)
+2022-12-21 14:55:48.146  INFO 181605 --- [main] c.m.postgress.test.ItemControllerTest    : Starting ItemControllerTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:48.149  INFO 181605 --- [main] c.m.postgress.test.ItemControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:50.020  INFO 181605 --- [main] c.m.postgress.test.ItemControllerTest    : Started ItemControllerTest in 2.962 seconds (JVM running for 6.964)
+2022-12-21 14:55:50.134  INFO 181605 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@410ae5ac
+2022-12-21 14:55:50.144  INFO 181605 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@410ae5ac
+2022-12-21 14:55:50.373  INFO 181605 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@7523a3dc
+2022-12-21 14:55:50.384  INFO 181605 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@766a49c7
+2022-12-21 14:55:50.386  INFO 181605 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@766a49c7
+2022-12-21 14:55:50.413  INFO 181605 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@6ee99964
+2022-12-21 14:55:50.414  INFO 181605 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@6ee99964
+2022-12-21 14:55:50.433  INFO 181605 --- [main] c.m.r.controller.ItemController          : Response: Item with itemId=1 successfully deleted.
+2022-12-21 14:55:50.530  INFO 181605 --- [main] c.m.postgress.test.DemandControllerTest  : Starting DemandControllerTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:50.531  INFO 181605 --- [main] c.m.postgress.test.DemandControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:50.661  INFO 181605 --- [main] c.m.postgress.test.DemandControllerTest  : Started DemandControllerTest in 0.205 seconds (JVM running for 7.604)
+2022-12-21 14:55:50.751  INFO 181605 --- [main] c.m.postgress.test.SupplyControllerTest  : Starting SupplyControllerTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:50.752  INFO 181605 --- [main] c.m.postgress.test.SupplyControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:50.870  INFO 181605 --- [main] c.m.postgress.test.SupplyControllerTest  : Started SupplyControllerTest in 0.177 seconds (JVM running for 7.814)
+2022-12-21 14:55:50.960  INFO 181605 --- [main] c.m.p.test.ThresholdControllerTest       : Starting ThresholdControllerTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:50.961  INFO 181605 --- [main] c.m.p.test.ThresholdControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:51.071  INFO 181605 --- [main] c.m.p.test.ThresholdControllerTest       : Started ThresholdControllerTest in 0.166 seconds (JVM running for 8.015)
+2022-12-21 14:55:51.197  INFO 181605 --- [main] c.m.postgress.test.ThresholdServiceTest  : Starting ThresholdServiceTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:51.198  INFO 181605 --- [main] c.m.postgress.test.ThresholdServiceTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:51.667  INFO 181605 --- [main] c.m.postgress.test.ThresholdServiceTest  : Started ThresholdServiceTest in 0.519 seconds (JVM running for 8.611)
+2022-12-21 14:55:51.794  INFO 181605 --- [main] c.m.postgress.test.SupplyServiceTest     : Starting SupplyServiceTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:51.795  INFO 181605 --- [main] c.m.postgress.test.SupplyServiceTest     : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:51.918  INFO 181605 --- [main] c.m.postgress.test.SupplyServiceTest     : Started SupplyServiceTest in 0.167 seconds (JVM running for 8.862)
+2022-12-21 14:55:52.028  INFO 181605 --- [main] c.m.p.test.LocationControllerTest        : Starting LocationControllerTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:52.029  INFO 181605 --- [main] c.m.p.test.LocationControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:52.121  INFO 181605 --- [main] c.m.p.test.LocationControllerTest        : Started LocationControllerTest in 0.133 seconds (JVM running for 9.065)
+2022-12-21 14:55:52.219  INFO 181605 --- [main] c.m.postgress.test.LocationServiceTest   : Starting LocationServiceTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:52.220  INFO 181605 --- [main] c.m.postgress.test.LocationServiceTest   : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:52.324  INFO 181605 --- [main] c.m.postgress.test.LocationServiceTest   : Started LocationServiceTest in 0.145 seconds (JVM running for 9.268)
+2022-12-21 14:55:52.410  INFO 181605 --- [main] c.m.p.test.AvailabilityControllerTest    : Starting AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:52.410  INFO 181605 --- [main] c.m.p.test.AvailabilityControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:52.456  INFO 181605 --- [main] c.m.p.test.AvailabilityControllerTest    : Started AvailabilityControllerTest in 0.075 seconds (JVM running for 9.4)
+2022-12-21 14:55:52.528  INFO 181605 --- [main] c.m.postgress.test.DemandServiceTest     : Starting DemandServiceTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:52.529  INFO 181605 --- [main] c.m.postgress.test.DemandServiceTest     : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:52.556  INFO 181605 --- [main] c.m.postgress.test.DemandServiceTest     : Started DemandServiceTest in 0.061 seconds (JVM running for 9.499)
+2022-12-21 14:55:52.645  INFO 181605 --- [main] c.m.p.test.AvailabilityServiceTest       : Starting AvailabilityServiceTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:52.646  INFO 181605 --- [main] c.m.p.test.AvailabilityServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:52.679  INFO 181605 --- [main] c.m.p.test.AvailabilityServiceTest       : Started AvailabilityServiceTest in 0.071 seconds (JVM running for 9.623)
+2022-12-21 14:55:52.764  INFO 181605 --- [main] c.m.postgress.test.ItemServiceTest       : Starting ItemServiceTest using Java 11.0.17 on U-Sujan with PID 181605 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 14:55:52.765  INFO 181605 --- [main] c.m.postgress.test.ItemServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 14:55:52.795  INFO 181605 --- [main] c.m.postgress.test.ItemServiceTest       : Started ItemServiceTest in 0.064 seconds (JVM running for 9.738)
+2022-12-21 16:30:33.496  INFO 189998 --- [main] c.m.postgress.test.SupplyControllerTest  : Starting SupplyControllerTest using Java 11.0.17 on U-Sujan with PID 189998 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 16:30:33.498  INFO 189998 --- [main] c.m.postgress.test.SupplyControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 16:30:34.440  INFO 189998 --- [main] c.m.postgress.test.SupplyControllerTest  : Started SupplyControllerTest in 1.735 seconds (JVM running for 3.229)
+2022-12-21 16:31:11.452  INFO 190079 --- [main] c.m.postgress.test.SupplyControllerTest  : Starting SupplyControllerTest using Java 11.0.17 on U-Sujan with PID 190079 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 16:31:11.454  INFO 190079 --- [main] c.m.postgress.test.SupplyControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 16:31:12.333  INFO 190079 --- [main] c.m.postgress.test.SupplyControllerTest  : Started SupplyControllerTest in 1.591 seconds (JVM running for 3.041)
+2022-12-21 16:35:34.006  INFO 190400 --- [main] c.m.postgress.test.SupplyControllerTest  : Starting SupplyControllerTest using Java 11.0.17 on U-Sujan with PID 190400 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 16:35:34.016  INFO 190400 --- [main] c.m.postgress.test.SupplyControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 16:35:34.977  INFO 190400 --- [main] c.m.postgress.test.SupplyControllerTest  : Started SupplyControllerTest in 1.708 seconds (JVM running for 3.18)
+2022-12-21 16:37:42.657  INFO 190662 --- [main] c.m.postgress.test.SupplyControllerTest  : Starting SupplyControllerTest using Java 11.0.17 on U-Sujan with PID 190662 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 16:37:42.660  INFO 190662 --- [main] c.m.postgress.test.SupplyControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 16:37:43.559  INFO 190662 --- [main] c.m.postgress.test.SupplyControllerTest  : Started SupplyControllerTest in 1.663 seconds (JVM running for 3.253)
+2022-12-21 16:47:35.705  INFO 191296 --- [main] c.m.postgress.test.SupplyControllerTest  : Starting SupplyControllerTest using Java 11.0.17 on U-Sujan with PID 191296 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 16:47:35.708  INFO 191296 --- [main] c.m.postgress.test.SupplyControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 16:47:36.637  INFO 191296 --- [main] c.m.postgress.test.SupplyControllerTest  : Started SupplyControllerTest in 1.663 seconds (JVM running for 3.057)
+2022-12-21 20:04:35.936  INFO 195774 --- [main] c.m.postgress.test.DemandControllerTest  : Starting DemandControllerTest using Java 11.0.17 on U-Sujan with PID 195774 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 20:04:35.939  INFO 195774 --- [main] c.m.postgress.test.DemandControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 20:04:36.833  INFO 195774 --- [main] c.m.postgress.test.DemandControllerTest  : Started DemandControllerTest in 1.602 seconds (JVM running for 3.13)
+2022-12-21 20:04:55.913  INFO 195861 --- [main] c.m.postgress.test.DemandControllerTest  : Starting DemandControllerTest using Java 11.0.17 on U-Sujan with PID 195861 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 20:04:55.916  INFO 195861 --- [main] c.m.postgress.test.DemandControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 20:04:56.809  INFO 195861 --- [main] c.m.postgress.test.DemandControllerTest  : Started DemandControllerTest in 1.607 seconds (JVM running for 3.059)
+2022-12-21 20:05:26.248  INFO 195946 --- [main] c.m.postgress.test.DemandControllerTest  : Starting DemandControllerTest using Java 11.0.17 on U-Sujan with PID 195946 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 20:05:26.251  INFO 195946 --- [main] c.m.postgress.test.DemandControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 20:05:27.329  INFO 195946 --- [main] c.m.postgress.test.DemandControllerTest  : Started DemandControllerTest in 1.883 seconds (JVM running for 3.527)
+2022-12-21 20:06:31.726  INFO 196069 --- [main] c.m.postgress.test.DemandControllerTest  : Starting DemandControllerTest using Java 11.0.17 on U-Sujan with PID 196069 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 20:06:31.730  INFO 196069 --- [main] c.m.postgress.test.DemandControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 20:06:32.731  INFO 196069 --- [main] c.m.postgress.test.DemandControllerTest  : Started DemandControllerTest in 1.873 seconds (JVM running for 3.555)
+2022-12-21 20:08:58.607  INFO 196298 --- [main] c.m.postgress.test.DemandControllerTest  : Starting DemandControllerTest using Java 11.0.17 on U-Sujan with PID 196298 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 20:08:58.610  INFO 196298 --- [main] c.m.postgress.test.DemandControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 20:08:59.507  INFO 196298 --- [main] c.m.postgress.test.DemandControllerTest  : Started DemandControllerTest in 1.589 seconds (JVM running for 2.993)
+2022-12-21 20:15:16.848  INFO 196665 --- [main] c.m.postgress.test.DemandControllerTest  : Starting DemandControllerTest using Java 11.0.17 on U-Sujan with PID 196665 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 20:15:16.851  INFO 196665 --- [main] c.m.postgress.test.DemandControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 20:15:17.845  INFO 196665 --- [main] c.m.postgress.test.DemandControllerTest  : Started DemandControllerTest in 1.765 seconds (JVM running for 3.25)
+2022-12-21 20:20:27.813  INFO 197795 --- [main] c.m.postgress.test.DemandControllerTest  : Starting DemandControllerTest using Java 11.0.17 on U-Sujan with PID 197795 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 20:20:27.816  INFO 197795 --- [main] c.m.postgress.test.DemandControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 20:20:28.835  INFO 197795 --- [main] c.m.postgress.test.DemandControllerTest  : Started DemandControllerTest in 1.862 seconds (JVM running for 3.355)
+2022-12-21 20:21:28.983  INFO 198960 --- [main] c.m.postgress.test.DemandControllerTest  : Starting DemandControllerTest using Java 11.0.17 on U-Sujan with PID 198960 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 20:21:28.986  INFO 198960 --- [main] c.m.postgress.test.DemandControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 20:21:29.980  INFO 198960 --- [main] c.m.postgress.test.DemandControllerTest  : Started DemandControllerTest in 1.744 seconds (JVM running for 3.245)
+2022-12-21 20:24:31.743  INFO 201380 --- [main] c.m.postgress.test.DemandControllerTest  : Starting DemandControllerTest using Java 11.0.17 on U-Sujan with PID 201380 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-21 20:24:31.746  INFO 201380 --- [main] c.m.postgress.test.DemandControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-21 20:24:32.673  INFO 201380 --- [main] c.m.postgress.test.DemandControllerTest  : Started DemandControllerTest in 1.64 seconds (JVM running for 3.09)

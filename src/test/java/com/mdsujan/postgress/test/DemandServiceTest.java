@@ -16,8 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import java.util.List;
 import java.util.Optional;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 
@@ -120,16 +122,17 @@ public class DemandServiceTest {
             mockItem1,
             mockLocation1);
 
+
     private final UpdateDemandRequest mockUpdateDemandRequest11Put = new UpdateDemandRequest(
-            AllowedDemandTypes.HARD_PROMISED,
             10L,
             1L,
+            AllowedDemandTypes.HARD_PROMISED,
             1L);
 
     private final UpdateDemandRequest mockUpdateDemandRequest11Patch = new UpdateDemandRequest(
-            AllowedDemandTypes.HARD_PROMISED,
             10L,
             1L,
+            AllowedDemandTypes.HARD_PROMISED,
             1L);
 
     @Test
@@ -181,7 +184,7 @@ public class DemandServiceTest {
 
         // test
         Demand demandResponse = mockDemandService.createNewDemand(mockCreateDemandRequest11);
-        System.out.println("Demand Response: "+demandResponse);
+        System.out.println("Demand Response: " + demandResponse);
         // assert
         assertThat(demandResponse).isEqualTo(mockDemand11);
 //        assertThat(demandResponse.getItem().getItemId()).isEqualTo(mockDemand11.getItem().getItemId());

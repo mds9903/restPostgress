@@ -15,11 +15,11 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class UpdateDemandRequest {
     @NotNull
-    AllowedDemandTypes demandType;
-    @NotNull
     Long itemId;
     @NotNull
     Long locationId;
+    @NotNull
+    AllowedDemandTypes demandType;
     @NotNull
     Long demandQty;
 }

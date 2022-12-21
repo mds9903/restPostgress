@@ -1,5 +1,6 @@
 package com.mdsujan.restPostgres.service;
 
+import com.mdsujan.restPostgres.entity.Demand;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Supply;
@@ -8,6 +9,7 @@ import com.mdsujan.restPostgres.exceptionHandling.*;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
+import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
 import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
 import com.mdsujan.restPostgres.response.SupplyDetails;
@@ -49,20 +51,6 @@ public class SupplyService {
         }
     }
 
-//    public List<Supply> getSuppliesByItemIdAndLocationId(Long itemId, Long locationId) {
-//        List<Supply> supplyList = supplyRepository.findByItemItemIdAndLocationLocationId(itemId,locationId);
-//        if(supplyList != null && supplyList.size() > 0){
-//            return supplyList;
-//        }else{
-//            throw new ResourceAccessException("no supplies found for given itemId and locationId;" +
-//                    " please give correct itemId and/or locationId");
-//        }
-//    }
-
-//    public List<Supply> getSuppliesByItemId(Long itemId) {
-//        return supplyRepository.findByItemItemId(itemId);
-//    }
-
     public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(Long itemId, Long locationId) throws Throwable {
         List<Supply> supplyList = supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
         if (supplyList != null && supplyList.size() > 0) {
@@ -83,16 +71,37 @@ public class SupplyService {
         }
     }
 
-//    public List<Supply> getSupplyDetailsBySupplyTypeAndLocation(Long supplyType, Long locationId) {
-//        return supplyRepository.findBySupplyTypeAndLocationLocationId(supplyType, locationId);
+//    public Supply createNewSupply(CreateSupplyRequest createSupplyRequest, Supply supply) throws Throwable {
+//        // create a supply for an item on a location (given in the request body)
+//        // if the itemId and the locationId are present in the items and locations table
+//        if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
+//                && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
+//            // create the supply
+//            // get the item for this supply
+//            Item item = itemRepository.findById(createSupplyRequest.getItemId()).get();
+//            // get the location for this supply
+//            Location location = locationRepository.findById(createSupplyRequest.getLocationId()).get();
+//            supply.setItem(item);
+//            supply.setLocation(location);
+//            // save this new supply
+////            return supplyRepository.save(supply);
+//            supply = supplyRepository.save(supply);
+//            return supply;
+//        } else {
+//            throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create supply; " +
+//                    "please provide an item id and a location id that exists");
+//        }
+//
 //    }
 
-    public Supply createNewSupply(CreateSupplyRequest createSupplyRequest, Supply supply) throws Throwable {
-        // create a supply for an item on a location (given in the request body)
+    public Supply createNewSupply(CreateSupplyRequest createSupplyRequest) throws Throwable {
+        // create a demand for an item on a location (given in the request body)
+
         // if the itemId and the locationId are present in the items and locations table
         if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
                 && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
-            // create the supply
+            // create the demand
+            Supply supply = new Supply(createSupplyRequest);
             // get the item for this supply
             Item item = itemRepository.findById(createSupplyRequest.getItemId()).get();
             // get the location for this supply
@@ -100,14 +109,12 @@ public class SupplyService {
             supply.setItem(item);
             supply.setLocation(location);
             // save this new supply
-//            return supplyRepository.save(supply);
             supply = supplyRepository.save(supply);
             return supply;
         } else {
-            throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create supply; " +
+            throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create demand; " +
                     "please provide an item id and a location id that exists");
         }
-
     }
 
     public Supply updateSupplyPut(Long supplyId, UpdateSupplyRequest updateSupplyRequest) throws Throwable {

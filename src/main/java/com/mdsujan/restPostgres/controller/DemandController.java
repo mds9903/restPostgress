@@ -66,7 +66,7 @@ public class DemandController {
     }
 
     @DeleteMapping("/{demandId}") // delete a demand
-    public String deleteSupply(@PathVariable @Valid Long demandId) throws Throwable {
+    public String deleteDemand(@PathVariable @Valid Long demandId) throws Throwable {
         return demandService.deleteDemand(demandId);
     }
 }
