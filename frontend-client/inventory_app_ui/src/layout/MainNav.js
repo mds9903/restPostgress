@@ -8,7 +8,7 @@ function MainNav() {
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto" variant="pills" defaultActiveKey="/home">
+            <Nav className="me-auto" variant="pills">
               <LinkContainer to="/home">
                 <Nav.Link>Home</Nav.Link>
               </LinkContainer>
