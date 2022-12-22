@@ -23,7 +23,7 @@ public class ItemService {
     DemandRepository demandRepository;
 
 
-//    @Cacheable("items")
+    //    @Cacheable("items")
     public List<Item> getAllItems() {
 
         System.out.println("getting all items..");
@@ -38,14 +38,13 @@ public class ItemService {
                                 + itemId + "'; please check itemId entered"));
     }
 
-//    @CacheEvict(value = "items", allEntries = true)
+    //    @CacheEvict(value = "items", allEntries = true)
     public Item createItem(Item createItemRequest) throws Throwable {
         // new record should not be created if record already exists
 
         // if record with same id exists then simply return it
         if (itemRepository.findById(createItemRequest.getItemId()).isPresent()) {
             throw new DuplicateResourceException("an item with same itemId already exists; please provide a unique itemId in the request body");
-//            return itemRepository.findById(createItemRequest.getItemId()).get();
         }
         // else we create a new item
         return itemRepository.save(createItemRequest);

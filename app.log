@@ -1519,3 +1519,6 @@ List of constraint violations:[
 2022-12-21 20:44:28.612  INFO 202689 --- [main] c.m.postgress.test.ItemServiceTest       : Starting ItemServiceTest using Java 11.0.17 on U-Sujan with PID 202689 (started by sujan in /home/sujan/Documents/restPostgres)
 2022-12-21 20:44:28.613  INFO 202689 --- [main] c.m.postgress.test.ItemServiceTest       : No active profile set, falling back to 1 default profile: "default"
 2022-12-21 20:44:28.646  INFO 202689 --- [main] c.m.postgress.test.ItemServiceTest       : Started ItemServiceTest in 0.068 seconds (JVM running for 8.5)
+2022-12-22 10:20:35.972  INFO 221127 --- [main] c.m.postgress.test.SupplyServiceTest     : Starting SupplyServiceTest using Java 11.0.17 on U-Sujan with PID 221127 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:20:35.974  INFO 221127 --- [main] c.m.postgress.test.SupplyServiceTest     : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:20:37.140  INFO 221127 --- [main] c.m.postgress.test.SupplyServiceTest     : Started SupplyServiceTest in 1.741 seconds (JVM running for 3.477)

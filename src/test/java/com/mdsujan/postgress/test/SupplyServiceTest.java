@@ -162,31 +162,31 @@ public class SupplyServiceTest {
         assertThat(supplyResponseList).isEqualTo(mockSupplyListAll);
     }
 
-//    @Test
-//    public void createSupplyTest() throws Throwable {
-//        // stubs
-//        Mockito
-//                .when(mockLocationRepository.findById(
-//                        mockCreateSupplyRequest11.getLocationId()
-//                ))
-//                .thenReturn(Optional.of(mockLocation1));
-//
-//        Mockito
-//                .when(mockItemRepository.findById(
-//                        mockCreateSupplyRequest11.getItemId()
-//                ))
-//                .thenReturn(Optional.of(mockItem1));
-//
-//        Mockito
-//                .when(mockSupplyRepository.save(any()))
-//                .thenReturn(mockSupply11);
-//
-//        // test
-//        Supply supplyResponse = mockSupplyService.createNewSupply(mockCreateSupplyRequest11, mockSupply11);
-//        System.out.println("Supply Response: "+supplyResponse);
-//        // assert
-//        assertThat(supplyResponse).isEqualTo(mockSupply11);
-//    }
+    @Test
+    public void createSupplyTest() throws Throwable {
+        // stubs
+        Mockito
+                .when(mockLocationRepository.findById(
+                        mockCreateSupplyRequest11.getLocationId()
+                ))
+                .thenReturn(Optional.of(mockLocation1));
+
+        Mockito
+                .when(mockItemRepository.findById(
+                        mockCreateSupplyRequest11.getItemId()
+                ))
+                .thenReturn(Optional.of(mockItem1));
+
+        Mockito
+                .when(mockSupplyRepository.save(any()))
+                .thenReturn(mockSupply11);
+
+        // test
+        Supply supplyResponse = mockSupplyService.createNewSupply(mockCreateSupplyRequest11);
+        System.out.println("Supply Response: " + supplyResponse);
+        // assert
+        assertThat(supplyResponse).isEqualTo(mockSupply11);
+    }
 
     @Test
     public void updateSupplyPutTest() throws Throwable {
