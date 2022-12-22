@@ -1522,3 +1522,200 @@ List of constraint violations:[
 2022-12-22 10:20:35.972  INFO 221127 --- [main] c.m.postgress.test.SupplyServiceTest     : Starting SupplyServiceTest using Java 11.0.17 on U-Sujan with PID 221127 (started by sujan in /home/sujan/Documents/restPostgres)
 2022-12-22 10:20:35.974  INFO 221127 --- [main] c.m.postgress.test.SupplyServiceTest     : No active profile set, falling back to 1 default profile: "default"
 2022-12-22 10:20:37.140  INFO 221127 --- [main] c.m.postgress.test.SupplyServiceTest     : Started SupplyServiceTest in 1.741 seconds (JVM running for 3.477)
+2022-12-22 10:21:56.951  INFO 221308 --- [main] c.m.postgress.test.ItemControllerTest    : Starting ItemControllerTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:21:56.955  INFO 221308 --- [main] c.m.postgress.test.ItemControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:21:58.611  INFO 221308 --- [main] c.m.postgress.test.ItemControllerTest    : Started ItemControllerTest in 2.682 seconds (JVM running for 6.37)
+2022-12-22 10:21:58.757  INFO 221308 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@1a8df0b3
+2022-12-22 10:21:58.766  INFO 221308 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@1a8df0b3
+2022-12-22 10:21:58.983  INFO 221308 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@2806d6da
+2022-12-22 10:21:58.990  INFO 221308 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@1db7157f
+2022-12-22 10:21:58.991  INFO 221308 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@1db7157f
+2022-12-22 10:21:59.013  INFO 221308 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@257ef9ed
+2022-12-22 10:21:59.014  INFO 221308 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@257ef9ed
+2022-12-22 10:21:59.027  INFO 221308 --- [main] c.m.r.controller.ItemController          : Response: Item with itemId=1 successfully deleted.
+2022-12-22 10:21:59.099  INFO 221308 --- [main] c.m.postgress.test.DemandControllerTest  : Starting DemandControllerTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:21:59.100  INFO 221308 --- [main] c.m.postgress.test.DemandControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:21:59.199  INFO 221308 --- [main] c.m.postgress.test.DemandControllerTest  : Started DemandControllerTest in 0.147 seconds (JVM running for 6.958)
+2022-12-22 10:21:59.298  INFO 221308 --- [main] c.m.postgress.test.SupplyControllerTest  : Starting SupplyControllerTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:21:59.299  INFO 221308 --- [main] c.m.postgress.test.SupplyControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:21:59.380  INFO 221308 --- [main] c.m.postgress.test.SupplyControllerTest  : Started SupplyControllerTest in 0.125 seconds (JVM running for 7.139)
+2022-12-22 10:21:59.477  INFO 221308 --- [main] c.m.p.test.ThresholdControllerTest       : Starting ThresholdControllerTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:21:59.478  INFO 221308 --- [main] c.m.p.test.ThresholdControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:21:59.548  INFO 221308 --- [main] c.m.p.test.ThresholdControllerTest       : Started ThresholdControllerTest in 0.116 seconds (JVM running for 7.307)
+2022-12-22 10:21:59.645  INFO 221308 --- [main] c.m.postgress.test.ThresholdServiceTest  : Starting ThresholdServiceTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:21:59.646  INFO 221308 --- [main] c.m.postgress.test.ThresholdServiceTest  : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:21:59.969  INFO 221308 --- [main] c.m.postgress.test.ThresholdServiceTest  : Started ThresholdServiceTest in 0.366 seconds (JVM running for 7.728)
+2022-12-22 10:22:00.065  INFO 221308 --- [main] c.m.postgress.test.SupplyServiceTest     : Starting SupplyServiceTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:22:00.065  INFO 221308 --- [main] c.m.postgress.test.SupplyServiceTest     : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:22:00.152  INFO 221308 --- [main] c.m.postgress.test.SupplyServiceTest     : Started SupplyServiceTest in 0.12 seconds (JVM running for 7.911)
+2022-12-22 10:22:00.227  INFO 221308 --- [main] c.m.p.test.LocationControllerTest        : Starting LocationControllerTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:22:00.228  INFO 221308 --- [main] c.m.p.test.LocationControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:22:00.281  INFO 221308 --- [main] c.m.p.test.LocationControllerTest        : Started LocationControllerTest in 0.083 seconds (JVM running for 8.04)
+2022-12-22 10:22:00.348  INFO 221308 --- [main] c.m.postgress.test.LocationServiceTest   : Starting LocationServiceTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:22:00.349  INFO 221308 --- [main] c.m.postgress.test.LocationServiceTest   : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:22:00.435  INFO 221308 --- [main] c.m.postgress.test.LocationServiceTest   : Started LocationServiceTest in 0.114 seconds (JVM running for 8.193)
+2022-12-22 10:22:00.506  INFO 221308 --- [main] c.m.p.test.AvailabilityControllerTest    : Starting AvailabilityControllerTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:22:00.506  INFO 221308 --- [main] c.m.p.test.AvailabilityControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:22:00.556  INFO 221308 --- [main] c.m.p.test.AvailabilityControllerTest    : Started AvailabilityControllerTest in 0.077 seconds (JVM running for 8.315)
+2022-12-22 10:22:00.619  INFO 221308 --- [main] c.m.postgress.test.DemandServiceTest     : Starting DemandServiceTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:22:00.619  INFO 221308 --- [main] c.m.postgress.test.DemandServiceTest     : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:22:00.642  INFO 221308 --- [main] c.m.postgress.test.DemandServiceTest     : Started DemandServiceTest in 0.051 seconds (JVM running for 8.401)
+2022-12-22 10:22:00.711  INFO 221308 --- [main] c.m.p.test.AvailabilityServiceTest       : Starting AvailabilityServiceTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:22:00.712  INFO 221308 --- [main] c.m.p.test.AvailabilityServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:22:00.735  INFO 221308 --- [main] c.m.p.test.AvailabilityServiceTest       : Started AvailabilityServiceTest in 0.049 seconds (JVM running for 8.494)
+2022-12-22 10:22:00.806  INFO 221308 --- [main] c.m.postgress.test.ItemServiceTest       : Starting ItemServiceTest using Java 11.0.17 on U-Sujan with PID 221308 (started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:22:00.806  INFO 221308 --- [main] c.m.postgress.test.ItemServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:22:00.827  INFO 221308 --- [main] c.m.postgress.test.ItemServiceTest       : Started ItemServiceTest in 0.047 seconds (JVM running for 8.585)
+2022-12-22 10:31:34.169  INFO 221905 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 221905 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:31:34.175  INFO 221905 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:31:35.114  INFO 221905 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-22 10:31:35.115  INFO 221905 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-22 10:31:35.355  INFO 221905 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 224 ms. Found 5 JPA repository interfaces.
+2022-12-22 10:31:35.607  INFO 221905 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-22 10:31:35.609  INFO 221905 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-12-22 10:31:35.622  INFO 221905 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2022-12-22 10:31:36.444  INFO 221905 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2022-12-22 10:31:36.458  INFO 221905 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-22 10:31:36.459  INFO 221905 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-22 10:31:38.903  INFO 221905 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-22 10:31:38.904  INFO 221905 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4633 ms
+2022-12-22 10:31:39.415  INFO 221905 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-22 10:31:39.535  INFO 221905 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-22 10:31:39.610  INFO 221905 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-22 10:31:39.689  INFO 221905 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-22 10:31:39.928  INFO 221905 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-22 10:31:40.067  INFO 221905 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-22 10:31:40.973  INFO 221905 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-22 10:31:40.984  INFO 221905 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-22 10:31:41.903  WARN 221905 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-22 10:31:42.492  INFO 221905 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2022-12-22 10:31:42.506  INFO 221905 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 9.116 seconds (JVM running for 9.797)
+2022-12-22 10:33:53.762  INFO 221905 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-22 10:33:53.763  INFO 221905 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-22 10:33:53.765  INFO 221905 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-12-22 10:33:53.903  INFO 221905 --- [http-nio-8088-exec-1] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@5c92806c, com.mdsujan.restPostgres.entity.Item@64bce632]
+2022-12-22 10:33:54.068  INFO 221905 --- [http-nio-8088-exec-1] c.m.r.controller.ItemController          : Response: [com.mdsujan.restPostgres.entity.Item@4945b98a, com.mdsujan.restPostgres.entity.Item@3a5f0bdd]
+2022-12-22 10:34:29.995  INFO 221905 --- [http-nio-8088-exec-2] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@505a576f, com.mdsujan.restPostgres.entity.Item@5e9db314]
+2022-12-22 10:53:46.326  INFO 221905 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-22 10:53:46.330  INFO 221905 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-22 10:53:46.343  INFO 221905 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-22 10:53:52.831  INFO 223158 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 223158 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:53:52.836  INFO 223158 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:53:54.312  INFO 223158 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-22 10:53:54.312  INFO 223158 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-22 10:53:54.577  INFO 223158 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 251 ms. Found 5 JPA repository interfaces.
+2022-12-22 10:53:54.873  INFO 223158 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-22 10:53:54.875  INFO 223158 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-12-22 10:53:54.888  INFO 223158 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2022-12-22 10:53:55.707  INFO 223158 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2022-12-22 10:53:55.722  INFO 223158 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-22 10:53:55.723  INFO 223158 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-22 10:53:55.925  INFO 223158 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-22 10:53:55.926  INFO 223158 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2923 ms
+2022-12-22 10:53:56.455  INFO 223158 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-22 10:53:56.601  INFO 223158 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-22 10:53:56.677  INFO 223158 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-22 10:53:56.753  INFO 223158 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-22 10:53:56.983  INFO 223158 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-22 10:53:57.144  INFO 223158 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-22 10:53:58.131  INFO 223158 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-22 10:53:58.142  INFO 223158 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-22 10:53:59.311  WARN 223158 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-22 10:54:00.613  INFO 223158 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2022-12-22 10:54:00.669  INFO 223158 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 8.796 seconds (JVM running for 9.564)
+2022-12-22 10:54:03.293  INFO 223158 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-22 10:54:03.297  INFO 223158 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-22 10:54:03.309  INFO 223158 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-22 10:54:09.679  INFO 223284 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 223284 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:54:09.684  INFO 223284 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:54:10.748  INFO 223284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-22 10:54:10.749  INFO 223284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-22 10:54:11.001  INFO 223284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 234 ms. Found 5 JPA repository interfaces.
+2022-12-22 10:54:11.335  INFO 223284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-22 10:54:11.338  INFO 223284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-12-22 10:54:11.354  INFO 223284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-12-22 10:54:12.495  INFO 223284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2022-12-22 10:54:12.510  INFO 223284 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-22 10:54:12.511  INFO 223284 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-22 10:54:12.695  INFO 223284 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-22 10:54:12.695  INFO 223284 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2871 ms
+2022-12-22 10:54:13.366  INFO 223284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-22 10:54:13.495  INFO 223284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-22 10:54:13.592  INFO 223284 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-22 10:54:13.676  INFO 223284 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-22 10:54:13.897  INFO 223284 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-22 10:54:14.041  INFO 223284 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-22 10:54:14.966  INFO 223284 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-22 10:54:14.976  INFO 223284 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-22 10:54:16.066  WARN 223284 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-22 10:54:16.723  INFO 223284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2022-12-22 10:54:16.739  INFO 223284 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 7.96 seconds (JVM running for 8.673)
+2022-12-22 10:55:03.000  INFO 223284 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-22 10:55:03.002  INFO 223284 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-22 10:55:03.004  INFO 223284 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-22 10:55:03.132  INFO 223284 --- [http-nio-8088-exec-1] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@11eb2cb2, com.mdsujan.restPostgres.entity.Item@1b8deb]
+2022-12-22 10:55:24.182  INFO 223284 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-22 10:55:24.188  INFO 223284 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-22 10:55:24.219  INFO 223284 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-22 10:55:30.608  INFO 223481 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 223481 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:55:30.613  INFO 223481 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:55:31.761  INFO 223481 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-22 10:55:31.762  INFO 223481 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-22 10:55:32.006  INFO 223481 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 230 ms. Found 5 JPA repository interfaces.
+2022-12-22 10:55:32.287  INFO 223481 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-22 10:55:32.289  INFO 223481 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-12-22 10:55:32.303  INFO 223481 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2022-12-22 10:55:33.164  INFO 223481 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2022-12-22 10:55:33.179  INFO 223481 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-22 10:55:33.180  INFO 223481 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-22 10:55:33.353  INFO 223481 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-22 10:55:33.354  INFO 223481 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2586 ms
+2022-12-22 10:55:33.893  INFO 223481 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-22 10:55:34.007  INFO 223481 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-22 10:55:34.080  INFO 223481 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-22 10:55:34.154  INFO 223481 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-22 10:55:34.373  INFO 223481 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-22 10:55:34.509  INFO 223481 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-22 10:55:35.414  INFO 223481 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-22 10:55:35.424  INFO 223481 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-22 10:55:36.353  WARN 223481 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-22 10:55:37.055  INFO 223481 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2022-12-22 10:55:37.076  INFO 223481 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 7.422 seconds (JVM running for 8.227)
+2022-12-22 10:55:45.634  INFO 223481 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-22 10:55:45.637  INFO 223481 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-22 10:55:45.642  INFO 223481 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-12-22 10:55:45.804  INFO 223481 --- [http-nio-8088-exec-1] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@6d5be1c2, com.mdsujan.restPostgres.entity.Item@4884590c]
+2022-12-22 10:56:04.276  INFO 223481 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-22 10:56:04.278  INFO 223481 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-22 10:56:04.290  INFO 223481 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-22 10:56:10.070  INFO 223596 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 223596 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-22 10:56:10.078  INFO 223596 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 10:56:11.110  INFO 223596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-22 10:56:11.111  INFO 223596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-22 10:56:11.365  INFO 223596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 239 ms. Found 5 JPA repository interfaces.
+2022-12-22 10:56:11.682  INFO 223596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-22 10:56:11.684  INFO 223596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-12-22 10:56:11.698  INFO 223596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-12-22 10:56:12.571  INFO 223596 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2022-12-22 10:56:12.585  INFO 223596 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-22 10:56:12.585  INFO 223596 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-22 10:56:12.761  INFO 223596 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-22 10:56:12.762  INFO 223596 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2555 ms
+2022-12-22 10:56:13.291  INFO 223596 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-22 10:56:13.403  INFO 223596 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-22 10:56:13.475  INFO 223596 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-22 10:56:13.545  INFO 223596 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-22 10:56:13.755  INFO 223596 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-22 10:56:13.888  INFO 223596 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-22 10:56:14.823  INFO 223596 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-22 10:56:14.834  INFO 223596 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-22 10:56:15.827  WARN 223596 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-22 10:56:16.460  INFO 223596 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2022-12-22 10:56:16.477  INFO 223596 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 7.32 seconds (JVM running for 8.023)
+2022-12-22 10:56:40.575  INFO 223596 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-22 10:56:40.577  INFO 223596 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-22 10:56:40.580  INFO 223596 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-12-22 10:56:40.714  INFO 223596 --- [http-nio-8088-exec-1] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@9985d29, com.mdsujan.restPostgres.entity.Item@6d577dfc]
+2022-12-22 10:57:04.510  INFO 223596 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-22 10:57:04.513  INFO 223596 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-22 10:57:04.525  INFO 223596 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

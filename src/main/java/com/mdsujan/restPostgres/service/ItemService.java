@@ -8,7 +8,9 @@ import com.mdsujan.restPostgres.repository.SupplyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -48,6 +50,24 @@ public class ItemService {
         }
         // else we create a new item
         return itemRepository.save(createItemRequest);
+    }
+
+    public List<Item> createItems(List<Item> itemList) throws Throwable {
+        // for each item in itemList
+        // perform item creation
+        // also handle validations and errors elegantly
+        List<Item> itemsCreated = new ArrayList<>();
+//        List<Item> itemsNotCreated = new ArrayList<>();
+
+        for (Item item : itemList) {
+            try {
+                itemsCreated.add(createItem(item));
+            } catch (DuplicateResourceException e) {
+                throw new DuplicateResourceException("For item #" + (itemList.indexOf(item) + 1) + "; an item with same itemId already exists; please provide a unique itemId in the request body");
+            }
+        }
+
+        return itemsCreated;
     }
 
     public String deleteItemById(Long itemId) throws Throwable {
@@ -146,4 +166,5 @@ public class ItemService {
     public List<Item> getAllItemsPaginated(int pageSize, int pageNum) {
         return itemRepository.findAll(PageRequest.of(pageNum - 1, pageSize)).getContent();
     }
+
 }

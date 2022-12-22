@@ -37,19 +37,27 @@ public class ItemController {
         return itemResponse;
     }
 
-    @DeleteMapping("/{itemId}") // delete a specific item
-    public String deleteItem(@PathVariable @Valid Long itemId) throws Throwable {
-        String response = itemService.deleteItemById(itemId);
-        logger.info("Response: " + response);
-        return response;
-    }
-
     @PostMapping("/") // create an item in the table
     public Item createItem(@RequestBody @Valid Item createItemRequest) throws Throwable {
         logger.info("InQueryRequest: " + createItemRequest);
         Item itemResponse = itemService.createItem(createItemRequest);
         logger.info("Response: " + itemResponse);
         return itemResponse;
+    }
+
+    @PostMapping("/batch") // create an item in the table
+    public List<Item> createItems(@RequestBody List<Item> createItemRequestList) throws Throwable {
+        logger.info("InQueryRequest: " + createItemRequestList);
+        List<Item> itemResponse = itemService.createItems(createItemRequestList);
+        logger.info("Response: " + itemResponse);
+        return itemResponse;
+    }
+
+    @DeleteMapping("/{itemId}") // delete a specific item
+    public String deleteItem(@PathVariable @Valid Long itemId) throws Throwable {
+        String response = itemService.deleteItemById(itemId);
+        logger.info("Response: " + response);
+        return response;
     }
 
     @PutMapping("/{itemId}") // update an item using PUT
