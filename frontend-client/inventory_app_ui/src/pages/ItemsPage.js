@@ -1,6 +1,39 @@
+import { useState, useEffect } from "react";
+
 import { Button, Container, Table, Row, Col } from "react-bootstrap";
 
+import axios from "axios";
+
+const getAllUrl = "http://localhost:8088/items/";
+
 function ItemsPage() {
+  const [isDataLoaded, setDataLoaded] = useState(false);
+
+  const [tableData, setTableData] = useState(null);
+
+  const [shouldReload, setShouldReload] = useState(false);
+
+  useEffect(() => {
+    axios.get(getAllUrl).then((response) => {
+      console.log("getting data");
+      console.log(tableData);
+      setDataLoaded(true);
+      setTableData(response.data);
+      setShouldReload(false);
+    });
+  }, [shouldReload]);
+
+  const reloadTable = () => {
+    console.log("reloading table");
+    console.log("shouldReload" + shouldReload);
+    setShouldReload(true);
+  };
+
+  if (!isDataLoaded) {
+    return <div>Loading data</div>;
+  }
+  if (!tableData) return <div>No data</div>;
+
   return (
     <div>
       <h1>ItemsPage</h1>
@@ -10,40 +43,12 @@ function ItemsPage() {
             <h2>All Items</h2>
           </Col>
           <Col>
-            <Button>Refresh Data</Button>
+            <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
         <Row>
-          <Table responsive>
-            <thead>
-              <tr>
-                <th>#</th>
-                {Array.from({ length: 12 }).map((_, index) => (
-                  <th key={index}>Table heading</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                {Array.from({ length: 12 }).map((_, index) => (
-                  <td key={index}>Table cell {index}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>2</td>
-                {Array.from({ length: 12 }).map((_, index) => (
-                  <td key={index}>Table cell {index}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>3</td>
-                {Array.from({ length: 12 }).map((_, index) => (
-                  <td key={index}>Table cell {index}</td>
-                ))}
-              </tr>
-            </tbody>
-          </Table>
+          <p>{JSON.stringify(tableData)}</p>
+          <Col></Col>
         </Row>
       </Container>
     </div>
