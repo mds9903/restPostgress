@@ -15,6 +15,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/supply")
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class SupplyController {
     @Autowired
     SupplyService supplyService;

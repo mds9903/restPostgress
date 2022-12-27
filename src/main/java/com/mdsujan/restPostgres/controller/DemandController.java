@@ -22,6 +22,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/demand")
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class DemandController {
 
     @Autowired

@@ -17,6 +17,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/atpThresholds")
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class ThresholdController {
 
     @Autowired
