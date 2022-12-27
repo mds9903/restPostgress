@@ -273,3 +273,65 @@ org.springframework.core.convert.ConverterNotFoundException: No converter found 
 2022-12-27 12:05:57.189  INFO 393939 --- [http-nio-8088-exec-4] c.m.r.controller.ItemController          : Response: Item with itemId=991 successfully deleted.
 2022-12-27 12:06:20.882  INFO 393939 --- [http-nio-8088-exec-6] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@63e9310f
 2022-12-27 12:06:20.944  INFO 393939 --- [http-nio-8088-exec-6] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@5911db24
+2022-12-27 13:22:48.600  INFO 393939 --- [http-nio-8088-exec-8] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@47600972
+2022-12-27 13:22:53.317  INFO 393939 --- [http-nio-8088-exec-10] c.m.r.controller.ItemController          : Response: Item with itemId=991 successfully deleted.
+2022-12-27 13:25:09.045  INFO 393939 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 13:25:09.052  INFO 393939 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-27 13:25:09.070  INFO 393939 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-27 13:25:15.453  INFO 403814 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 403814 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-27 13:25:15.464  INFO 403814 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 13:25:16.814  INFO 403814 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-27 13:25:16.815  INFO 403814 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 13:25:17.094  INFO 403814 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 265 ms. Found 5 JPA repository interfaces.
+2022-12-27 13:25:17.398  INFO 403814 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-27 13:25:17.400  INFO 403814 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-12-27 13:25:17.415  INFO 403814 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-12-27 13:25:18.461  INFO 403814 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2022-12-27 13:25:18.483  INFO 403814 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 13:25:18.484  INFO 403814 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 13:25:18.672  INFO 403814 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 13:25:18.673  INFO 403814 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3020 ms
+2022-12-27 13:25:19.241  INFO 403814 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-27 13:25:19.366  INFO 403814 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-27 13:25:19.454  INFO 403814 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 13:25:19.538  INFO 403814 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-27 13:25:19.766  INFO 403814 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-27 13:25:19.909  INFO 403814 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-27 13:25:20.882  INFO 403814 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 13:25:20.892  INFO 403814 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 13:25:21.939  WARN 403814 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 13:25:22.725  INFO 403814 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2022-12-27 13:25:22.740  INFO 403814 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 8.163 seconds (JVM running for 8.921)
+2022-12-27 13:26:43.964  INFO 403814 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 13:26:43.966  INFO 403814 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 13:26:43.968  INFO 403814 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-12-27 13:27:27.597  INFO 403814 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 13:27:27.604  INFO 403814 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-27 13:27:27.630  INFO 403814 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-27 13:27:34.030  INFO 404047 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-Sujan with PID 404047 (/home/sujan/Documents/restPostgres/target/classes started by sujan in /home/sujan/Documents/restPostgres)
+2022-12-27 13:27:34.036  INFO 404047 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 13:27:35.114  INFO 404047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-27 13:27:35.115  INFO 404047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 13:27:35.382  INFO 404047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 254 ms. Found 5 JPA repository interfaces.
+2022-12-27 13:27:35.724  INFO 404047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-27 13:27:35.726  INFO 404047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-12-27 13:27:35.746  INFO 404047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-12-27 13:27:36.694  INFO 404047 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2022-12-27 13:27:36.710  INFO 404047 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 13:27:36.711  INFO 404047 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 13:27:37.081  INFO 404047 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 13:27:37.082  INFO 404047 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2898 ms
+2022-12-27 13:27:37.712  INFO 404047 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-27 13:27:37.839  INFO 404047 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-27 13:27:37.934  INFO 404047 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 13:27:38.024  INFO 404047 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-27 13:27:38.246  INFO 404047 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-27 13:27:38.392  INFO 404047 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-27 13:27:39.413  INFO 404047 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 13:27:39.430  INFO 404047 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 13:27:40.660  WARN 404047 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 13:27:41.392  INFO 404047 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2022-12-27 13:27:41.409  INFO 404047 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 8.289 seconds (JVM running for 9.046)
+2022-12-27 13:27:59.937  INFO 404047 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 13:27:59.938  INFO 404047 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 13:27:59.941  INFO 404047 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

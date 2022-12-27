@@ -13,6 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.mdsujan.restPostgres.entity")
 @EnableJpaRepositories("com.mdsujan.restPostgres.repository")
 @EnableCaching
+
 public class MyApp {
     public static void main(String[] args) {
         SpringApplication.run(MyApp.class, args);

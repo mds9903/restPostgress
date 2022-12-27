@@ -13,6 +13,7 @@ import java.util.List;
 @RestController // controller and response body combo
 @RequestMapping("/items") // the uri this controller should be mapped to
 @CrossOrigin(origins = "http://localhost:3000")
+
 public class ItemController {
 
     Logger logger = LoggerFactory.getLogger(ItemController.class);

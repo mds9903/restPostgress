@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-
-import { Button, Container, Table, Row, Col } from "react-bootstrap";
+import MyTable from "../components/MyTable";
+import { Button, Container, Row, Col } from "react-bootstrap";
 
 import axios from "axios";
 
@@ -19,6 +19,7 @@ function ItemsPage() {
       console.log("response.data:\n", response.data);
       setDataLoaded(true);
       setTableData(response.data);
+      // console.log(tableData);
       setShouldReload(false);
     });
   }, [shouldReload]);
@@ -32,6 +33,7 @@ function ItemsPage() {
   if (!isDataLoaded) {
     return <div>Loading data</div>;
   }
+
   if (!tableData) return <div>No data</div>;
 
   return (
@@ -47,8 +49,9 @@ function ItemsPage() {
           </Col>
         </Row>
         <Row>
-          <p>{JSON.stringify(tableData)}</p>
-          <Col></Col>
+          <Col>
+            <MyTable tableData={tableData} />
+          </Col>
         </Row>
       </Container>
     </div>
