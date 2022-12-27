@@ -5,6 +5,7 @@ import com.mdsujan.restPostgres.exceptionHandling.*;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
+import com.mdsujan.restPostgres.repository.ThresholdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,9 @@ public class ItemService {
 
     @Autowired
     DemandRepository demandRepository;
+
+    @Autowired
+    ThresholdRepository thresholdRepository;
 
 
     //    @Cacheable("items")
@@ -74,7 +78,9 @@ public class ItemService {
         // check if item exists
         if (itemRepository.findById(itemId).isPresent()) {
             // if any child records depend on this item
-            if (supplyRepository.findByItemItemId(itemId).size() > 0 || demandRepository.findByItemItemId(itemId).size() > 0) {
+            if (supplyRepository.findByItemItemId(itemId).size() > 0
+                    || demandRepository.findByItemItemId(itemId).size() > 0
+                    || thresholdRepository.findByItemItemId(itemId).size() > 0) {
                 // this item cannot be deleted
 //                return "Cannot delete item; it has child records";
                 throw new ResourceConflictException("this item cannot be deleted; has child dependencies");

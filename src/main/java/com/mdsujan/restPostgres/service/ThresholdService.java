@@ -94,62 +94,83 @@ public class ThresholdService {
                     " please provide correct itemId and locationId in the request");
         }
     }
-        public Threshold updateThresholdPut (Long thresholdId, UpdateThresholdRequest updateThresholdRequest) throws Throwable {
-            // this method updates a threshold for given thresholdId
 
-            // find the threshold
-            if (thresholdRepository.findById(thresholdId).isPresent()) {
-                Threshold thresholdToUpdate = thresholdRepository.findById(thresholdId).get();
-                // perform the put update
-                thresholdToUpdate.setMinThreshold(updateThresholdRequest.getMinThreshold());
-                thresholdToUpdate.setMaxThreshold(updateThresholdRequest.getMaxThreshold());
-                // save the new threshold to the db
-                thresholdToUpdate = thresholdRepository.save(thresholdToUpdate);
-                return thresholdToUpdate;
-            } else {
-                throw new ResourceNotFoundException("cannot update;" +
-                        "no such threshold found; please provide correct thresholdId");
-            }
+    public Threshold updateThresholdPut(Long thresholdId, UpdateThresholdRequest updateThresholdRequest) throws Throwable {
+        // this method updates a threshold for given thresholdId
+
+        // find the threshold
+        if (thresholdRepository.findById(thresholdId).isPresent()) {
+            Threshold thresholdToUpdate = thresholdRepository.findById(thresholdId).get();
+            // perform the put update
+            thresholdToUpdate.setMinThreshold(updateThresholdRequest.getMinThreshold());
+            thresholdToUpdate.setMaxThreshold(updateThresholdRequest.getMaxThreshold());
+            // save the new threshold to the db
+            thresholdToUpdate = thresholdRepository.save(thresholdToUpdate);
+            return thresholdToUpdate;
+        } else {
+            throw new ResourceNotFoundException("cannot update;" +
+                    "no such threshold found; please provide correct thresholdId");
         }
-
-        public Threshold updateThresholdPatch (Long thresholdId, UpdateThresholdRequest updateThresholdRequest) throws
-        Throwable {
-            // this method updates a threshold for given thresholdId
-
-            // find the threshold
-            if (thresholdRepository.findById(thresholdId).isPresent()) {
-                Threshold thresholdToUpdate = thresholdRepository.findById(thresholdId).get();
-                // perform the path update
-                if (updateThresholdRequest.getMinThreshold() != null) {
-                    thresholdToUpdate.setMinThreshold(updateThresholdRequest.getMinThreshold());
-                }
-                if (updateThresholdRequest.getMaxThreshold() != null) {
-                    thresholdToUpdate.setMaxThreshold(updateThresholdRequest.getMaxThreshold());
-                }
-                // save the new threshold to the db
-                thresholdToUpdate = thresholdRepository.save(thresholdToUpdate);
-                return thresholdToUpdate;
-            } else {
-                throw new ResourceNotFoundException("cannot update;" +
-                        "no such threshold found; please provide correct thresholdId");
-            }
-        }
-
-        public ThresholdDetailsResponse getThresholdDetailsByItemAndLocation (Long itemId, Long locationId){
-            // get threshold details
-            // for given itemId and locationId find the min and max thresholds
-            Threshold threshold = thresholdRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
-            return new ThresholdDetailsResponse(itemId, locationId, new ThresholdDetails(threshold.getMinThreshold(), threshold.getMaxThreshold()));
-        }
-
-        public String deleteThresholdById (Long thresholdId)throws Throwable {
-            // check if threshold exists
-            if (thresholdRepository.findById(thresholdId).isPresent()) {
-                // delete the existing threshold
-                thresholdRepository.deleteById(thresholdId);
-                return "Threshold with thresholdId=" + thresholdId + " successfully deleted.";
-            }
-            throw new ResourceNotFoundException("cannot delete; no such threshold found; please provide correct thresholdId");
-        }
-
     }
+
+    public Threshold updateThresholdPatch(Long thresholdId, UpdateThresholdRequest updateThresholdRequest) throws
+            Throwable {
+        // this method updates a threshold for given thresholdId
+
+        // find the threshold
+        if (thresholdRepository.findById(thresholdId).isPresent()) {
+            Threshold thresholdToUpdate = thresholdRepository.findById(thresholdId).get();
+            // perform the path update
+            if (updateThresholdRequest.getMinThreshold() != null) {
+                thresholdToUpdate.setMinThreshold(updateThresholdRequest.getMinThreshold());
+            }
+            if (updateThresholdRequest.getMaxThreshold() != null) {
+                thresholdToUpdate.setMaxThreshold(updateThresholdRequest.getMaxThreshold());
+            }
+            // save the new threshold to the db
+            thresholdToUpdate = thresholdRepository.save(thresholdToUpdate);
+            return thresholdToUpdate;
+        } else {
+            throw new ResourceNotFoundException("cannot update;" +
+                    "no such threshold found; please provide correct thresholdId");
+        }
+    }
+
+    public ThresholdDetailsResponse getThresholdDetailsByItemAndLocation(Long itemId, Long locationId) {
+        // get threshold details
+        // for given itemId and locationId find the min and max thresholds
+        Threshold threshold = thresholdRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
+        return new ThresholdDetailsResponse(itemId, locationId, new ThresholdDetails(threshold.getMinThreshold(), threshold.getMaxThreshold()));
+    }
+
+    public String deleteThresholdById(Long thresholdId) throws Throwable {
+        // check if threshold exists
+        if (thresholdRepository.findById(thresholdId).isPresent()) {
+            // delete the existing threshold
+            thresholdRepository.deleteById(thresholdId);
+            return "Threshold with thresholdId=" + thresholdId + " successfully deleted.";
+        }
+        throw new ResourceNotFoundException("cannot delete; no such threshold found; please provide correct thresholdId");
+    }
+
+    public Boolean updateThresholdByItemAndLocationPut(
+            Long itemId, Long locationId, UpdateThresholdRequest updateThresholdRequest) throws Throwable {
+        // update (all) the thresholds having the given itemId and locationId
+        // check if itemId is correct or not
+        if (itemRepository.findById(itemId).isPresent() && locationRepository.findById(locationId).isPresent()) {
+            // if correct then perform the update
+            Integer recordsUpdated = thresholdRepository.UpdateThresholdsByItemAndLocation(
+                    itemRepository.findById(itemId).get(),
+                    locationRepository.findById(locationId).get(),
+                    updateThresholdRequest.getMinThreshold(),
+                    updateThresholdRequest.getMaxThreshold());
+            if (recordsUpdated == 0) {
+                throw new Exception("No records updated");
+            }
+            return true;
+        } else {
+            throw new ResourceNotFoundException("cannot update;" +
+                    "no such threshold found; please provide correct thresholdId");
+        }
+    }
+}

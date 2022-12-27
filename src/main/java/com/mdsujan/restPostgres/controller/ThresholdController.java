@@ -23,7 +23,7 @@ public class ThresholdController {
     ThresholdService thresholdService;
 
     @GetMapping("/") // get all thresholds
-    public List<ThresholdResponse> getAllThresholds(){
+    public List<ThresholdResponse> getAllThresholds() {
         List<Threshold> thresholdList = thresholdService.getAllThresholds();
         List<ThresholdResponse> thresholdResponseList = new ArrayList<>();
 
@@ -39,12 +39,12 @@ public class ThresholdController {
 
     @GetMapping("/{itemId}/{locationId}")
     public ThresholdDetailsResponse getThresholdDetails(@PathVariable @Valid Long itemId,
-                                                        @PathVariable @Valid Long locationId){
+                                                        @PathVariable @Valid Long locationId) {
         return thresholdService.getThresholdDetailsByItemAndLocation(itemId, locationId);
     }
 
     @PostMapping("/")
-    public ThresholdResponse createThreshold(@RequestBody @Valid CreateThresholdRequest createThresholdRequest) throws Throwable{
+    public ThresholdResponse createThreshold(@RequestBody @Valid CreateThresholdRequest createThresholdRequest) throws Throwable {
         return new ThresholdResponse(thresholdService.createThreshold(createThresholdRequest));
     }
 
@@ -53,10 +53,17 @@ public class ThresholdController {
                                                 @RequestBody @Valid UpdateThresholdRequest updateThresholdRequest) throws Throwable {
         return new ThresholdResponse(thresholdService.updateThresholdPut(thresholdId, updateThresholdRequest));
     }
+
     @PatchMapping("/{thresholdId}")
     public ThresholdResponse updateThresholdPatch(@PathVariable @Valid Long thresholdId,
                                                   @RequestBody UpdateThresholdRequest updateThresholdRequest) throws Throwable {
         return new ThresholdResponse(thresholdService.updateThresholdPatch(thresholdId, updateThresholdRequest));
+    }
+
+    @PutMapping("/{itemId}/{locationId}")
+    public Boolean updateThresholdPut(@PathVariable @Valid Long itemId, @PathVariable @Valid Long locationId,
+                                      @RequestBody @Valid UpdateThresholdRequest updateThresholdRequest) throws Throwable {
+        return thresholdService.updateThresholdByItemAndLocationPut(itemId, locationId, updateThresholdRequest);
     }
 
     @DeleteMapping("/{thresholdId}") // delete a specific item

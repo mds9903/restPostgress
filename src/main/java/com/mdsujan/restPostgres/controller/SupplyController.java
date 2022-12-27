@@ -35,34 +35,12 @@ public class SupplyController {
         return new SupplyResponse(supplyService.getSupplyById(supplyId));
     }
 
-//    // not included in the requirements sheet
-//    @GetMapping("supplyList/{itemId}/{locationId}") // get list of supplies by item and location
-//    public List<SupplyResponse> getSuppliesByItemAndLocation(@PathVariable Long itemId, @PathVariable Long locationId) {
-//        List<Supply> supplyList = supplyService.getSuppliesByItemIdAndLocationId(itemId, locationId);
-//        List<SupplyResponse> supplyResponseList = new ArrayList<>();
-//
-//        supplyList.forEach(supply -> supplyResponseList.add(new SupplyResponse(supply)));
-//
-//        return supplyResponseList;
-//
-//    }
-
-    //    // not included in the requirements sheet
-//    @GetMapping("supplyList/{itemId}") // get supply for an item in all locations
-//    public List<SupplyResponse> getSuppliesByItem(@PathVariable Long itemId) {
-//        List<Supply> supplyList = supplyService.getSuppliesByItemId(itemId);
-//        List<SupplyResponse> supplyResponseList = new ArrayList<>();
-//
-//        supplyList.forEach(supply -> supplyResponseList.add(new SupplyResponse(supply)));
-//
-//        return supplyResponseList;
-//    }
     @GetMapping("/{itemId}/{locationId}") // get supply details for an item at a location
     public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(@PathVariable @Valid Long itemId, @PathVariable @Valid Long locationId) throws Throwable {
         return supplyService.getSupplyDetailsByItemAndLocation(itemId, locationId);
     }
 
-    // creates ambiguity
+    // creates ambiguity - solution: 1. use regex; 2. perform the validation of the path vars in the method and call the relevant service
 //    @GetMapping("/{supplyType}/{locationId}") // get demand details by itemType and location
 ////    public SupplyDetailsResponse getSupplyDetailsBySupplyTypeAndLocation(@PathVariable Long supplyType, @PathVariable Long locationId) throws Throwable {
 //    public List<Supply> getSupplyDetailsBySupplyTypeAndLocation(@PathVariable Long supplyType, @PathVariable Long locationId) throws Throwable {
@@ -86,6 +64,7 @@ public class SupplyController {
     public SupplyResponse updateSupplyPatch(@PathVariable @Valid Long supplyId, @RequestBody UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.updateSupplyPatch(supplyId, updateSupplyRequest));
     }
+
 
     @DeleteMapping("/{supplyId}") // delete a supply
     public String deleteSupply(@PathVariable Long supplyId) throws Throwable {

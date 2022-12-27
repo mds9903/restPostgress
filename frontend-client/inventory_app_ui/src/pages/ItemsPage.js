@@ -16,7 +16,7 @@ function ItemsPage() {
   useEffect(() => {
     axios.get(getAllUrl).then((response) => {
       console.log("getting data");
-      console.log(tableData);
+      console.log("response.data:\n", response.data);
       setDataLoaded(true);
       setTableData(response.data);
       setShouldReload(false);
