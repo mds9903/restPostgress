@@ -2,6 +2,7 @@ import { Table } from "react-bootstrap";
 
 function MyTable({ tableData }) {
   //   console.log(Object.keys(tableData[0]));
+
   const columns = Array.from(Object.keys(tableData[0]));
   const rows = tableData.map((item, index) => Object.values(item));
 

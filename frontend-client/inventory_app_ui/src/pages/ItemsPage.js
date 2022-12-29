@@ -5,20 +5,19 @@ import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import axios from "axios";
 
 const getAllUrl = "http://localhost:8088/items/";
-const getAllPaginatedUr = "http://localhost:8088/items/paginated";
+const getAllPaginatedUrl = "http://localhost:8088/items/paginated";
 
 function ItemsPage() {
   const [pageSize, setPageSize] = useState(1);
   const [pageNum, setPageNum] = useState(3);
+  const [pageNumbers, setPageNumbers] = useState([]);
   const [isDataLoaded, setDataLoaded] = useState(false);
-
   const [tableData, setTableData] = useState(null);
-
   const [shouldReload, setShouldReload] = useState(false);
 
   useEffect(() => {
     axios
-      .get(getAllPaginatedUr, {
+      .get(getAllPaginatedUrl, {
         params: { pageSize: pageSize, pageNum: pageNum },
       })
       .then((response) => {
@@ -26,10 +25,13 @@ function ItemsPage() {
         console.log("response.data:\n", response.data);
         setDataLoaded(true);
         setTableData(response.data);
-        // console.log(tableData);
+        console.log("tableData: ", tableData);
+        setPageNumbers(
+          Array.from({ length: response.data.maxPages }, (_, i) => i + 1)
+        );
         setShouldReload(false);
       });
-  }, [shouldReload]);
+  }, [shouldReload, pageNum]);
 
   const reloadTable = () => {
     console.log("reloading table");
@@ -57,14 +59,25 @@ function ItemsPage() {
         </Row>
         <Row>
           <Col>
-            <MyTable tableData={tableData} />
-            <Form.Select>
-              <option>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </Form.Select>
+            <MyTable tableData={tableData.items} />
           </Col>
+        </Row>
+        <Row>
+          {pageNumbers.map((item, index) => {
+            return (
+              <Col>
+                <Button
+                  key={index}
+                  onClick={() => {
+                    console.log("setting page num to ", item);
+                    setPageNum(item);
+                  }}
+                >
+                  {item}
+                </Button>
+              </Col>
+            );
+          })}
         </Row>
       </Container>
     </div>

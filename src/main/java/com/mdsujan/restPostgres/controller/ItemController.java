@@ -1,6 +1,7 @@
 package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.response.PaginatedResponse;
 import com.mdsujan.restPostgres.service.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +28,7 @@ public class ItemController {
     }
 
     @GetMapping(value = "/paginated") // retrieve all items with pagination
-    public List<Item> getAllItemsPaginated(@RequestParam int pageSize, @RequestParam int pageNum) {
+    public PaginatedResponse getAllItemsPaginated(@RequestParam int pageSize, @RequestParam int pageNum) {
         return itemService.getAllItemsPaginated(pageSize, pageNum);
     }
 

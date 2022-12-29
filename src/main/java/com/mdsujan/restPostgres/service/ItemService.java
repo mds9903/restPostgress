@@ -6,6 +6,7 @@ import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.repository.ThresholdRepository;
+import com.mdsujan.restPostgres.response.PaginatedResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -169,8 +170,11 @@ public class ItemService {
         }
     }
 
-    public List<Item> getAllItemsPaginated(int pageSize, int pageNum) {
-        return itemRepository.findAll(PageRequest.of(pageNum - 1, pageSize)).getContent();
+    public PaginatedResponse getAllItemsPaginated(Integer pageSize, Integer pageNum) {
+        List<Item> items = itemRepository.findAll(PageRequest.of(pageNum - 1, pageSize)).getContent();
+        Long maxPages = itemRepository.count() / pageSize;
+
+        return new PaginatedResponse(items, maxPages, pageNum, pageSize);
     }
 
 }
