@@ -18,13 +18,14 @@ function App() {
       <MainNav />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/items" element={<ItemsPage />} />
         <Route path="/locations" element={<LocationsPage />} />
         <Route path="/supplies" element={<SuppliesPage />} />
         <Route path="/demands" element={<DemandsPage />} />
         <Route path="/thresholds" element={<ThresholdsPage />} />
         <Route path="/availability" element={<AvaibilityPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );

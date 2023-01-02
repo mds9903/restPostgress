@@ -1,19 +1,22 @@
 import { useState, useEffect } from "react";
-import MyTable from "../components/MyTable";
-import { Button, Container, Row, Col, Form } from "react-bootstrap";
-
+import { Button, Container, Row, Col, Card } from "react-bootstrap";
 import axios from "axios";
 
-const getAllUrl = "http://localhost:8088/items/";
+import MyTable from "../components/MyTable";
+import FormCreateNew from "../components/FormCreateNew";
+
+// const getAllUrl = "http://localhost:8088/items/";
 const getAllPaginatedUrl = "http://localhost:8088/items/paginated";
 
 function ItemsPage() {
-  const [pageSize, setPageSize] = useState(1);
-  const [pageNum, setPageNum] = useState(3);
-  const [pageNumbers, setPageNumbers] = useState([]);
   const [isDataLoaded, setDataLoaded] = useState(false);
   const [tableData, setTableData] = useState(null);
+
   const [shouldReload, setShouldReload] = useState(false);
+
+  const [pageSize, setPageSize] = useState(2);
+  const [pageNum, setPageNum] = useState(3);
+  const [pageNumbers, setPageNumbers] = useState([]);
 
   useEffect(() => {
     axios
@@ -30,6 +33,8 @@ function ItemsPage() {
           Array.from({ length: response.data.maxPages }, (_, i) => i + 1)
         );
         setShouldReload(false);
+        // const [pageSize, setPageSize] = useState(2);
+        // const [pageNum, setPageNum] = useState(3);
       });
   }, [shouldReload, pageNum]);
 
@@ -78,6 +83,11 @@ function ItemsPage() {
               </Col>
             );
           })}
+        </Row>
+        <Row>
+          <Card>
+            <FormCreateNew fields={Object.keys(tableData.items[0])} />
+          </Card>
         </Row>
       </Container>
     </div>
