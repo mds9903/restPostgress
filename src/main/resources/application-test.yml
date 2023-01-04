@@ -1,0 +1,39 @@
+app:
+  name: inventory-app-test
+
+# for stock level
+demandTypes: HARD_PROMISED
+supplyTypes: ONHAND
+locations:
+  exclude: '18100'
+
+# spring
+spring:
+  jpa:
+    database: postgresql
+    show-sql: 'true'
+    show-jpql: 'true'
+  datasource:
+    password: '4748'
+    driver-class-name: org.postgresql.Driver
+    username: inventory_app
+    url: jdbc:postgresql://localhost:5432/app_test?stringtype=unspecified
+  cache:
+    redis:
+      time-to-live: 10S
+
+# logging
+logging:
+  file:
+    name: app.log
+  level:
+    com:
+      mdsujan:
+        restPostgres:
+          controller: trace
+
+# for app's local running
+server:
+  port: '8088'
+  error:
+    include-message: always
