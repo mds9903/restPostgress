@@ -15,6 +15,7 @@ import java.io.Serializable;
 @Table(name = "item", schema = "public")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Item {
 
     @Id

@@ -6,6 +6,7 @@ import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
+import com.mdsujan.restPostgres.repository.ThresholdRepository;
 import com.mdsujan.restPostgres.service.ItemService;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,9 +41,23 @@ public class ItemServiceTest {
     private SupplyRepository mockSupplyRepository;
 
     @MockBean
+    private ThresholdRepository mockThresholdRepository;
+
+    @MockBean
     private DemandRepository mockDemandRepository;
 
-    private final Item mockItem = new Item(1L, "testDesc", "testCategory", "testType", "testStatus", 19.99, false, false, false);
+    //    private final Item mockItem = new Item(1L, "testDesc", "testCategory", "testType", "testStatus", 19.99, false, false, false);
+    private final Item mockItem = Item.builder()
+            .itemId(1L)
+            .itemDesc("testDesc")
+            .category("testCategory")
+            .itemType("testType")
+            .status("testStatus")
+//            .price(19.99)
+            .deliveryAllowed(false)
+            .pickupAllowed(false)
+            .shippingAllowed(false)
+            .build();
 
     private final Item mockItem2 = new Item(2L, "testDesc2", "testCategory2", "testType2", "testStatus2", 29.99, false, false, false);
 
