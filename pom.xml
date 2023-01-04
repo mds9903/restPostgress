@@ -12,7 +12,7 @@
     <artifactId>restPostgres</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>restPostgres</name>
-    <description>Demo project for Spring Boot using Postgres as the db</description>
+    <description>Demo project for Spring Boot using MongoDb</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -21,20 +21,23 @@
 
     <dependencies>
         <!--for web apps-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <!--lombok for reduction of boilerplate code-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>maven-lombok-plugin</artifactId>
             <version>0.9.3.1</version>
         </dependency>
+
         <!--for db-->
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
             <scope>runtime</scope>
         </dependency>
         <!--for jdbc-->
@@ -42,26 +45,27 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-<!--        jpa for orm support-->
+
+        <!--        jpa for orm support-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>2.7.5</version>
         </dependency>
         <!--/for db-->
-        <!-- caching -->
 
-                <dependency>
-                    <groupId>com.squareup.okhttp3</groupId>
-                    <artifactId>okhttp</artifactId>
-                    <version>4.9.3</version>
-                </dependency>
+        <!-- caching -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.9.3</version>
+        </dependency>
         <!-- redis-->
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-data-redis</artifactId>
-                    <version>3.0.0</version>
-                </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>3.0.0</version>
+        </dependency>
         <!-- /redis-->
         <!--  /caching -->
 
@@ -71,6 +75,7 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
         <!--        for validations-->
+
         <!--		for unit tests-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

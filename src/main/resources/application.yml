@@ -9,17 +9,18 @@ locations:
 
 # spring
 spring:
-  profiles:
-    active: test
   jpa:
-    database: postgresql
+    database: mongodb
     show-sql: 'true'
     show-jpql: 'true'
-  datasource:
-    password: '4748'
-    driver-class-name: org.postgresql.Driver
-    username: inventory_app
-    url: jdbc:postgresql://localhost:5432/app_test?stringtype=unspecified
+  data:
+    mongodb:
+      authentication-database: admin
+      username: rootuser
+      password: rootpass
+      database: inventory_app
+      port: 27017
+      host: localhost
   cache:
     redis:
       time-to-live: 10S
