@@ -123,7 +123,7 @@ public class AvailabilityService {
 //                sum += demand.getDemandQty();
 //            }
 //        }
-        Long hardPromisedQty = sum;
+//        Long hardPromisedQty = sum;
 
         Long availableQty = onhandQty + hardPromisedQty;
 
