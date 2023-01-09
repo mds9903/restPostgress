@@ -110,10 +110,20 @@ public class AvailabilityService {
                 .reduce(0L, Long::sum);
 
         // get the hardPromised qty for the demand of the given item on all locations
-        Long hardPromisedQty = demandList.stream()
+        Long hardPromisedQty = demandList.stream() // declarative programming
                 .filter(demand -> demand.getDemandType() == AllowedDemandTypes.HARD_PROMISED)
                 .map(Demand::getDemandQty)
                 .reduce(0L, Long::sum);
+        // using method reference and lambda (java 8+)
+
+//        // imperative programming
+//        Long sum = 0L;
+//        for (Demand demand : demandList) {
+//            if (demand.getDemandType() == AllowedDemandTypes.HARD_PROMISED) {
+//                sum += demand.getDemandQty();
+//            }
+//        }
+        Long hardPromisedQty = sum;
 
         Long availableQty = onhandQty + hardPromisedQty;
 

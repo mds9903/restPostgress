@@ -26,8 +26,8 @@ public class SupplyController {
         List<Supply> supplyList = supplyService.getAllSupplies();
         List<SupplyResponse> supplyResponseList = new ArrayList<>();
 
-        supplyList.forEach(
-                supply -> supplyResponseList.add(new SupplyResponse(supply))
+        // java 8+ feature: functional interface, forEach, Consumer
+        supplyList.forEach(supply -> supplyResponseList.add(new SupplyResponse(supply))
         );
         return supplyResponseList;
     }

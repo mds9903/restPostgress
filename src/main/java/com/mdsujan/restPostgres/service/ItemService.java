@@ -117,7 +117,7 @@ public class ItemService {
             return updateItemRequest;
 //            }
         } else {
-            throw new ResourceNotFoundException("cannot update this item; item not found; please a correct itemId");
+            throw new ResourceNotFoundException("cannot update this item; item not found; please enter a correct itemId");
         }
     }
 

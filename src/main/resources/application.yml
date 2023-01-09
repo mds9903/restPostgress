@@ -1,7 +1,7 @@
 app:
   name: inventory-app-default
 
-# for stock level
+# for availability api stock level
 demandTypes: HARD_PROMISED
 supplyTypes: ONHAND
 locations:
@@ -10,7 +10,7 @@ locations:
 # spring
 spring:
   profiles:
-    active: test
+    active: dev
   jpa:
     database: postgresql
     show-sql: 'true'

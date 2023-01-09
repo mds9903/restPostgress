@@ -63,7 +63,7 @@ public class LocationService {
 
         // if record with same id exists then simply return it
         if (locationRepository.findById(createLocationRequest.getLocationId()).isPresent()) {
-            throw new DuplicateResourceException("an location with same locationId already exists; " +
+            throw new DuplicateResourceException("a location with same locationId already exists; " +
                     "please provide a unique locationId in the request body");
         }
         // else we create a new location

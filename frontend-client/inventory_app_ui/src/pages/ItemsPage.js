@@ -86,7 +86,12 @@ function ItemsPage() {
         </Row>
         <Row>
           <Card>
-            <FormCreateNew fields={Object.keys(tableData.items[0])} />
+            <FormCreateNew
+              formInputStructure={Object.keys(tableData.items[0]).reduce(
+                (acc, val) => ({ ...acc, [val]: "" }),
+                {}
+              )}
+            />
           </Card>
         </Row>
       </Container>
