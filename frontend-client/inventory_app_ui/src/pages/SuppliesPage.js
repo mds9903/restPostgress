@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import MyTable from "../components/MyTable";
 import { Button, Container, Row, Col } from "react-bootstrap";
+import MyBarChart from "./../components/MyBarChart";
 
 import axios from "axios";
 
@@ -8,10 +9,12 @@ const getAllUrl = "http://localhost:8088/inventory/supply/";
 
 function SuppliesPage() {
   const [isDataLoaded, setDataLoaded] = useState(false);
-
   const [tableData, setTableData] = useState(null);
-
   const [shouldReload, setShouldReload] = useState(false);
+  const [chartData, setChartData] = useState({
+    labels: [],
+    datasets: [],
+  });
 
   useEffect(() => {
     axios.get(getAllUrl).then((response) => {
@@ -19,7 +22,27 @@ function SuppliesPage() {
       console.log("response.data:\n", response.data);
       setDataLoaded(true);
       setTableData(response.data);
-      // console.log(tableData);
+      setChartData({
+        labels: ["ONHAND Supplies", "INTRANSIT Supplies"],
+        datasets: [
+          {
+            label: "ONHAND Supplies",
+            data: [
+              response.data.filter((supply) => supply.type === "ONHAND").length,
+            ],
+            backgroundColor: "#9BD0F5",
+          },
+          {
+            label: "INTRANSIT Supplies",
+            data: [
+              response.data.filter((supply) => supply.type === "INTRANSIT")
+                .length,
+            ],
+            backgroundColor: "#FFB1C1",
+          },
+        ],
+      });
+      console.log("chartData: ", chartData);
       setShouldReload(false);
     });
   }, [shouldReload]);
@@ -52,6 +75,9 @@ function SuppliesPage() {
           <Col>
             <MyTable tableData={tableData} />
           </Col>
+        </Row>
+        <Row>
+          <MyBarChart data={chartData} />
         </Row>
       </Container>
     </div>
