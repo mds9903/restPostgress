@@ -4,7 +4,7 @@ import { Button, Container, Row, Col } from "react-bootstrap";
 
 import axios from "axios";
 
-const getAllUrl = "http://localhost:8088/atpThresholds/";
+const getAllUrl = "http://localhost:8088/inventory/atpThresholds/";
 
 function ThresholdsPage() {
   const [isDataLoaded, setDataLoaded] = useState(false);

@@ -4,7 +4,7 @@ import { Button, Container, Row, Col } from "react-bootstrap";
 
 import axios from "axios";
 
-const getAllUrl = "http://localhost:8088/demand/";
+const getAllUrl = "http://localhost:8088/inventory/demand/";
 
 function DemandsPage() {
   const [isDataLoaded, setDataLoaded] = useState(false);

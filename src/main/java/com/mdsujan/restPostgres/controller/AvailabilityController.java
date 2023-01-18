@@ -1,27 +1,19 @@
 package com.mdsujan.restPostgres.controller;
 
-import com.mdsujan.restPostgres.entity.Demand;
-import com.mdsujan.restPostgres.entity.Supply;
-import com.mdsujan.restPostgres.entity.Threshold;
-import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
-import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
-import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
-import com.mdsujan.restPostgres.repository.DemandRepository;
-import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.response.AvailabilityV1Response;
 import com.mdsujan.restPostgres.response.AvailabilityV2Response;
 import com.mdsujan.restPostgres.response.AvailabilityV3Response;
 import com.mdsujan.restPostgres.service.AvailabilityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/inventory/")
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class AvailabilityController {
 
     @Autowired

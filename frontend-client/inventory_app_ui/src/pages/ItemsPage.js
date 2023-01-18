@@ -6,7 +6,7 @@ import MyTable from "../components/MyTable";
 import FormCreateNew from "../components/FormCreateNew";
 
 // const getAllUrl = "http://localhost:8088/items/";
-const getAllPaginatedUrl = "http://localhost:8088/items/paginated";
+const getAllPaginatedUrl = "http://localhost:8088/inventory/items/paginated";
 
 function ItemsPage() {
   const [isDataLoaded, setDataLoaded] = useState(false);

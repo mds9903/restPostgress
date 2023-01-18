@@ -4,7 +4,7 @@ import { Button, Container, Row, Col } from "react-bootstrap";
 
 import axios from "axios";
 
-const getAllUrl = "http://localhost:8088/locations/";
+const getAllUrl = "http://localhost:8088/inventory/locations/";
 
 function LocationsPage() {
   const [isDataLoaded, setDataLoaded] = useState(false);
