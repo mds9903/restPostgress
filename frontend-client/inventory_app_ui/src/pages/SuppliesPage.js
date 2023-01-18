@@ -23,26 +23,26 @@ function SuppliesPage() {
       setDataLoaded(true);
       setTableData(response.data);
       setChartData({
-        labels: ["ONHAND Supplies", "INTRANSIT Supplies"],
+        labels: ["ONHAND", "INTRANSIT"],
         datasets: [
           {
-            label: "ONHAND Supplies",
+            // label: ["ONHAND", "INTRANSIT"],
             data: [
               response.data.filter((supply) => supply.type === "ONHAND").length,
-            ],
-            backgroundColor: "#9BD0F5",
-          },
-          {
-            label: "INTRANSIT Supplies",
-            data: [
               response.data.filter((supply) => supply.type === "INTRANSIT")
                 .length,
             ],
-            backgroundColor: "#FFB1C1",
+            // label: ["onhand", "intransit"],
+            backgroundColor: ["red", "yellow"],
           },
         ],
       });
       console.log("chartData: ", chartData);
+      // console.log("supplies page; tableData: ", tableData);
+      // const onhand = response.data.filter(
+      //   (supply) => supply.type === "ONHAND"
+      // ).length;
+      // console.log("Onhand: ", onhand);
       setShouldReload(false);
     });
   }, [shouldReload]);
