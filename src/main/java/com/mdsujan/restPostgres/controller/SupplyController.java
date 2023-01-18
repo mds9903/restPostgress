@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/supply")
+@RequestMapping("/inventory/supply")
 @CrossOrigin(origins = "http://localhost:3000")
 
 public class SupplyController {

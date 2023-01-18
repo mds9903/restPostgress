@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/locations")
+@RequestMapping("/inventory/locations")
 @CrossOrigin(origins = "http://localhost:3000")
 
 

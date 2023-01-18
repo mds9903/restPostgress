@@ -42,7 +42,7 @@ function LocationsPage() {
       <Container>
         <Row>
           <Col>
-            <h2>All Items</h2>
+            <h2>All Locations</h2>
           </Col>
           <Col>
             <Button onClick={reloadTable}>Refresh Data</Button>

@@ -64,7 +64,7 @@ public class DemandService {
 
             return new DemandDetailsResponse(itemId, locationId, new DemandDetails(planned, hardPromised));
         } else {
-            throw new ResourceNotFoundException("no supplies found for given itemId and locationId;" +
+            throw new ResourceNotFoundException("no demands found for given itemId and locationId;" +
                     "please give correct itemId and/or locationId");
         }
     }

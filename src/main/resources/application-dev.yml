@@ -15,7 +15,7 @@ spring:
     show-jpql: 'true'
   datasource:
     password: '4748'
-    driver-class-name: org.postgresql.Driver
+    #    driver-class-name: org.postgresql.Driver
     username: inventory_app
     url: jdbc:postgresql://localhost:5432/app_test?stringtype=unspecified
   cache:

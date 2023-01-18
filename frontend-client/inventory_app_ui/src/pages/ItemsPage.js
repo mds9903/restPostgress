@@ -84,14 +84,17 @@ function ItemsPage() {
             );
           })}
         </Row>
-        <Row>
-          <Card>
-            <FormCreateNew
-              formInputStructure={Object.keys(tableData.items[0]).reduce(
-                (acc, val) => ({ ...acc, [val]: "" }),
-                {}
-              )}
-            />
+        <Row className="m-5">
+          <Card className="w-auto">
+            <Card.Header>Create new Item</Card.Header>
+            <Card.Body>
+              <FormCreateNew
+                formInputStructure={Object.keys(tableData.items[0]).reduce(
+                  (acc, val) => ({ ...acc, [val]: "" }),
+                  {}
+                )}
+              />
+            </Card.Body>
           </Card>
         </Row>
       </Container>

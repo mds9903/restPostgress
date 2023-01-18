@@ -42,7 +42,7 @@ function SuppliesPage() {
       <Container>
         <Row>
           <Col>
-            <h2>All Items</h2>
+            <h2>All Supplies</h2>
           </Col>
           <Col>
             <Button onClick={reloadTable}>Refresh Data</Button>

@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController // controller and response body combo
-@RequestMapping("/items") // the uri this controller should be mapped to
+@RequestMapping("/inventory/items") // the uri this controller should be mapped to
 @CrossOrigin(origins = "http://localhost:3000")
 
 public class ItemController {
@@ -32,7 +32,6 @@ public class ItemController {
         return itemService.getAllItemsPaginated(pageSize, pageNum);
     }
 
-
     @GetMapping(value = "/{itemId}") // return the details of specific itemId
     public Item getItem(@PathVariable @Valid Long itemId) throws Throwable {
         Item itemResponse = itemService.getItemById(itemId);
@@ -47,6 +46,22 @@ public class ItemController {
         logger.info("Response: " + itemResponse);
         return itemResponse;
     }
+
+    @PostMapping("/noValidate") // create an item in the table
+    public String createItemNoValidate(@RequestBody Item createItemRequest) throws Throwable {
+        logger.info("InQueryRequest: " + createItemRequest);
+        return itemService.createItemNoValidate(createItemRequest);
+//        logger.info("Response: " + itemResponse);
+//        return itemResponse;
+    }
+
+//    @RequestMapping(value = "/", method = RequestMethod.POST, consumes = "text/plain")
+//    public Item createItem(@RequestBody @Valid Item createItemRequest) throws Throwable {
+//        logger.info("InQueryRequest: " + createItemRequest);
+//        Item itemResponse = itemService.createItem(createItemRequest);
+//        logger.info("Response: " + itemResponse);
+//        return itemResponse;
+//    }
 
     @PostMapping("/batch") // create an item in the table
     public List<Item> createItems(@RequestBody List<Item> createItemRequestList) throws Throwable {

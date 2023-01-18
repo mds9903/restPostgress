@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/atpThresholds")
+@RequestMapping("/inventory/atpThresholds")
 @CrossOrigin(origins = "http://localhost:3000")
 
 public class ThresholdController {

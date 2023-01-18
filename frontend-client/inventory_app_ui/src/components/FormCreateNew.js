@@ -19,7 +19,7 @@ export default function FormCreateNew(props) {
   };
 
   return (
-    <Form onSubmit={submitHandler}>
+    <Form className={"m-2"} onSubmit={submitHandler}>
       {Object.keys(props.formInputStructure).map((item, index) => {
         return (
           <Form.Group className="m-3">
@@ -34,7 +34,6 @@ export default function FormCreateNew(props) {
           </Form.Group>
         );
       })}
-
       <Button variant="primary" type="submit">
         Create
       </Button>
