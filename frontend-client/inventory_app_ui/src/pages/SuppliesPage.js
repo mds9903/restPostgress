@@ -54,11 +54,11 @@ function SuppliesPage() {
     setShouldReload(true);
   };
 
-  if (!isDataLoaded) {
-    return <div>Loading data</div>;
-  }
+  // if (!isDataLoaded) {
+  //   return <div>Loading data</div>;
+  // }
 
-  if (!tableData) return <div>No data</div>;
+  // if (!tableData) return <div>No data</div>;
 
   return (
     <div>
@@ -77,7 +77,16 @@ function SuppliesPage() {
         </Row>
         <Row>
           <Col>
-            <MyTable tableData={tableData} />
+            {isDataLoaded ? (
+              tableData ? (
+                <MyTable tableData={tableData} />
+              ) : (
+                <div>No data</div>
+              )
+            ) : (
+              <div>Loading data...please wait</div>
+            )}
+            {/* <MyTable tableData={tableData} /> */}
           </Col>
         </Row>
       </Container>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 import { Button, Container, Row, Col, Card } from "react-bootstrap";
 import axios from "axios";
 
@@ -10,13 +10,12 @@ const getAllPaginatedUrl = "http://localhost:8088/inventory/items/paginated";
 
 function ItemsPage() {
   const [isDataLoaded, setDataLoaded] = useState(false);
-  const [tableData, setTableData] = useState(null);
-
+  const [tableData, setTableData] = useState([]);
   const [shouldReload, setShouldReload] = useState(false);
-
   const [pageSize, setPageSize] = useState(2);
   const [pageNum, setPageNum] = useState(3);
   const [pageNumbers, setPageNumbers] = useState([]);
+  const [formInputStructure, setformInputStructure] = useState();
 
   useEffect(() => {
     axios
@@ -24,17 +23,22 @@ function ItemsPage() {
         params: { pageSize: pageSize, pageNum: pageNum },
       })
       .then((response) => {
-        console.log("getting data");
-        console.log("response.data:\n", response.data);
+        console.log("response: ", response);
+        // console.log("getting data");
+        // console.log("response.data:\n", response.data);
         setDataLoaded(true);
-        setTableData(response.data);
-        console.log("tableData: ", tableData);
+        setTableData(response.data.items);
+        // console.log("tableData: ", tableData);
         setPageNumbers(
           Array.from({ length: response.data.maxPages }, (_, i) => i + 1)
         );
         setShouldReload(false);
-        // const [pageSize, setPageSize] = useState(2);
-        // const [pageNum, setPageNum] = useState(3);
+        setformInputStructure(
+          Object.keys(tableData[0]).reduce(
+            (acc, val) => ({ ...acc, [val]: "" }),
+            {}
+          )
+        );
       });
   }, [shouldReload, pageNum]);
 
@@ -53,7 +57,7 @@ function ItemsPage() {
   return (
     <div>
       <h1>ItemsPage</h1>
-      <Container>
+      <Container className="w-10">
         <Row>
           <Col>
             <h2>All Items</h2>
@@ -64,7 +68,7 @@ function ItemsPage() {
         </Row>
         <Row>
           <Col>
-            <MyTable tableData={tableData.items} />
+            <MyTable tableData={tableData} />
           </Col>
         </Row>
         <Row>
@@ -72,6 +76,7 @@ function ItemsPage() {
             return (
               <Col>
                 <Button
+                  className="rounded-circle"
                   key={index}
                   onClick={() => {
                     console.log("setting page num to ", item);
@@ -84,19 +89,14 @@ function ItemsPage() {
             );
           })}
         </Row>
-        <Row className="m-5">
+        {/* <Row className="m-5">
           <Card className="w-auto">
             <Card.Header>Create new Item</Card.Header>
             <Card.Body>
-              <FormCreateNew
-                formInputStructure={Object.keys(tableData.items[0]).reduce(
-                  (acc, val) => ({ ...acc, [val]: "" }),
-                  {}
-                )}
-              />
+              <FormCreateNew formInputStructure={formInputStructure} />
             </Card.Body>
           </Card>
-        </Row>
+        </Row> */}
       </Container>
     </div>
   );

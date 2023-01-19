@@ -8,10 +8,12 @@ const getAllUrl = "http://localhost:8088/inventory/demand/";
 
 function DemandsPage() {
   const [isDataLoaded, setDataLoaded] = useState(false);
-
   const [tableData, setTableData] = useState(null);
-
   const [shouldReload, setShouldReload] = useState(false);
+  const [chartData, setChartData] = useState({
+    labels: [],
+    datasets: [],
+  });
 
   useEffect(() => {
     axios.get(getAllUrl).then((response) => {
@@ -20,6 +22,22 @@ function DemandsPage() {
       setDataLoaded(true);
       setTableData(response.data);
       // console.log(tableData);
+      setChartData({
+        labels: ["ONHAND", "INTRANSIT"],
+        datasets: [
+          {
+            // label: ["ONHAND", "INTRANSIT"],
+            data: [
+              response.data.filter((supply) => supply.type === "ONHAND").length,
+              response.data.filter((supply) => supply.type === "INTRANSIT")
+                .length,
+            ],
+            // label: ["onhand", "intransit"],
+            backgroundColor: ["red", "yellow"],
+            indexAxis: "y",
+          },
+        ],
+      });
       setShouldReload(false);
     });
   }, [shouldReload]);
@@ -30,11 +48,11 @@ function DemandsPage() {
     setShouldReload(true);
   };
 
-  if (!isDataLoaded) {
-    return <div>Loading data</div>;
-  }
+  // if (!isDataLoaded) {
+  //   return <div>Loading data</div>;
+  // }
 
-  if (!tableData) return <div>No data</div>;
+  // if (!tableData) return <div>No data</div>;
 
   return (
     <div>
@@ -50,7 +68,15 @@ function DemandsPage() {
         </Row>
         <Row>
           <Col>
-            <MyTable tableData={tableData} />
+            {isDataLoaded ? (
+              tableData ? (
+                <MyTable tableData={tableData} />
+              ) : (
+                <div>No data</div>
+              )
+            ) : (
+              <div>Loading data...please wait</div>
+            )}
           </Col>
         </Row>
       </Container>

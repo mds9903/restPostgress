@@ -10,28 +10,24 @@ function MyTable({ tableData }) {
   console.log("Rows:\n", rows);
 
   return (
-    <Container>
-      <Row>
-        <Table responsive striped bordered hover>
-          <thead>
-            <tr>
-              {columns.map((column, key) => {
-                return <th key={key}>{column}</th>;
-              })}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((item, index) => (
-              <tr key={index}>
-                {item.map((val, key) => (
-                  <td key={key}>{val && val.toString()}</td>
-                ))}
-              </tr>
+    <Table responsive striped bordered hover>
+      <thead>
+        <tr>
+          {columns.map((column, key) => {
+            return <th key={key}>{column}</th>;
+          })}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((item, index) => (
+          <tr key={index}>
+            {item.map((val, key) => (
+              <td key={key}>{val && val.toString()}</td>
             ))}
-          </tbody>
-        </Table>
-      </Row>
-    </Container>
+          </tr>
+        ))}
+      </tbody>
+    </Table>
   );
 }
 
