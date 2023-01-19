@@ -3,6 +3,8 @@ import MyTable from "../components/MyTable";
 import { Button, Container, Row, Col } from "react-bootstrap";
 
 import axios from "axios";
+import MyBarChart from "../components/MyBarChart";
+import MyPieChart from "../components/MyPieChart";
 
 const getAllUrl = "http://localhost:8088/inventory/demand/";
 
@@ -23,21 +25,35 @@ function DemandsPage() {
       setTableData(response.data);
       // console.log(tableData);
       setChartData({
-        labels: ["ONHAND", "INTRANSIT"],
+        labels: ["Total Demands"],
         datasets: [
           {
-            // label: ["ONHAND", "INTRANSIT"],
+            label: "hard promised demands",
             data: [
-              response.data.filter((supply) => supply.type === "ONHAND").length,
-              response.data.filter((supply) => supply.type === "INTRANSIT")
-                .length,
+              response.data
+                .filter((demand) => demand.demandType === "HARD_PROMISED")
+                .map((demand) => demand.demandQty)
+                .reduce((acc, curr) => acc + curr),
             ],
-            // label: ["onhand", "intransit"],
-            backgroundColor: ["red", "yellow"],
-            indexAxis: "y",
+            backgroundColor: "blue",
+            borderColor: "black",
+            borderWidth: 2,
+          },
+          {
+            label: "planned demands",
+            data: [
+              response.data
+                .filter((demand) => demand.demandType === "PLANNED")
+                .map((demand) => demand.demandQty)
+                .reduce((acc, curr) => acc + curr),
+            ],
+            backgroundColor: "grey",
+            borderColor: "black",
+            borderWidth: 2,
           },
         ],
       });
+      console.log("chartData: ", chartData);
       setShouldReload(false);
     });
   }, [shouldReload]);
@@ -47,12 +63,6 @@ function DemandsPage() {
     console.log("shouldReload" + shouldReload);
     setShouldReload(true);
   };
-
-  // if (!isDataLoaded) {
-  //   return <div>Loading data</div>;
-  // }
-
-  // if (!tableData) return <div>No data</div>;
 
   return (
     <div>
@@ -78,6 +88,10 @@ function DemandsPage() {
               <div>Loading data...please wait</div>
             )}
           </Col>
+        </Row>
+        <Row>
+          <MyBarChart data={chartData} />
+          {/* <MyPieChart data={chartData} /> */}
         </Row>
       </Container>
     </div>

@@ -41,26 +41,28 @@ function LocationsPage() {
       <h1>LocationsPage</h1>
       <Container>
         <Row>
+          {/* heading */}
           <Col>
             <h2>All Locations</h2>
           </Col>
+          {/* refresh btn */}
           <Col>
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
         <Row>
-          <Col>
-            {isDataLoaded ? (
-              tableData ? (
-                <MyTable tableData={tableData} />
-              ) : (
-                <div>No data</div>
-              )
+          {/* table */}
+          {/* <Col> */}
+          {isDataLoaded ? (
+            tableData ? (
+              <MyTable tableData={tableData} />
             ) : (
-              <div>Loading data...please wait</div>
-            )}
-            {/* <MyTable tableData={tableData} /> */}
-          </Col>
+              <div>No data</div>
+            )
+          ) : (
+            <div>Loading data...please wait</div>
+          )}
+          {/* </Col> */}
         </Row>
       </Container>
     </div>

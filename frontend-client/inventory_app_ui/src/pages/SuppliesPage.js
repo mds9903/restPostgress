@@ -33,17 +33,12 @@ function SuppliesPage() {
                 .length,
             ],
             // label: ["onhand", "intransit"],
-            backgroundColor: ["red", "yellow"],
+            backgroundColor: ["blue", "grey"],
             indexAxis: "y",
           },
         ],
       });
       console.log("chartData: ", chartData);
-      // console.log("supplies page; tableData: ", tableData);
-      // const onhand = response.data.filter(
-      //   (supply) => supply.type === "ONHAND"
-      // ).length;
-      // console.log("Onhand: ", onhand);
       setShouldReload(false);
     });
   }, [shouldReload]);
@@ -53,12 +48,6 @@ function SuppliesPage() {
     console.log("shouldReload" + shouldReload);
     setShouldReload(true);
   };
-
-  // if (!isDataLoaded) {
-  //   return <div>Loading data</div>;
-  // }
-
-  // if (!tableData) return <div>No data</div>;
 
   return (
     <div>
@@ -86,7 +75,6 @@ function SuppliesPage() {
             ) : (
               <div>Loading data...please wait</div>
             )}
-            {/* <MyTable tableData={tableData} /> */}
           </Col>
         </Row>
       </Container>
