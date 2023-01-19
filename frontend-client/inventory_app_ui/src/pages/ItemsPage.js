@@ -12,8 +12,8 @@ function ItemsPage() {
   const [isDataLoaded, setDataLoaded] = useState(false);
   const [tableData, setTableData] = useState([]);
   const [shouldReload, setShouldReload] = useState(false);
-  const [pageSize, setPageSize] = useState(2);
-  const [pageNum, setPageNum] = useState(3);
+  const [pageSize, setPageSize] = useState(5);
+  const [pageNum, setPageNum] = useState(1);
   const [pageNumbers, setPageNumbers] = useState([]);
   const [formInputStructure, setformInputStructure] = useState();
 
@@ -73,7 +73,11 @@ function ItemsPage() {
         <Row>
           {pageNumbers.map((item, index) => {
             return (
-              <Col>
+              <Col
+                className={
+                  "d-flex flex-row align-content-center justify-content-center"
+                }
+              >
                 <Button
                   className="rounded-circle"
                   key={index}

@@ -72,12 +72,14 @@ function DemandsPage() {
             <h2>All Demands</h2>
           </Col>
         </Row>
-        <Row style={{ width: "50%" }}>
-          <MyBarChart data={chartData} />
+        <Row>
+          <Col>
+            <MyBarChart data={chartData} />
+          </Col>
+          <Col>
+            <Button onClick={reloadTable}>Refresh Data</Button>
+          </Col>
         </Row>
-        <Col>
-          <Button onClick={reloadTable}>Refresh Data</Button>
-        </Col>
         <Row>
           <Col>
             {isDataLoaded ? (

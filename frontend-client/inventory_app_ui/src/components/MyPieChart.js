@@ -4,14 +4,12 @@ import { Colors } from "chart.js/auto";
 
 ChartJS.register(Colors);
 const options = {
-  // plugins: {
-  //   legend: {
-  //     display: false,
-  //   },
-  // },
   maintainAspectRatio: false,
+  indexAxis: "y",
 };
 
 export default function MyPieChart(props) {
-  return <Pie data={props.data} options={options} />;
+  console.log(props.data);
+  // return <Pie data={props.data} options={options} />;
+  return <Pie data={props.data} />;
 }
