@@ -34,6 +34,7 @@ function SuppliesPage() {
             ],
             // label: ["onhand", "intransit"],
             backgroundColor: ["red", "yellow"],
+            indexAxis: "y",
           },
         ],
       });
@@ -64,20 +65,20 @@ function SuppliesPage() {
       <h1>SuppliesPage</h1>
       <Container>
         <Row>
-          <Col>
-            <h2>All Supplies</h2>
-          </Col>
+          <h2>All Supplies</h2>
+        </Row>
+        <Row>
           <Col>
             <Button onClick={reloadTable}>Refresh Data</Button>
+          </Col>
+          <Col style={{ height: "200px", width: "300px" }}>
+            <MyBarChart data={chartData} />
           </Col>
         </Row>
         <Row>
           <Col>
             <MyTable tableData={tableData} />
           </Col>
-        </Row>
-        <Row>
-          <MyBarChart data={chartData} />
         </Row>
       </Container>
     </div>

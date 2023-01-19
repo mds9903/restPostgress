@@ -9,6 +9,8 @@ const options = {
       display: false,
     },
   },
+  maintainAspectRatio: false,
+  indexAxis: "y",
 };
 
 export default function MyBarChart(props) {
