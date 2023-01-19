@@ -38,7 +38,6 @@ function ThresholdsPage() {
 
   return (
     <div>
-      <h1>ThresholdsPage</h1>
       <Container>
         <Row>
           <Col>

@@ -66,16 +66,18 @@ function DemandsPage() {
 
   return (
     <div>
-      <h1>DemandsPage</h1>
       <Container>
         <Row>
           <Col>
             <h2>All Demands</h2>
           </Col>
-          <Col>
-            <Button onClick={reloadTable}>Refresh Data</Button>
-          </Col>
         </Row>
+        <Row style={{ width: "50%" }}>
+          <MyBarChart data={chartData} />
+        </Row>
+        <Col>
+          <Button onClick={reloadTable}>Refresh Data</Button>
+        </Col>
         <Row>
           <Col>
             {isDataLoaded ? (
@@ -88,10 +90,6 @@ function DemandsPage() {
               <div>Loading data...please wait</div>
             )}
           </Col>
-        </Row>
-        <Row>
-          <MyBarChart data={chartData} />
-          {/* <MyPieChart data={chartData} /> */}
         </Row>
       </Container>
     </div>

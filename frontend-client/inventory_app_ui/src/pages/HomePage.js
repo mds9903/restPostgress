@@ -4,7 +4,6 @@ import myCss from "./HomePage.module.css";
 function HomePage() {
   return (
     <div>
-      <h1>HomePage</h1>
       <Container>
         <Row>
           <section className={myCss.about_section}>

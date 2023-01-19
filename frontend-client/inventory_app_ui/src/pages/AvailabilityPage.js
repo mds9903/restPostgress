@@ -36,7 +36,6 @@ function AvaibilityPage() {
 
   return (
     <div>
-      <h1>AvaibilityPage</h1>
       <Container>
         <Row>
           <Col>

@@ -56,7 +56,6 @@ function ItemsPage() {
 
   return (
     <div>
-      <h1>ItemsPage</h1>
       <Container className="w-10">
         <Row>
           <Col>

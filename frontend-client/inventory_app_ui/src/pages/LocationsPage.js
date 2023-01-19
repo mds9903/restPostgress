@@ -38,7 +38,6 @@ function LocationsPage() {
 
   return (
     <div>
-      <h1>LocationsPage</h1>
       <Container>
         <Row>
           {/* heading */}

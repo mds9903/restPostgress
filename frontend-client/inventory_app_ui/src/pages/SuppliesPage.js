@@ -23,17 +23,32 @@ function SuppliesPage() {
       setDataLoaded(true);
       setTableData(response.data);
       setChartData({
-        labels: ["ONHAND", "INTRANSIT"],
+        labels: ["Total Supplies"],
         datasets: [
           {
-            // label: ["ONHAND", "INTRANSIT"],
+            label: "on hand supplies",
             data: [
-              response.data.filter((supply) => supply.type === "ONHAND").length,
-              response.data.filter((supply) => supply.type === "INTRANSIT")
-                .length,
+              response.data
+                .filter((supply) => supply.type === "ONHAND")
+                .map((supply) => supply.supplyQty)
+                .reduce((acc, curr) => acc + curr),
             ],
-            // label: ["onhand", "intransit"],
-            backgroundColor: ["blue", "grey"],
+            backgroundColor: "blue",
+            borderColor: "black",
+            borderWidth: 2,
+            indexAxis: "y",
+          },
+          {
+            label: "planned supplys",
+            data: [
+              response.data
+                .filter((supply) => supply.type === "INTRANSIT")
+                .map((supply) => supply.supplyQty)
+                .reduce((acc, curr) => acc + curr),
+            ],
+            backgroundColor: "grey",
+            borderColor: "black",
+            borderWidth: 2,
             indexAxis: "y",
           },
         ],
@@ -51,19 +66,18 @@ function SuppliesPage() {
 
   return (
     <div>
-      <h1>SuppliesPage</h1>
       <Container>
         <Row>
-          <h2>All Supplies</h2>
-        </Row>
-        <Row>
           <Col>
-            <Button onClick={reloadTable}>Refresh Data</Button>
-          </Col>
-          <Col style={{ height: "200px", width: "300px" }}>
-            <MyBarChart data={chartData} />
+            <h2>All Supplies</h2>
           </Col>
         </Row>
+        <Row style={{ width: "75%" }}>
+          <MyBarChart data={chartData} />
+        </Row>
+        <Col>
+          <Button onClick={reloadTable}>Refresh Data</Button>
+        </Col>
         <Row>
           <Col>
             {isDataLoaded ? (
