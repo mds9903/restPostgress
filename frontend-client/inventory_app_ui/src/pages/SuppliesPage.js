@@ -4,6 +4,7 @@ import { Button, Container, Row, Col } from "react-bootstrap";
 import MyBarChart from "./../components/MyBarChart";
 
 import axios from "axios";
+import MyStackChart from "../components/MyStackChart";
 
 const getAllUrl = "http://localhost:8088/inventory/supply/";
 
@@ -90,6 +91,10 @@ function SuppliesPage() {
               <div>Loading data...please wait</div>
             )}
           </Col>
+        </Row>
+        <Row>
+          <div>stacked chart</div>
+          <MyStackChart />
         </Row>
       </Container>
     </div>
