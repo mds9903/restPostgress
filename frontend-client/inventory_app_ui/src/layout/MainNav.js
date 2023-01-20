@@ -11,31 +11,31 @@ function MainNav() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" variant="pills">
               <LinkContainer to="/home">
-                <Nav.Link>Home</Nav.Link>
+                <Nav.Link className="m-1 p-2">Home</Nav.Link>
               </LinkContainer>
 
               <LinkContainer to="/items">
-                <Nav.Link>Items</Nav.Link>
+                <Nav.Link className="m-1 p-2">Items</Nav.Link>
               </LinkContainer>
 
               <LinkContainer to="/locations">
-                <Nav.Link>Locations</Nav.Link>
+                <Nav.Link className="m-1 p-2">Locations</Nav.Link>
               </LinkContainer>
 
               <LinkContainer to="/supplies">
-                <Nav.Link>Supplies</Nav.Link>
+                <Nav.Link className="m-1 p-2">Supplies</Nav.Link>
               </LinkContainer>
 
               <LinkContainer to="/demands">
-                <Nav.Link>Demands</Nav.Link>
+                <Nav.Link className="m-1 p-2">Demands</Nav.Link>
               </LinkContainer>
 
               <LinkContainer to="/thresholds">
-                <Nav.Link>Thresholds</Nav.Link>
+                <Nav.Link className="m-1 p-2">Thresholds</Nav.Link>
               </LinkContainer>
 
               <LinkContainer to="/availability">
-                <Nav.Link>Availability</Nav.Link>
+                <Nav.Link className="m-1 p-2">Availability</Nav.Link>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>

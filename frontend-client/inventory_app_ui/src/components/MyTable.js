@@ -10,7 +10,7 @@ function MyTable({ tableData }) {
   console.log("Rows:\n", rows);
 
   return (
-    <Table responsive striped bordered hover>
+    <Table size="sm" responsive striped bordered hover>
       <thead>
         <tr>
           {columns.map((column, key) => {

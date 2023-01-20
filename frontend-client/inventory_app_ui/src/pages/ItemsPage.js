@@ -4,6 +4,7 @@ import axios from "axios";
 
 import MyTable from "../components/MyTable";
 import FormCreateNew from "../components/FormCreateNew";
+import { minHeight } from "@mui/system";
 
 // const getAllUrl = "http://localhost:8088/items/";
 const getAllPaginatedUrl = "http://localhost:8088/inventory/items/paginated";
@@ -56,8 +57,9 @@ function ItemsPage() {
 
   return (
     <div>
-      <Container className="w-10">
-        <Row className="mt-2">
+      <Container>
+        {/* heading */}
+        <Row>
           <Col>
             <h2>Items</h2>
           </Col>
@@ -66,13 +68,24 @@ function ItemsPage() {
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
-        <Row>
+        {/* heading */}
+
+        {/* views */}
+        <Row className="d-flex flex-row justify-content-between align-items-around">
+          <Col>
+            <MyTable tableData={tableData} />
+          </Col>
+
           {/* pagination */}
-          <Col className={"d-flex flex-column justify-content-around"}>
+          <Col
+            className="d-flex flex-column justify-content-between align-items-center "
+            style={{ maxWidth: "50px", maxHeight: "min-content" }}
+          >
             {pageNumbers.map((item, index) => {
               return (
-                <Row className="w-25">
+                <Row className="d-flex flex-column justify-content-between align-items-center text-align-center ">
                   <Button
+                    size="sm"
                     className="rounded-circle"
                     key={index}
                     onClick={() => {
@@ -86,12 +99,11 @@ function ItemsPage() {
               );
             })}
           </Col>
-          {/* table of all resources */}
-          <Col>
-            <MyTable tableData={tableData} />
-          </Col>
         </Row>
-        <Row className="mt-2"></Row>
+        {/* views */}
+
+        {/* actions to create, update resources */}
+        {/* <Row className="mt-2"></Row> */}
         {/* forms */}
         {/* <Row className="m-5">
           <Card className="w-auto">
@@ -101,6 +113,7 @@ function ItemsPage() {
             </Card.Body>
           </Card>
         </Row> */}
+        {/* actions to create, update resources */}
       </Container>
     </div>
   );
