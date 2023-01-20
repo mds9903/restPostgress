@@ -24,36 +24,48 @@ function SuppliesPage() {
       setDataLoaded(true);
       setTableData(response.data);
       setChartData({
-        labels: ["Total Supplies"],
+        // labels show on the x axis
+        labels: ["ONHAND SUPPLIES", "INTRANSIT SUPPLIES", "DAMAGED SUPPLIES"],
         datasets: [
           {
-            label: "on hand supplies",
+            label: "Supply Quantities",
             data: [
               response.data
                 .filter((supply) => supply.type === "ONHAND")
                 .map((supply) => supply.supplyQty)
                 .reduce((acc, curr) => acc + curr),
-            ],
-            backgroundColor: "blue",
-            borderColor: "black",
-            borderWidth: 2,
-            indexAxis: "y",
-          },
-          {
-            label: "planned supplys",
-            data: [
               response.data
                 .filter((supply) => supply.type === "INTRANSIT")
                 .map((supply) => supply.supplyQty)
                 .reduce((acc, curr) => acc + curr),
+              // response.data
+              //   .filter((supply) => supply.type === "DAMAGED")
+              //   .map((supply) => supply.supplyQty)
+              //   .reduce((acc, curr) => acc + curr),
             ],
-            backgroundColor: "grey",
+            backgroundColor: ["blue", "yellow", "red"],
             borderColor: "black",
-            borderWidth: 2,
-            indexAxis: "y",
+            borderWidth: 1,
+            // indexAxis: "y",
           },
         ],
       });
+      // },
+      // {
+      //   label: "INTANSIT",
+      //   data: [
+      //     response.data
+      //       .filter((supply) => supply.type === "INTRANSIT")
+      //       .map((supply) => supply.supplyQty)
+      //       .reduce((acc, curr) => acc + curr),
+      //   ],
+      //   backgroundColor: "yellow",
+      //   borderColor: "black",
+      //   borderWidth: 2,
+      //   indexAxis: "y",
+      // },
+      // ],
+      // });
       console.log("chartData: ", chartData);
       setShouldReload(false);
     });
@@ -73,7 +85,7 @@ function SuppliesPage() {
             <h2>All Supplies</h2>
           </Col>
         </Row>
-        <Row style={{ width: "75%" }}>
+        <Row>
           <MyBarChart data={chartData} />
         </Row>
         <Col>

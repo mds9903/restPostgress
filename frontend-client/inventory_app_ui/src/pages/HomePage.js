@@ -6,21 +6,15 @@ function HomePage() {
     <div>
       <Container>
         <Row>
-          <section className={myCss.about_section}>
-            <Col>
-              <article id="intro_article">
-                Tracking availability of various items based on locations, the
-                demand, supply and threshold quantities can help in managing
-                stock levels more efficiently. <br />
-                To provide a tool for this - we present the “Inventory App” a
-                backend API that provides different endpoints that make it
-                simple to retrieve and update information of Items,
-                locations,supplies, demands, thresholds, availability quantities
-                and stock levels help make business decisions and calculations
-                like Available To Promise (ATP) quicker and
-              </article>
-            </Col>
-          </section>
+          <Col>Supplies that are in transit, damaged and on hand</Col>
+          <Col>Demands that are planned, hard promised</Col>
+        </Row>
+        <Row>
+          <Col>
+            Locations pie chart that are only shipping, only delivering, only
+            pickup, and all modes.
+          </Col>
+          <Col>Items that are in stock, under stocked and over stocked</Col>
         </Row>
       </Container>
     </div>
