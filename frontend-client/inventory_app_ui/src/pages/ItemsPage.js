@@ -71,7 +71,7 @@ function ItemsPage() {
         {/* heading */}
 
         {/* views */}
-        <Row className="d-flex flex-row justify-content-between align-items-around">
+        <Row>
           <Col>
             <MyTable tableData={tableData} />
           </Col>

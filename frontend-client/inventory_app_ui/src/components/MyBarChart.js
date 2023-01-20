@@ -18,9 +18,12 @@ const options = {
   plugins: {
     datalabels: {
       // This code is used to display data values
-      anchor: "inside",
+      anchor: "center",
       align: "center",
       color: "black",
+      font: {
+        size: 15,
+      },
     },
     legend: {
       display: false,

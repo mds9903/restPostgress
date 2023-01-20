@@ -79,7 +79,7 @@ function LocationsPage() {
   return (
     <div>
       <Container>
-        <Row className="mt-2">
+        <Row>
           <Col>
             <h2>Locations</h2>
           </Col>
@@ -88,10 +88,10 @@ function LocationsPage() {
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
-        <Row className="mt-2">
+        <Row>
           <MyPieChart data={chartData} />
         </Row>
-        <Row className="mt-2">
+        <Row>
           {/* table */}
           {isDataLoaded ? (
             tableData ? (

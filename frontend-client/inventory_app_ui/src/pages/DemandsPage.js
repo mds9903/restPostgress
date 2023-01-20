@@ -67,7 +67,7 @@ function DemandsPage() {
   return (
     <div>
       <Container>
-        <Row className="mt-2">
+        <Row>
           <Col>
             <h2>Demands</h2>
           </Col>
@@ -75,10 +75,10 @@ function DemandsPage() {
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
-        <Row className="mt-2">
+        <Row>
           <MyBarChart data={chartData} />
         </Row>
-        <Row className="mt-2">
+        <Row>
           <Col>
             {isDataLoaded ? (
               tableData ? (
