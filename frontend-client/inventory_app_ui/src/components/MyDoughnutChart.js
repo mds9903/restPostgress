@@ -1,4 +1,4 @@
-import { Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js";
 import { Colors } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
@@ -11,17 +11,17 @@ const options = {
     datalabels: {
       // This code is used to display data values
       anchor: "center",
-      align: "start",
+      align: "center",
       color: "black",
       font: {
-        size: 20,
+        size: 15,
       },
     },
   },
 };
 
-export default function MyPieChart(props) {
+export default function MyDoughnutChart(props) {
   // console.log(props.data);
   console.log(props.data);
-  return <Pie height={100} data={props.data} options={options} />;
+  return <Doughnut height={200} data={props.data} options={options} />;
 }

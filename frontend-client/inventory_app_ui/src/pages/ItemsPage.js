@@ -15,7 +15,7 @@ function ItemsPage() {
   const [pageSize, setPageSize] = useState(5);
   const [pageNum, setPageNum] = useState(1);
   const [pageNumbers, setPageNumbers] = useState([]);
-  const [formInputStructure, setformInputStructure] = useState();
+  // const [formInputStructure, setformInputStructure] = useState();
 
   useEffect(() => {
     axios
@@ -33,12 +33,12 @@ function ItemsPage() {
           Array.from({ length: response.data.maxPages }, (_, i) => i + 1)
         );
         setShouldReload(false);
-        setformInputStructure(
-          Object.keys(tableData[0]).reduce(
-            (acc, val) => ({ ...acc, [val]: "" }),
-            {}
-          )
-        );
+        // setformInputStructure(
+        //   Object.keys(tableData[0]).reduce(
+        //     (acc, val) => ({ ...acc, [val]: "" }),
+        //     {}
+        //   )
+        // );
       });
   }, [shouldReload, pageNum]);
 
@@ -57,41 +57,42 @@ function ItemsPage() {
   return (
     <div>
       <Container className="w-10">
-        <Row>
+        <Row className="mt-2">
           <Col>
-            <h2>All Items</h2>
+            <h2>Items</h2>
           </Col>
           <Col>
+            {/* data reload button */}
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
         <Row>
+          {/* pagination */}
+          <Col className={"d-flex flex-column justify-content-around"}>
+            {pageNumbers.map((item, index) => {
+              return (
+                <Row className="w-25">
+                  <Button
+                    className="rounded-circle"
+                    key={index}
+                    onClick={() => {
+                      console.log("setting page num to ", item);
+                      setPageNum(item);
+                    }}
+                  >
+                    {item}
+                  </Button>
+                </Row>
+              );
+            })}
+          </Col>
+          {/* table of all resources */}
           <Col>
             <MyTable tableData={tableData} />
           </Col>
         </Row>
-        <Row>
-          {pageNumbers.map((item, index) => {
-            return (
-              <Col
-                className={
-                  "d-flex flex-row align-content-center justify-content-center"
-                }
-              >
-                <Button
-                  className="rounded-circle"
-                  key={index}
-                  onClick={() => {
-                    console.log("setting page num to ", item);
-                    setPageNum(item);
-                  }}
-                >
-                  {item}
-                </Button>
-              </Col>
-            );
-          })}
-        </Row>
+        <Row className="mt-2"></Row>
+        {/* forms */}
         {/* <Row className="m-5">
           <Card className="w-auto">
             <Card.Header>Create new Item</Card.Header>

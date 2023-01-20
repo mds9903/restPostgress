@@ -4,6 +4,7 @@ import { Button, Container, Row, Col } from "react-bootstrap";
 
 import axios from "axios";
 import MyPieChart from "../components/MyPieChart";
+import MyLineChart from "../components/MyLineChart";
 
 const getAllUrl = "http://localhost:8088/inventory/locations/";
 
@@ -78,27 +79,20 @@ function LocationsPage() {
   return (
     <div>
       <Container>
-        <Row>
-          {/* heading */}
+        <Row className="mt-2">
           <Col>
-            <h2>All Locations</h2>
+            <h2>Locations</h2>
           </Col>
-          {/* refresh btn */}
           <Col>
+            {/* data reload button */}
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
-          <Col>
-            {/* pie chart to show
-              locations where 
-              shipping is allowed,
-              delivery is allowed,
-              pickup is allowed */}
-            <MyPieChart data={chartData} />
-          </Col>
         </Row>
-        <Row>
+        <Row className="mt-2">
+          <MyPieChart data={chartData} />
+        </Row>
+        <Row className="mt-2">
           {/* table */}
-          {/* <Col> */}
           {isDataLoaded ? (
             tableData ? (
               <MyTable tableData={tableData} />
@@ -108,7 +102,6 @@ function LocationsPage() {
           ) : (
             <div>Loading data...please wait</div>
           )}
-          {/* </Col> */}
         </Row>
       </Container>
     </div>

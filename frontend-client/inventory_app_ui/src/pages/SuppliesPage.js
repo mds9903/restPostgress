@@ -19,55 +19,41 @@ function SuppliesPage() {
 
   useEffect(() => {
     axios.get(getAllUrl).then((response) => {
-      console.log("getting data");
-      console.log("response.data:\n", response.data);
-      setDataLoaded(true);
-      setTableData(response.data);
-      setChartData({
-        // labels show on the x axis
-        labels: ["ONHAND SUPPLIES", "INTRANSIT SUPPLIES", "DAMAGED SUPPLIES"],
-        datasets: [
-          {
-            label: "Supply Quantities",
-            data: [
-              response.data
-                .filter((supply) => supply.type === "ONHAND")
-                .map((supply) => supply.supplyQty)
-                .reduce((acc, curr) => acc + curr),
-              response.data
-                .filter((supply) => supply.type === "INTRANSIT")
-                .map((supply) => supply.supplyQty)
-                .reduce((acc, curr) => acc + curr),
-              // response.data
-              //   .filter((supply) => supply.type === "DAMAGED")
-              //   .map((supply) => supply.supplyQty)
-              //   .reduce((acc, curr) => acc + curr),
-            ],
-            backgroundColor: ["blue", "yellow", "red"],
-            borderColor: "black",
-            borderWidth: 1,
-            // indexAxis: "y",
-          },
-        ],
-      });
-      // },
-      // {
-      //   label: "INTANSIT",
-      //   data: [
-      //     response.data
-      //       .filter((supply) => supply.type === "INTRANSIT")
-      //       .map((supply) => supply.supplyQty)
-      //       .reduce((acc, curr) => acc + curr),
-      //   ],
-      //   backgroundColor: "yellow",
-      //   borderColor: "black",
-      //   borderWidth: 2,
-      //   indexAxis: "y",
-      // },
-      // ],
-      // });
-      console.log("chartData: ", chartData);
-      setShouldReload(false);
+      if (response.data) {
+        console.log("getting data");
+        console.log("response.data:\n", response.data);
+        setDataLoaded(true);
+        setTableData(response.data);
+        setChartData({
+          // labels show on the x axis
+          labels: ["ONHAND SUPPLIES", "INTRANSIT SUPPLIES", "DAMAGED SUPPLIES"],
+          datasets: [
+            {
+              label: "Supply Quantities",
+              data: [
+                response.data
+                  .filter((supply) => supply.type === "ONHAND")
+                  .map((supply) => supply.supplyQty)
+                  .reduce((acc, curr) => acc + curr),
+                response.data
+                  .filter((supply) => supply.type === "INTRANSIT")
+                  .map((supply) => supply.supplyQty)
+                  .reduce((acc, curr) => acc + curr),
+                response.data
+                  .filter((supply) => supply.type === "DAMAGED")
+                  .map((supply) => supply.supplyQty)
+                  .reduce((acc, curr) => acc + curr),
+              ],
+              backgroundColor: ["blue", "yellow", "red"],
+              borderColor: "black",
+              borderWidth: 1,
+              // indexAxis: "y",
+            },
+          ],
+        });
+        console.log("chartData: ", chartData);
+        setShouldReload(false);
+      }
     });
   }, [shouldReload]);
 
@@ -80,18 +66,18 @@ function SuppliesPage() {
   return (
     <div>
       <Container>
-        <Row>
+        <Row className="mt-2">
           <Col>
-            <h2>All Supplies</h2>
+            <h2>Supplies</h2>
+          </Col>
+          <Col>
+            <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
-        <Row>
+        <Row className="mt-2">
           <MyBarChart data={chartData} />
         </Row>
-        <Col>
-          <Button onClick={reloadTable}>Refresh Data</Button>
-        </Col>
-        <Row>
+        <Row className="mt-2">
           <Col>
             {isDataLoaded ? (
               tableData ? (
@@ -104,7 +90,7 @@ function SuppliesPage() {
             )}
           </Col>
         </Row>
-        <Row>
+        <Row className="mt-2">
           <div>stacked chart</div>
           <MyStackChart />
         </Row>

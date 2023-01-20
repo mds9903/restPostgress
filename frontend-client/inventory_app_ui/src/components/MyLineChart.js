@@ -1,4 +1,4 @@
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Colors } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
@@ -6,7 +6,6 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 ChartJS.register(Colors);
 ChartJS.register(ChartDataLabels);
 const options = {
-  maintainAspectRatio: false,
   indexAxis: "y",
   scales: {
     y: {
@@ -28,7 +27,7 @@ const options = {
   },
 };
 
-export default function MyBarChart(props) {
+export default function MyLineChart(props) {
   console.log(props.data);
-  return <Bar height={100} data={props.data} options={options} />;
+  return <Line height={100} data={props.data} options={options} />;
 }
