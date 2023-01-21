@@ -19,7 +19,7 @@ function AvaibilityPage() {
   const [loadedData, setLoadedData] = useState(null);
   const [shouldReload, setShouldReload] = useState(false);
 
-  const getAllUrl = `http://localhost:8088/inventory`;
+  const getAllUrl = `http://localhost:8088/inventory/`;
 
   const itemIdChangeHandler = (event) => {
     console.log("itemChange: " + event.target.value);
@@ -42,7 +42,7 @@ function AvaibilityPage() {
 
   useEffect(() => {
     axios
-      .get(`${getAllUrl}/v${version}/availability/${itemId}/${locationId}`)
+      .get(`${getAllUrl}v${version}/availability/${itemId}/${locationId}`)
       .then((response) => {
         console.log("getting data");
         console.log("response.data:\n", response.data);
@@ -50,6 +50,10 @@ function AvaibilityPage() {
         setLoadedData(response.data);
         // console.log(tableData);
         setShouldReload(false);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log("Error occurred: " + error);
       });
   }, [shouldReload, isDataLoaded, version, itemId, locationId]);
 
@@ -72,65 +76,68 @@ function AvaibilityPage() {
           </Col>
         </Row>
         <Row className="mt-2 w-50">
-          <Col>
-            <Card>
-              <Form className={"m-2"} onSubmit={submitHandler}>
-                <Form.Group>
-                  {/* item id */}
-                  <FloatingLabel
-                    controlId="floatingInput_item"
-                    label="Item ID"
-                    className="mb-2"
-                  >
-                    <Form.Control
-                      type="text"
-                      placeholder="the item id"
-                      onChange={itemIdChangeHandler}
-                    />
-                  </FloatingLabel>
-                </Form.Group>
-                <Form.Group>
-                  {/* locationd id */}
-                  <FloatingLabel
-                    controlId="floatingInput_location"
-                    label="Location ID"
-                    className="mb-2"
-                  >
-                    <Form.Control
-                      type="text"
-                      placeholder="the location id"
-                      onChange={locationIdChangeHandler}
+          <Row className="p-2">
+            {/* form */}
+            <Col>
+              <Card>
+                <Form className={"m-2"} onSubmit={submitHandler}>
+                  <Form.Group>
+                    {/* item id */}
+                    <FloatingLabel
+                      controlId="floatingInput_item"
+                      label={"Item ID: " + itemId}
                       className="mb-2"
-                    />
-                  </FloatingLabel>
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Select Avaibility Version</Form.Label>
-                  <Form.Control as={"select"} onChange={versionChangeHandler}>
-                    <option value="1" className="mb-2">
+                    >
+                      <Form.Control
+                        type="text"
+                        placeholder="the item id"
+                        onChange={itemIdChangeHandler}
+                      />
+                    </FloatingLabel>
+                  </Form.Group>
+                  <Form.Group>
+                    {/* locationd id */}
+                    <FloatingLabel
+                      controlId="floatingInput_location"
+                      label={"Location ID: " + locationId}
+                      className="mb-2"
+                    >
+                      <Form.Control
+                        type="text"
+                        placeholder="the location id"
+                        onChange={locationIdChangeHandler}
+                        className="mb-2"
+                      />
+                    </FloatingLabel>
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Select Avaibility Version</Form.Label>
+                    <Form.Control as={"select"} onChange={versionChangeHandler}>
+                      {/* <option value="1" className="mb-2">
                       V1 Avaibility
-                    </option>
-                    <option value="2" className="mb-2">
-                      V2 Avaibility
-                    </option>
-                    <option value="3" className="mb-2">
-                      V3 Avaibility
-                    </option>
-                  </Form.Control>
-                </Form.Group>
-              </Form>
-            </Card>
-          </Col>
-          <Col className="mt-2">
-            {isDataLoaded ? (
-              <AvaibilityCard
-                data={loadedData}
-                colorDynamic={version === "1" ? true : false}
-              />
-            ) : (
-              <div>Loading data</div>
-            )}
-          </Col>
+                    </option> */}
+                      <option value="2" className="mb-2">
+                        V2 Avaibility
+                      </option>
+                      <option value="3" className="mb-2">
+                        V3 Avaibility
+                      </option>
+                    </Form.Control>
+                  </Form.Group>
+                </Form>
+              </Card>
+            </Col>
+            {/* availability card */}
+            <Col>
+              <Card>
+                {isDataLoaded ? (
+                  <AvaibilityCard data={loadedData} />
+                ) : (
+                  <div>Loading data</div>
+                )}
+              </Card>
+            </Col>
+          </Row>
         </Row>
       </Container>
     </div>
