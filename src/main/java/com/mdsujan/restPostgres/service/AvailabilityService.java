@@ -165,9 +165,9 @@ public class AvailabilityService {
         // derive the stock level
         String stockLevel = "yellow";
         if (availableQty < threshold.getMinThreshold()) {
-            stockLevel = "Red";
+            stockLevel = "red";
         } else if (availableQty > threshold.getMaxThreshold()) {
-            stockLevel = "Green";
+            stockLevel = "green";
         }
 
         return new AvailabilityV2Response(itemId, locationId, availableQty, stockLevel);

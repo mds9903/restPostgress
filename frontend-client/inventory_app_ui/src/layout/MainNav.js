@@ -4,7 +4,7 @@ import { LinkContainer } from "react-router-bootstrap";
 function MainNav() {
   return (
     <header>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="dark" variant="dark" expand="lg" className="mb-2">
         <Container>
           <Navbar.Brand>React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

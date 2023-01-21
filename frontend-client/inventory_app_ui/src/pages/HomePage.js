@@ -183,7 +183,7 @@ function HomePage() {
       })
       .catch(function (error) {
         // handle error
-        console.log("Error occurred: " + error);
+        console.log("Error occurred: ", error.response.data.message);
       });
   }, [shouldReload, version, itemId, locationId]);
 
@@ -195,7 +195,7 @@ function HomePage() {
 
   return (
     <div>
-      <Container className="h-80">
+      <Container>
         {/* heading */}
         <Row>
           <Col>
@@ -203,7 +203,7 @@ function HomePage() {
           </Col>
         </Row>
 
-        <Row className="mt-2 h-50">
+        <Row className="mt-2 ">
           {/* supplies */}
           <Col className="w-30">
             <Card>
@@ -242,7 +242,7 @@ function HomePage() {
                         <FloatingLabel
                           controlId="floatingInput_item"
                           label={"Item ID: " + itemId}
-                          className="mb-2"
+                          className="mb-1"
                         >
                           <Form.Control
                             type="text"
@@ -251,38 +251,35 @@ function HomePage() {
                           />
                         </FloatingLabel>
                       </Form.Group>
-                      <Form.Group>
-                        {/* locationd id */}
-                        <FloatingLabel
-                          controlId="floatingInput_location"
-                          label={"Location ID: " + locationId}
-                          className="mb-2"
-                        >
-                          <Form.Control
-                            type="text"
-                            placeholder="the location id"
-                            onChange={locationIdChangeHandler}
-                            className="mb-2"
-                          />
-                        </FloatingLabel>
-                      </Form.Group>
-                      <Form.Group>
-                        <Form.Label>Select Avaibility Version</Form.Label>
+
+                      {/* locationd id */}
+                      <FloatingLabel
+                        controlId="floatingInput_location"
+                        label={"Location ID: " + locationId}
+                        className="mb-1"
+                      >
                         <Form.Control
-                          as={"select"}
-                          onChange={versionChangeHandler}
-                        >
-                          {/* <option value="1" className="mb-2">
+                          type="text"
+                          placeholder="the location id"
+                          onChange={locationIdChangeHandler}
+                          className="mb-1"
+                        />
+                      </FloatingLabel>
+                      <Form.Label>Select Avaibility Version</Form.Label>
+                      <Form.Control
+                        as={"select"}
+                        onChange={versionChangeHandler}
+                      >
+                        {/* <option value="1" className="mb-2">
                       V1 Avaibility
                     </option> */}
-                          <option value="2" className="mb-2">
-                            V2 Avaibility
-                          </option>
-                          <option value="3" className="mb-2">
-                            V3 Avaibility
-                          </option>
-                        </Form.Control>
-                      </Form.Group>
+                        <option value="2" className="mb-1">
+                          V2 Avaibility
+                        </option>
+                        <option value="3" className="mb-1">
+                          V3 Avaibility
+                        </option>
+                      </Form.Control>
                     </Form>
                   </Card>
                 </Col>
