@@ -1,32 +1,57 @@
 import { useState, useEffect } from "react";
-import MyTable from "../components/MyTable";
-import { Button, Container, Row, Col } from "react-bootstrap";
-
 import axios from "axios";
-import { useLoaderData } from "react-router-dom";
-
-// const getAllUrlV2 = "http://localhost:8088/inventory/v2/availability";
-// const getAllUrlV3 = "http://localhost:8088/inventory/v3/availability";
+import AvaibilityCard from "../components/AvaibilityCard";
+import {
+  Button,
+  Container,
+  Row,
+  Col,
+  Form,
+  FloatingLabel,
+  Card,
+} from "react-bootstrap";
 
 function AvaibilityPage() {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
-  const [version, setVersion] = useState("1");
+  const [version, setVersion] = useState("2");
+  const [itemId, setItemId] = useState("1");
+  const [locationId, setLocationId] = useState("1");
   const [loadedData, setLoadedData] = useState(null);
-
   const [shouldReload, setShouldReload] = useState(false);
 
-  const getAllUrl = `http://localhost:8088/inventory/v${version}/availability`;
+  const getAllUrl = `http://localhost:8088/inventory`;
+
+  const itemIdChangeHandler = (event) => {
+    console.log("itemChange: " + event.target.value);
+    setItemId(event.target.value);
+  };
+
+  const locationIdChangeHandler = (event) => {
+    console.log("itemChange: " + event.target.value);
+    setLocationId(event.target.value);
+  };
+
+  const versionChangeHandler = (event) => {
+    console.log("versionChange: " + event.target.value);
+    setVersion(event.target.value);
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+  };
 
   useEffect(() => {
-    axios.get(getAllUrl + "/1/1").then((response) => {
-      console.log("getting data");
-      console.log("response.data:\n", response.data);
-      setIsDataLoaded(true);
-      setLoadedData(response.data);
-      // console.log(tableData);
-      setShouldReload(false);
-    });
-  }, [shouldReload, isDataLoaded, version]);
+    axios
+      .get(`${getAllUrl}/v${version}/availability/${itemId}/${locationId}`)
+      .then((response) => {
+        console.log("getting data");
+        console.log("response.data:\n", response.data);
+        setIsDataLoaded(true);
+        setLoadedData(response.data);
+        // console.log(tableData);
+        setShouldReload(false);
+      });
+  }, [shouldReload, isDataLoaded, version, itemId, locationId]);
 
   const reloadData = () => {
     console.log("reloading data");
@@ -37,51 +62,75 @@ function AvaibilityPage() {
   return (
     <div>
       <Container>
-        <Row>
+        {/* heading */}
+        <Row className="mt-2">
           <Col>
             <h2>Avaibilities</h2>
           </Col>
           <Col>
             <Button onClick={reloadData}>Refresh Data</Button>
           </Col>
-          <Row>
-            <Col>
-              <Button
-                className="m-2"
-                onClick={() => {
-                  setVersion("1");
-                }}
-              >
-                {" "}
-                V1
-              </Button>
-              <Button
-                className="m-2"
-                onClick={() => {
-                  setVersion("2");
-                }}
-              >
-                {" "}
-                V2
-              </Button>
-              <Button
-                className="m-2"
-                onClick={() => {
-                  setVersion("3");
-                }}
-              >
-                {" "}
-                V3
-              </Button>
-            </Col>
-          </Row>
         </Row>
-        <Row>
-          {isDataLoaded ? (
-            <div>{JSON.stringify(loadedData)}</div>
-          ) : (
-            <div>Loading data</div>
-          )}
+        <Row className="mt-2 w-50">
+          <Col>
+            <Card>
+              <Form className={"m-2"} onSubmit={submitHandler}>
+                <Form.Group>
+                  {/* item id */}
+                  <FloatingLabel
+                    controlId="floatingInput_item"
+                    label="Item ID"
+                    className="mb-2"
+                  >
+                    <Form.Control
+                      type="text"
+                      placeholder="the item id"
+                      onChange={itemIdChangeHandler}
+                    />
+                  </FloatingLabel>
+                </Form.Group>
+                <Form.Group>
+                  {/* locationd id */}
+                  <FloatingLabel
+                    controlId="floatingInput_location"
+                    label="Location ID"
+                    className="mb-2"
+                  >
+                    <Form.Control
+                      type="text"
+                      placeholder="the location id"
+                      onChange={locationIdChangeHandler}
+                      className="mb-2"
+                    />
+                  </FloatingLabel>
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label>Select Avaibility Version</Form.Label>
+                  <Form.Control as={"select"} onChange={versionChangeHandler}>
+                    <option value="1" className="mb-2">
+                      V1 Avaibility
+                    </option>
+                    <option value="2" className="mb-2">
+                      V2 Avaibility
+                    </option>
+                    <option value="3" className="mb-2">
+                      V3 Avaibility
+                    </option>
+                  </Form.Control>
+                </Form.Group>
+              </Form>
+            </Card>
+          </Col>
+          <Col className="mt-2">
+            {isDataLoaded ? (
+              <AvaibilityCard
+                data={loadedData}
+                colorDynamic={version === "1" ? true : false}
+              />
+            ) : (
+              <div>Loading data</div>
+            )}
+          </Col>
         </Row>
       </Container>
     </div>
