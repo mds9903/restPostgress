@@ -1,7 +1,12 @@
 import { Container, Row, Table } from "react-bootstrap";
 
 function MyTable({ tableData }) {
-  //   console.log(Object.keys(tableData[0]));
+  console.log(tableData);
+  // console.log(Object.keys(tableData[0]));
+
+  if (tableData.length === 0) {
+    return <div>No Data</div>;
+  }
 
   const columns = Array.from(Object.keys(tableData[0]));
   const rows = tableData.map((item, index) => Object.values(item));

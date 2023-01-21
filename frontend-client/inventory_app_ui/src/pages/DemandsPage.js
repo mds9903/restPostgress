@@ -76,20 +76,28 @@ function DemandsPage() {
           </Col>
         </Row>
         <Row>
-          <MyBarChart data={chartData} />
+          {/* chart */}
+          {isDataLoaded ? (
+            chartData ? (
+              <MyBarChart data={chartData} />
+            ) : (
+              <div>No Chart Data</div>
+            )
+          ) : (
+            <div>No Data</div>
+          )}
         </Row>
         <Row>
-          <Col>
-            {isDataLoaded ? (
-              tableData ? (
-                <MyTable tableData={tableData} />
-              ) : (
-                <div>No data</div>
-              )
+          {/* table */}
+          {isDataLoaded ? (
+            tableData ? (
+              <MyTable tableData={tableData} />
             ) : (
-              <div>Loading data...please wait</div>
-            )}
-          </Col>
+              <div>No Table Data</div>
+            )
+          ) : (
+            <div>No Data</div>
+          )}
         </Row>
       </Container>
     </div>

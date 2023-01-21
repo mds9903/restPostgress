@@ -89,7 +89,16 @@ function LocationsPage() {
           </Col>
         </Row>
         <Row>
-          <MyPieChart data={chartData} />
+          {/* chart */}
+          {isDataLoaded ? (
+            chartData ? (
+              <MyPieChart data={chartData} />
+            ) : (
+              <div>No Chart Data</div>
+            )
+          ) : (
+            <div>No Data</div>
+          )}
         </Row>
         <Row>
           {/* table */}
@@ -97,10 +106,10 @@ function LocationsPage() {
             tableData ? (
               <MyTable tableData={tableData} />
             ) : (
-              <div>No data</div>
+              <div>No Table Data</div>
             )
           ) : (
-            <div>Loading data...please wait</div>
+            <div>No Data</div>
           )}
         </Row>
       </Container>

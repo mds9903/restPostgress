@@ -1,10 +1,10 @@
-import { useState, useEffect, useTransition } from "react";
-import { Button, Container, Row, Col, Card } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Button, Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 
 import MyTable from "../components/MyTable";
-import FormCreateNew from "../components/FormCreateNew";
-import { minHeight } from "@mui/system";
+// import FormCreateNew from "../components/FormCreateNew";
+// import { minHeight } from "@mui/system";
 
 // const getAllUrl = "http://localhost:8088/items/";
 const getAllPaginatedUrl = "http://localhost:8088/inventory/items/paginated";
@@ -49,11 +49,11 @@ function ItemsPage() {
     setShouldReload(true);
   };
 
-  if (!isDataLoaded) {
-    return <div>Loading data</div>;
-  }
+  // if (!isDataLoaded) {
+  //   return <div>No Data</div>;
+  // }
 
-  if (!tableData) return <div>No data</div>;
+  // if (!tableData) return <div>No data</div>;
 
   return (
     <div>
@@ -71,35 +71,44 @@ function ItemsPage() {
         {/* heading */}
 
         {/* views */}
-        <Row>
-          <Col>
-            <MyTable tableData={tableData} />
-          </Col>
+        {isDataLoaded ? (
+          tableData ? (
+            <Row>
+              <Col>
+                <MyTable tableData={tableData} />
+              </Col>
 
-          {/* pagination */}
-          <Col
-            className="d-flex flex-column justify-content-between align-items-center "
-            style={{ maxWidth: "50px", maxHeight: "min-content" }}
-          >
-            {pageNumbers.map((item, index) => {
-              return (
-                <Row className="d-flex flex-column justify-content-between align-items-center text-align-center ">
-                  <Button
-                    size="sm"
-                    className="rounded-circle"
-                    key={index}
-                    onClick={() => {
-                      console.log("setting page num to ", item);
-                      setPageNum(item);
-                    }}
-                  >
-                    {item}
-                  </Button>
-                </Row>
-              );
-            })}
-          </Col>
-        </Row>
+              {/* pagination */}
+              <Col
+                className="d-flex flex-column justify-content-between align-items-center "
+                style={{ maxWidth: "50px", maxHeight: "min-content" }}
+              >
+                {pageNumbers.map((item, index) => {
+                  return (
+                    <Row className="d-flex flex-column justify-content-between align-items-center text-align-center ">
+                      <Button
+                        size="sm"
+                        className="rounded-circle"
+                        key={index}
+                        onClick={() => {
+                          console.log("setting page num to ", item);
+                          setPageNum(item);
+                        }}
+                      >
+                        {item}
+                      </Button>
+                    </Row>
+                  );
+                })}
+              </Col>
+            </Row>
+          ) : (
+            <div>No Table Data</div>
+          )
+        ) : (
+          <div>No Data</div>
+        )}
+
         {/* views */}
 
         {/* actions to create, update resources */}

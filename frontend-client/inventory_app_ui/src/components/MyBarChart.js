@@ -32,6 +32,9 @@ const options = {
 };
 
 export default function MyBarChart(props) {
-  console.log(props.data);
+  console.log("props.data: ", props.data);
+  if (props.data.labels.length === 0 || props.data.datasets.length === 0) {
+    return <div>No Data</div>;
+  }
   return <Bar height={100} data={props.data} options={options} />;
 }

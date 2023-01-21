@@ -75,7 +75,8 @@ function SuppliesPage() {
           </Col>
         </Row>
         <Row>
-          <MyBarChart data={chartData} />
+          {/* chart */}
+          {isDataLoaded ? <MyBarChart data={chartData} /> : <div>No Data</div>}
         </Row>
         <Row>
           <Col>
@@ -83,10 +84,10 @@ function SuppliesPage() {
               tableData ? (
                 <MyTable tableData={tableData} />
               ) : (
-                <div>No data</div>
+                <div>No Table Data</div>
               )
             ) : (
-              <div>Loading data...please wait</div>
+              <div>No Data</div>
             )}
           </Col>
         </Row>

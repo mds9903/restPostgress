@@ -30,12 +30,6 @@ function ThresholdsPage() {
     setShouldReload(true);
   };
 
-  if (!isDataLoaded) {
-    return <div>Loading data</div>;
-  }
-
-  if (!tableData) return <div>No data</div>;
-
   return (
     <div>
       <Container>
@@ -48,9 +42,16 @@ function ThresholdsPage() {
           </Col>
         </Row>
         <Row>
-          <Col>
-            <MyTable tableData={tableData} />
-          </Col>
+          {/* table */}
+          {isDataLoaded ? (
+            tableData ? (
+              <MyTable tableData={tableData} />
+            ) : (
+              <div>No Table Data</div>
+            )
+          ) : (
+            <div>No Data</div>
+          )}
         </Row>
       </Container>
     </div>

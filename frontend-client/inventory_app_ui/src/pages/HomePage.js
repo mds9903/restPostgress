@@ -24,8 +24,7 @@ function HomePage() {
   const [shouldReload, setShouldReload] = useState(false);
   const [demandsChartData, setDemandsChartData] = useState(emptyChartData);
   const [suppliesChartData, setSuppliesChartData] = useState(emptyChartData);
-  const [locationsChartData, setLocationsChartData] = useState(emptyChartData);
-  // const [isDataLoaded, setIsDataLoaded] = useState(false);
+  // const [locationsChartData, setLocationsChartData] = useState(emptyChartData);
   const [version, setVersion] = useState("2");
   const [itemId, setItemId] = useState("1");
   const [locationId, setLocationId] = useState("1");
@@ -52,39 +51,45 @@ function HomePage() {
 
   useEffect(() => {
     // demands
-    axios.get(inventoryUri + "demand/").then((response) => {
-      console.log("getting data");
-      console.log("response.data:\n", response.data);
-      setIsDataLoaded(true);
-      setDemandsChartData({
-        labels: ["Hard Promised Demands", "Planned Demands"],
-        datasets: [
-          {
-            label: "hard promised demands",
-            data: [
-              response.data
-                .filter((demand) => demand.demandType === "HARD_PROMISED")
-                .map((demand) => demand.demandQty)
-                .reduce((acc, curr) => acc + curr),
-              response.data
-                .filter((demand) => demand.demandType === "PLANNED")
-                .map((demand) => demand.demandQty)
-                .reduce((acc, curr) => acc + curr),
-            ],
-            backgroundColor: ["blue", "yellow"],
-            borderColor: "black",
-            borderWidth: 1,
-            borderRadius: 3,
-            spacing: 5,
-          },
-        ],
+    axios
+      .get(inventoryUri + "demand/")
+      .then((response) => {
+        console.log("getting data");
+        console.log("response.data:\n", response.data);
+        setIsDataLoaded(true);
+        setDemandsChartData({
+          labels: ["Hard Promised Demands", "Planned Demands"],
+          datasets: [
+            {
+              label: "hard promised demands",
+              data: [
+                response.data
+                  .filter((demand) => demand.demandType === "HARD_PROMISED")
+                  .map((demand) => demand.demandQty)
+                  .reduce((acc, curr) => acc + curr),
+                response.data
+                  .filter((demand) => demand.demandType === "PLANNED")
+                  .map((demand) => demand.demandQty)
+                  .reduce((acc, curr) => acc + curr),
+              ],
+              backgroundColor: ["blue", "yellow"],
+              borderColor: "black",
+              borderWidth: 1,
+              borderRadius: 3,
+              spacing: 5,
+            },
+          ],
+        });
+        setShouldReload(false);
+      })
+      .catch((error) => {
+        console.log("Error occurred: ", error);
       });
-      setShouldReload(false);
-    });
 
     // supplies
-    axios.get(inventoryUri + "supply/").then((response) => {
-      if (response.data) {
+    axios
+      .get(inventoryUri + "supply/")
+      .then((response) => {
         console.log("getting data");
         console.log("response.data:\n", response.data);
         setIsDataLoaded(true);
@@ -117,58 +122,60 @@ function HomePage() {
           ],
         });
         setShouldReload(false);
-      }
-    });
+      })
+      .catch((error) => {
+        console.log("Error: ", error.response);
+      });
 
     // locations
-    axios.get(inventoryUri + "locations/").then((response) => {
-      console.log("getting data");
-      console.log("response.data:\n", response.data);
-      setIsDataLoaded(true);
-      setLocationsChartData({
-        labels: [
-          "All Modes Allowed",
-          "Only Delivery Allowed",
-          "Only Pickup Allowed",
-          "Only Shipping Allowed",
-        ],
-        datasets: [
-          {
-            data: [
-              response.data.filter(
-                (location) =>
-                  location.shippingAllowed === true &&
-                  location.pickupAllowed === true &&
-                  location.deliveryAllowed === true
-              ).length,
-              response.data.filter(
-                (location) =>
-                  location.shippingAllowed === false &&
-                  location.pickupAllowed === false &&
-                  location.deliveryAllowed === true
-              ).length,
-              response.data.filter(
-                (location) =>
-                  location.shippingAllowed === false &&
-                  location.pickupAllowed === true &&
-                  location.deliveryAllowed === false
-              ).length,
-              response.data.filter(
-                (location) =>
-                  location.shippingAllowed === true &&
-                  location.pickupAllowed === false &&
-                  location.deliveryAllowed === false
-              ).length,
-            ],
-            backgroundColor: ["green", "orange", "yellow", "grey"],
-            borderColor: "black",
-            borderWidth: 1,
-            borderRadius: 3,
-            spacing: 5,
-          },
-        ],
-      });
-    });
+    // axios.get(inventoryUri + "locations/").then((response) => {
+    //   console.log("getting data");
+    //   console.log("response.data:\n", response.data);
+    //   setIsDataLoaded(true);
+    //   setLocationsChartData({
+    //     labels: [
+    //       "All Modes Allowed",
+    //       "Only Delivery Allowed",
+    //       "Only Pickup Allowed",
+    //       "Only Shipping Allowed",
+    //     ],
+    //     datasets: [
+    //       {
+    //         data: [
+    //           response.data.filter(
+    //             (location) =>
+    //               location.shippingAllowed === true &&
+    //               location.pickupAllowed === true &&
+    //               location.deliveryAllowed === true
+    //           ).length,
+    //           response.data.filter(
+    //             (location) =>
+    //               location.shippingAllowed === false &&
+    //               location.pickupAllowed === false &&
+    //               location.deliveryAllowed === true
+    //           ).length,
+    //           response.data.filter(
+    //             (location) =>
+    //               location.shippingAllowed === false &&
+    //               location.pickupAllowed === true &&
+    //               location.deliveryAllowed === false
+    //           ).length,
+    //           response.data.filter(
+    //             (location) =>
+    //               location.shippingAllowed === true &&
+    //               location.pickupAllowed === false &&
+    //               location.deliveryAllowed === false
+    //           ).length,
+    //         ],
+    //         backgroundColor: ["green", "orange", "yellow", "grey"],
+    //         borderColor: "black",
+    //         borderWidth: 1,
+    //         borderRadius: 3,
+    //         spacing: 5,
+    //       },
+    //     ],
+    //   });
+    // });
 
     // availabilities
     axios
@@ -203,13 +210,17 @@ function HomePage() {
           </Col>
         </Row>
 
-        <Row className="mt-2 ">
+        <Row className="mt-2">
           {/* supplies */}
           <Col className="w-30">
             <Card>
               <Card.Header>Supplies</Card.Header>
               <Card.Body>
-                <MyDoughnutChart data={suppliesChartData} />
+                {isDataLoaded ? (
+                  <MyDoughnutChart data={suppliesChartData} />
+                ) : (
+                  <div>No Data</div>
+                )}
               </Card.Body>
             </Card>
           </Col>
@@ -221,7 +232,7 @@ function HomePage() {
                 {isDataLoaded ? (
                   <MyDoughnutChart data={demandsChartData} />
                 ) : (
-                  <div>No data</div>
+                  <div>No Data</div>
                 )}
               </Card.Body>
             </Card>
@@ -231,7 +242,7 @@ function HomePage() {
           {/* avaiabilities */}
           <Col>
             <Card>
-              <Card.Header>Avaibilities</Card.Header>
+              <Card.Header>Quantities Available To Promise</Card.Header>
               <Row className="p-2">
                 {/* form */}
                 <Col>
@@ -270,9 +281,6 @@ function HomePage() {
                         as={"select"}
                         onChange={versionChangeHandler}
                       >
-                        {/* <option value="1" className="mb-2">
-                      V1 Avaibility
-                    </option> */}
                         <option value="2" className="mb-1">
                           V2 Avaibility
                         </option>
@@ -289,7 +297,7 @@ function HomePage() {
                     {isDataLoaded ? (
                       <AvaibilityCard data={loadedAvbData} />
                     ) : (
-                      <div>Loading data</div>
+                      <div>No Data</div>
                     )}
                   </Card>
                 </Col>
