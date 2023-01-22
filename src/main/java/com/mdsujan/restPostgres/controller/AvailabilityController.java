@@ -39,7 +39,7 @@ public class AvailabilityController {
     }
 
     @GetMapping("/v3/availability/{itemId}/{locationId}") // get the stock level for an item at a location v3
-    public AvailabilityV3Response getAvailabilityStockLevelV3(@PathVariable Long itemId, @PathVariable Long locationId) {
+    public AvailabilityV3Response getAvailabilityStockLevelV3(@PathVariable Long itemId, @PathVariable Long locationId) throws ResourceNotFoundException {
         // get the stock level but only as mentioned in the config file (properties file)
         return availabilityService.getStockLevelV3(itemId, locationId);
     }

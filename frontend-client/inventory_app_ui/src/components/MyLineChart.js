@@ -3,9 +3,14 @@ import { Chart as ChartJS } from "chart.js/auto";
 import { Colors } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
+const onClickHandler = (e) =>
+  console.log(JSON.stringify(e.chart.$context.chart.tooltip.body[0].lines[0]));
+
 ChartJS.register(Colors);
 ChartJS.register(ChartDataLabels);
+
 const options = {
+  onClick: onClickHandler,
   indexAxis: "y",
   scales: {
     y: {

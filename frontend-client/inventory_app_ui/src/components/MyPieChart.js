@@ -5,9 +5,16 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 
 ChartJS.register(Colors);
 ChartJS.register(ChartDataLabels);
+const onClickHandler = (e) =>
+  console.log(JSON.stringify(e.chart.$context.chart.tooltip.body[0].lines[0]));
 const options = {
+  onClick: onClickHandler,
   maintainAspectRatio: false,
   plugins: {
+    // tooltip: {
+    //   // Tooltip will only receive click events
+    //   events: ["click"],
+    // },
     datalabels: {
       // This code is used to display data values
       anchor: "center",
@@ -18,7 +25,12 @@ const options = {
       },
     },
   },
+  interactions: {
+    mode: "point",
+  },
 };
+
+// console.log(canvasPosition);
 
 export default function MyPieChart(props) {
   console.log("pie chart data: ", props.data);

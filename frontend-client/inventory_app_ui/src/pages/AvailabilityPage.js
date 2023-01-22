@@ -10,12 +10,14 @@ import {
   FloatingLabel,
   Card,
 } from "react-bootstrap";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function AvaibilityPage() {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [version, setVersion] = useState("2");
-  const [itemId, setItemId] = useState("1");
-  const [locationId, setLocationId] = useState("1");
+  const [itemId, setItemId] = useState("131");
+  const [locationId, setLocationId] = useState("131");
   const [loadedData, setLoadedData] = useState(null);
   const [shouldReload, setShouldReload] = useState(false);
 
@@ -54,6 +56,11 @@ function AvaibilityPage() {
       .catch(function (error) {
         // handle error
         console.log("Error occurred: ", error);
+        // window.alert("No availability found");
+
+        // setItemId(131);
+        // setLocationId(131);
+        toast("Availabilities not found");
       });
   }, [shouldReload, isDataLoaded, version, itemId, locationId]);
 

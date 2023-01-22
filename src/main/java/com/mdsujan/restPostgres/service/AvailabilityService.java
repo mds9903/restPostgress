@@ -178,7 +178,7 @@ public class AvailabilityService {
         return new AvailabilityV2Response(itemId, locationId, availableQty, stockLevel);
     }
 
-    public AvailabilityV3Response getStockLevelV3(Long itemId, Long locationId) {
+    public AvailabilityV3Response getStockLevelV3(Long itemId, Long locationId) throws ResourceNotFoundException {
         // get the stock level based on the availabilityQty for given itemId and locationId
         // based from the values given in the properties file
         // here extracted using @Value supplyTypes and demandTypes
@@ -214,7 +214,10 @@ public class AvailabilityService {
          *
          * */
         Threshold threshold = thresholdRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
-        System.out.println(threshold);
+
+        if (threshold == null) {
+            throw new ResourceNotFoundException("no threshold found for given item and location");
+        }
         String stockLevel = "yellow";
         if (availableQty < threshold.getMinThreshold()) {
             stockLevel = "Red";
