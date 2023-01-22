@@ -1,5 +1,6 @@
 package com.mdsujan.restPostgres.controller;
 
+import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,14 @@ public class LocationController {
     @PostMapping("/") // create a location in the table
     public Location createLocation(@RequestBody Location createLocationRequest) throws Throwable {
         return locationService.createLocation(createLocationRequest);
+    }
+
+    @PostMapping("/batch") // create locations (batch) in the table
+    public List<Location> createLocations(@RequestBody List<Location> createLocationRequestList) throws Throwable {
+//        logger.info("InQueryRequest: " + createLocationRequestList);
+        List<Location> locationResponse = locationService.createLocations(createLocationRequestList);
+//        logger.info("Response: " + locationResponse);
+        return locationResponse;
     }
 
     @DeleteMapping("/{locationId}") // delete a specific location

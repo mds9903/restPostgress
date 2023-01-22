@@ -1,6 +1,7 @@
 package com.mdsujan.restPostgres.service;
 
 import com.mdsujan.restPostgres.entity.Location;
+import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.exceptionHandling.*;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -164,5 +166,23 @@ public class LocationService {
         } else {
             throw new ResourceNotFoundException("cannot update this location; location not found; please enter a correct locationId");
         }
+    }
+
+    public List<Location> createLocations(List<Location> locationList) throws Throwable {
+        // for each location in locationList
+        // perform location creation
+        // also handle validations and errors elegantly
+        List<Location> locationsCreated = new ArrayList<>();
+//        List<Location> locationsNotCreated = new ArrayList<>();
+
+        for (Location location : locationList) {
+            try {
+                locationsCreated.add(createLocation(location));
+            } catch (DuplicateResourceException e) {
+                throw new DuplicateResourceException("For location #" + (locationList.indexOf(location) + 1) + "; an location with same itemId already exists; please provide a unique itemId in the request body");
+            }
+        }
+
+        return locationsCreated;
     }
 }
