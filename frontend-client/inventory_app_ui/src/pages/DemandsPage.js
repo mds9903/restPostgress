@@ -7,15 +7,16 @@ import MyBarChart from "../components/MyBarChart";
 import MyPieChart from "../components/MyPieChart";
 
 const getAllUrl = "http://localhost:8088/inventory/demand/";
+const emptyChartData = {
+  labels: [],
+  datasets: [],
+};
 
 function DemandsPage() {
   const [isDataLoaded, setDataLoaded] = useState(false);
   const [tableData, setTableData] = useState(null);
   const [shouldReload, setShouldReload] = useState(false);
-  const [chartData, setChartData] = useState({
-    labels: [],
-    datasets: [],
-  });
+  const [chartData, setChartData] = useState(emptyChartData);
 
   useEffect(() => {
     axios.get(getAllUrl).then((response) => {
@@ -24,35 +25,39 @@ function DemandsPage() {
       setDataLoaded(true);
       setTableData(response.data);
       // console.log(tableData);
-      setChartData({
-        labels: ["Total Demands"],
-        datasets: [
-          {
-            label: "hard promised demands",
-            data: [
-              response.data
-                .filter((demand) => demand.demandType === "HARD_PROMISED")
-                .map((demand) => demand.demandQty)
-                .reduce((acc, curr) => acc + curr),
-            ],
-            backgroundColor: "blue",
-            borderColor: "black",
-            borderWidth: 2,
-          },
-          {
-            label: "planned demands",
-            data: [
-              response.data
-                .filter((demand) => demand.demandType === "PLANNED")
-                .map((demand) => demand.demandQty)
-                .reduce((acc, curr) => acc + curr),
-            ],
-            backgroundColor: "grey",
-            borderColor: "black",
-            borderWidth: 2,
-          },
-        ],
-      });
+      setChartData(
+        response.data.length > 0
+          ? {
+              labels: ["Total Demands"],
+              datasets: [
+                {
+                  label: "hard promised demands",
+                  data: [
+                    response.data
+                      .filter((demand) => demand.demandType === "HARD_PROMISED")
+                      .map((demand) => demand.demandQty)
+                      .reduce((acc, curr) => acc + curr),
+                  ],
+                  backgroundColor: "blue",
+                  borderColor: "black",
+                  borderWidth: 2,
+                },
+                {
+                  label: "planned demands",
+                  data: [
+                    response.data
+                      .filter((demand) => demand.demandType === "PLANNED")
+                      .map((demand) => demand.demandQty)
+                      .reduce((acc, curr) => acc + curr),
+                  ],
+                  backgroundColor: "grey",
+                  borderColor: "black",
+                  borderWidth: 2,
+                },
+              ],
+            }
+          : emptyChartData
+      );
       console.log("chartData: ", chartData);
       setShouldReload(false);
     });

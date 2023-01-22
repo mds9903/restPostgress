@@ -21,7 +21,12 @@ const options = {
 };
 
 export default function MyPieChart(props) {
-  // console.log(props.data);
-  console.log(props.data);
+  console.log("pie chart: ", props.data);
+  console.log(props.data.labels.length);
+  console.log(props.data.datasets.length);
+
+  if (props.data.labels.length === 0 || props.data.datasets.length === 0) {
+    return <div>No Data</div>;
+  }
   return <Pie height={100} data={props.data} options={options} />;
 }

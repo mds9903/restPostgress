@@ -1,7 +1,7 @@
 import { Container, Row, Table } from "react-bootstrap";
 
 function MyTable({ tableData }) {
-  console.log(tableData);
+  console.log("Table Data: ", tableData);
   // console.log(Object.keys(tableData[0]));
 
   if (tableData.length === 0) {
