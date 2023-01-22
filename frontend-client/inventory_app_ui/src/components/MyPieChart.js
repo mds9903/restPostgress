@@ -21,7 +21,7 @@ const options = {
 };
 
 export default function MyPieChart(props) {
-  console.log("pie chart: ", props.data);
+  console.log("pie chart data: ", props.data);
   console.log(props.data.labels.length);
   console.log(props.data.datasets.length);
 

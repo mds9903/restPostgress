@@ -31,32 +31,32 @@ function LocationsPage() {
             ? {
                 labels: [
                   "All Modes Allowed",
-                  "Only Delivery Allowed",
+                  // "Only Delivery Allowed",
                   "Only Pickup Allowed",
                   "Only Shipping Allowed",
                 ],
                 datasets: [
                   {
                     data: [
-                      response.data.filter(
+                      tableData.filter(
                         (location) =>
                           location.shippingAllowed === true &&
                           location.pickupAllowed === true &&
                           location.deliveryAllowed === true
                       ).length,
-                      response.data.filter(
-                        (location) =>
-                          location.shippingAllowed === false &&
-                          location.pickupAllowed === false &&
-                          location.deliveryAllowed === true
-                      ).length,
-                      response.data.filter(
+                      // tableData.filter(
+                      //   (location) =>
+                      //     location.shippingAllowed === false &&
+                      //     location.pickupAllowed === false &&
+                      //     location.deliveryAllowed === true
+                      // ).length,
+                      tableData.filter(
                         (location) =>
                           location.shippingAllowed === false &&
                           location.pickupAllowed === true &&
                           location.deliveryAllowed === false
                       ).length,
-                      response.data.filter(
+                      tableData.filter(
                         (location) =>
                           location.shippingAllowed === true &&
                           location.pickupAllowed === false &&

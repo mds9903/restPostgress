@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/inventory/supply")
@@ -55,6 +56,14 @@ public class SupplyController {
 //        Supply newSupply = new Supply(createSupplyRequest); // without the details of the (dependency) item and location entities
 //        // pass the request body to help assign item and location as well as pass the supply object for creating
         return new SupplyResponse(supplyService.createNewSupply(createSupplyRequest));
+    }
+
+    @PostMapping("/batch") // create a new supply
+    public List<SupplyResponse> createSupplies(@RequestBody List<CreateSupplyRequest> createSupplyRequests) throws Throwable {
+//        // send the supply entity itself that should be created
+//        Supply newSupply = new Supply(createSupplyRequest); // without the details of the (dependency) item and location entities
+//        // pass the request body to help assign item and location as well as pass the supply object for creating
+        return (supplyService.createNewSupplies(createSupplyRequests));
     }
 
     @PutMapping("/{supplyId}") // update supply using PUT

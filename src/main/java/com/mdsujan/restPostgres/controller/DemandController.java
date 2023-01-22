@@ -4,10 +4,8 @@ import com.mdsujan.restPostgres.entity.Demand;
 import com.mdsujan.restPostgres.entity.Demand;
 import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.repository.DemandRepository;
+import com.mdsujan.restPostgres.request.*;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
-import com.mdsujan.restPostgres.request.CreateDemandRequest;
-import com.mdsujan.restPostgres.request.UpdateDemandRequest;
-import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
 import com.mdsujan.restPostgres.response.DemandResponse;
 import com.mdsujan.restPostgres.response.DemandDetailsResponse;
 import com.mdsujan.restPostgres.response.DemandResponse;
@@ -19,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/inventory/demand")
@@ -53,6 +52,14 @@ public class DemandController {
     @PostMapping("/") // create a new demand
     public DemandResponse createDemand(@RequestBody CreateDemandRequest createDemandRequest) throws Throwable {
         return new DemandResponse(demandService.createNewDemand(createDemandRequest));
+    }
+
+    @PostMapping("/batch") // create a new demand
+    public List<DemandResponse> createDemands(@RequestBody List<CreateDemandRequest> createDemandRequests) throws Throwable {
+//        // send the demand entity itself that should be created
+//        Demand newDemand = new Demand(createDemandRequest); // without the details of the (dependency) item and location entities
+//        // pass the request body to help assign item and location as well as pass the demand object for creating
+        return (demandService.createNewDemands(createDemandRequests));
     }
 
     @PutMapping("/{demandId}") // update a demand using PUT

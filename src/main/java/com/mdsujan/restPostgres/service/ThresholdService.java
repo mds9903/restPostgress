@@ -1,8 +1,6 @@
 package com.mdsujan.restPostgres.service;
 
-import com.mdsujan.restPostgres.entity.Item;
-import com.mdsujan.restPostgres.entity.Location;
-import com.mdsujan.restPostgres.entity.Threshold;
+import com.mdsujan.restPostgres.entity.*;
 import com.mdsujan.restPostgres.entity.Threshold;
 import com.mdsujan.restPostgres.exceptionHandling.DuplicateResourceException;
 import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
@@ -10,14 +8,19 @@ import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.ThresholdRepository;
 import com.mdsujan.restPostgres.request.CreateThresholdRequest;
+import com.mdsujan.restPostgres.request.CreateThresholdRequest;
 import com.mdsujan.restPostgres.request.UpdateThresholdRequest;
+import com.mdsujan.restPostgres.response.ThresholdResponse;
 import com.mdsujan.restPostgres.response.ThresholdDetails;
 import com.mdsujan.restPostgres.response.ThresholdDetailsResponse;
+import com.mdsujan.restPostgres.response.ThresholdResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class ThresholdService {
@@ -172,5 +175,25 @@ public class ThresholdService {
             throw new ResourceNotFoundException("cannot update;" +
                     "no such threshold found; please provide correct thresholdId");
         }
+    }
+
+    public List<ThresholdResponse> createThresholds(List<CreateThresholdRequest> createThresholdRequests) throws Throwable {
+        // for each threshold in thresholdsList
+        // perform threshold creation
+        // also handle validations and errors elegantly
+
+        List<Threshold> thresholdsCreated = new ArrayList<>();
+
+        for (CreateThresholdRequest threshold : createThresholdRequests) {
+            try {
+                thresholdsCreated.add(createThreshold(threshold));
+            } catch (Throwable e) {
+                throw new DuplicateResourceException("For threshold #"
+                        + (createThresholdRequests.indexOf(threshold) + 1)
+                        + "; an threshold with same thresholdId already exists; please provide a unique thresholdId in the request body");
+            }
+        }
+
+        return thresholdsCreated.stream().map((ThresholdResponse::new)).collect(Collectors.toList());
     }
 }

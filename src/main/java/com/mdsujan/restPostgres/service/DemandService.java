@@ -5,6 +5,7 @@ import com.mdsujan.restPostgres.entity.Demand;
 import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
 import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
 import com.mdsujan.restPostgres.exceptionHandling.CreateResourceOperationNotAllowed;
+import com.mdsujan.restPostgres.exceptionHandling.DuplicateResourceException;
 import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
 import com.mdsujan.restPostgres.exceptionHandling.UpdateResourceRequestBodyInvalidException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
@@ -12,9 +13,9 @@ import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
+import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import com.mdsujan.restPostgres.request.UpdateDemandRequest;
-import com.mdsujan.restPostgres.response.DemandDetails;
-import com.mdsujan.restPostgres.response.DemandDetailsResponse;
+import com.mdsujan.restPostgres.response.*;
 
 import com.mdsujan.restPostgres.response.DemandDetails;
 import com.mdsujan.restPostgres.response.DemandDetailsResponse;
@@ -22,8 +23,12 @@ import com.sun.jdi.request.DuplicateRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
+import java.util.stream.Stream;
 
 @Service
 public class DemandService {
@@ -144,5 +149,23 @@ public class DemandService {
             throw new ResourceNotFoundException("cannot update demand; demand not found with given demandId; " +
                     "please provide correct demandId");
         }
+    }
+
+    public List<DemandResponse> createNewDemands(List<CreateDemandRequest> createDemandRequests) throws DuplicateResourceException {
+
+        // for each demand in demandList
+        // perform demand creation
+        // also handle validations and errors elegantly
+        List<Demand> demandsCreated = new ArrayList<>();
+
+        for (CreateDemandRequest demand : createDemandRequests) {
+            try {
+                demandsCreated.add(createNewDemand(demand));
+            } catch (Throwable e) {
+                throw new DuplicateResourceException("For demand #" + (createDemandRequests.indexOf(demand) + 1) + "; an demand with same demandId already exists; please provide a unique demandId in the request body");
+            }
+        }
+
+        return demandsCreated.stream().map((DemandResponse::new)).collect(Collectors.toList());
     }
 }

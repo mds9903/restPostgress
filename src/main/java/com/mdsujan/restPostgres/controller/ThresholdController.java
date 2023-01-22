@@ -50,6 +50,11 @@ public class ThresholdController {
         return new ThresholdResponse(thresholdService.createThreshold(createThresholdRequest));
     }
 
+    @PostMapping("/batch")
+    public List<ThresholdResponse> createThresholds(@RequestBody @Valid List<CreateThresholdRequest> createThresholdRequests) throws Throwable {
+        return (thresholdService.createThresholds(createThresholdRequests));
+    }
+
     @PutMapping("/{thresholdId}")
     public ThresholdResponse updateThresholdPut(@PathVariable @Valid Long thresholdId,
                                                 @RequestBody @Valid UpdateThresholdRequest updateThresholdRequest) throws Throwable {
