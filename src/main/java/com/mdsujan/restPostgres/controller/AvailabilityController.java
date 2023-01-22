@@ -1,5 +1,6 @@
 package com.mdsujan.restPostgres.controller;
 
+import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
 import com.mdsujan.restPostgres.response.AvailabilityV1Response;
 import com.mdsujan.restPostgres.response.AvailabilityV2Response;
 import com.mdsujan.restPostgres.response.AvailabilityV3Response;
@@ -32,7 +33,7 @@ public class AvailabilityController {
     }
 
     @GetMapping("/v2/availability/{itemId}/{locationId}") // get the stock level for an item at a location v2
-    public AvailabilityV2Response getAvailabilityStockLevelV2(@PathVariable Long itemId, @PathVariable Long locationId) {
+    public AvailabilityV2Response getAvailabilityStockLevelV2(@PathVariable Long itemId, @PathVariable Long locationId) throws ResourceNotFoundException {
         // get the stock level "red", "yellow" or "green" for an item and a location
         return availabilityService.getStockLevelV2(itemId, locationId);
     }

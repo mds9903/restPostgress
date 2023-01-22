@@ -132,7 +132,7 @@ public class AvailabilityService {
 
     }
 
-    public AvailabilityV2Response getStockLevelV2(Long itemId, Long locationId) {
+    public AvailabilityV2Response getStockLevelV2(Long itemId, Long locationId) throws ResourceNotFoundException {
         // get the stock level based on the availabilityQty for given itemId and locationId
 
         /*
@@ -156,11 +156,16 @@ public class AvailabilityService {
                 .filter(demand -> demand.getDemandType() == AllowedDemandTypes.HARD_PROMISED)
                 .map(Demand::getDemandQty)
                 .reduce(0L, Long::sum);
+
         // qty available
         Long availableQty = onhandQty + hardPromisedQty;
 
         // threshold with given item and location to compare stock level
         Threshold threshold = thresholdRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
+
+        if (threshold == null) {
+            throw new ResourceNotFoundException("no threshold found for given item and location");
+        }
 
         // derive the stock level
         String stockLevel = "yellow";

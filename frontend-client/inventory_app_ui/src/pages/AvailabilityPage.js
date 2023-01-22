@@ -53,7 +53,7 @@ function AvaibilityPage() {
       })
       .catch(function (error) {
         // handle error
-        console.log("Error occurred: " + error);
+        console.log("Error occurred: ", error);
       });
   }, [shouldReload, isDataLoaded, version, itemId, locationId]);
 
@@ -133,7 +133,7 @@ function AvaibilityPage() {
                 {isDataLoaded ? (
                   <AvaibilityCard data={loadedData} />
                 ) : (
-                  <div>Loading data</div>
+                  <div>No Data</div>
                 )}
               </Card>
             </Col>
