@@ -33,7 +33,7 @@ function ThresholdsPage() {
   return (
     <div>
       <Container>
-        <Row className="mb-3">
+        <Row className="m-2">
           <Col>
             <h2>ATP Thresholds</h2>
           </Col>
@@ -41,7 +41,7 @@ function ThresholdsPage() {
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
-        <Row className="mb-3">
+        <Row className="m-2">
           <Col>
             {/* table */}
             {isDataLoaded ? (

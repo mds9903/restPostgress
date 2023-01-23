@@ -2,6 +2,7 @@ import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Colors } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
+import { Card, Row, Col } from "react-bootstrap";
 
 const onClickHandler = (e) =>
   console.log(JSON.stringify(e.chart.$context.chart.tooltip.body[0].lines[0]));
@@ -33,8 +34,8 @@ const options = {
       textAlign: "center",
       // backgroundColor: "rgba(255,255,255, 0.25)",
       font: {
-        weight: "bold",
-        size: 16,
+        weight: "bolder",
+        size: 12,
       },
     },
     legend: {
@@ -42,6 +43,7 @@ const options = {
       position: "right",
     },
   },
+  // cutout: 20,
 };
 
 export default function MyBarChart(props) {
@@ -49,5 +51,16 @@ export default function MyBarChart(props) {
   if (props.data.labels.length === 0 || props.data.datasets.length === 0) {
     return <div>No Data</div>;
   }
-  return <Bar height={100} data={props.data} options={options} />;
+  return (
+    <Card>
+      <Card.Header>Bar Chart of Different Modes</Card.Header>
+      <Card.Body>
+        <Row>
+          <Col>
+            <Bar data={props.data} options={options} />
+          </Col>
+        </Row>
+      </Card.Body>
+    </Card>
+  );
 }

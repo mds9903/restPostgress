@@ -1,44 +1,39 @@
-import { Table } from "react-bootstrap";
+import { Table, Card } from "react-bootstrap";
 
-function MyTable({ tableData, hideColumns }) {
-  // console.log("Table Data: ", tableData);
-  // console.log(Object.keys(tableData[0]));
-
-  const hideColumnsSet = new Set(hideColumns);
-
+function MyTable({ tableData }) {
   if (tableData.length === 0) {
     return <div>No Data</div>;
   }
 
-  // const columns = Array.from(Object.keys(tableData[0]));
-  const columns = Array.from(Object.keys(tableData[0])).filter(
-    (col) => !hideColumnsSet.has(col)
-  );
+  const columns = Array.from(Object.keys(tableData[0]));
   console.log(columns);
-  const rows = tableData.map((item, index) => Object.values(item));
 
-  // console.log("Columns:\n", columns);
-  // console.log("Rows:\n", rows);
+  const rows = tableData.map((item) => Object.values(item));
 
   return (
-    <Table size="sm" responsive striped bordered hover>
-      <thead>
-        <tr>
-          {columns.map((column, key) => {
-            return <th key={key}>{column}</th>;
-          })}
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((item, index) => (
-          <tr key={index}>
-            {item.map((val, key) => (
-              <td key={key}>{val && val.toString()}</td>
+    <Card>
+      <Card.Header>Table of resources</Card.Header>
+      <Card.Body>
+        <Table size="sm" responsive bordered hover>
+          <thead>
+            <tr>
+              {columns.map((column, key) => {
+                return <th key={key}>{column}</th>;
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((item, index) => (
+              <tr key={index}>
+                {item.map((val, key) => (
+                  <td key={key}>{val && val.toString()}</td>
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-      </tbody>
-    </Table>
+          </tbody>
+        </Table>
+      </Card.Body>
+    </Card>
   );
 }
 

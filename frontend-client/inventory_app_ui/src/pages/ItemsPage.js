@@ -59,7 +59,7 @@ function ItemsPage() {
     <div>
       <Container>
         {/* heading */}
-        <Row>
+        <Row className="m-2">
           <Col>
             <h2>Items</h2>
           </Col>
@@ -73,7 +73,7 @@ function ItemsPage() {
         {/* views */}
         {isDataLoaded ? (
           tableData ? (
-            <Row>
+            <Row className="m-2">
               <Col>
                 <MyTable tableData={tableData} />
               </Col>

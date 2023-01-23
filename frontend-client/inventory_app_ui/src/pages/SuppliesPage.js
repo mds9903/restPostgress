@@ -65,7 +65,7 @@ function SuppliesPage() {
   return (
     <div>
       <Container>
-        <Row className="mb-3">
+        <Row className="m-2">
           <Col>
             <h2>Supplies</h2>
           </Col>
@@ -73,11 +73,18 @@ function SuppliesPage() {
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
-        <Row className="mb-3">
+        <Row className="m-2">
           {/* chart */}
-          {isDataLoaded ? <MyBarChart data={chartData} /> : <div>No Data</div>}
+          <Col>
+            {isDataLoaded ? (
+              <MyBarChart data={chartData} />
+            ) : (
+              <div>No Data</div>
+            )}
+          </Col>
         </Row>
-        <Row className="mb-3">
+        <Row className="m-2">
+          {/* table */}
           <Col>
             {isDataLoaded ? (
               tableData ? (
@@ -90,10 +97,6 @@ function SuppliesPage() {
             )}
           </Col>
         </Row>
-        {/* <Row className="mb-3">
-          <div>stacked chart</div>
-          <MyStackChart />
-        </Row> */}
       </Container>
     </div>
   );

@@ -72,7 +72,7 @@ function DemandsPage() {
   return (
     <div>
       <Container>
-        <Row>
+        <Row className="m-2">
           <Col>
             <h2>Demands</h2>
           </Col>
@@ -80,7 +80,7 @@ function DemandsPage() {
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
-        <Row>
+        <Row className="m-2">
           {/* chart */}
           {isDataLoaded ? (
             chartData ? (
@@ -92,7 +92,7 @@ function DemandsPage() {
             <div>No Data</div>
           )}
         </Row>
-        <Row>
+        <Row className="m-2">
           {/* table */}
           {isDataLoaded ? (
             tableData ? (

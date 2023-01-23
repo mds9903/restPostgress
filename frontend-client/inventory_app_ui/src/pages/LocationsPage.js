@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import MyTable from "../components/MyTable";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import { Button, Container, Row, Col, Card } from "react-bootstrap";
 
 import axios from "axios";
 import MyPieChart from "../components/MyPieChart";
@@ -58,7 +58,6 @@ function LocationsPage() {
             ? {
                 labels: [
                   "All Modes Allowed",
-                  // "Only Delivery Allowed",
                   "Only Pickup Allowed",
                   "Only Shipping Allowed",
                 ],
@@ -96,7 +95,7 @@ function LocationsPage() {
   return (
     <div>
       <Container>
-        <Row>
+        <Row className="m-2">
           <Col>
             <h2>Locations</h2>
           </Col>
@@ -105,29 +104,29 @@ function LocationsPage() {
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
-        <Row>
-          {/* chart */}
-          {isDataLoaded ? (
-            chartData ? (
+        <Row className="m-2">
+          <Col>
+            {/* chart */}
+            {isDataLoaded ? (
               <MyPieChart data={chartData} />
             ) : (
-              <div>No Chart Data</div>
-            )
-          ) : (
-            <div>No Data</div>
-          )}
+              <div>No Data</div>
+            )}
+          </Col>
         </Row>
-        <Row>
+        <Row className="m-2">
           {/* table */}
-          {isDataLoaded ? (
-            tableData ? (
-              <MyTable tableData={tableData} />
+          <Col>
+            {isDataLoaded ? (
+              tableData ? (
+                <MyTable tableData={tableData} />
+              ) : (
+                <div>No Table Data</div>
+              )
             ) : (
-              <div>No Table Data</div>
-            )
-          ) : (
-            <div>No Data</div>
-          )}
+              <div>No Data</div>
+            )}
+          </Col>
         </Row>
       </Container>
     </div>

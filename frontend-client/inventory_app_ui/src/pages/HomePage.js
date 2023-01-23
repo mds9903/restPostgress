@@ -211,7 +211,7 @@ function HomePage() {
           </Col>
         </Row>
 
-        <Row className="mt-2 mb-2">
+        <Row className="m-2">
           {/* avaiabilities */}
           <Col>
             <Card>
@@ -278,7 +278,7 @@ function HomePage() {
             </Card>
           </Col>
         </Row>
-        <Row className="mt-2 mb-2">
+        <Row className="m-2">
           {/* supplies */}
           <Col className="w-30">
             <Card>

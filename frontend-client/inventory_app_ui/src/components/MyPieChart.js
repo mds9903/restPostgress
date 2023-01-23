@@ -9,33 +9,15 @@ import DrillDown from "./DrillDown";
 ChartJS.register(Colors);
 ChartJS.register(ChartDataLabels);
 export default function MyPieChart(props) {
-  // const [isDrillDownOpen, setIsDrillDownOpen] = useState(false);
-  const [DrillDownData, setDrillDownData] = useState({
-    pieVal: null,
-    records: null,
-  });
+  const [DrillDownData, setDrillDownData] = useState();
 
-  // useEffect(() => {
-
-  // }, [])
-
-  console.log("pie chart data: ", props.data);
-  console.log("pie chart data records: ", props.data.records);
+  // console.log("pie chart data: ", props.data);
+  // console.log("pie chart data records: ", props.data.records);
 
   const onClickHandler = (e) => {
-    // if (isDrillDownOpen) {
-    //   setDrillDownData({
-    //     pieVal: e.chart.$context.chart.tooltip.body[0].lines[0],
-    //     records: props.data.records,
-    //   });
-    // } else {
-    //   setIsDrillDownOpen(true);
-    // }
     console.log(e.chart);
-    const modes = e.chart.legend.legendItems.map((item) => item.text);
     const modeSelected = e.chart.$context.chart.tooltip.dataPoints[0].label;
     console.log(modeSelected);
-    // console.log(props.data.records[]))
     setDrillDownData({
       pieVal: e.chart.$context.chart.tooltip.body[0].lines[0],
       records: props.data.records,
@@ -78,18 +60,22 @@ export default function MyPieChart(props) {
   }
 
   return (
-    <Row>
-      <Col>
-        <Card className="m-2">
-          <Card.Header>Pie Chart of Different Modes</Card.Header>
-          <Card.Body>
+    <Card>
+      <Card.Header>Pie Chart of Different Modes</Card.Header>
+      <Card.Body>
+        <Row>
+          <Col>
             <Pie data={props.data} options={options} />
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col>
-        <DrillDown data={DrillDownData} />
-      </Col>
-    </Row>
+          </Col>
+          <Col>
+            {DrillDown === undefined ? (
+              <div>No data</div>
+            ) : (
+              <DrillDown data={DrillDownData} />
+            )}
+          </Col>
+        </Row>
+      </Card.Body>
+    </Card>
   );
 }
