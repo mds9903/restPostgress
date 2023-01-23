@@ -25,7 +25,7 @@ export default function MyPieChart(props) {
   };
 
   const options = {
-    onHover: onClickHandler,
+    onClick: onClickHandler,
     maintainAspectRatio: false,
     plugins: {
       datalabels: {
