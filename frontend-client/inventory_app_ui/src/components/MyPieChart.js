@@ -33,7 +33,7 @@ export default function MyPieChart(props) {
     // }
     setDrillDownData({
       pieVal: e.chart.$context.chart.tooltip.body[0].lines[0],
-      records: props.data.records[],
+      records: props.data.records,
     });
   };
 

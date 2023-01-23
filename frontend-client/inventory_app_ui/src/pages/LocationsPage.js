@@ -26,6 +26,24 @@ function LocationsPage() {
         console.log("response.data:\n", response.data);
         setDataLoaded(true);
         setTableData(response.data);
+        const allModes = tableData.filter(
+          (location) =>
+            location.shippingAllowed === true &&
+            location.pickupAllowed === true &&
+            location.deliveryAllowed === true
+        );
+        const onlyPickup = tableData.filter(
+          (location) =>
+            location.shippingAllowed === false &&
+            location.pickupAllowed === true &&
+            location.deliveryAllowed === false
+        );
+        const onlyShipping = tableData.filter(
+          (location) =>
+            location.shippingAllowed === true &&
+            location.pickupAllowed === false &&
+            location.deliveryAllowed === false
+        );
         setChartData(
           response.data.length > 0
             ? {
@@ -38,30 +56,9 @@ function LocationsPage() {
                 datasets: [
                   {
                     data: [
-                      tableData.filter(
-                        (location) =>
-                          location.shippingAllowed === true &&
-                          location.pickupAllowed === true &&
-                          location.deliveryAllowed === true
-                      ).length,
-                      // tableData.filter(
-                      //   (location) =>
-                      //     location.shippingAllowed === false &&
-                      //     location.pickupAllowed === false &&
-                      //     location.deliveryAllowed === true
-                      // ).length,
-                      tableData.filter(
-                        (location) =>
-                          location.shippingAllowed === false &&
-                          location.pickupAllowed === true &&
-                          location.deliveryAllowed === false
-                      ).length,
-                      tableData.filter(
-                        (location) =>
-                          location.shippingAllowed === true &&
-                          location.pickupAllowed === false &&
-                          location.deliveryAllowed === false
-                      ).length,
+                      allModes.length,
+                      onlyPickup.length,
+                      onlyShipping.length,
                     ],
                     backgroundColor: ["green", "orange", "yellow", "grey"],
                     borderColor: "black",
@@ -69,6 +66,7 @@ function LocationsPage() {
                     // indexAxis: "y",
                   },
                 ],
+                records: [allModes, onlyPickup, onlyShipping],
               }
             : emptyChartData
         );
