@@ -1,4 +1,4 @@
-import { Container, Row, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 
 function MyTable({ tableData }) {
   console.log("Table Data: ", tableData);

@@ -28,22 +28,30 @@ export default function MyPieChart(props) {
     onClick: onClickHandler,
     maintainAspectRatio: false,
     plugins: {
-      legend: {
-        align: "start",
-      },
       datalabels: {
         // This code is used to display data values
-        anchor: "center",
-        align: "start",
-        color: "black",
+        // anchor: "start",
+        // align: "start",
+        clamp: false,
+        color: "rgba(0,0,0, 0.9)",
+        // borderColor: "black",
+        // borderWidth: 1,
+        // borderRadius: 30,
+        padding: 3,
+        textAlign: "center",
+        // backgroundColor: "rgba(255,255,255, 0.25)",
         font: {
-          size: 20,
+          weight: "bolder",
+          size: 12,
         },
       },
+      legend: {
+        align: "center",
+        position: "left",
+      },
     },
-    interactions: {
-      mode: "point",
-    },
+
+    // cutout: 20,
   };
 
   // console.log(canvasPosition);

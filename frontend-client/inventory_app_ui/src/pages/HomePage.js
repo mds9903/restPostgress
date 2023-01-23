@@ -72,11 +72,11 @@ function HomePage() {
                   .map((demand) => demand.demandQty)
                   .reduce((acc, curr) => acc + curr),
               ],
-              backgroundColor: ["blue", "yellow"],
+              backgroundColor: ["green", "orange"],
               borderColor: "black",
               borderWidth: 1,
-              borderRadius: 3,
-              spacing: 5,
+              borderRadius: 2,
+              spacing: 8,
             },
           ],
         });
@@ -113,11 +113,12 @@ function HomePage() {
                   .map((supply) => supply.supplyQty)
                   .reduce((acc, curr) => acc + curr),
               ],
-              backgroundColor: ["blue", "yellow", "red"],
+              backgroundColor: ["green", "orange", "red"],
               borderColor: "black",
               borderWidth: 1,
-              borderRadius: 3,
-              spacing: 5,
+              borderRadius: 2,
+              spacing: 8,
+              // weight: 10,
             },
           ],
         });
@@ -167,7 +168,7 @@ function HomePage() {
     //               location.deliveryAllowed === false
     //           ).length,
     //         ],
-    //         backgroundColor: ["green", "orange", "yellow", "grey"],
+    //         backgroundColor: ["green", "orange", "orange", "grey"],
     //         borderColor: "black",
     //         borderWidth: 1,
     //         borderRadius: 3,
@@ -210,35 +211,7 @@ function HomePage() {
           </Col>
         </Row>
 
-        <Row className="mt-2">
-          {/* supplies */}
-          <Col className="w-30">
-            <Card>
-              <Card.Header>Supplies</Card.Header>
-              <Card.Body>
-                {isDataLoaded ? (
-                  <MyDoughnutChart data={suppliesChartData} />
-                ) : (
-                  <div>No Data</div>
-                )}
-              </Card.Body>
-            </Card>
-          </Col>
-          {/* Demands */}
-          <Col className="w-30">
-            <Card>
-              <Card.Header>Demands </Card.Header>
-              <Card.Body>
-                {isDataLoaded ? (
-                  <MyDoughnutChart data={demandsChartData} />
-                ) : (
-                  <div>No Data</div>
-                )}
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-        <Row className="mt-2">
+        <Row className="mt-2 mb-2">
           {/* avaiabilities */}
           <Col>
             <Card>
@@ -302,6 +275,34 @@ function HomePage() {
                   </Card>
                 </Col>
               </Row>
+            </Card>
+          </Col>
+        </Row>
+        <Row className="mt-2 mb-2">
+          {/* supplies */}
+          <Col className="w-30">
+            <Card>
+              <Card.Header>Supplies</Card.Header>
+              <Card.Body>
+                {isDataLoaded ? (
+                  <MyDoughnutChart data={suppliesChartData} />
+                ) : (
+                  <div>No Data</div>
+                )}
+              </Card.Body>
+            </Card>
+          </Col>
+          {/* Demands */}
+          <Col className="w-30">
+            <Card>
+              <Card.Header>Demands </Card.Header>
+              <Card.Body>
+                {isDataLoaded ? (
+                  <MyDoughnutChart data={demandsChartData} />
+                ) : (
+                  <div>No Data</div>
+                )}
+              </Card.Body>
             </Card>
           </Col>
         </Row>

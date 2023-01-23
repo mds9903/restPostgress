@@ -22,15 +22,24 @@ const options = {
   plugins: {
     datalabels: {
       // This code is used to display data values
-      anchor: "center",
-      align: "center",
-      color: "black",
+      // anchor: "start",
+      // align: "start",
+      clamp: false,
+      color: "rgba(0,0,0, 0.9)",
+      // borderColor: "black",
+      // borderWidth: 1,
+      // borderRadius: 30,
+      padding: 3,
+      textAlign: "center",
+      // backgroundColor: "rgba(255,255,255, 0.25)",
       font: {
-        size: 15,
+        weight: "bold",
+        size: 16,
       },
     },
     legend: {
-      display: false,
+      align: "start",
+      position: "right",
     },
   },
 };

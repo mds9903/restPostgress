@@ -25,7 +25,6 @@ function SuppliesPage() {
         setDataLoaded(true);
         setTableData(response.data);
         setChartData({
-          // labels show on the x axis
           labels: ["ONHAND SUPPLIES", "INTRANSIT SUPPLIES", "DAMAGED SUPPLIES"],
           datasets: [
             {
@@ -66,7 +65,7 @@ function SuppliesPage() {
   return (
     <div>
       <Container>
-        <Row>
+        <Row className="mb-3">
           <Col>
             <h2>Supplies</h2>
           </Col>
@@ -74,11 +73,11 @@ function SuppliesPage() {
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
-        <Row>
+        <Row className="mb-3">
           {/* chart */}
           {isDataLoaded ? <MyBarChart data={chartData} /> : <div>No Data</div>}
         </Row>
-        <Row>
+        <Row className="mb-3">
           <Col>
             {isDataLoaded ? (
               tableData ? (
@@ -91,7 +90,7 @@ function SuppliesPage() {
             )}
           </Col>
         </Row>
-        {/* <Row>
+        {/* <Row className="mb-3">
           <div>stacked chart</div>
           <MyStackChart />
         </Row> */}
