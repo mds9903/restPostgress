@@ -2,30 +2,30 @@ import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js";
 import { Colors } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import { useState } from "react";
-import { Card } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Card, Col, Row } from "react-bootstrap";
 import ChartDataModal from "./ChartDataModal";
 
 ChartJS.register(Colors);
 ChartJS.register(ChartDataLabels);
 export default function MyPieChart(props) {
-  const [showModal, setShowModal] = useState(false);
-  const [modalData, setModalData] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalData, setModalData] = useState();
+
+  // useEffect(() => {
+
+  // }, [])
 
   const onClickHandler = (e) => {
-    console.log("MyPieChart onClick handler");
-    console.log("event: ", e);
-    console.log(
-      JSON.stringify(e.chart.$context.chart.tooltip.body[0].lines[0])
-    );
-    setModalData(
-      JSON.stringify(e.chart.$context.chart.tooltip.body[0].lines[0])
-    );
-    showModal ? setShowModal(false) : setShowModal(true);
+    if (isModalOpen) {
+      setModalData(e.chart.$context.chart.tooltip.body[0].lines[0]);
+    } else {
+      setIsModalOpen(true);
+    }
   };
 
   const options = {
-    onClick: onClickHandler,
+    onHover: onClickHandler,
     maintainAspectRatio: false,
     plugins: {
       datalabels: {
@@ -65,16 +65,15 @@ export default function MyPieChart(props) {
   }
 
   return (
-    <Card className="m-2" height={"500px"}>
-      <Card className="m-2">
-        <Card.Header>
+    <Row>
+      <Col>
+        <Card className="m-2">
           <Pie data={props.data} options={options} />
-        </Card.Header>
-        <Card.Footer>
-          {showModal ? <ChartDataModal data={modalData} /> : <></>}
-        </Card.Footer>
-      </Card>
-      {/* <Card className="m-2"></Card> */}
-    </Card>
+        </Card>
+      </Col>
+      <Col>
+        <Card>{isModalOpen ? <ChartDataModal data={modalData} /> : <></>}</Card>
+      </Col>
+    </Row>
   );
 }
