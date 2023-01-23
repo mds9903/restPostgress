@@ -22,28 +22,37 @@ function LocationsPage() {
     axios
       .get(getAllUrl)
       .then((response) => {
-        console.log("getting data");
-        console.log("response.data:\n", response.data);
+        // console.log("getting data");
+        // console.log("response.data:\n", response.data);
         setDataLoaded(true);
         setTableData(response.data);
-        const allModes = tableData.filter(
-          (location) =>
-            location.shippingAllowed === true &&
-            location.pickupAllowed === true &&
-            location.deliveryAllowed === true
-        );
-        const onlyPickup = tableData.filter(
-          (location) =>
-            location.shippingAllowed === false &&
-            location.pickupAllowed === true &&
-            location.deliveryAllowed === false
-        );
-        const onlyShipping = tableData.filter(
-          (location) =>
-            location.shippingAllowed === true &&
-            location.pickupAllowed === false &&
-            location.deliveryAllowed === false
-        );
+        const allModes = {
+          mode: "All Modes Allowed",
+          data: tableData.filter(
+            (location) =>
+              location.shippingAllowed === true &&
+              location.pickupAllowed === true &&
+              location.deliveryAllowed === true
+          ),
+        };
+        const onlyPickup = {
+          mode: "Only Pickup Allowed",
+          data: tableData.filter(
+            (location) =>
+              location.shippingAllowed === false &&
+              location.pickupAllowed === true &&
+              location.deliveryAllowed === false
+          ),
+        };
+        const onlyShipping = {
+          mode: "Only Shipping Allowed",
+          data: tableData.filter(
+            (location) =>
+              location.shippingAllowed === true &&
+              location.pickupAllowed === false &&
+              location.deliveryAllowed === false
+          ),
+        };
         setChartData(
           response.data.length > 0
             ? {
@@ -56,9 +65,9 @@ function LocationsPage() {
                 datasets: [
                   {
                     data: [
-                      allModes.length,
-                      onlyPickup.length,
-                      onlyShipping.length,
+                      allModes.data.length,
+                      onlyPickup.data.length,
+                      onlyShipping.data.length,
                     ],
                     backgroundColor: ["green", "orange", "yellow", "grey"],
                     borderColor: "black",
@@ -70,17 +79,17 @@ function LocationsPage() {
               }
             : emptyChartData
         );
-        console.log(chartData);
+        // console.log(chartData);
         setShouldReload(false);
       })
       .catch((error) => {
-        console.log("Error occurred: ", error);
+        // console.log("Error occurred: ", error);
       });
   }, [shouldReload, isDataLoaded]);
 
   const reloadTable = () => {
-    console.log("reloading table");
-    console.log("shouldReload" + shouldReload);
+    // console.log("reloading table");
+    // console.log("shouldReload" + shouldReload);
     setShouldReload(true);
   };
 

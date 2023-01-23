@@ -31,9 +31,15 @@ export default function MyPieChart(props) {
     // } else {
     //   setIsDrillDownOpen(true);
     // }
+    console.log(e.chart);
+    const modes = e.chart.legend.legendItems.map((item) => item.text);
+    const modeSelected = e.chart.$context.chart.tooltip.dataPoints[0].label;
+    console.log(modeSelected);
+    // console.log(props.data.records[]))
     setDrillDownData({
       pieVal: e.chart.$context.chart.tooltip.body[0].lines[0],
       records: props.data.records,
+      modeSelected: modeSelected,
     });
   };
 
@@ -82,12 +88,7 @@ export default function MyPieChart(props) {
         </Card>
       </Col>
       <Col>
-        <Card className="m-2">
-          <Card.Header>Pie Chart of Different Modes</Card.Header>
-          <Card.Body>
-            <DrillDown data={DrillDownData} />
-          </Card.Body>
-        </Card>
+        <DrillDown data={DrillDownData} />
       </Col>
     </Row>
   );

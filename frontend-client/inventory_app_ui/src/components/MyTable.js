@@ -1,18 +1,24 @@
 import { Table } from "react-bootstrap";
 
-function MyTable({ tableData }) {
-  console.log("Table Data: ", tableData);
+function MyTable({ tableData, hideColumns }) {
+  // console.log("Table Data: ", tableData);
   // console.log(Object.keys(tableData[0]));
+
+  const hideColumnsSet = new Set(hideColumns);
 
   if (tableData.length === 0) {
     return <div>No Data</div>;
   }
 
-  const columns = Array.from(Object.keys(tableData[0]));
+  // const columns = Array.from(Object.keys(tableData[0]));
+  const columns = Array.from(Object.keys(tableData[0])).filter(
+    (col) => !hideColumnsSet.has(col)
+  );
+  console.log(columns);
   const rows = tableData.map((item, index) => Object.values(item));
 
-  console.log("Columns:\n", columns);
-  console.log("Rows:\n", rows);
+  // console.log("Columns:\n", columns);
+  // console.log("Rows:\n", rows);
 
   return (
     <Table size="sm" responsive striped bordered hover>
