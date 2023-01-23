@@ -4,28 +4,41 @@ import { Colors } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import ChartDataModal from "./ChartDataModal";
+import DrillDown from "./DrillDown";
 
 ChartJS.register(Colors);
 ChartJS.register(ChartDataLabels);
 export default function MyPieChart(props) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalData, setModalData] = useState();
+  // const [isDrillDownOpen, setIsDrillDownOpen] = useState(false);
+  const [DrillDownData, setDrillDownData] = useState({
+    pieVal: null,
+    records: null,
+  });
 
   // useEffect(() => {
 
   // }, [])
 
+  console.log("pie chart data: ", props.data);
+  console.log("pie chart data records: ", props.data.records);
+
   const onClickHandler = (e) => {
-    if (isModalOpen) {
-      setModalData(e.chart.$context.chart.tooltip.body[0].lines[0]);
-    } else {
-      setIsModalOpen(true);
-    }
+    // if (isDrillDownOpen) {
+    //   setDrillDownData({
+    //     pieVal: e.chart.$context.chart.tooltip.body[0].lines[0],
+    //     records: props.data.records,
+    //   });
+    // } else {
+    //   setIsDrillDownOpen(true);
+    // }
+    setDrillDownData({
+      pieVal: e.chart.$context.chart.tooltip.body[0].lines[0],
+      records: props.data.records[],
+    });
   };
 
   const options = {
-    onHover: onClickHandler,
+    onClick: onClickHandler,
     maintainAspectRatio: false,
     plugins: {
       datalabels: {
@@ -54,12 +67,6 @@ export default function MyPieChart(props) {
     // cutout: 20,
   };
 
-  // console.log(canvasPosition);
-
-  console.log("pie chart data: ", props.data);
-  console.log(props.data.labels.length);
-  console.log(props.data.datasets.length);
-
   if (props.data.labels.length === 0 || props.data.datasets.length === 0) {
     return <div>No Data</div>;
   }
@@ -68,11 +75,19 @@ export default function MyPieChart(props) {
     <Row>
       <Col>
         <Card className="m-2">
-          <Pie data={props.data} options={options} />
+          <Card.Header>Pie Chart of Different Modes</Card.Header>
+          <Card.Body>
+            <Pie data={props.data} options={options} />
+          </Card.Body>
         </Card>
       </Col>
       <Col>
-        <Card>{isModalOpen ? <ChartDataModal data={modalData} /> : <></>}</Card>
+        <Card className="m-2">
+          <Card.Header>Pie Chart of Different Modes</Card.Header>
+          <Card.Body>
+            <DrillDown data={DrillDownData} />
+          </Card.Body>
+        </Card>
       </Col>
     </Row>
   );
