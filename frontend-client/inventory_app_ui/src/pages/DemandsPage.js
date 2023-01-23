@@ -82,27 +82,31 @@ function DemandsPage() {
         </Row>
         <Row className="m-2">
           {/* chart */}
-          {isDataLoaded ? (
-            chartData ? (
-              <MyBarChart data={chartData} />
+          <Col>
+            {isDataLoaded ? (
+              chartData ? (
+                <MyBarChart data={chartData} />
+              ) : (
+                <div>No Chart Data</div>
+              )
             ) : (
-              <div>No Chart Data</div>
-            )
-          ) : (
-            <div>No Data</div>
-          )}
+              <div>No Data</div>
+            )}
+          </Col>
         </Row>
         <Row className="m-2">
           {/* table */}
-          {isDataLoaded ? (
-            tableData ? (
-              <MyTable tableData={tableData} />
+          <Col>
+            {isDataLoaded ? (
+              tableData ? (
+                <MyTable tableData={tableData} />
+              ) : (
+                <div>No Table Data</div>
+              )
             ) : (
-              <div>No Table Data</div>
-            )
-          ) : (
-            <div>No Data</div>
-          )}
+              <div>No Data</div>
+            )}
+          </Col>
         </Row>
       </Container>
     </div>
