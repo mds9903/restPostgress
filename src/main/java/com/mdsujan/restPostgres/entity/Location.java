@@ -1,5 +1,6 @@
 package com.mdsujan.restPostgres.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -20,6 +21,7 @@ public class Location {
     @Id
     @Column(name = "location_id")
     @NotNull
+//    @JsonIgnore
     Long locationId;
 
     @Column(name = "location_desc")

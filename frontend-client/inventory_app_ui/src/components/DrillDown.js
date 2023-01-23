@@ -17,6 +17,12 @@ export default function DrillDown({ data }) {
       )[0].data
     : null;
   console.log("DrillDown Records: ", drillDownRecords);
+  const drillDownRecordsSliced = drillDownRecords.map((record) => {
+    return Object.entries(record)
+      .slice(0, 3)
+      .map((entry) => entry[1]);
+  });
+  console.log("DrillDown Records Sliced: ", drillDownRecordsSliced);
   return (
     <div>
       <div>
@@ -27,11 +33,18 @@ export default function DrillDown({ data }) {
         )}
       </div>
       <div>
-        {drillDownRecords === null ? (
+        {drillDownRecordsSliced === null ? (
           <div>No DrillDown Data</div>
         ) : (
           // JSON.stringify(drillDownRecords)
-          <MyTable tableData={drillDownRecords} />
+          // <MyTable tableData={drillDownRecordsSliced} />
+          drillDownRecordsSliced.map((record) => {
+            return (
+              <Card className="m-1">
+                {record.toString().split(",").join(" | ")}
+              </Card>
+            );
+          })
         )}
       </div>
     </div>
