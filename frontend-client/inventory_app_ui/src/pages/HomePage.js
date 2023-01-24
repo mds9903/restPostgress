@@ -24,6 +24,7 @@ function HomePage() {
   const [shouldReload, setShouldReload] = useState(false);
   const [demandsChartData, setDemandsChartData] = useState(emptyChartData);
   const [suppliesChartData, setSuppliesChartData] = useState(emptyChartData);
+  const [chartData, setChartData] = useState(emptyChartData);
   // const [locationsChartData, setLocationsChartData] = useState(emptyChartData);
   const [version, setVersion] = useState("2");
   const [itemId, setItemId] = useState("1");
@@ -128,55 +129,71 @@ function HomePage() {
         console.log("Error: ", error.response);
       });
 
-    // locations
-    // axios.get(inventoryUri + "locations/").then((response) => {
-    //   console.log("getting data");
-    //   console.log("response.data:\n", response.data);
-    //   setIsDataLoaded(true);
-    //   setLocationsChartData({
-    //     labels: [
-    //       "All Modes Allowed",
-    //       "Only Delivery Allowed",
-    //       "Only Pickup Allowed",
-    //       "Only Shipping Allowed",
-    //     ],
-    //     datasets: [
-    //       {
-    //         data: [
-    //           response.data.filter(
-    //             (location) =>
-    //               location.shippingAllowed === true &&
-    //               location.pickupAllowed === true &&
-    //               location.deliveryAllowed === true
-    //           ).length,
-    //           response.data.filter(
-    //             (location) =>
-    //               location.shippingAllowed === false &&
-    //               location.pickupAllowed === false &&
-    //               location.deliveryAllowed === true
-    //           ).length,
-    //           response.data.filter(
-    //             (location) =>
-    //               location.shippingAllowed === false &&
-    //               location.pickupAllowed === true &&
-    //               location.deliveryAllowed === false
-    //           ).length,
-    //           response.data.filter(
-    //             (location) =>
-    //               location.shippingAllowed === true &&
-    //               location.pickupAllowed === false &&
-    //               location.deliveryAllowed === false
-    //           ).length,
-    //         ],
-    //         backgroundColor: ["green", "orange", "orange", "grey"],
-    //         borderColor: "black",
-    //         borderWidth: 1,
-    //         borderRadius: 3,
-    //         spacing: 5,
-    //       },
-    //     ],
-    //   });
-    // });
+    axios
+      .get(inventoryUri + "locations/")
+      .then((response) => {
+        // console.log("getting data");
+        // console.log("response.data:\n", response.data);
+        setIsDataLoaded(true);
+        // setTableData(response.data);
+        const allModes = {
+          mode: "All Modes Allowed",
+          data: response.data.filter(
+            (location) =>
+              location.shippingAllowed === true &&
+              location.pickupAllowed === true &&
+              location.deliveryAllowed === true
+          ),
+        };
+        const onlyPickup = {
+          mode: "Only Pickup Allowed",
+          data: response.data.filter(
+            (location) =>
+              location.shippingAllowed === false &&
+              location.pickupAllowed === true &&
+              location.deliveryAllowed === false
+          ),
+        };
+        const onlyShipping = {
+          mode: "Only Shipping Allowed",
+          data: response.data.filter(
+            (location) =>
+              location.shippingAllowed === true &&
+              location.pickupAllowed === false &&
+              location.deliveryAllowed === false
+          ),
+        };
+        setChartData(
+          response.data.length > 0
+            ? {
+                labels: [
+                  "All Modes Allowed",
+                  "Only Pickup Allowed",
+                  "Only Shipping Allowed",
+                ],
+                datasets: [
+                  {
+                    data: [
+                      allModes.data.length,
+                      onlyPickup.data.length,
+                      onlyShipping.data.length,
+                    ],
+                    backgroundColor: ["green", "orange", "yellow", "grey"],
+                    borderColor: "black",
+                    borderWidth: 1,
+                    // indexAxis: "y",
+                  },
+                ],
+                records: [allModes, onlyPickup, onlyShipping],
+              }
+            : emptyChartData
+        );
+        // console.log(chartData);
+        setShouldReload(false);
+      })
+      .catch((error) => {
+        // console.log("Error occurred: ", error);
+      });
 
     // availabilities
     axios

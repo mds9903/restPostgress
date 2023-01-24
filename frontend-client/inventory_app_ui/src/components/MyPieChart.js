@@ -3,7 +3,7 @@ import { Chart as ChartJS } from "chart.js";
 import { Colors } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { useEffect, useState } from "react";
-import { Card, Col, Row, Button } from "react-bootstrap";
+import { Card, Col, Row, Button, CloseButton } from "react-bootstrap";
 import DrillDown from "./DrillDown";
 
 ChartJS.register(Colors);
@@ -68,20 +68,28 @@ export default function MyPieChart(props) {
         <Row>
           <Col style={{ height: "300px", width: "500px" }}>
             <Pie
-              className="scroll"
               // height={200}
-              // style={{ overflow: "scroll" }}
               data={props.data}
               options={options}
             />
           </Col>
           {DrillDown === undefined ? (
             <Col
-              style={{ width: "500px", height: "300px", overflow: "scroll" }}
+              style={{
+                width: "600px",
+                height: "300px",
+                // overflowY: "scroll",
+                // overflowX: "-moz-hidden-unscrollable",
+              }}
             >
               <Card>
                 <Card.Header>
-                  <Button onClick={() => setShowDrillDown(false)}>x</Button>
+                  More Info
+                  <CloseButton
+                    variant="outline-dark"
+                    size="sm"
+                    onClick={() => setShowDrillDown(false)}
+                  />
                 </Card.Header>
                 <Card.Body>
                   <div>No data</div>
@@ -90,15 +98,21 @@ export default function MyPieChart(props) {
             </Col>
           ) : showDrillDown ? (
             <Col
-              style={{ width: "500px", height: "300px", overflow: "scroll" }}
+            // style={{
+            //   width: "500px",
+            //   height: "300px",
+            //   overflow: "scroll",
+            // }}
             >
               <Card>
-                <Card.Header>
-                  <Button className="" onClick={() => setShowDrillDown(false)}>
-                    x
-                  </Button>
-                </Card.Header>
                 <Card.Body>
+                  <Card.Title className="d-flex flex-direction-row justify-content-end">
+                    <CloseButton
+                      variant="outline-dark"
+                      size="sm"
+                      onClick={() => setShowDrillDown(false)}
+                    />
+                  </Card.Title>
                   <DrillDown data={DrillDownData} />
                 </Card.Body>
               </Card>
