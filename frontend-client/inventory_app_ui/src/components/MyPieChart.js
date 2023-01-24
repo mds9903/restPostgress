@@ -3,13 +3,14 @@ import { Chart as ChartJS } from "chart.js";
 import { Colors } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { useEffect, useState } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Row, Button } from "react-bootstrap";
 import DrillDown from "./DrillDown";
 
 ChartJS.register(Colors);
 ChartJS.register(ChartDataLabels);
 export default function MyPieChart(props) {
   const [DrillDownData, setDrillDownData] = useState();
+  const [showDrillDown, setShowDrillDown] = useState(false);
 
   // console.log("pie chart data: ", props.data);
   // console.log("pie chart data records: ", props.data.records);
@@ -23,6 +24,7 @@ export default function MyPieChart(props) {
       records: props.data.records,
       modeSelected: modeSelected,
     });
+    setShowDrillDown(true);
   };
 
   const options = {
@@ -64,16 +66,47 @@ export default function MyPieChart(props) {
       <Card.Header>Pie Chart of Different Modes</Card.Header>
       <Card.Body>
         <Row>
-          <Col>
-            <Pie data={props.data} options={options} />
+          <Col style={{ height: "300px", width: "500px" }}>
+            <Pie
+              className="scroll"
+              // height={200}
+              // style={{ overflow: "scroll" }}
+              data={props.data}
+              options={options}
+            />
           </Col>
-          <Col>
-            {DrillDown === undefined ? (
-              <div>No data</div>
-            ) : (
-              <DrillDown data={DrillDownData} />
-            )}
-          </Col>
+          {DrillDown === undefined ? (
+            <Col
+              style={{ width: "500px", height: "300px", overflow: "scroll" }}
+            >
+              <Card>
+                <Card.Header>
+                  <Button onClick={() => setShowDrillDown(false)}>x</Button>
+                </Card.Header>
+                <Card.Body>
+                  <div>No data</div>
+                </Card.Body>
+              </Card>
+            </Col>
+          ) : showDrillDown ? (
+            <Col
+              style={{ width: "500px", height: "300px", overflow: "scroll" }}
+            >
+              <Card>
+                <Card.Header>
+                  <Button className="" onClick={() => setShowDrillDown(false)}>
+                    x
+                  </Button>
+                </Card.Header>
+                <Card.Body>
+                  <DrillDown data={DrillDownData} />
+                </Card.Body>
+              </Card>
+            </Col>
+          ) : (
+            <></>
+          )}
+          {/* </Col> */}
         </Row>
       </Card.Body>
     </Card>

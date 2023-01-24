@@ -1,7 +1,10 @@
-import { Card } from "react-bootstrap";
+import { useState } from "react";
+import { Button, Card, Col, Row } from "react-bootstrap";
 import MyTable from "./MyTable";
 
 export default function DrillDown({ data }) {
+  // const [showDrillDown, setShowDrillDown] = useState(true);
+
   if (data === undefined) {
     return <div></div>;
   }
@@ -24,15 +27,19 @@ export default function DrillDown({ data }) {
   });
   console.log("DrillDown Records Sliced: ", drillDownRecordsSliced);
   return (
-    <div>
-      <div>
-        {data.pieVal === null ? (
-          <div>?No Data?</div>
-        ) : (
-          `${data.pieVal} Locatins where ${data.modeSelected} are available`
-        )}
-      </div>
-      <div>
+    <Card>
+      <Card.Header>
+        <Row className="d-flex flex-row justify-content-between">
+          <Col>
+            {data.pieVal === null ? (
+              <div>?No Data?</div>
+            ) : (
+              `${data.pieVal} Locatins where ${data.modeSelected} are available`
+            )}
+          </Col>
+        </Row>
+      </Card.Header>
+      <Card.Body>
         {drillDownRecordsSliced === null ? (
           <div>No DrillDown Data</div>
         ) : (
@@ -40,13 +47,18 @@ export default function DrillDown({ data }) {
           // <MyTable tableData={drillDownRecordsSliced} />
           drillDownRecordsSliced.map((record) => {
             return (
-              <Card className="m-1">
-                {record.toString().split(",").join(" | ")}
+              <Card
+                className="m-1 p-2"
+                style={{ height: "min-content", overflow: "y" }}
+              >
+                <Card.Text bsPrefix={"card-text"}>
+                  {record.toString().split(",").join(" | ")}
+                </Card.Text>
               </Card>
             );
           })
         )}
-      </div>
-    </div>
+      </Card.Body>{" "}
+    </Card>
   );
 }
