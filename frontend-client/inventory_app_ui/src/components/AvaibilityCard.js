@@ -8,6 +8,12 @@ const variants = {
 
 export default function AvaibilityCard({ data }) {
   console.log("data: ", data);
+
+  const knowMoreHandler = (event) => {
+    console.log("clicked knowMoreHandler");
+    console.log(data);
+  };
+
   if (!data) {
     return <div>No Data</div>;
   }
@@ -22,6 +28,7 @@ export default function AvaibilityCard({ data }) {
           </Card.Body>
         </Card>
       </Card.Body>
+      <Card.Footer onClick={knowMoreHandler}>More info</Card.Footer>
     </Card>
   );
 }

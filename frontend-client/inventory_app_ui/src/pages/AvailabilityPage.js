@@ -88,28 +88,30 @@ function AvaibilityPage() {
             <Col>
               <Card>
                 <Form className={"m-2"} onSubmit={submitHandler}>
+                  {/* item id */}
                   <Form.Group>
-                    {/* item id */}
                     <FloatingLabel
                       controlId="floatingInput_item"
                       label={"Item ID: " + itemId}
                       className="mb-2"
                     >
                       <Form.Control
+                        size="sm"
                         type="text"
                         placeholder="the item id"
                         onChange={itemIdChangeHandler}
                       />
                     </FloatingLabel>
                   </Form.Group>
+                  {/* locationd id */}
                   <Form.Group>
-                    {/* locationd id */}
                     <FloatingLabel
                       controlId="floatingInput_location"
                       label={"Location ID: " + locationId}
                       className="mb-2"
                     >
                       <Form.Control
+                        size="sm"
                         type="text"
                         placeholder="the location id"
                         onChange={locationIdChangeHandler}
@@ -120,9 +122,9 @@ function AvaibilityPage() {
                   <Form.Group>
                     <Form.Label>Select Avaibility Version</Form.Label>
                     <Form.Control as={"select"} onChange={versionChangeHandler}>
-                      {/* <option value="1" className="mb-2">
-                      V1 Avaibility
-                    </option> */}
+                      <option value="1" className="mb-2">
+                        V1 Avaibility
+                      </option>
                       <option value="2" className="mb-2">
                         V2 Avaibility
                       </option>
