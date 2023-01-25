@@ -205,7 +205,7 @@ function HomePage() {
       .get(`${inventoryUri}v${version}/availability/${itemId}/${locationId}`)
       .then((response) => {
         console.log("getting data");
-        console.log("response.data:\n", response.data);
+        console.log("Avb---response.data:\n", response.data);
         setIsDataLoaded(true);
         setLoadedAvbData(response.data);
         // console.log(tableData);
@@ -224,119 +224,119 @@ function HomePage() {
   };
 
   return (
-    <div>
-      <Container>
-        {/* heading */}
-        <Row>
-          <Col>
-            <Button onClick={reloadData}>Reload Data</Button>
-          </Col>
-        </Row>
-        {/* dashboard widgets */}
-        <Row className="m-2">
-          {/* avaiabilities */}
-          <Col>
-            <Card className="m-1">
-              <Card.Header>Avaibilities</Card.Header>
-              <Card.Body>
-                <Row className="p-2">
-                  {/* form */}
-                  <Col>
-                    <Card className="m-1">
-                      <Form className={"m-2"} onSubmit={submitHandler}>
-                        <Form.Group>
-                          {/* item id */}
-                          <FloatingLabel
-                            controlId="floatingInput_item"
-                            label={"Item ID: " + itemId}
+    <Container fluid>
+      {/* heading */}
+      <Row className="mb-2">
+        <Col>
+          <Button onClick={reloadData}>Reload Data</Button>
+        </Col>
+      </Row>
+      {/* dashboard widgets */}
+      <Row className="mb-2">
+        {/* avaiabilities */}
+        <Col>
+          <Card>
+            <Card.Header>Avaibilities</Card.Header>
+            <Card.Body>
+              <Row className="mb-2">
+                {/* form */}
+                <Col>
+                  <Card>
+                    <Form className={"m-2"} onSubmit={submitHandler}>
+                      <Form.Group>
+                        {/* item id */}
+                        <FloatingLabel
+                          controlId="floatingInput_item"
+                          label={"Item ID: " + itemId}
+                          className="mb-2"
+                        >
+                          <Form.Control
+                            type="text"
+                            placeholder="the item id"
+                            onChange={itemIdChangeHandler}
+                          />
+                        </FloatingLabel>
+                      </Form.Group>
+                      <Form.Group>
+                        {/* locationd id */}
+                        <FloatingLabel
+                          controlId="floatingInput_location"
+                          label={"Location ID: " + locationId}
+                          className="mb-2"
+                        >
+                          <Form.Control
+                            type="text"
+                            placeholder="the location id"
+                            onChange={locationIdChangeHandler}
                             className="mb-2"
-                          >
-                            <Form.Control
-                              type="text"
-                              placeholder="the item id"
-                              onChange={itemIdChangeHandler}
-                            />
-                          </FloatingLabel>
-                        </Form.Group>
-                        <Form.Group>
-                          {/* locationd id */}
-                          <FloatingLabel
-                            controlId="floatingInput_location"
-                            label={"Location ID: " + locationId}
-                            className="mb-2"
-                          >
-                            <Form.Control
-                              type="text"
-                              placeholder="the location id"
-                              onChange={locationIdChangeHandler}
-                              className="mb-2"
-                            />
-                          </FloatingLabel>
-                        </Form.Group>
-                        <Form.Group>
-                          {/* <FloatingLabel
+                          />
+                        </FloatingLabel>
+                      </Form.Group>
+                      <Form.Group>
+                        {/* <FloatingLabel
                             controlId="floatingInput_version"
                             label={"Avaibility Version:" + version}
                           /> */}
-                          <Form.Control
-                            as={"select"}
-                            onChange={versionChangeHandler}
-                            placeholder={"Avaibility Version:" + version}
-                          >
-                            <option value="2" className="mb-2">
-                              V2
-                            </option>
-                            <option value="3" className="mb-2">
-                              V3
-                            </option>
-                            <option value="1" className="mb-2">
-                              V1
-                            </option>
-                          </Form.Control>
-                        </Form.Group>
-                      </Form>
-                    </Card>
-                  </Col>
-                  {/* availability card */}
-                  <Col>
-                    <Card className="m-1">
-                      {isDataLoaded ? (
-                        <AvaibilityCard data={loadedAvbData} />
+                        <Form.Control
+                          as={"select"}
+                          onChange={versionChangeHandler}
+                          placeholder={"Avaibility Version:" + version}
+                        >
+                          <option value="2">V2</option>
+                          <option value="3">V3</option>
+                          <option value="1">V1</option>
+                        </Form.Control>
+                      </Form.Group>
+                    </Form>
+                  </Card>
+                </Col>
+                {/* availability card */}
+                <Col>
+                  <Card>
+                    {isDataLoaded ? (
+                      loadedAvbData ? (
+                        <AvaibilityCard
+                          data={loadedAvbData}
+                          itemId={loadedAvbData.itemId}
+                          locationId={loadedAvbData.locationId}
+                        />
                       ) : (
                         <div>No Data</div>
-                      )}
-                    </Card>
-                  </Col>
-                </Row>
-              </Card.Body>
-            </Card>
-          </Col>
-          {/* supplies and demands */}
-          <Col className="w-30">
-            <Card className="m-1">
-              <Card.Header>Supplies</Card.Header>
-              <Card.Body>
-                {isDataLoaded ? (
-                  <MyDoughnutChart data={suppliesChartData} />
-                ) : (
-                  <div>No Data</div>
-                )}
-              </Card.Body>
-            </Card>
-            <Card className="m-1">
-              <Card.Header>Demands </Card.Header>
-              <Card.Body>
-                {isDataLoaded ? (
-                  <MyDoughnutChart data={demandsChartData} />
-                ) : (
-                  <div>No Data</div>
-                )}
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+                      )
+                    ) : (
+                      <div>No Data</div>
+                    )}
+                  </Card>
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+        {/* supplies and demands */}
+        <Col sm>
+          <Card className="mb-2">
+            <Card.Header>Supplies</Card.Header>
+            <Card.Body>
+              {isDataLoaded ? (
+                <MyDoughnutChart data={suppliesChartData} />
+              ) : (
+                <div>No Data</div>
+              )}
+            </Card.Body>
+          </Card>
+          <Card className="mb-2">
+            <Card.Header>Demands </Card.Header>
+            <Card.Body>
+              {isDataLoaded ? (
+                <MyDoughnutChart data={demandsChartData} />
+              ) : (
+                <div>No Data</div>
+              )}
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

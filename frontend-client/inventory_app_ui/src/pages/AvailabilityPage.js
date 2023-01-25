@@ -82,7 +82,7 @@ function AvaibilityPage() {
             <Button onClick={reloadData}>Refresh Data</Button>
           </Col>
         </Row>
-        <Row className="mt-2 w-50">
+        <Row className="mt-2 w-100">
           <Row className="p-2">
             {/* form */}
             <Col>
@@ -122,14 +122,14 @@ function AvaibilityPage() {
                   <Form.Group>
                     <Form.Label>Select Avaibility Version</Form.Label>
                     <Form.Control as={"select"} onChange={versionChangeHandler}>
-                      <option value="1" className="mb-2">
-                        V1 Avaibility
-                      </option>
                       <option value="2" className="mb-2">
                         V2 Avaibility
                       </option>
                       <option value="3" className="mb-2">
                         V3 Avaibility
+                      </option>
+                      <option value="1" className="mb-2">
+                        V1 Avaibility
                       </option>
                     </Form.Control>
                   </Form.Group>
@@ -140,7 +140,11 @@ function AvaibilityPage() {
             <Col>
               <Card>
                 {isDataLoaded ? (
-                  <AvaibilityCard data={loadedData} />
+                  <AvaibilityCard
+                    data={loadedData}
+                    itemId={loadedData.itemId}
+                    locationId={loadedData.locationId}
+                  />
                 ) : (
                   <div>No Data</div>
                 )}
