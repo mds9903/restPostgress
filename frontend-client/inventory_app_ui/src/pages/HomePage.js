@@ -235,44 +235,40 @@ function HomePage() {
           </Col>
         </Row>
         {/* dashboard widgets */}
-        <Row className="w-100 h-100" lg={2}>
+        <Row className="w-100 h-100" md={1} lg={2} xl={2}>
           {/* avaiabilities */}
           <Col>
-            <Card>
+            <Card className="h-100">
               <Card.Header>Availabilities</Card.Header>
               <Card.Body>
                 <Row className="m-2">
                   {/* form */}
                   <Col>
-                    <Card>
+                    <Card className="p-2">
                       <Form onSubmit={submitHandler}>
-                        <Form.Group>
+                        <Form.Group className="p-2">
                           {/* item id */}
                           <FloatingLabel
                             controlId="floatingInput_item"
                             label={"Item ID: " + itemId}
-                            className="p-2"
                           >
                             <Form.Control
                               type="text"
                               placeholder="the item id"
                               onChange={itemIdChangeHandler}
-                              className="p-2"
                             />
                           </FloatingLabel>
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className="p-2">
                           {/* locationd id */}
                           <FloatingLabel
                             controlId="floatingInput_location"
                             label={"Location ID: " + locationId}
-                            className="p-2"
                           >
                             <Form.Control
                               type="text"
                               placeholder="the location id"
                               onChange={locationIdChangeHandler}
-                              className="p-2"
                             />
                           </FloatingLabel>
                         </Form.Group>

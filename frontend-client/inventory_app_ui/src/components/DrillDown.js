@@ -33,7 +33,7 @@ export default function DrillDown({ data }) {
           {data.pieVal === null ? (
             <div>?No Data?</div>
           ) : (
-            `${data.pieVal} Locatins where ${data.modeSelected} are available`
+            `${data.pieVal} Locations where ${data.modeSelected} are available`
           )}
         </Card.Title>
         <Card.Body
@@ -58,7 +58,11 @@ export default function DrillDown({ data }) {
                   className="m-1 p-2"
                   style={{ height: "min-content", overflow: "y" }}
                 >
-                  <Card.Text key={"card_text" + index} bsPrefix={"card-text"}>
+                  <Card.Text
+                    style={{ fontSize: ".8em" }}
+                    key={"card_text" + index}
+                    bsPrefix={"card-text"}
+                  >
                     {record.toString().split(",").join(" | ")}
                   </Card.Text>
                 </Card>
