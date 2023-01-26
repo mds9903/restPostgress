@@ -1,4 +1,4 @@
-import { Table, Card } from "react-bootstrap";
+import { Table, Card, Container } from "react-bootstrap";
 
 function MyTable({ tableData }) {
   if (tableData.length === 0) {
@@ -11,24 +11,29 @@ function MyTable({ tableData }) {
   const rows = tableData.map((item) => Object.values(item));
 
   return (
-    <Table size="sm" responsive bordered hover>
-      <thead>
-        <tr>
-          {columns.map((column, key) => {
-            return <th key={key}>{column}</th>;
-          })}
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((item, index) => (
-          <tr key={index}>
-            {item.map((val, key) => (
-              <td key={key}>{val && val.toString()}</td>
+    <Card>
+      <Card.Header>Table of all resources</Card.Header>
+      <Card.Body>
+        <Table responsive bordered hover>
+          <thead>
+            <tr>
+              {columns.map((column, key) => {
+                return <th key={key}>{column}</th>;
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((item, index) => (
+              <tr key={index}>
+                {item.map((val, key) => (
+                  <td key={key}>{val && val.toString()}</td>
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-      </tbody>
-    </Table>
+          </tbody>
+        </Table>
+      </Card.Body>
+    </Card>
   );
 }
 

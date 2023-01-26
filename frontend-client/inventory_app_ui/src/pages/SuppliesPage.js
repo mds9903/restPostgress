@@ -63,18 +63,19 @@ function SuppliesPage() {
   };
 
   return (
-    <div>
-      <Container>
+    <Container fluid style={{ height: "89vh", overflowY: "auto" }}>
+      <Container fluid>
+        {/* heading */}
         <Row className="m-2">
-          <Col>
+          <Col className="m-1">
             <h2>Supplies</h2>
           </Col>
-          <Col>
+          <Col className="m-1">
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
+        {/* chart */}
         <Row className="m-2">
-          {/* chart */}
           <Col>
             {isDataLoaded ? (
               <MyBarChart data={chartData} />
@@ -83,9 +84,9 @@ function SuppliesPage() {
             )}
           </Col>
         </Row>
+        {/* table */}
         <Row className="m-2">
-          {/* table */}
-          <Col>
+          <Col className="m-1">
             {isDataLoaded ? (
               tableData ? (
                 <MyTable tableData={tableData} />
@@ -98,7 +99,7 @@ function SuppliesPage() {
           </Col>
         </Row>
       </Container>
-    </div>
+    </Container>
   );
 }
 

@@ -17,7 +17,7 @@ const variants = {
 
 const inventoryUri = "http://localhost:8088/inventory/";
 
-export default function AvaibilityCard({ data, itemId, locationId }) {
+export default function AvailabilityCard({ data, itemId, locationId }) {
   // const [itemId, setItemId] = useState(data.itemId);
   // const [locationId, setLocationId] = useState(data.locationId);
   const [itemData, setItemData] = useState();

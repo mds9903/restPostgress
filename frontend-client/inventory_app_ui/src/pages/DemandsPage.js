@@ -70,10 +70,10 @@ function DemandsPage() {
   };
 
   return (
-    <div>
-      <Container>
+    <Container fluid style={{ maxHeight: "85vh", overflowY: "scroll" }}>
+      <Container fluid>
         <Row className="m-2">
-          <Col>
+          <Col className="m-1">
             <h2>Demands</h2>
           </Col>
           <Col>
@@ -109,7 +109,7 @@ function DemandsPage() {
           </Col>
         </Row>
       </Container>
-    </div>
+    </Container>
   );
 }
 

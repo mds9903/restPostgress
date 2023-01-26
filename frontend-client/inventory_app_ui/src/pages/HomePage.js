@@ -10,7 +10,7 @@ import {
 import MyDoughnutChart from "../components/MyDoughnutChart";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AvaibilityCard from "../components/AvaibilityCard";
+import AvailabilityCard from "../components/AvailabilityCard";
 
 const inventoryUri = "http://localhost:8088/inventory/";
 
@@ -224,118 +224,120 @@ function HomePage() {
   };
 
   return (
-    <Container fluid>
-      {/* heading */}
-      <Row className="mb-2">
-        <Col>
-          <Button onClick={reloadData}>Reload Data</Button>
-        </Col>
-      </Row>
-      {/* dashboard widgets */}
-      <Row className="mb-2">
-        {/* avaiabilities */}
-        <Col>
-          <Card>
-            <Card.Header>Avaibilities</Card.Header>
-            <Card.Body>
-              <Row className="mb-2">
-                {/* form */}
-                <Col>
-                  <Card>
-                    <Form className={"m-2"} onSubmit={submitHandler}>
-                      <Form.Group>
-                        {/* item id */}
-                        <FloatingLabel
-                          controlId="floatingInput_item"
-                          label={"Item ID: " + itemId}
-                          className="mb-2"
-                        >
-                          <Form.Control
-                            type="text"
-                            placeholder="the item id"
-                            onChange={itemIdChangeHandler}
-                          />
-                        </FloatingLabel>
-                      </Form.Group>
-                      <Form.Group>
-                        {/* locationd id */}
-                        <FloatingLabel
-                          controlId="floatingInput_location"
-                          label={"Location ID: " + locationId}
-                          className="mb-2"
-                        >
-                          <Form.Control
-                            type="text"
-                            placeholder="the location id"
-                            onChange={locationIdChangeHandler}
+    <Container fluid style={{ maxHeight: "89vh" }}>
+      <Container fluid>
+        {/* heading */}
+        <Row className="mb-2" sm={3}>
+          <Col>
+            <Button onClick={reloadData}>Refresh Data</Button>
+          </Col>
+        </Row>
+        {/* dashboard widgets */}
+        <Row className="mb-2">
+          {/* avaiabilities */}
+          <Col>
+            <Card>
+              <Card.Header>Availabilities</Card.Header>
+              <Card.Body>
+                <Row className="mb-2">
+                  {/* form */}
+                  <Col>
+                    <Card>
+                      <Form className={"m-2"} onSubmit={submitHandler}>
+                        <Form.Group>
+                          {/* item id */}
+                          <FloatingLabel
+                            controlId="floatingInput_item"
+                            label={"Item ID: " + itemId}
                             className="mb-2"
-                          />
-                        </FloatingLabel>
-                      </Form.Group>
-                      <Form.Group>
-                        {/* <FloatingLabel
+                          >
+                            <Form.Control
+                              type="text"
+                              placeholder="the item id"
+                              onChange={itemIdChangeHandler}
+                            />
+                          </FloatingLabel>
+                        </Form.Group>
+                        <Form.Group>
+                          {/* locationd id */}
+                          <FloatingLabel
+                            controlId="floatingInput_location"
+                            label={"Location ID: " + locationId}
+                            className="mb-2"
+                          >
+                            <Form.Control
+                              type="text"
+                              placeholder="the location id"
+                              onChange={locationIdChangeHandler}
+                              className="mb-2"
+                            />
+                          </FloatingLabel>
+                        </Form.Group>
+                        <Form.Group>
+                          {/* <FloatingLabel
                             controlId="floatingInput_version"
                             label={"Avaibility Version:" + version}
                           /> */}
-                        <Form.Control
-                          as={"select"}
-                          onChange={versionChangeHandler}
-                          placeholder={"Avaibility Version:" + version}
-                        >
-                          <option value="2">V2</option>
-                          <option value="3">V3</option>
-                          <option value="1">V1</option>
-                        </Form.Control>
-                      </Form.Group>
-                    </Form>
-                  </Card>
-                </Col>
-                {/* availability card */}
-                <Col>
-                  <Card>
-                    {isDataLoaded ? (
-                      loadedAvbData ? (
-                        <AvaibilityCard
-                          data={loadedAvbData}
-                          itemId={loadedAvbData.itemId}
-                          locationId={loadedAvbData.locationId}
-                        />
+                          <Form.Control
+                            as={"select"}
+                            onChange={versionChangeHandler}
+                            placeholder={"Avaibility Version:" + version}
+                          >
+                            <option value="2">V2</option>
+                            <option value="3">V3</option>
+                            <option value="1">V1</option>
+                          </Form.Control>
+                        </Form.Group>
+                      </Form>
+                    </Card>
+                  </Col>
+                  {/* availability card */}
+                  <Col>
+                    <Card>
+                      {isDataLoaded ? (
+                        loadedAvbData ? (
+                          <AvailabilityCard
+                            data={loadedAvbData}
+                            itemId={loadedAvbData.itemId}
+                            locationId={loadedAvbData.locationId}
+                          />
+                        ) : (
+                          <div>No Data</div>
+                        )
                       ) : (
                         <div>No Data</div>
-                      )
-                    ) : (
-                      <div>No Data</div>
-                    )}
-                  </Card>
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
-        </Col>
-        {/* supplies and demands */}
-        <Col sm>
-          <Card className="mb-2">
-            <Card.Header>Supplies</Card.Header>
-            <Card.Body>
-              {isDataLoaded ? (
-                <MyDoughnutChart data={suppliesChartData} />
-              ) : (
-                <div>No Data</div>
-              )}
-            </Card.Body>
-          </Card>
-          <Card className="mb-2">
-            <Card.Header>Demands </Card.Header>
-            <Card.Body>
-              {isDataLoaded ? (
-                <MyDoughnutChart data={demandsChartData} />
-              ) : (
-                <div>No Data</div>
-              )}
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+                      )}
+                    </Card>
+                  </Col>
+                </Row>
+              </Card.Body>
+            </Card>
+          </Col>
+          {/* supplies and demands */}
+          <Col sm>
+            <Card className="mb-2">
+              <Card.Header>Supplies</Card.Header>
+              <Card.Body>
+                {isDataLoaded ? (
+                  <MyDoughnutChart data={suppliesChartData} />
+                ) : (
+                  <div>No Data</div>
+                )}
+              </Card.Body>
+            </Card>
+            <Card className="mb-2">
+              <Card.Header>Demands </Card.Header>
+              <Card.Body>
+                {isDataLoaded ? (
+                  <MyDoughnutChart data={demandsChartData} />
+                ) : (
+                  <div>No Data</div>
+                )}
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     </Container>
   );
 }

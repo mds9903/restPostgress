@@ -31,8 +31,8 @@ function ThresholdsPage() {
   };
 
   return (
-    <div>
-      <Container>
+    <Container fluid style={{ height: "89vh", overflow: "auto" }}>
+      <Container fluid>
         <Row className="m-2">
           <Col>
             <h2>ATP Thresholds</h2>
@@ -56,7 +56,7 @@ function ThresholdsPage() {
           </Col>
         </Row>
       </Container>
-    </div>
+    </Container>
   );
 }
 

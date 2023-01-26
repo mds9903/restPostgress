@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AvaibilityCard from "../components/AvaibilityCard";
+import AvailabilityCard from "../components/AvailabilityCard";
 import {
   Button,
   Container,
@@ -71,12 +71,12 @@ function AvaibilityPage() {
   };
 
   return (
-    <div>
-      <Container>
+    <Container fluid style={{ height: "89vh", overflow: "auto" }}>
+      <Container fluid>
         {/* heading */}
         <Row className="mt-2">
           <Col>
-            <h2>Avaibilities</h2>
+            <h2>Availabilities</h2>
           </Col>
           <Col>
             <Button onClick={reloadData}>Refresh Data</Button>
@@ -140,7 +140,7 @@ function AvaibilityPage() {
             <Col>
               <Card>
                 {isDataLoaded ? (
-                  <AvaibilityCard
+                  <AvailabilityCard
                     data={loadedData}
                     itemId={loadedData.itemId}
                     locationId={loadedData.locationId}
@@ -153,7 +153,7 @@ function AvaibilityPage() {
           </Row>
         </Row>
       </Container>
-    </div>
+    </Container>
   );
 }
 

@@ -93,20 +93,20 @@ function LocationsPage() {
   };
 
   return (
-    <div>
-      <Container>
+    <Container fluid style={{ height: "89vh", overflow: "auto" }}>
+      <Container fluid>
+        {/* heading */}
         <Row className="m-2">
-          <Col>
+          <Col className="m-1">
             <h2>Locations</h2>
           </Col>
-          <Col>
-            {/* data reload button */}
+          <Col className="m-1">
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
+        {/* chart */}
         <Row className="m-2">
-          <Col>
-            {/* chart */}
+          <Col className="m-1">
             {isDataLoaded ? (
               <MyPieChart data={chartData} />
             ) : (
@@ -114,9 +114,9 @@ function LocationsPage() {
             )}
           </Col>
         </Row>
+        {/* table */}
         <Row className="m-2">
-          {/* table */}
-          <Col>
+          <Col className="m-1">
             {isDataLoaded ? (
               tableData ? (
                 <MyTable tableData={tableData} />
@@ -129,7 +129,7 @@ function LocationsPage() {
           </Col>
         </Row>
       </Container>
-    </div>
+    </Container>
   );
 }
 

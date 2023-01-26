@@ -56,11 +56,11 @@ function ItemsPage() {
   // if (!tableData) return <div>No data</div>;
 
   return (
-    <div>
-      <Container>
+    <Container fluid style={{ height: "89vh", overflow: "auto" }}>
+      <Container fluid>
         {/* heading */}
         <Row className="m-2">
-          <Col>
+          <Col className="m-1">
             <h2>Items</h2>
           </Col>
           <Col>
@@ -68,49 +68,36 @@ function ItemsPage() {
             <Button onClick={reloadTable}>Refresh Data</Button>
           </Col>
         </Row>
-        {/* heading */}
-
         {/* views */}
         {isDataLoaded ? (
           tableData ? (
             <Row className="m-2">
               <Col>
-                <Col>
-                  <Card>
-                    <Card.Header>Table of resources</Card.Header>
-                    <Card.Body>
-                      <Row>
-                        <Col>
-                          <MyTable tableData={tableData} />
-                        </Col>
-                        {/* pagination */}
-                        <Col
-                          className="d-flex flex-column justify-content-between align-items-center "
-                          style={{ maxWidth: "50px", maxHeight: "min-content" }}
-                        >
-                          {pageNumbers.map((item, index) => {
-                            return (
-                              <Row className="d-flex flex-column justify-content-between align-items-center text-align-center ">
-                                <Button
-                                  variant="outline-dark"
-                                  size="sm"
-                                  className="rounded-circle"
-                                  key={index}
-                                  onClick={() => {
-                                    console.log("setting page num to ", item);
-                                    setPageNum(item);
-                                  }}
-                                >
-                                  {item}
-                                </Button>
-                              </Row>
-                            );
-                          })}
-                        </Col>
-                      </Row>
-                    </Card.Body>
-                  </Card>
-                </Col>
+                <MyTable tableData={tableData} />
+              </Col>
+              {/* pagination */}
+              <Col
+                className="d-flex flex-column justify-content-between align-items-center "
+                style={{ maxWidth: "50px", maxHeight: "min-content" }}
+              >
+                {pageNumbers.map((item, index) => {
+                  return (
+                    <Row className="d-flex flex-column justify-content-between align-items-center text-align-center ">
+                      <Button
+                        variant="outline-dark"
+                        size="sm"
+                        className="rounded-circle"
+                        key={index}
+                        onClick={() => {
+                          console.log("setting page num to ", item);
+                          setPageNum(item);
+                        }}
+                      >
+                        {item}
+                      </Button>
+                    </Row>
+                  );
+                })}
               </Col>
             </Row>
           ) : (
@@ -119,23 +106,8 @@ function ItemsPage() {
         ) : (
           <div>No Data</div>
         )}
-
-        {/* views */}
-
-        {/* actions to create, update resources */}
-        {/* <Row className="mt-2"></Row> */}
-        {/* forms */}
-        {/* <Row className="m-5">
-          <Card className="w-auto">
-            <Card.Header>Create new Item</Card.Header>
-            <Card.Body>
-              <FormCreateNew formInputStructure={formInputStructure} />
-            </Card.Body>
-          </Card>
-        </Row> */}
-        {/* actions to create, update resources */}
       </Container>
-    </div>
+    </Container>
   );
 }
 
