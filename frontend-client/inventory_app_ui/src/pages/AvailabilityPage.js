@@ -74,11 +74,11 @@ function AvaibilityPage() {
     <Container fluid style={{ height: "89vh", overflow: "auto" }}>
       <Container fluid>
         {/* heading */}
-        <Row className="mt-2">
-          <Col>
-            <h2>Availabilities</h2>
-          </Col>
-          <Col>
+        <Row className="mb-2">
+          <Col className="w-100 mb-2 d-flex flex-direction-row justify-content-between">
+            <h2>Dashboard</h2>
+
+            {/* data reload button */}
             <Button onClick={reloadData}>Refresh Data</Button>
           </Col>
         </Row>

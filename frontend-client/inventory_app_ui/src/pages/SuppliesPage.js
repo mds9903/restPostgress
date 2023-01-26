@@ -56,7 +56,7 @@ function SuppliesPage() {
     });
   }, [shouldReload]);
 
-  const reloadTable = () => {
+  const reloadData = () => {
     console.log("reloading table");
     console.log("shouldReload" + shouldReload);
     setShouldReload(true);
@@ -66,12 +66,12 @@ function SuppliesPage() {
     <Container fluid style={{ height: "89vh", overflowY: "auto" }}>
       <Container fluid>
         {/* heading */}
-        <Row className="m-2">
-          <Col className="m-1">
-            <h2>Supplies</h2>
-          </Col>
-          <Col className="m-1">
-            <Button onClick={reloadTable}>Refresh Data</Button>
+        <Row className="mb-2">
+          <Col className="w-100 mb-2 d-flex flex-direction-row justify-content-between">
+            <h2>Dashboard</h2>
+
+            {/* data reload button */}
+            <Button onClick={reloadData}>Refresh Data</Button>
           </Col>
         </Row>
         {/* chart */}

@@ -227,8 +227,11 @@ function HomePage() {
     <Container fluid style={{ maxHeight: "89vh" }}>
       <Container fluid>
         {/* heading */}
-        <Row className="mb-2" sm={3}>
-          <Col>
+        <Row className="mb-2">
+          <Col className="w-100 mb-2 d-flex flex-direction-row justify-content-between">
+            <h2>Dashboard</h2>
+
+            {/* data reload button */}
             <Button onClick={reloadData}>Refresh Data</Button>
           </Col>
         </Row>

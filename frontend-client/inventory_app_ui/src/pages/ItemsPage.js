@@ -43,7 +43,7 @@ function ItemsPage() {
       });
   }, [shouldReload, pageNum]);
 
-  const reloadTable = () => {
+  const reloadData = () => {
     console.log("reloading table");
     console.log("shouldReload" + shouldReload);
     setShouldReload(true);
@@ -59,13 +59,12 @@ function ItemsPage() {
     <Container fluid style={{ height: "89vh", overflow: "auto" }}>
       <Container fluid>
         {/* heading */}
-        <Row className="m-2">
-          <Col className="m-1">
-            <h2>Items</h2>
-          </Col>
-          <Col>
+        <Row className="mb-2">
+          <Col className="w-100 mb-2 d-flex flex-direction-row justify-content-between">
+            <h2>Dashboard</h2>
+
             {/* data reload button */}
-            <Button onClick={reloadTable}>Refresh Data</Button>
+            <Button onClick={reloadData}>Refresh Data</Button>
           </Col>
         </Row>
         {/* views */}
