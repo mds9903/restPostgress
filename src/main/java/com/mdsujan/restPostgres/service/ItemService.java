@@ -59,13 +59,12 @@ public class ItemService {
         return itemRepository.save(createItemRequest);
     }
 
-    public String createItemNoValidate(Item createItemRequest) throws Throwable {
+    public Item createItemNoValidate(Item createItemRequest) throws Throwable {
 
         ObjectMapper mapper = new ObjectMapper();
 //        mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
         String jsonString = mapper.writeValueAsString(createItemRequest);
-
-        return jsonString;
+        return itemRepository.save(createItemRequest);
 
 
 //        // new record should not be created if record already exists

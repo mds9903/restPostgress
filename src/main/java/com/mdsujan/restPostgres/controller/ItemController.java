@@ -41,7 +41,7 @@ public class ItemController {
 
     @PostMapping("/") // create an item in the table
     public Item createItem(@RequestBody @Valid Item createItemRequest) throws Throwable {
-        logger.info("InQueryRequest: " + createItemRequest);
+        logger.info("CREATE NEW ITEM | InQueryRequest: " + createItemRequest);
         Item itemResponse = itemService.createItem(createItemRequest);
         logger.info("Response: " + itemResponse);
         return itemResponse;
@@ -49,8 +49,8 @@ public class ItemController {
 
     @PostMapping("/noValidate") // create an item in the table
     public String createItemNoValidate(@RequestBody Item createItemRequest) throws Throwable {
-        logger.info("InQueryRequest: " + createItemRequest);
-        return itemService.createItemNoValidate(createItemRequest);
+        logger.info("CREATE NEW ITEM | InQueryRequest: " + createItemRequest);
+        return itemService.createItemNoValidate(createItemRequest).toString();
 //        logger.info("Response: " + itemResponse);
 //        return itemResponse;
     }

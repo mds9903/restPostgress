@@ -11,29 +11,24 @@ function MyTable({ tableData }) {
   const rows = tableData.map((item) => Object.values(item));
 
   return (
-    <Card>
-      <Card.Header>Table of resources</Card.Header>
-      <Card.Body>
-        <Table size="sm" responsive bordered hover>
-          <thead>
-            <tr>
-              {columns.map((column, key) => {
-                return <th key={key}>{column}</th>;
-              })}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((item, index) => (
-              <tr key={index}>
-                {item.map((val, key) => (
-                  <td key={key}>{val && val.toString()}</td>
-                ))}
-              </tr>
+    <Table size="sm" responsive bordered hover>
+      <thead>
+        <tr>
+          {columns.map((column, key) => {
+            return <th key={key}>{column}</th>;
+          })}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((item, index) => (
+          <tr key={index}>
+            {item.map((val, key) => (
+              <td key={key}>{val && val.toString()}</td>
             ))}
-          </tbody>
-        </Table>
-      </Card.Body>
-    </Card>
+          </tr>
+        ))}
+      </tbody>
+    </Table>
   );
 }
 

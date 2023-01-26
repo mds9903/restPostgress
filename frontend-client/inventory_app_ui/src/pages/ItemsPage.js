@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import { Button, Container, Row, Col, Card } from "react-bootstrap";
 import axios from "axios";
 
 import MyTable from "../components/MyTable";
@@ -75,31 +75,42 @@ function ItemsPage() {
           tableData ? (
             <Row className="m-2">
               <Col>
-                <MyTable tableData={tableData} />
-              </Col>
-
-              {/* pagination */}
-              <Col
-                className="d-flex flex-column justify-content-between align-items-center "
-                style={{ maxWidth: "50px", maxHeight: "min-content" }}
-              >
-                {pageNumbers.map((item, index) => {
-                  return (
-                    <Row className="d-flex flex-column justify-content-between align-items-center text-align-center ">
-                      <Button
-                        size="sm"
-                        className="rounded-circle"
-                        key={index}
-                        onClick={() => {
-                          console.log("setting page num to ", item);
-                          setPageNum(item);
-                        }}
-                      >
-                        {item}
-                      </Button>
-                    </Row>
-                  );
-                })}
+                <Col>
+                  <Card>
+                    <Card.Header>Table of resources</Card.Header>
+                    <Card.Body>
+                      <Row>
+                        <Col>
+                          <MyTable tableData={tableData} />
+                        </Col>
+                        {/* pagination */}
+                        <Col
+                          className="d-flex flex-column justify-content-between align-items-center "
+                          style={{ maxWidth: "50px", maxHeight: "min-content" }}
+                        >
+                          {pageNumbers.map((item, index) => {
+                            return (
+                              <Row className="d-flex flex-column justify-content-between align-items-center text-align-center ">
+                                <Button
+                                  variant="outline-dark"
+                                  size="sm"
+                                  className="rounded-circle"
+                                  key={index}
+                                  onClick={() => {
+                                    console.log("setting page num to ", item);
+                                    setPageNum(item);
+                                  }}
+                                >
+                                  {item}
+                                </Button>
+                              </Row>
+                            );
+                          })}
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  </Card>
+                </Col>
               </Col>
             </Row>
           ) : (
