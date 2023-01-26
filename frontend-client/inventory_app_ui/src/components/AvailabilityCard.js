@@ -23,6 +23,7 @@ export default function AvailabilityCard({ data, itemId, locationId }) {
   const [itemData, setItemData] = useState();
   // const [locationData, setLoctationData] = useState();
   const [showMoreData, setShowMoreData] = useState(false);
+  const [outline, setOutline] = useState("none");
 
   useEffect(() => {
     axios.get(inventoryUri + "items/" + itemId).then((response) => {
@@ -46,16 +47,15 @@ export default function AvailabilityCard({ data, itemId, locationId }) {
   }
   //   const bg = colorDynamic ? variants[data.stockLevel].toLowerCase() : "";
   return (
-    <div className="d-flex flex-direction-row">
+    <Card className="d-flex flex-direction-column">
       <Card className="m-2">
         <Card.Body>
           <Card bg={variants[data.stockLevel.toLowerCase()].toLowerCase()}>
             <Card.Header>Items Available To Promise</Card.Header>
-            <Card.Body style={{ fontSize: "2.5em" }}>
-              {data.availabilityQty}
-            </Card.Body>
+            <Card.Body>{data.availabilityQty}</Card.Body>
           </Card>
         </Card.Body>
+        {/* know more btn */}
         {!showMoreData ? (
           <Card.Footer onClick={knowMoreHandler}>
             <Button>Know more</Button>
@@ -69,17 +69,28 @@ export default function AvailabilityCard({ data, itemId, locationId }) {
           <Card.Header className="d-flex flex-direction-row justify-content-between">
             Item Info
             <CloseButton
+              style={{ outline: { outline }, border: { outline } }}
+              onFocus={() => {
+                setOutline("none");
+              }}
               onClick={() => {
+                setOutline("none");
                 setShowMoreData(false);
               }}
             />
           </Card.Header>
           {itemData ? (
             <>
-              <Card.Body className="p-2">
-                <Card.Text>{itemData.itemDesc}</Card.Text>
-                <Card.Text>{itemData.category}</Card.Text>
-                <Card.Text>{itemData.itemType}</Card.Text>
+              <Card.Body>
+                <Card.Text className="m-1">
+                  Item Name: {itemData.itemDesc}
+                </Card.Text>
+                <Card.Text className="m-1">
+                  Category: {itemData.category}
+                </Card.Text>
+                <Card.Text className="m-1">
+                  Item Type: {itemData.itemType}
+                </Card.Text>
               </Card.Body>
             </>
           ) : (
@@ -89,6 +100,6 @@ export default function AvailabilityCard({ data, itemId, locationId }) {
       ) : (
         <div></div>
       )}
-    </div>
+    </Card>
   );
 }

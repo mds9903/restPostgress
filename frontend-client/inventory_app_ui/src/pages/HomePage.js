@@ -227,37 +227,37 @@ function HomePage() {
     <Container fluid style={{ maxHeight: "89vh" }}>
       <Container fluid>
         {/* heading */}
-        <Row className="mb-2">
-          <Col className="w-100 mb-2 d-flex flex-direction-row justify-content-between">
+        <Row className="m-2">
+          <Col className="m-2 d-flex flex-direction-row justify-content-between">
             <h2>Dashboard</h2>
-
             {/* data reload button */}
             <Button onClick={reloadData}>Refresh Data</Button>
           </Col>
         </Row>
         {/* dashboard widgets */}
-        <Row className="mb-2">
+        <Row className="w-100 h-100" lg={2}>
           {/* avaiabilities */}
           <Col>
             <Card>
               <Card.Header>Availabilities</Card.Header>
               <Card.Body>
-                <Row className="mb-2">
+                <Row className="m-2">
                   {/* form */}
                   <Col>
                     <Card>
-                      <Form className={"m-2"} onSubmit={submitHandler}>
+                      <Form onSubmit={submitHandler}>
                         <Form.Group>
                           {/* item id */}
                           <FloatingLabel
                             controlId="floatingInput_item"
                             label={"Item ID: " + itemId}
-                            className="mb-2"
+                            className="p-2"
                           >
                             <Form.Control
                               type="text"
                               placeholder="the item id"
                               onChange={itemIdChangeHandler}
+                              className="p-2"
                             />
                           </FloatingLabel>
                         </Form.Group>
@@ -266,25 +266,22 @@ function HomePage() {
                           <FloatingLabel
                             controlId="floatingInput_location"
                             label={"Location ID: " + locationId}
-                            className="mb-2"
+                            className="p-2"
                           >
                             <Form.Control
                               type="text"
                               placeholder="the location id"
                               onChange={locationIdChangeHandler}
-                              className="mb-2"
+                              className="p-2"
                             />
                           </FloatingLabel>
                         </Form.Group>
-                        <Form.Group>
-                          {/* <FloatingLabel
-                            controlId="floatingInput_version"
-                            label={"Avaibility Version:" + version}
-                          /> */}
+                        <Form.Group className="p-2">
                           <Form.Control
+                            size="sm"
                             as={"select"}
                             onChange={versionChangeHandler}
-                            placeholder={"Avaibility Version:" + version}
+                            placeholder={"Availability Version:" + version}
                           >
                             <option value="2">V2</option>
                             <option value="3">V3</option>
@@ -317,8 +314,8 @@ function HomePage() {
             </Card>
           </Col>
           {/* supplies and demands */}
-          <Col sm>
-            <Card className="mb-2">
+          <Col>
+            <Card className="m-2">
               <Card.Header>Supplies</Card.Header>
               <Card.Body>
                 {isDataLoaded ? (
@@ -328,7 +325,7 @@ function HomePage() {
                 )}
               </Card.Body>
             </Card>
-            <Card className="mb-2">
+            <Card className="m-2">
               <Card.Header>Demands </Card.Header>
               <Card.Body>
                 {isDataLoaded ? (
