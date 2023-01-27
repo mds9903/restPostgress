@@ -1,12 +1,5 @@
 import axios from "axios";
-import {
-  Button,
-  Card,
-  CloseButton,
-  Row,
-  Col,
-  Container,
-} from "react-bootstrap";
+import { Button, Card, CloseButton } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
 const variants = {
@@ -69,12 +62,8 @@ export default function AvailabilityCard({ data, itemId, locationId }) {
           <Card.Header className="d-flex flex-direction-row justify-content-between">
             Item Info
             <CloseButton
-              style={{ outline: { outline }, border: { outline } }}
-              onFocus={() => {
-                setOutline("none");
-              }}
+              style={{ outline: "none", boxShadow: "none" }}
               onClick={() => {
-                setOutline("none");
                 setShowMoreData(false);
               }}
             />
@@ -94,7 +83,7 @@ export default function AvailabilityCard({ data, itemId, locationId }) {
               </Card.Body>
             </>
           ) : (
-            <div>No Item Data</div>
+            <Card.Body>No Item Data</Card.Body>
           )}
         </Card>
       ) : (

@@ -3,7 +3,7 @@ import { Chart as ChartJS } from "chart.js";
 import { Colors } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { useEffect, useState } from "react";
-import { Card, Col, Row, Button, CloseButton } from "react-bootstrap";
+import { Card, Col, Row, CloseButton } from "react-bootstrap";
 import DrillDown from "./DrillDown";
 
 ChartJS.register(Colors);
@@ -78,17 +78,16 @@ export default function MyPieChart(props) {
               style={{
                 width: "600px",
                 height: "300px",
-                // overflowY: "scroll",
-                // overflowX: "-moz-hidden-unscrollable",
               }}
             >
               <Card>
                 <Card.Header>
                   More Info
                   <CloseButton
-                    variant="outline-dark"
-                    size="sm"
-                    onClick={() => setShowDrillDown(false)}
+                    style={{ outline: "none", boxShadow: "none" }}
+                    onClick={() => {
+                      setShowDrillDown(false);
+                    }}
                   />
                 </Card.Header>
                 <Card.Body>
@@ -97,19 +96,14 @@ export default function MyPieChart(props) {
               </Card>
             </Col>
           ) : showDrillDown ? (
-            <Col
-            // style={{
-            //   width: "500px",
-            //   height: "300px",
-            //   overflow: "scroll",
-            // }}
-            >
+            <Col>
               <Card>
                 <Card.Body>
                   <Card.Title className="d-flex flex-direction-row justify-content-end">
                     <CloseButton
                       variant="outline-dark"
                       size="sm"
+                      style={{ outline: "none", boxShadow: "none" }}
                       onClick={() => setShowDrillDown(false)}
                     />
                   </Card.Title>
