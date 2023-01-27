@@ -3,10 +3,11 @@ import { Button, Container, Row, Col, Card } from "react-bootstrap";
 import axios from "axios";
 
 import MyTable from "../components/MyTable";
+import MyPagination from "../components/MyPaginatin";
 // import FormCreateNew from "../components/FormCreateNew";
 // import { minHeight } from "@mui/system";
 
-// const getAllUrl = "http://localhost:8088/items/";
+const getAllUrl = "http://localhost:8088/inventory/items/";
 const getAllPaginatedUrl = "http://localhost:8088/inventory/items/paginated";
 
 function ItemsPage() {
@@ -19,29 +20,13 @@ function ItemsPage() {
   // const [formInputStructure, setformInputStructure] = useState();
 
   useEffect(() => {
-    axios
-      .get(getAllPaginatedUrl, {
-        params: { pageSize: pageSize, pageNum: pageNum },
-      })
-      .then((response) => {
-        console.log("response: ", response);
-        // console.log("getting data");
-        // console.log("response.data:\n", response.data);
-        setDataLoaded(true);
-        setTableData(response.data.items);
-        // console.log("tableData: ", tableData);
-        setPageNumbers(
-          Array.from({ length: response.data.maxPages }, (_, i) => i + 1)
-        );
-        setShouldReload(false);
-        // setformInputStructure(
-        //   Object.keys(tableData[0]).reduce(
-        //     (acc, val) => ({ ...acc, [val]: "" }),
-        //     {}
-        //   )
-        // );
-      });
-  }, [shouldReload, pageNum]);
+    axios.get(getAllUrl).then((response) => {
+      console.log("response: ", response);
+      setTableData(response.data);
+      setDataLoaded(true);
+      setShouldReload(false);
+    });
+  }, [shouldReload]);
 
   const reloadData = () => {
     console.log("reloading table");
@@ -74,29 +59,10 @@ function ItemsPage() {
               <Col>
                 <MyTable tableData={tableData} />
               </Col>
+
               {/* pagination */}
-              <Col
-                className="d-flex flex-column justify-content-between align-items-center "
-                style={{ maxWidth: "50px", maxHeight: "min-content" }}
-              >
-                {pageNumbers.map((item, index) => {
-                  return (
-                    <Row className="d-flex flex-column justify-content-between align-items-center text-align-center ">
-                      <Button
-                        variant="outline-dark"
-                        size="sm"
-                        className="rounded-circle"
-                        key={index}
-                        onClick={() => {
-                          console.log("setting page num to ", item);
-                          setPageNum(item);
-                        }}
-                      >
-                        {item}
-                      </Button>
-                    </Row>
-                  );
-                })}
+              <Col>
+                <MyPagination data={tableData} />
               </Col>
             </Row>
           ) : (
