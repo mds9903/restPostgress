@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
-import { Button, Container, Row, Col, Card } from "react-bootstrap";
+import {
+  Button,
+  Container,
+  Row,
+  Col,
+  Card,
+  ButtonGroup,
+} from "react-bootstrap";
 import axios from "axios";
 
 import MyTable from "../components/MyTable";
@@ -14,46 +21,31 @@ function ItemsPage() {
   const [tableData, setTableData] = useState([]);
   const [shouldReload, setShouldReload] = useState(false);
   const [pageSize, setPageSize] = useState(5);
-  const [pageNum, setPageNum] = useState(1);
+  const [pageCurrent, setPageCurrent] = useState(1);
   const [pageNumbers, setPageNumbers] = useState([]);
-  // const [formInputStructure, setformInputStructure] = useState();
 
   useEffect(() => {
     axios
       .get(getAllPaginatedUrl, {
-        params: { pageSize: pageSize, pageNum: pageNum },
+        params: { pageSize: pageSize, pageNum: pageCurrent },
       })
       .then((response) => {
         console.log("response: ", response);
-        // console.log("getting data");
-        // console.log("response.data:\n", response.data);
+
         setDataLoaded(true);
         setTableData(response.data.items);
-        // console.log("tableData: ", tableData);
         setPageNumbers(
           Array.from({ length: response.data.maxPages }, (_, i) => i + 1)
         );
         setShouldReload(false);
-        // setformInputStructure(
-        //   Object.keys(tableData[0]).reduce(
-        //     (acc, val) => ({ ...acc, [val]: "" }),
-        //     {}
-        //   )
-        // );
       });
-  }, [shouldReload, pageNum]);
+  }, [shouldReload, pageCurrent, pageSize]);
 
   const reloadData = () => {
-    console.log("reloading table");
+    console.log("reloading data");
     console.log("shouldReload" + shouldReload);
     setShouldReload(true);
   };
-
-  // if (!isDataLoaded) {
-  //   return <div>No Data</div>;
-  // }
-
-  // if (!tableData) return <div>No data</div>;
 
   return (
     <Container fluid style={{ height: "89vh", overflow: "auto" }}>
@@ -62,7 +54,6 @@ function ItemsPage() {
         <Row className="mb-2">
           <Col className="w-100 mb-2 d-flex flex-direction-row justify-content-between">
             <h2>Dashboard</h2>
-
             {/* data reload button */}
             <Button onClick={reloadData}>Refresh Data</Button>
           </Col>
@@ -73,30 +64,54 @@ function ItemsPage() {
             <Row className="m-2">
               <Col>
                 <MyTable tableData={tableData} />
-              </Col>
-              {/* pagination */}
-              <Col
-                className="d-flex flex-column justify-content-between align-items-center "
-                style={{ maxWidth: "50px", maxHeight: "min-content" }}
-              >
-                {pageNumbers.map((item, index) => {
-                  return (
-                    <Row className="d-flex flex-column justify-content-between align-items-center text-align-center ">
+
+                {/* pagination */}
+
+                <Row>
+                  <Col className="m-2">
+                    <ButtonGroup size="sm">
                       <Button
-                        variant="outline-dark"
-                        size="sm"
-                        className="rounded-circle"
-                        key={index}
                         onClick={() => {
-                          console.log("setting page num to ", item);
-                          setPageNum(item);
+                          setPageCurrent(pageCurrent > 0 ? pageCurrent - 1 : 1);
                         }}
+                        size={"sm"}
+                        variant={"outline-dark"}
                       >
-                        {item}
+                        Prev
                       </Button>
-                    </Row>
-                  );
-                })}
+                      <Button size={"sm"} variant={"outline-dark"}>
+                        {pageCurrent}
+                      </Button>
+                      <Button
+                        onClick={() => {
+                          setPageCurrent(pageCurrent + 1);
+                        }}
+                        size={"sm"}
+                        variant={"outline-dark"}
+                      >
+                        Next
+                      </Button>
+                    </ButtonGroup>
+                  </Col>
+                  {/* {pageNumbers.map((item, index) => {
+                    return (
+                      <Col className="d-flex flex-column justify-content-between align-items-center text-align-center ">
+                        <Button
+                          variant="outline-dark"
+                          size="sm"
+                          className="rounded-circle"
+                          key={index}
+                          onClick={() => {
+                            console.log("setting page num to ", item);
+                            setPageCurrent(item);
+                          }}
+                        >
+                          {item}
+                        </Button>
+                      </Col>
+                    );
+                  })} */}
+                </Row>
               </Col>
             </Row>
           ) : (
