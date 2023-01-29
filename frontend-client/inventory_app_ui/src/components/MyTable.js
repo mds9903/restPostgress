@@ -1,12 +1,37 @@
-import { Table, Card, Container } from "react-bootstrap";
+import { Table, Card } from "react-bootstrap";
 
 function MyTable({ tableData }) {
   if (tableData.length === 0) {
     return <div>No Data</div>;
   }
 
-  const columns = Array.from(Object.keys(tableData[0]));
+  const columns = Array.from(Object.keys(tableData[0]))
+    .map((col) => {
+      return col
+        .split(/([A-Z][a-z]+)/)
+        .filter(Boolean)
+        .join(" ");
+    })
+    .map(
+      (newCol) =>
+        newCol.substring(0, 1).toUpperCase() +
+        newCol.substring(1, newCol.length)
+    );
   console.log(columns);
+  // console.log(
+  //   columns
+  //     .map((col) => {
+  //       return col
+  //         .split(/([A-Z][a-z]+)/)
+  //         .filter(Boolean)
+  //         .join(" ");
+  //     })
+  //     .map(
+  //       (newCol) =>
+  //         newCol.substring(0, 1).toUpperCase() +
+  //         newCol.substring(1, newCol.length)
+  //     )
+  // );
 
   const rows = tableData.map((item) => Object.values(item));
 
@@ -14,7 +39,7 @@ function MyTable({ tableData }) {
     <Card>
       <Card.Header>Table of all resources</Card.Header>
       <Card.Body>
-        <Table responsive bordered hover>
+        <Table responsive bordered hover striped>
           <thead>
             <tr>
               {columns.map((column, key) => {

@@ -72,7 +72,7 @@ function ItemsPage() {
                     <ButtonGroup size="sm">
                       <Button
                         onClick={() => {
-                          setPageCurrent(pageCurrent > 0 ? pageCurrent - 1 : 1);
+                          setPageCurrent(pageCurrent > 1 ? pageCurrent - 1 : 1);
                         }}
                         size={"sm"}
                         variant={"outline-dark"}
