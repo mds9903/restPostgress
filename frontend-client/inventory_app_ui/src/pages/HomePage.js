@@ -6,11 +6,14 @@ import {
   Row,
   Form,
   FloatingLabel,
+  FormLabel,
 } from "react-bootstrap";
 import MyDoughnutChart from "../components/MyDoughnutChart";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import AvailabilityCard from "../components/AvailabilityCard";
+import { Line } from "react-chartjs-2";
+import MyLineChart from "../components/MyLineChart";
 
 const inventoryUri = "http://localhost:8088/inventory/";
 
@@ -21,18 +24,18 @@ const emptyChartData = {
 
 const defaultVersion = "2";
 const defaultItemId = "131";
-const defaultLoctionId = "131";
+const defaultLocationId = "131";
 
 function HomePage() {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [shouldReload, setShouldReload] = useState(false);
   const [demandsChartData, setDemandsChartData] = useState(emptyChartData);
   const [suppliesChartData, setSuppliesChartData] = useState(emptyChartData);
-  const [chartData, setChartData] = useState(emptyChartData);
+  const [itemsChartData, setItemsChartData] = useState(emptyChartData);
   // const [locationsChartData, setLocationsChartData] = useState(emptyChartData);
   const [version, setVersion] = useState(defaultVersion);
   const [itemId, setItemId] = useState(defaultItemId);
-  const [locationId, setLocationId] = useState(defaultLoctionId);
+  const [locationId, setLocationId] = useState(defaultLocationId);
   const [loadedAvbData, setLoadedAvbData] = useState(null);
 
   const itemIdChangeHandler = (event) => {
@@ -133,73 +136,6 @@ function HomePage() {
         console.log("Error: ", error.response);
       });
 
-    // locations
-    axios
-      .get(inventoryUri + "locations/")
-      .then((response) => {
-        // console.log("getting data");
-        // console.log("response.data:\n", response.data);
-        setIsDataLoaded(true);
-        // setTableData(response.data);
-        const allModes = {
-          mode: "All Modes Allowed",
-          data: response.data.filter(
-            (location) =>
-              location.shippingAllowed === true &&
-              location.pickupAllowed === true &&
-              location.deliveryAllowed === true
-          ),
-        };
-        const onlyPickup = {
-          mode: "Only Pickup Allowed",
-          data: response.data.filter(
-            (location) =>
-              location.shippingAllowed === false &&
-              location.pickupAllowed === true &&
-              location.deliveryAllowed === false
-          ),
-        };
-        const onlyShipping = {
-          mode: "Only Shipping Allowed",
-          data: response.data.filter(
-            (location) =>
-              location.shippingAllowed === true &&
-              location.pickupAllowed === false &&
-              location.deliveryAllowed === false
-          ),
-        };
-        setChartData(
-          response.data.length > 0
-            ? {
-                labels: [
-                  "All Modes Allowed",
-                  "Only Pickup Allowed",
-                  "Only Shipping Allowed",
-                ],
-                datasets: [
-                  {
-                    data: [
-                      allModes.data.length,
-                      onlyPickup.data.length,
-                      onlyShipping.data.length,
-                    ],
-                    backgroundColor: ["green", "orange", "yellow", "grey"],
-                    borderColor: "black",
-                    borderWidth: 1,
-                    // indexAxis: "y",
-                  },
-                ],
-                records: [allModes, onlyPickup, onlyShipping],
-              }
-            : emptyChartData
-        );
-        // console.log(chartData);
-        setShouldReload(false);
-      })
-      .catch((error) => {
-        // console.log("Error occurred: ", error);
-      });
-
     // availabilities
     axios
       .get(`${inventoryUri}v${version}/availability/${itemId}/${locationId}`)
@@ -208,7 +144,6 @@ function HomePage() {
         console.log("Avb---response.data:\n", response.data);
         setIsDataLoaded(true);
         setLoadedAvbData(response.data);
-        // console.log(tableData);
         setShouldReload(false);
       })
       .catch(function (error) {
@@ -224,8 +159,11 @@ function HomePage() {
   };
 
   return (
-    <Container fluid style={{ maxHeight: "89vh" }}>
-      <Container fluid>
+    <Container fluid style={{ height: "89vh", overflow: "auto" }}>
+      <Container
+        fluid
+        // style={{ backgroundColor: "grey" }}
+      >
         {/* heading */}
         <Row className="m-2">
           <Col className="m-2 d-flex flex-direction-row justify-content-between">
@@ -241,69 +179,78 @@ function HomePage() {
             <Card className="h-100">
               <Card.Header>Availabilities</Card.Header>
               <Card.Body>
-                <Row className="m-2">
+                <Row>
                   {/* form */}
                   <Col>
-                    <Card className="p-2">
-                      <Form onSubmit={submitHandler}>
-                        <Form.Group className="p-2">
-                          {/* item id */}
-                          <FloatingLabel
-                            controlId="floatingInput_item"
-                            label={"Item ID: " + itemId}
-                          >
-                            <Form.Control
-                              type="text"
-                              placeholder="the item id"
-                              onChange={itemIdChangeHandler}
-                            />
-                          </FloatingLabel>
-                        </Form.Group>
-                        <Form.Group className="p-2">
-                          {/* locationd id */}
-                          <FloatingLabel
-                            controlId="floatingInput_location"
-                            label={"Location ID: " + locationId}
-                          >
-                            <Form.Control
-                              type="text"
-                              placeholder="the location id"
-                              onChange={locationIdChangeHandler}
-                            />
-                          </FloatingLabel>
-                        </Form.Group>
-                        <Form.Group className="p-2">
+                    <Form onSubmit={submitHandler}>
+                      <Form.Group className="p-2">
+                        {/* item id */}
+                        <FloatingLabel
+                          controlId="floatingInput_item"
+                          label={"Item ID: " + itemId}
+                        >
                           <Form.Control
-                            size="sm"
+                            style={{ outline: "none", boxShadow: "none" }}
+                            type="text"
+                            placeholder="the item id"
+                            onChange={itemIdChangeHandler}
+                          />
+                        </FloatingLabel>
+                      </Form.Group>
+                      <Form.Group className="p-2">
+                        {/* locationd id */}
+                        <FloatingLabel
+                          controlId="floatingInput_location"
+                          label={"Location ID: " + locationId}
+                        >
+                          <Form.Control
+                            style={{ outline: "none", boxShadow: "none" }}
+                            type="text"
+                            placeholder="the location id"
+                            onChange={locationIdChangeHandler}
+                          />
+                        </FloatingLabel>
+                      </Form.Group>
+                      <Form.Group className="p-2">
+                        {/* version */}
+                        <FloatingLabel
+                          style={{ outline: "none", boxShadow: "none" }}
+                          controlId="floatingInput_version"
+                          label={"Selected version"}
+                        >
+                          <Form.Control
+                            style={{
+                              outline: "none",
+                              boxShadow: "none",
+                            }}
                             as={"select"}
                             onChange={versionChangeHandler}
-                            placeholder={"Availability Version:" + version}
                           >
                             <option value="2">V2</option>
                             <option value="3">V3</option>
-                            <option value="1">V1</option>
+                            {/* <option value="1">V1</option> */}
                           </Form.Control>
-                        </Form.Group>
-                      </Form>
-                    </Card>
+                        </FloatingLabel>
+                      </Form.Group>
+                    </Form>
                   </Col>
                   {/* availability card */}
                   <Col>
-                    <Card>
-                      {isDataLoaded ? (
-                        loadedAvbData ? (
-                          <AvailabilityCard
-                            data={loadedAvbData}
-                            itemId={loadedAvbData.itemId}
-                            locationId={loadedAvbData.locationId}
-                          />
-                        ) : (
-                          <div>No Data</div>
-                        )
+                    {/* <Card> */}
+                    {isDataLoaded ? (
+                      loadedAvbData ? (
+                        <AvailabilityCard
+                          data={loadedAvbData}
+                          itemId={loadedAvbData.itemId}
+                          locationId={loadedAvbData.locationId}
+                        />
                       ) : (
                         <div>No Data</div>
-                      )}
-                    </Card>
+                      )
+                    ) : (
+                      <div>No Data</div>
+                    )}
+                    {/* </Card> */}
                   </Col>
                 </Row>
               </Card.Body>
@@ -311,7 +258,7 @@ function HomePage() {
           </Col>
           {/* supplies and demands */}
           <Col>
-            <Card className="m-2">
+            <Card>
               <Card.Header>Supplies</Card.Header>
               <Card.Body>
                 {isDataLoaded ? (
@@ -321,7 +268,7 @@ function HomePage() {
                 )}
               </Card.Body>
             </Card>
-            <Card className="m-2">
+            <Card className="mt-2">
               <Card.Header>Demands </Card.Header>
               <Card.Body>
                 {isDataLoaded ? (
@@ -339,3 +286,70 @@ function HomePage() {
 }
 
 export default HomePage;
+
+// // locations
+// axios
+//   .get(inventoryUri + "locations/")
+//   .then((response) => {
+//     // console.log("getting data");
+//     // console.log("response.data:\n", response.data);
+//     setIsDataLoaded(true);
+//     // setTableData(response.data);
+//     const allModes = {
+//       mode: "All Modes Allowed",
+//       data: response.data.filter(
+//         (location) =>
+//           location.shippingAllowed === true &&
+//           location.pickupAllowed === true &&
+//           location.deliveryAllowed === true
+//       ),
+//     };
+//     const onlyPickup = {
+//       mode: "Only Pickup Allowed",
+//       data: response.data.filter(
+//         (location) =>
+//           location.shippingAllowed === false &&
+//           location.pickupAllowed === true &&
+//           location.deliveryAllowed === false
+//       ),
+//     };
+//     const onlyShipping = {
+//       mode: "Only Shipping Allowed",
+//       data: response.data.filter(
+//         (location) =>
+//           location.shippingAllowed === true &&
+//           location.pickupAllowed === false &&
+//           location.deliveryAllowed === false
+//       ),
+//     };
+//     setLocationsChartData(
+//       response.data.length > 0
+//         ? {
+//             labels: [
+//               "All Modes Allowed",
+//               "Only Pickup Allowed",
+//               "Only Shipping Allowed",
+//             ],
+//             datasets: [
+//               {
+//                 data: [
+//                   allModes.data.length,
+//                   onlyPickup.data.length,
+//                   onlyShipping.data.length,
+//                 ],
+//                 backgroundColor: ["green", "orange", "yellow", "grey"],
+//                 borderColor: "black",
+//                 borderWidth: 1,
+//                 // indexAxis: "y",
+//               },
+//             ],
+//             records: [allModes, onlyPickup, onlyShipping],
+//           }
+//         : emptyChartData
+//     );
+//     // console.log(chartData);
+//     setShouldReload(false);
+//   })
+//   .catch((error) => {
+//     // console.log("Error occurred: ", error);
+//   });

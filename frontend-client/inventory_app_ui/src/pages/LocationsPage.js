@@ -87,8 +87,6 @@ function LocationsPage() {
   }, [shouldReload, isDataLoaded]);
 
   const reloadData = () => {
-    // console.log("reloading table");
-    // console.log("shouldReload" + shouldReload);
     setShouldReload(true);
   };
 

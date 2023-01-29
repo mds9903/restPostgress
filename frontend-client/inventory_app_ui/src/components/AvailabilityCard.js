@@ -40,25 +40,23 @@ export default function AvailabilityCard({ data, itemId, locationId }) {
   }
   //   const bg = colorDynamic ? variants[data.stockLevel].toLowerCase() : "";
   return (
-    <Card className="d-flex flex-direction-column">
-      <Card className="m-2">
-        <Card.Body>
-          <Card bg={variants[data.stockLevel.toLowerCase()].toLowerCase()}>
-            <Card.Header>Items Available To Promise</Card.Header>
-            <Card.Body>{data.availabilityQty}</Card.Body>
-          </Card>
-        </Card.Body>
-        {/* know more btn */}
-        {!showMoreData ? (
-          <Card.Footer onClick={knowMoreHandler}>
-            <Button>Know more</Button>
-          </Card.Footer>
-        ) : (
-          <></>
-        )}
-      </Card>
-      {showMoreData ? (
-        <Card className="m-1">
+    <Card
+      className="d-flex flex-direction-column"
+      style={{ boxShadow: "none" }}
+    >
+      <Card.Body>
+        <Card bg={variants[data.stockLevel.toLowerCase()].toLowerCase()}>
+          <Card.Header>Items Available To Promise</Card.Header>
+          <Card.Body>{data.availabilityQty}</Card.Body>
+        </Card>
+      </Card.Body>
+      {/* know more btn */}
+      {!showMoreData ? (
+        <Card.Footer>
+          <Button onClick={knowMoreHandler}>Know more</Button>
+        </Card.Footer>
+      ) : (
+        <Card className="m-2">
           <Card.Header className="d-flex flex-direction-row justify-content-between">
             Item Info
             <CloseButton
@@ -69,26 +67,27 @@ export default function AvailabilityCard({ data, itemId, locationId }) {
             />
           </Card.Header>
           {itemData ? (
-            <>
-              <Card.Body>
-                <Card.Text className="m-1">
-                  Item Name: {itemData.itemDesc}
-                </Card.Text>
-                <Card.Text className="m-1">
-                  Category: {itemData.category}
-                </Card.Text>
-                <Card.Text className="m-1">
-                  Item Type: {itemData.itemType}
-                </Card.Text>
-              </Card.Body>
-            </>
+            <Card.Body>
+              <Card.Text className="m-1">
+                Item Name: {itemData.itemDesc}
+              </Card.Text>
+              <Card.Text className="m-1">
+                Category: {itemData.category}
+              </Card.Text>
+              <Card.Text className="m-1">
+                Item Type: {itemData.itemType}
+              </Card.Text>
+            </Card.Body>
           ) : (
             <Card.Body>No Item Data</Card.Body>
           )}
         </Card>
+      )}
+      {/* {showMoreData ? (
+        
       ) : (
         <div></div>
-      )}
+      )} */}
     </Card>
   );
 }
