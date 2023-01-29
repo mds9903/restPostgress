@@ -165,8 +165,8 @@ function HomePage() {
         // style={{ backgroundColor: "grey" }}
       >
         {/* heading */}
-        <Row className="m-2">
-          <Col className="m-2 d-flex flex-direction-row justify-content-between">
+        <Row className="mt-2 mb-2">
+          <Col className="mt-2 mb-2 d-flex flex-direction-row justify-content-between">
             <h2>Dashboard</h2>
             {/* data reload button */}
             <Button onClick={reloadData}>Refresh Data</Button>
@@ -175,15 +175,20 @@ function HomePage() {
         {/* dashboard widgets */}
         <Row className="w-100 h-100" md={1} lg={2} xl={2}>
           {/* avaiabilities */}
-          <Col>
-            <Card className="h-100">
+          <Col
+          // style={{ backgroundColor: "yellowgreen" }}
+          >
+            <Card className="h-100" style={{ padding: "0px" }}>
               <Card.Header>Availabilities</Card.Header>
-              <Card.Body>
-                <Row>
+              <Card.Body style={{ paddingTop: "5px" }}>
+                <Row
+                  // style={{ backgroundColor: "yellow" }}
+                  className="d-flex flex-row"
+                >
                   {/* form */}
                   <Col>
                     <Form onSubmit={submitHandler}>
-                      <Form.Group className="p-2">
+                      <Form.Group className="pb-2">
                         {/* item id */}
                         <FloatingLabel
                           controlId="floatingInput_item"
@@ -197,7 +202,7 @@ function HomePage() {
                           />
                         </FloatingLabel>
                       </Form.Group>
-                      <Form.Group className="p-2">
+                      <Form.Group className="pb-2">
                         {/* locationd id */}
                         <FloatingLabel
                           controlId="floatingInput_location"
@@ -211,7 +216,7 @@ function HomePage() {
                           />
                         </FloatingLabel>
                       </Form.Group>
-                      <Form.Group className="p-2">
+                      <Form.Group className="pb-2">
                         {/* version */}
                         <FloatingLabel
                           style={{ outline: "none", boxShadow: "none" }}
