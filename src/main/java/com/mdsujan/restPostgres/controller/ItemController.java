@@ -59,7 +59,7 @@ public class ItemController {
 //    public Item createItem(@RequestBody @Valid Item createItemRequest) throws Throwable {
 //        logger.info("InQueryRequest: " + createItemRequest);
 //        Item itemResponse = itemService.createItem(createItemRequest);
-//        logger.info("Response: " + itemResponse); 
+//        logger.info("Response: " + itemResponse);
 //        return itemResponse;
 //    }
 
