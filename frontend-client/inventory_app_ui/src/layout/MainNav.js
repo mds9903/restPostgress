@@ -6,7 +6,7 @@ function MainNav() {
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" className="mb-2">
         <Container>
-          <Navbar.Brand>React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand>Inventory App</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" variant="pills">

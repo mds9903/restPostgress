@@ -13,6 +13,8 @@ spring:
     database: postgresql
     show-sql: 'true'
     show-jpql: 'true'
+    hibernate:
+      ddl-auto: "update"
   datasource:
     password: '4748'
     #    driver-class-name: org.postgresql.Driver
