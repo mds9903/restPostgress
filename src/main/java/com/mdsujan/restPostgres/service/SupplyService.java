@@ -67,29 +67,6 @@ public class SupplyService {
         }
     }
 
-//    public Supply createNewSupply(CreateSupplyRequest createSupplyRequest, Supply supply) throws Throwable {
-//        // create a supply for an item on a location (given in the request body)
-//        // if the itemId and the locationId are present in the items and locations table
-//        if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
-//                && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
-//            // create the supply
-//            // get the item for this supply
-//            Item item = itemRepository.findById(createSupplyRequest.getItemId()).get();
-//            // get the location for this supply
-//            Location location = locationRepository.findById(createSupplyRequest.getLocationId()).get();
-//            supply.setItem(item);
-//            supply.setLocation(location);
-//            // save this new supply
-////            return supplyRepository.save(supply);
-//            supply = supplyRepository.save(supply);
-//            return supply;
-//        } else {
-//            throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create supply; " +
-//                    "please provide an item id and a location id that exists");
-//        }
-//
-//    }
-
     public Supply createNewSupply(CreateSupplyRequest createSupplyRequest) throws Throwable {
         // create a supply for an item on a location (given in the request body)
 

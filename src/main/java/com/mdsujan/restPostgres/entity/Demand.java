@@ -1,16 +1,19 @@
 package com.mdsujan.restPostgres.entity;
 
+import ch.qos.logback.core.joran.spi.DefaultClass;
 import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.hibernate.Hibernate;
+//import org.hibernate.Hibernate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name = "demand",schema = "public")
+@Document
+//@Table(name = "demand",schema = "public")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,23 +21,23 @@ import java.util.Objects;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Demand {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "demand_id")
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "demand_id")
     Long demandId;
 
-    @Column(name = "demand_type")
-    @Enumerated(EnumType.STRING)
+//    @Column(name = "demand_type")
+//    @Enumerated(EnumType.STRING)
     AllowedDemandTypes demandType;
 
-    @Column(name = "qty")
+//    @Column(name = "qty")
     Long demandQty;
 
-    @OneToOne // relation with items table via the fk itemId
-    @JoinColumn(name = "item_id")
+//    @OneToOne // relation with items table via the fk itemId
+//    @JoinColumn(name = "item_id")
     Item item;
 
-    @OneToOne // relation with items table via the fk locationId
-    @JoinColumn(name = "location_id")
+//    @OneToOne // relation with items table via the fk locationId
+//    @JoinColumn(name = "location_id")
     Location location;
 
     public Demand(CreateDemandRequest createDemandRequest) {

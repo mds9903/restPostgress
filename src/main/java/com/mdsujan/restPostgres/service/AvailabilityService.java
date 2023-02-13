@@ -12,7 +12,7 @@ import com.mdsujan.restPostgres.repository.ThresholdRepository;
 import com.mdsujan.restPostgres.response.AvailabilityV1Response;
 import com.mdsujan.restPostgres.response.AvailabilityV2Response;
 import com.mdsujan.restPostgres.response.AvailabilityV3Response;
-import net.bytebuddy.implementation.bytecode.Throw;
+//import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

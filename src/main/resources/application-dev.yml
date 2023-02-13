@@ -9,20 +9,10 @@ locations:
 
 # spring
 spring:
-  jpa:
-    database: postgresql
-    show-sql: 'true'
-    show-jpql: 'true'
-    hibernate:
-      ddl-auto: "update"
-  datasource:
-    password: '4748'
-    #    driver-class-name: org.postgresql.Driver
-    username: inventory_app
-    url: jdbc:postgresql://localhost:5432/app_test?stringtype=unspecified
-  cache:
-    redis:
-      time-to-live: 10S
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017/db_inventory_app"
+
 
 # logging
 logging:

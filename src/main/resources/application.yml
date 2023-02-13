@@ -11,18 +11,11 @@ locations:
 spring:
   profiles:
     active: dev
-  jpa:
-    database: postgresql
-    show-sql: 'true'
-    show-jpql: 'true'
-  datasource:
-    password: '4748'
-    driver-class-name: org.postgresql.Driver
-    username: inventory_app
-    url: jdbc:postgresql://localhost:5432/app_test?stringtype=unspecified
-  cache:
-    redis:
-      time-to-live: 10S
+# mongodb
+  data:
+    mongo:
+      uri: "mongodb+srv://learner:4748@cluster34938.uh7rhpp.mongodb.net/?retryWrites=true&w=majority"
+      database: "db_inventory_app"
 # logging
 logging:
   file:
@@ -33,10 +26,9 @@ logging:
         restPostgres:
           controller: trace
 
+
 # for app's local running
 server:
   port: '8088'
   error:
     include-message: always
-
-
