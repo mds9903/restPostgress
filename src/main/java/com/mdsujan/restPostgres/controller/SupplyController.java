@@ -38,10 +38,10 @@ public class SupplyController {
         return new SupplyResponse(supplyService.getSupplyById(supplyId));
     }
 
-    @GetMapping("/{itemId}/{locationId}") // get supply details for an item at a location
-    public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(@PathVariable @Valid Long itemId, @PathVariable @Valid Long locationId) throws Throwable {
-        return supplyService.getSupplyDetailsByItemAndLocation(itemId, locationId);
-    }
+//    @GetMapping("/{itemId}/{locationId}") // get supply details for an item at a location
+//    public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(@PathVariable @Valid Long itemId, @PathVariable @Valid Long locationId) throws Throwable {
+//        return supplyService.getSupplyDetailsByItemAndLocation(itemId, locationId);
+//    }
 
     // creates ambiguity - solution: 1. use regex; 2. perform the validation of the path vars in the method and call the relevant service
 //    @GetMapping("/{supplyType}/{locationId}") // get demand details by itemType and location

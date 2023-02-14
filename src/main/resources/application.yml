@@ -9,11 +9,11 @@ locations:
 
 # spring
 spring:
-  profiles:
-    active: dev
+#  profiles:
+#    active: dev
 # mongodb
   data:
-    mongo:
+    mongodb:
       uri: "mongodb+srv://learner:4748@cluster34938.uh7rhpp.mongodb.net/?retryWrites=true&w=majority"
       database: "db_inventory_app"
 # logging

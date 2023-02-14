@@ -99,7 +99,7 @@ public class ItemService {
         // check if item exists
         if (itemRepository.findById(itemId).isPresent()) {
             // if any child records depend on this item
-            if (supplyRepository.findByItemItemId(itemId).size() > 0
+            if (supplyRepository.findByItemId(itemId).size() > 0
                     || demandRepository.findByItemItemId(itemId).size() > 0
                     || thresholdRepository.findByItemItemId(itemId).size() > 0) {
                 // this item cannot be deleted

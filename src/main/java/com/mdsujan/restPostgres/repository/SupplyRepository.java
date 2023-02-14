@@ -9,12 +9,10 @@ import java.util.Collection;
 import java.util.List;
 @Repository
 public interface SupplyRepository extends MongoRepository<Supply, Long> {
-    List<Supply> findByItemItemIdAndLocationLocationId(Long itemId, Long locationId);
+    List<Supply> findByItemIdAndLocationId(Long itemId, Long locationId);
 
-    List<Supply> findByItemItemId(Long itemId);
+    List<Supply> findByItemId(Long itemId);
 
-    Collection<Supply> findByLocationLocationId(Long locationId);
+    Collection<Supply> findByLocationId(Long locationId);
 
-    List<Supply> findBySupplyTypeAndLocationLocationId(Long supplyType, Long locationId);
-//    List<Supply> getSupplyByLocationId();
 }

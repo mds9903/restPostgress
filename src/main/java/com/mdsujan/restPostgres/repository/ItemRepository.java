@@ -13,11 +13,4 @@ import org.springframework.stereotype.Repository;
 
 //@Repository
 public interface ItemRepository extends MongoRepository<Item, Long> {
-
-//    @Modifying
-//    @Transactional
-    @Query("Delete from Item where itemId = :id")
-    void deleteById(Long id);
-
-
 }

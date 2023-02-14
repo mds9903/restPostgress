@@ -1,25 +1,26 @@
 package com.mdsujan.restPostgres.service;
 
-import com.mdsujan.restPostgres.entity.Item;
-import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Supply;
-import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
 import com.mdsujan.restPostgres.exceptionHandling.*;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
 import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
-import com.mdsujan.restPostgres.response.SupplyDetails;
-import com.mdsujan.restPostgres.response.SupplyDetailsResponse;
 import com.mdsujan.restPostgres.response.SupplyResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.UUID;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
+import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
+import static org.springframework.data.mongodb.core.query.Criteria.where;
+import static org.springframework.data.mongodb.core.query.Query.query;
 
 @Service
 public class SupplyService {
@@ -33,6 +34,7 @@ public class SupplyService {
     @Autowired
     LocationRepository locationRepository;
 
+
     public List<Supply> getAllSupplies() {
         return supplyRepository.findAll();
     }
@@ -42,51 +44,42 @@ public class SupplyService {
         if (supplyRepository.findById(supplyId).isPresent()) {
             return supplyRepository.findById(supplyId).get();
         } else {
-            throw new ResourceNotFoundException("no supply found for given supplyId; " +
-                    "please enter correct supplyId");
+            throw new ResourceNotFoundException("no supply found for given supplyId; " + "please enter correct supplyId");
         }
     }
 
-    public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(Long itemId, Long locationId) throws Throwable {
-        List<Supply> supplyList = supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
-        if (supplyList != null && supplyList.size() > 0) {
-            // from this list extract the sum of quantities for ONHAND and INTRANSIT supplies
-            Long onhandQty = supplyList.stream()
-                    .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
-                    .map(Supply::getSupplyQty)
-                    .reduce(0L, Long::sum);
-            Long intransitQty = supplyList.stream()
-                    .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.INTRANSIT)
-                    .map(Supply::getSupplyQty)
-                    .reduce(0L, Long::sum);
-
-            return new SupplyDetailsResponse(itemId, locationId, new SupplyDetails(onhandQty, intransitQty));
-        } else {
-            throw new ResourceNotFoundException("no supplies found for given itemId and locationId;" +
-                    "please give correct itemId and/or locationId");
-        }
-    }
+//    public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(Long itemId, Long locationId) throws Throwable {
+//        List<Supply> supplyList = supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
+//        if (supplyList != null && supplyList.size() > 0) {
+//            // from this list extract the sum of quantities for ONHAND and INTRANSIT supplies
+//            Long onhandQty = supplyList.stream()
+//                    .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
+//                    .map(Supply::getSupplyQty)
+//                    .reduce(0L, Long::sum);
+//            Long intransitQty = supplyList.stream()
+//                    .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.INTRANSIT)
+//                    .map(Supply::getSupplyQty)
+//                    .reduce(0L, Long::sum);
+//
+//            return new SupplyDetailsResponse(itemId, locationId, new SupplyDetails(onhandQty, intransitQty));
+//        } else {
+//            throw new ResourceNotFoundException("no supplies found for given itemId and locationId;" +
+//                    "please give correct itemId and/or locationId");
+//        }
+//    }
 
     public Supply createNewSupply(CreateSupplyRequest createSupplyRequest) throws Throwable {
         // create a supply for an item on a location (given in the request body)
 
-        // if the itemId and the locationId are present in the items and locations table
-        if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent()
-                && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
+        // if the itemId and the locationId are valid
+        if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent() && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
             // create the supply
             Supply supply = new Supply(createSupplyRequest);
-            // get the item for this supply
-            Item item = itemRepository.findById(createSupplyRequest.getItemId()).get();
-            // get the location for this supply
-            Location location = locationRepository.findById(createSupplyRequest.getLocationId()).get();
-            supply.setItem(item);
-            supply.setLocation(location);
             // save this new supply
             supply = supplyRepository.save(supply);
             return supply;
         } else {
-            throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create supply; " +
-                    "please provide an item id and a location id that exists");
+            throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create supply; " + "please provide an item id and a location id that exists");
         }
     }
 
@@ -120,8 +113,7 @@ public class SupplyService {
             supplyToUpdate = supplyRepository.save(supplyToUpdate);
             return supplyToUpdate;
         } else {
-            throw new ResourceNotFoundException("cannot update supply; supply not found with given supplyId; " +
-                    "please provide correct supplyId");
+            throw new ResourceNotFoundException("cannot update supply; supply not found with given supplyId; " + "please provide correct supplyId");
         }
     }
 
@@ -136,8 +128,7 @@ public class SupplyService {
             // save the new supply to the db
             return supplyRepository.save(supplyToUpdate);
         } else {
-            throw new ResourceNotFoundException("cannot update supply; supply not found with given supplyId; " +
-                    "please provide correct supplyId");
+            throw new ResourceNotFoundException("cannot update supply; supply not found with given supplyId; " + "please provide correct supplyId");
         }
     }
 

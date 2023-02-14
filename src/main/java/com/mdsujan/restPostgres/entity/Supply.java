@@ -6,6 +6,7 @@ import com.mdsujan.restPostgres.request.CreateSupplyRequest;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 //import javax.persistence.*;
@@ -19,14 +20,11 @@ import javax.validation.constraints.NotNull;
 //@Table(name = "supply", schema = "public")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Supply {
+
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY) // use GenerationType.IDENTITY for "serial" id in psql table
-//    @Column(name = "supply_id")
     @JsonIgnore
     Long supplyId;
 
-//    @Column(name = "supply_type")
-//    @Enumerated(EnumType.STRING)
     @NotNull
     AllowedSupplyTypes supplyType;
 
@@ -36,15 +34,21 @@ public class Supply {
 
 //    @OneToOne // relation with items table via the fk itemId
 //    @JoinColumn(name = "item_id")
+//    @NotNull
+//    Item item;
     @NotNull
-    Item item;
+    Long itemId;
 
 //    @OneToOne // relation with locations table via the fk locationId
 //    @JoinColumn(name = "location_id")
+//    @NotNull
+//    Location location;
+
     @NotNull
-    Location location;
+    Long locationId;
 
     public Supply(CreateSupplyRequest createSupplyRequest) {
+        this.supplyId = createSupplyRequest.getSupplyId();
         this.supplyType = createSupplyRequest.getSupplyType();
         this.supplyQty = createSupplyRequest.getSupplyQty();
     }

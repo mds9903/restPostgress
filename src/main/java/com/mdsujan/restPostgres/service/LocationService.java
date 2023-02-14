@@ -45,7 +45,7 @@ public class LocationService {
         // check if item exists
         if (locationRepository.findById(locationId).isPresent()) {
             // if any child records depend on this location
-            if (supplyRepository.findByLocationLocationId(locationId).size() > 0
+            if (supplyRepository.findByLocationId(locationId).size() > 0
                     || demandRepository.findByLocationLocationId(locationId).size() > 0) {
                 // this location cannot be deleted
 //                return "Cannot delete location; it has child records";

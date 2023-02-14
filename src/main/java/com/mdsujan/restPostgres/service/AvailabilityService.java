@@ -51,7 +51,7 @@ public class AvailabilityService {
          * Note: consider only ONHAND supply and HARD_PROMISED demand
          * */
 
-        List<Supply> supplyList = supplyRepository.findByItemItemIdAndLocationLocationId(
+        List<Supply> supplyList = supplyRepository.findByItemIdAndLocationId(
                 itemId, locationId);
 
         List<Demand> demandList = demandRepository.findByItemItemIdAndLocationLocationId(
@@ -94,7 +94,7 @@ public class AvailabilityService {
          * Note: consider only ONHAND supply and HARD_PROMISED demand
          * */
 
-        List<Supply> supplyList = supplyRepository.findByItemItemId(itemId);
+        List<Supply> supplyList = supplyRepository.findByItemId(itemId);
 
         List<Demand> demandList = demandRepository.findByItemItemId(itemId);
 
@@ -144,7 +144,7 @@ public class AvailabilityService {
          * */
 
         // get the hardPromised qty for the demand of the given item and location
-        Long onhandQty = supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId)
+        Long onhandQty = supplyRepository.findByItemIdAndLocationId(itemId, locationId)
                 .stream()
                 .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
                 .map(Supply::getSupplyQty)
@@ -182,7 +182,7 @@ public class AvailabilityService {
         // get the stock level based on the availabilityQty for given itemId and locationId
         // based from the values given in the properties file
         // here extracted using @Value supplyTypes and demandTypes
-        List<Supply> supplyList = supplyRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
+        List<Supply> supplyList = supplyRepository.findByItemIdAndLocationId(itemId, locationId);
         Long supplyQty = 0L;
         List<String> supplyTypeList = List.of(supplyTypes); // get the supply types from the config
 
