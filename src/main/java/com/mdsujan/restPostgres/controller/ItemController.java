@@ -55,13 +55,6 @@ public class ItemController {
 //        return itemResponse;
     }
 
-//    @RequestMapping(value = "/", method = RequestMethod.POST, consumes = "text/plain")
-//    public Item createItem(@RequestBody @Valid Item createItemRequest) throws Throwable {
-//        logger.info("InQueryRequest: " + createItemRequest);
-//        Item itemResponse = itemService.createItem(createItemRequest);
-//        logger.info("Response: " + itemResponse);
-//        return itemResponse;
-//    }
 
     @PostMapping("/batch") // create an item in the table
     public List<Item> createItems(@RequestBody List<Item> createItemRequestList) throws Throwable {
@@ -87,7 +80,8 @@ public class ItemController {
     }
 
     @PatchMapping("/{itemId}") // update an item using PATCH
-    public Item updateItemPatch(@PathVariable @Valid Long itemId, @RequestBody Item updateItemRequest) throws Throwable {
+    public Item updateItemPatch(@PathVariable @Valid Long itemId, @RequestBody Item updateItemRequest)
+            throws Throwable {
         logger.info("InQueryRequest: " + updateItemRequest);
         Item itemResponse = itemService.updateItemByIdPatch(itemId, updateItemRequest);
         logger.info("Response: " + itemResponse);
