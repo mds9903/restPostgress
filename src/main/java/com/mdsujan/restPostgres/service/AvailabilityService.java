@@ -58,7 +58,7 @@ public class AvailabilityService {
 
         if (supplyList == null || demandList == null) {
             throw new ResourceNotFoundException("no supplies for this itemId and locationId; " +
-                                                        "please enter correct itemId and locationId");
+                                                "please enter correct itemId and locationId");
         }
 
         // gets only the "ONHAND" qty as mentioned in the assignment sheet
@@ -99,7 +99,7 @@ public class AvailabilityService {
 
         if (supplyList == null || demandList == null) {
             throw new ResourceNotFoundException("no supplies and/or demands for this itemId and locationId; " +
-                                                        "please enter correct itemId and locationId");
+                                                "please enter correct itemId and locationId");
         }
 
         // get the onhand qty for the supply of given item on all locations
@@ -160,7 +160,7 @@ public class AvailabilityService {
         Long availableQty = onhandQty + hardPromisedQty;
 
         // threshold with given item and location to compare stock level
-        Threshold threshold = thresholdRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
+        Threshold threshold = thresholdRepository.findByItemIdAndLocationId(itemId, locationId);
 
         if (threshold == null) {
             throw new ResourceNotFoundException("no threshold found for given item and location");
@@ -212,7 +212,7 @@ public class AvailabilityService {
          *  else yellow (availabilityQty >= min and <= max)
          *
          * */
-        Threshold threshold = thresholdRepository.findByItemItemIdAndLocationLocationId(itemId, locationId);
+        Threshold threshold = thresholdRepository.findByItemIdAndLocationId(itemId, locationId);
 
         if (threshold == null) {
             throw new ResourceNotFoundException("no threshold found for given item and location");

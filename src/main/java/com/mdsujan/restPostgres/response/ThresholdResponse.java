@@ -7,8 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-import java.util.List;
-
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -22,8 +20,8 @@ public class ThresholdResponse {
 
     public ThresholdResponse(Threshold threshold) {
         this.thresholdId = threshold.getThresholdId();
-        this.itemId = threshold.getItem().getItemId();
-        this.locationId = threshold.getLocation().getLocationId();
+        this.itemId = threshold.getItemId();
+        this.locationId = threshold.getLocationId();
         this.minThreshold = threshold.getMinThreshold();
         this.maxThreshold = threshold.getMaxThreshold();
     }

@@ -14,6 +14,8 @@ import javax.validation.constraints.NotNull;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CreateThresholdRequest {
     @NotNull
+    Long thresholdId;
+    @NotNull
     Long itemId;
     @NotNull
     Long locationId;

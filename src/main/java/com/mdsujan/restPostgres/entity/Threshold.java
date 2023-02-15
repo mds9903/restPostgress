@@ -18,25 +18,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 public class Threshold {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "threshold_id")
     Long thresholdId;
-
-//    @OneToOne // relation with items table via the fk itemId
-//    @JoinColumn(name = "item_id")
-    Item item;
-
-//    @OneToOne // relation with items table via the fk locationId
-//    @JoinColumn(name = "location_id")
-    Location location;
-
+    Long itemId;
+    Long locationId;
     Long minThreshold;
-
     Long maxThreshold;
 
     public Threshold(CreateThresholdRequest createThresholdRequest) {
-//        this.thresholdId = createThresholdRequest.getThresholdId();
         this.minThreshold = createThresholdRequest.getMinThreshold();
         this.maxThreshold = createThresholdRequest.getMaxThreshold();
+        this.thresholdId = createThresholdRequest.getThresholdId();
+        this.itemId = createThresholdRequest.getItemId();
+        this.locationId = createThresholdRequest.getLocationId();
     }
 }

@@ -1,10 +1,8 @@
 package com.mdsujan.restPostgres.controller;
 
 import com.mdsujan.restPostgres.entity.Threshold;
-import com.mdsujan.restPostgres.repository.ThresholdRepository;
 import com.mdsujan.restPostgres.request.CreateThresholdRequest;
 import com.mdsujan.restPostgres.request.UpdateThresholdRequest;
-import com.mdsujan.restPostgres.response.ThresholdDetails;
 import com.mdsujan.restPostgres.response.ThresholdDetailsResponse;
 import com.mdsujan.restPostgres.response.ThresholdResponse;
 import com.mdsujan.restPostgres.service.ThresholdService;
@@ -46,32 +44,37 @@ public class ThresholdController {
     }
 
     @PostMapping("/")
-    public ThresholdResponse createThreshold(@RequestBody @Valid CreateThresholdRequest createThresholdRequest) throws Throwable {
+    public ThresholdResponse createThreshold(@RequestBody @Valid CreateThresholdRequest createThresholdRequest)
+            throws Throwable {
         return new ThresholdResponse(thresholdService.createThreshold(createThresholdRequest));
     }
 
     @PostMapping("/batch")
-    public List<ThresholdResponse> createThresholds(@RequestBody @Valid List<CreateThresholdRequest> createThresholdRequests) throws Throwable {
+    public List<ThresholdResponse> createThresholds(
+            @RequestBody @Valid List<CreateThresholdRequest> createThresholdRequests) throws Throwable {
         return (thresholdService.createThresholds(createThresholdRequests));
     }
 
     @PutMapping("/{thresholdId}")
     public ThresholdResponse updateThresholdPut(@PathVariable @Valid Long thresholdId,
-                                                @RequestBody @Valid UpdateThresholdRequest updateThresholdRequest) throws Throwable {
+                                                @RequestBody @Valid UpdateThresholdRequest updateThresholdRequest)
+            throws Throwable {
         return new ThresholdResponse(thresholdService.updateThresholdPut(thresholdId, updateThresholdRequest));
     }
 
     @PatchMapping("/{thresholdId}")
     public ThresholdResponse updateThresholdPatch(@PathVariable @Valid Long thresholdId,
-                                                  @RequestBody UpdateThresholdRequest updateThresholdRequest) throws Throwable {
+                                                  @RequestBody UpdateThresholdRequest updateThresholdRequest)
+            throws Throwable {
         return new ThresholdResponse(thresholdService.updateThresholdPatch(thresholdId, updateThresholdRequest));
     }
 
-    @PutMapping("/{itemId}/{locationId}")
-    public Boolean updateThresholdPut(@PathVariable @Valid Long itemId, @PathVariable @Valid Long locationId,
-                                      @RequestBody @Valid UpdateThresholdRequest updateThresholdRequest) throws Throwable {
-        return thresholdService.updateThresholdByItemAndLocationPut(itemId, locationId, updateThresholdRequest);
-    }
+//    @PutMapping("/{itemId}/{locationId}")
+//    public Boolean updateThresholdPut(@PathVariable @Valid Long itemId, @PathVariable @Valid Long locationId,
+//                                      @RequestBody @Valid UpdateThresholdRequest updateThresholdRequest) throws
+//                                      Throwable {
+//        return thresholdService.updateThresholdByItemAndLocationPut(itemId, locationId, updateThresholdRequest);
+//    }
 
     @DeleteMapping("/{thresholdId}") // delete a specific item
     public String deleteThreshold(@PathVariable @Valid Long thresholdId) throws Throwable {
