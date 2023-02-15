@@ -12,6 +12,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CreateDemandRequest {
+    Long demandId;
     Long itemId;
     Long locationId;
     AllowedDemandTypes demandType;

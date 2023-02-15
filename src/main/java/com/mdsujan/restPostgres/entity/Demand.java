@@ -1,16 +1,11 @@
 package com.mdsujan.restPostgres.entity;
 
-import ch.qos.logback.core.joran.spi.DefaultClass;
 import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
 import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-//import org.hibernate.Hibernate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-//import javax.persistence.*;
-import java.util.Objects;
 
 @Document
 //@Table(name = "demand",schema = "public")
@@ -21,27 +16,17 @@ import java.util.Objects;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Demand {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "demand_id")
     Long demandId;
-
-//    @Column(name = "demand_type")
-//    @Enumerated(EnumType.STRING)
     AllowedDemandTypes demandType;
-
-//    @Column(name = "qty")
     Long demandQty;
-
-//    @OneToOne // relation with items table via the fk itemId
-//    @JoinColumn(name = "item_id")
-    Item item;
-
-//    @OneToOne // relation with items table via the fk locationId
-//    @JoinColumn(name = "location_id")
-    Location location;
+    Long itemId;
+    Long locationId;
 
     public Demand(CreateDemandRequest createDemandRequest) {
         this.demandQty = createDemandRequest.getDemandQty();
         this.demandType = createDemandRequest.getDemandType();
+        this.demandId = createDemandRequest.getDemandId();
+        this.itemId = createDemandRequest.getItemId();
+        this.locationId = createDemandRequest.getLocationId();
     }
 }

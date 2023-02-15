@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/inventory/supply")
@@ -28,8 +27,7 @@ public class SupplyController {
         List<SupplyResponse> supplyResponseList = new ArrayList<>();
 
         // java 8+ feature: functional interface, forEach, Consumer
-        supplyList.forEach(supply -> supplyResponseList.add(new SupplyResponse(supply))
-        );
+        supplyList.forEach(supply -> supplyResponseList.add(new SupplyResponse(supply)));
         return supplyResponseList;
     }
 
@@ -38,41 +36,36 @@ public class SupplyController {
         return new SupplyResponse(supplyService.getSupplyById(supplyId));
     }
 
-//    @GetMapping("/{itemId}/{locationId}") // get supply details for an item at a location
-//    public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(@PathVariable @Valid Long itemId, @PathVariable @Valid Long locationId) throws Throwable {
-//        return supplyService.getSupplyDetailsByItemAndLocation(itemId, locationId);
-//    }
-
-    // creates ambiguity - solution: 1. use regex; 2. perform the validation of the path vars in the method and call the relevant service
-//    @GetMapping("/{supplyType}/{locationId}") // get demand details by itemType and location
-////    public SupplyDetailsResponse getSupplyDetailsBySupplyTypeAndLocation(@PathVariable Long supplyType, @PathVariable Long locationId) throws Throwable {
-//    public List<Supply> getSupplyDetailsBySupplyTypeAndLocation(@PathVariable Long supplyType, @PathVariable Long locationId) throws Throwable {
-//        return supplyService.getSupplyDetailsBySupplyTypeAndLocation(supplyType, locationId);
-//    }
+    @GetMapping("/{itemId}/{locationId}") // get supply details for an item at a location
+    public SupplyDetailsResponse getSupplyDetailsByItemAndLocation(@PathVariable @Valid Long itemId,
+                                                                   @PathVariable @Valid Long locationId) throws Throwable {
+        return supplyService.getSupplyDetailsByItemAndLocation(itemId, locationId);
+    }
 
     @PostMapping("/") // create a new supply
-    public SupplyResponse createSupply(@RequestBody CreateSupplyRequest createSupplyRequest) throws Throwable {
-//        // send the supply entity itself that should be created
-//        Supply newSupply = new Supply(createSupplyRequest); // without the details of the (dependency) item and location entities
-//        // pass the request body to help assign item and location as well as pass the supply object for creating
+    public SupplyResponse createSupply(@RequestBody @Valid CreateSupplyRequest createSupplyRequest) throws Throwable {
+        // send the supply entity itself that should be created
+        Supply newSupply = new Supply(createSupplyRequest); // without the details of the (dependency) item and
+        // location entities
+        // pass the request body to help assign item and location as well as pass the supply object for creating
         return new SupplyResponse(supplyService.createNewSupply(createSupplyRequest));
     }
 
-    @PostMapping("/batch") // create a new supply
-    public List<SupplyResponse> createSupplies(@RequestBody List<CreateSupplyRequest> createSupplyRequests) throws Throwable {
-//        // send the supply entity itself that should be created
-//        Supply newSupply = new Supply(createSupplyRequest); // without the details of the (dependency) item and location entities
-//        // pass the request body to help assign item and location as well as pass the supply object for creating
+    @PostMapping("/batch") // create new supplies in a batch
+    public List<SupplyResponse> createSupplies(
+            @RequestBody List<CreateSupplyRequest> createSupplyRequests) throws Throwable {
         return (supplyService.createNewSupplies(createSupplyRequests));
     }
 
     @PutMapping("/{supplyId}") // update supply using PUT
-    public SupplyResponse updateSupplyPut(@PathVariable @Valid Long supplyId, @RequestBody @Valid UpdateSupplyRequest updateSupplyRequest) throws Throwable {
+    public SupplyResponse updateSupplyPut(@PathVariable @Valid Long supplyId,
+                                          @RequestBody @Valid UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.updateSupplyPut(supplyId, updateSupplyRequest));
     }
 
     @PatchMapping("/{supplyId}") // update supply using PATCH
-    public SupplyResponse updateSupplyPatch(@PathVariable @Valid Long supplyId, @RequestBody UpdateSupplyRequest updateSupplyRequest) throws Throwable {
+    public SupplyResponse updateSupplyPatch(@PathVariable @Valid Long supplyId,
+                                            @RequestBody UpdateSupplyRequest updateSupplyRequest) throws Throwable {
         return new SupplyResponse(supplyService.updateSupplyPatch(supplyId, updateSupplyRequest));
     }
 

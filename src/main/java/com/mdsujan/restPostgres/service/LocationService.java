@@ -1,8 +1,10 @@
 package com.mdsujan.restPostgres.service;
 
 import com.mdsujan.restPostgres.entity.Location;
-import com.mdsujan.restPostgres.entity.Location;
-import com.mdsujan.restPostgres.exceptionHandling.*;
+import com.mdsujan.restPostgres.exceptionHandling.DuplicateResourceException;
+import com.mdsujan.restPostgres.exceptionHandling.ResourceConflictException;
+import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
+import com.mdsujan.restPostgres.exceptionHandling.UpdateResourceRequestBodyInvalidException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
@@ -36,7 +38,7 @@ public class LocationService {
             return locationRepository.findById(locationId).get();
         } else {
             throw new ResourceNotFoundException("no such location with given locationId; " +
-                    "please enter correct locationId");
+                                                        "please enter correct locationId");
         }
     }
 
@@ -46,7 +48,7 @@ public class LocationService {
         if (locationRepository.findById(locationId).isPresent()) {
             // if any child records depend on this location
             if (supplyRepository.findByLocationId(locationId).size() > 0
-                    || demandRepository.findByLocationLocationId(locationId).size() > 0) {
+                    || demandRepository.findByLocationId(locationId).size() > 0) {
                 // this location cannot be deleted
 //                return "Cannot delete location; it has child records";
                 throw new ResourceConflictException("this location cannot be deleted; has child dependencies");
@@ -66,7 +68,7 @@ public class LocationService {
         // if record with same id exists then simply return it
         if (locationRepository.findById(createLocationRequest.getLocationId()).isPresent()) {
             throw new DuplicateResourceException("a location with same locationId already exists; " +
-                    "please provide a unique locationId in the request body");
+                                                         "please provide a unique locationId in the request body");
         }
         // else we create a new location
 
@@ -76,8 +78,9 @@ public class LocationService {
     public Location updateLocationPut(@Valid Long locationId, @Valid Location updateLocationRequest) throws Throwable {
         if (!locationId.equals(updateLocationRequest.getLocationId())) {
             // locationId in the body should match the locationId in the path variable
-            throw new UpdateResourceRequestBodyInvalidException("locationId in the body is not matching the locationId in the path variable; " +
-                    "please provide the right locationId");
+            throw new UpdateResourceRequestBodyInvalidException("locationId in the body is not matching the " +
+                                                                        "locationId in the path variable; " +
+                                                                        "please provide the right locationId");
         }
         if (locationRepository.findById(locationId).isPresent()) {
             // find the record matching with the id
@@ -101,15 +104,18 @@ public class LocationService {
             // return the updated location as response
             return updateLocationRequest;
         } else {
-            throw new ResourceNotFoundException("cannot update this location; location not found; please enter a correct locationId");
+            throw new ResourceNotFoundException("cannot update this location; location not found; please enter a " +
+                                                        "correct locationId");
         }
     }
 
     public Location updateLocationPatch(Long locationId, Location updateLocationRequest) throws Throwable {
         if (!locationId.equals(updateLocationRequest.getLocationId())) {
             // itemId in the body is not matching the itemId in the path variable
-            throw new UpdateResourceRequestBodyInvalidException("itemId in the body is not matching the itemId in the path variable; " +
-                    "please provide the right itemId to avoid confusion");
+            throw new UpdateResourceRequestBodyInvalidException("itemId in the body is not matching the itemId in the" +
+                                                                        " path variable; " +
+                                                                        "please provide the right itemId to avoid " +
+                                                                        "confusion");
         }
         if (locationRepository.findById(locationId).isPresent()) {
             // find the record matching with the id
@@ -164,7 +170,8 @@ public class LocationService {
             // return the updated location as response
             return locationToUpdate;
         } else {
-            throw new ResourceNotFoundException("cannot update this location; location not found; please enter a correct locationId");
+            throw new ResourceNotFoundException("cannot update this location; location not found; please enter a " +
+                                                        "correct locationId");
         }
     }
 
