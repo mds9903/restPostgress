@@ -9,18 +9,11 @@ import com.mdsujan.restPostgres.request.CreateSupplyRequest;
 import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
 import com.mdsujan.restPostgres.response.SupplyResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
 import java.util.stream.Collectors;
-
-import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
-import static org.springframework.data.mongodb.core.query.Criteria.where;
-import static org.springframework.data.mongodb.core.query.Query.query;
 
 @Service
 public class SupplyService {
@@ -44,7 +37,7 @@ public class SupplyService {
         if (supplyRepository.findById(supplyId).isPresent()) {
             return supplyRepository.findById(supplyId).get();
         } else {
-            throw new ResourceNotFoundException("no supply found for given supplyId; " + "please enter correct supplyId");
+            throw new ResourceNotFoundException("no supply found for given supplyId; " + "please enter correct " + "supplyId");
         }
     }
 
@@ -72,14 +65,16 @@ public class SupplyService {
         // create a supply for an item on a location (given in the request body)
 
         // if the itemId and the locationId are valid
-        if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent() && itemRepository.findById(createSupplyRequest.getItemId()).isPresent()) {
+        if (locationRepository.findById(createSupplyRequest.getLocationId()).isPresent() && itemRepository.findById(
+                createSupplyRequest.getItemId()).isPresent()) {
             // create the supply
             Supply supply = new Supply(createSupplyRequest);
             // save this new supply
             supply = supplyRepository.save(supply);
             return supply;
         } else {
-            throw new CreateResourceOperationNotAllowed("there are no items and locations for your requested create supply; " + "please provide an item id and a location id that exists");
+            throw new CreateResourceOperationNotAllowed(
+                    "there are no items and locations for your requested create supply; please provide an item id and a location id that exists");
         }
     }
 
@@ -94,7 +89,8 @@ public class SupplyService {
             try {
                 suppliesCreated.add(createNewSupply(supply));
             } catch (Throwable e) {
-                throw new DuplicateResourceException("For supply #" + (createSupplyRequests.indexOf(supply) + 1) + "; an supply with same supplyId already exists; please provide a unique supplyId in the request body");
+                throw new DuplicateResourceException("For supply #" + (createSupplyRequests.indexOf(
+                        supply) + 1) + "; an supply with same supplyId already exists; please provide a unique supplyId in the request body");
             }
         }
 
@@ -128,7 +124,7 @@ public class SupplyService {
             // save the new supply to the db
             return supplyRepository.save(supplyToUpdate);
         } else {
-            throw new ResourceNotFoundException("cannot update supply; supply not found with given supplyId; " + "please provide correct supplyId");
+            throw new ResourceNotFoundException("cannot update supply; supply not found with given supplyId; please provide correct supplyId");
         }
     }
 

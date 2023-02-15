@@ -14,14 +14,9 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateSupplyRequest {
-    @NotNull
-    Long supplyId;
-    @NotNull
-    AllowedSupplyTypes supplyType;
-    @NotNull
-    Long supplyQty;
-    @NotNull
-    Long itemId;
-    @NotNull
-    Long locationId;
+    @NotNull Long supplyId;
+    @NotNull AllowedSupplyTypes supplyType;
+    @NotNull Long supplyQty;
+    @NotNull Long itemId;
+    @NotNull Long locationId;
 }

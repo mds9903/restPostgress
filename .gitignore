@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### log file ###
-app.log
+app.log.*
