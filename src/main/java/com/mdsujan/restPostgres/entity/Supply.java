@@ -51,5 +51,7 @@ public class Supply {
         this.supplyId = createSupplyRequest.getSupplyId();
         this.supplyType = createSupplyRequest.getSupplyType();
         this.supplyQty = createSupplyRequest.getSupplyQty();
+        this.itemId = createSupplyRequest.getItemId();
+        this.locationId = createSupplyRequest.getLocationId();
     }
 }
