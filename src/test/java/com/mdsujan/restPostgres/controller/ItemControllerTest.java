@@ -1,5 +1,6 @@
 package com.mdsujan.restPostgres.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mdsujan.restPostgres.TestUtils;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.service.ItemService;
@@ -18,9 +19,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -40,18 +42,22 @@ public class ItemControllerTest {
     public void test_getAllItems() throws Exception {
 
         // setup
-        List<Item> testData = testUtils.getItemsList();
-        when(mockItemService.getAllItems()).thenReturn(testData);
+        List<Item> testItemList = List.of(testUtils.getTestItem());
+        when(mockItemService.getAllItems()).thenReturn(testItemList);
 
         // execute
+        ObjectMapper objectMapper = new ObjectMapper();
+        String expectedJsonString = objectMapper.writeValueAsString(testItemList);
+
         MvcResult mvcResult = mockMvc.perform(get("/inventory/items/")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andReturn();
 
+        String actualJsonString = mvcResult.getResponse().getContentAsString();
+
         // assert
-        verify(mockItemService, times(1)).getAllItems();
-        assertTrue(mvcResult.getResponse().getContentAsString().contains("itemId"));
+        assertEquals(expectedJsonString, actualJsonString);
     }
 
     @DisplayName("get the correct error code when api endpoint is wrong - 404")
@@ -66,4 +72,28 @@ public class ItemControllerTest {
 
     }
 
+    @DisplayName("createItem returns the itemCreated")
+    @Test
+    public void test_createItem() throws Throwable {
+
+        // setup
+        Item testItem = testUtils.getTestItem();
+        when(mockItemService.createItem(testItem)).thenReturn(testItem);
+
+        // execute
+        ObjectMapper objectMapper = new ObjectMapper();
+        String expectedJsonString = objectMapper.writeValueAsString(testItem);
+
+        MvcResult mvcResult = mockMvc.perform(post("/inventory/items/")
+                        .accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(testItem)))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String actualJsonString = mvcResult.getResponse().getContentAsString();
+
+        // assert
+        assertEquals(expectedJsonString, actualJsonString);
+    }
 }

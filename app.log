@@ -498,3 +498,39 @@ Caused by: java.lang.NullPointerException: null
 2023-02-16 12:21:09.108  WARN 532352 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /swagger-ui.html
 2023-02-16 12:21:09.211  WARN 532352 --- [http-nio-8088-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
 2023-02-16 12:22:01.028  INFO 532352 --- [http-nio-8088-exec-4] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:1022123}] to ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
+2023-02-16 16:09:45.972  INFO 655581 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 655581 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-16 16:09:45.973 DEBUG 655581 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-16 16:09:45.973  INFO 655581 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-16 16:09:46.783  INFO 655581 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-16 16:09:46.784  INFO 655581 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-16 16:09:46.784  INFO 655581 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-16 16:09:46.812  INFO 655581 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.267 seconds (JVM running for 2.042)
+2023-02-16 16:10:06.936  INFO 655822 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 655822 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-16 16:10:06.937 DEBUG 655822 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-16 16:10:06.937  INFO 655822 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-16 16:10:07.743  INFO 655822 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-16 16:10:07.743  INFO 655822 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-16 16:10:07.744  INFO 655822 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-16 16:10:07.784  INFO 655822 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.261 seconds (JVM running for 1.914)
+2023-02-16 16:19:50.940  INFO 661183 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 661183 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-16 16:19:50.943 DEBUG 661183 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-16 16:19:50.944  INFO 661183 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-16 16:19:51.762  INFO 661183 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-16 16:19:51.763  INFO 661183 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-16 16:19:51.763  INFO 661183 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-16 16:19:51.791  INFO 661183 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.234 seconds (JVM running for 2.016)
+2023-02-16 16:20:50.678  INFO 661766 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 661766 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-16 16:20:50.679 DEBUG 661766 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-16 16:20:50.679  INFO 661766 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-16 16:20:51.417  INFO 661766 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-16 16:20:51.417  INFO 661766 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-16 16:20:51.418  INFO 661766 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-16 16:20:51.451  INFO 661766 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.232 seconds (JVM running for 2.002)
+2023-02-16 16:26:00.677  INFO 664399 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 664399 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-16 16:26:00.678 DEBUG 664399 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-16 16:26:00.678  INFO 664399 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-16 16:26:01.430  INFO 664399 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-16 16:26:01.431  INFO 664399 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-16 16:26:01.431  INFO 664399 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-16 16:26:01.463  INFO 664399 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.247 seconds (JVM running for 1.936)
+2023-02-16 16:26:01.699  WARN 664399 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.mdsujan.restPostgres.entity.Item com.mdsujan.restPostgres.controller.ItemController.createItem(com.mdsujan.restPostgres.entity.Item) throws java.lang.Throwable with 2 errors: [Field error in object 'item' on field 'status': rejected value [null]; codes [NotNull.item.status,NotNull.status,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.status,status]; arguments []; default message [status]]; default message [must not be null]] [Field error in object 'item' on field 'price': rejected value [null]; codes [NotNull.item.price,NotNull.price,NotNull.java.lang.Double,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.price,price]; arguments []; default message [price]]; default message [must not be null]] ]

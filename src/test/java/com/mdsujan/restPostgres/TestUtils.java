@@ -2,14 +2,12 @@ package com.mdsujan.restPostgres;
 
 import com.mdsujan.restPostgres.entity.Item;
 
-import java.util.List;
-
 public class TestUtils {
     // a class to provide variables and instances whenever needed during tests
 
     // get a list of items
-    public List<Item> getItemsList() {
-        Item item1 = Item.builder()
+    public Item getTestItem() {
+        return Item.builder()
                 .itemId(123L)
                 .itemDesc("test description")
                 .itemType("test type")
@@ -18,7 +16,7 @@ public class TestUtils {
                 .shippingAllowed(false)
                 .pickupAllowed(false)
                 .build();
-        return List.of(item1);
     }
+
 
 }
