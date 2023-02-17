@@ -22,6 +22,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -33,6 +34,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @EnableWebMvc
 public class ItemControllerTest {
+    public static final String base_url = "/inventory/items/";
     @Autowired
     private MockMvc mockMvc; // inject the mock mvc
 
@@ -43,6 +45,9 @@ public class ItemControllerTest {
     private ItemService mockItemService;
     TestUtils testUtils = new TestUtils();
 
+    ObjectMapper objectMapper = new ObjectMapper();
+
+
     @DisplayName("get all returns a list + test web layer")
     @Test
     public void test_getAllItems() throws Exception {
@@ -52,10 +57,9 @@ public class ItemControllerTest {
         when(mockItemService.getAllItems()).thenReturn(testItemList);
 
         // execute
-        ObjectMapper objectMapper = new ObjectMapper();
         String expectedJsonString = objectMapper.writeValueAsString(testItemList);
 
-        MvcResult mvcResult = mockMvc.perform(get("/inventory/items/")
+        MvcResult mvcResult = mockMvc.perform(get(base_url)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -78,21 +82,46 @@ public class ItemControllerTest {
 
     }
 
+    @DisplayName("getItem() - get item by id when id is valid - returns an item as response")
+    @Test
+    public void testGetItemById() throws Throwable {
+        // setup
+        Item testItem = testUtils.getTestItem();
+        Long testId = 1L;
+
+        // stub
+        Mockito.when(mockItemService.getItemById(testId)).thenReturn(testItem);
+
+        // execute
+        String expectedJsonResponse = objectMapper.writeValueAsString(testItem);
+
+        MvcResult mvcResult = mockMvc.perform(get(base_url + testId)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String actualJsonResponse = mvcResult.getResponse().getContentAsString();
+
+        // assertions
+        assertEquals(expectedJsonResponse, actualJsonResponse);
+
+
+    }
+
     @DisplayName("createItem returns the itemCreated")
     @Test
     public void test_createItem() throws Throwable {
 
         // setup
-        ObjectMapper objectMapper = new ObjectMapper();
-
         Item testItem = testUtils.getTestItem();
 
         // stub
         Mockito.when(mockItemService.createItem(any(Item.class))).thenReturn(testItem);
+
         // execute
         String expectedJsonResponse = objectMapper.writeValueAsString(testItem);
 
-        MvcResult mvcResult = mockMvc.perform(post("/inventory/items/")
+        MvcResult mvcResult = mockMvc.perform(post(base_url)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(expectedJsonResponse).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -103,4 +132,31 @@ public class ItemControllerTest {
         // assert
         assertEquals(expectedJsonResponse, actualJsonResponse);
     }
+
+    @DisplayName("createItems (batch) returns the items created as a list")
+    @Test
+    public void test_createItems() throws Throwable {
+
+        // setup
+        List<Item> testItemList = List.of(testUtils.getTestItem());
+
+        // stub
+        Mockito.when(mockItemService.createItems(anyList())).thenReturn(testItemList);
+
+        // execute
+        String expectedJsonResponse = objectMapper.writeValueAsString(testItemList);
+
+        MvcResult mvcResult = mockMvc.perform(post(base_url + "/batch")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(expectedJsonResponse).accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String actualJsonResponse = mvcResult.getResponse().getContentAsString();
+
+        // assert
+        assertEquals(expectedJsonResponse, actualJsonResponse);
+    }
+
+
 }

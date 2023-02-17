@@ -219,3 +219,99 @@
 2023-02-17 11:00:08.398  INFO 711944 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.035 seconds (JVM running for 1.642)
 2023-02-17 11:00:08.573  INFO 711944 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@1536ea40
 2023-02-17 11:00:08.575  INFO 711944 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@1da1380b
+2023-02-17 11:12:52.627  INFO 718529 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 718529 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 11:12:52.628 DEBUG 718529 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 11:12:52.628  INFO 718529 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 11:12:53.317  INFO 718529 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 11:12:53.317  INFO 718529 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 11:12:53.318  INFO 718529 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 11:12:53.358  INFO 718529 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.042 seconds (JVM running for 1.695)
+2023-02-17 11:12:53.402  WARN 718529 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-17 11:12:53.549  INFO 718529 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@62b09715
+2023-02-17 11:12:53.550  INFO 718529 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@7e34b127
+2023-02-17 11:39:38.761  INFO 734646 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 734646 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 11:39:38.762 DEBUG 734646 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 11:39:38.762  INFO 734646 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 11:39:39.535  INFO 734646 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 11:39:39.535  INFO 734646 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 11:39:39.536  INFO 734646 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 11:39:39.564  INFO 734646 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.182 seconds (JVM running for 2.186)
+2023-02-17 11:41:29.355  INFO 735760 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 735760 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 11:41:29.356 DEBUG 735760 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 11:41:29.357  INFO 735760 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 11:41:30.035  INFO 735760 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 11:41:30.036  INFO 735760 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 11:41:30.038  INFO 735760 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-02-17 11:41:30.082  INFO 735760 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.995 seconds (JVM running for 1.61)
+2023-02-17 11:41:30.203  INFO 735760 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@1f9d4b0e
+2023-02-17 11:42:19.119  INFO 736377 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 736377 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 11:42:19.120 DEBUG 736377 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 11:42:19.120  INFO 736377 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 11:42:19.807  INFO 736377 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 11:42:19.807  INFO 736377 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 11:42:19.808  INFO 736377 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 11:42:19.834  INFO 736377 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.02 seconds (JVM running for 1.76)
+2023-02-17 11:42:19.909  INFO 736377 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@7d4d8579
+2023-02-17 11:42:19.934  WARN 736377 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-17 11:42:20.026  INFO 736377 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@62ade015
+2023-02-17 11:42:20.027  INFO 736377 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@70ede57d
+2023-02-17 11:46:52.669  INFO 738848 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 738848 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 11:46:52.670 DEBUG 738848 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 11:46:52.671  INFO 738848 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 11:46:53.326  INFO 738848 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 11:46:53.326  INFO 738848 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 11:46:53.328  INFO 738848 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-02-17 11:46:53.357  INFO 738848 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.04 seconds (JVM running for 1.884)
+2023-02-17 11:46:53.492  INFO 738848 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@4c3de38e
+2023-02-17 11:46:53.514  WARN 738848 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-17 11:46:53.612  INFO 738848 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@4525e9e8
+2023-02-17 11:46:53.612  INFO 738848 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@443a53df
+2023-02-17 11:54:06.621  INFO 742664 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 742664 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 11:54:06.622 DEBUG 742664 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 11:54:06.622  INFO 742664 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 11:54:07.250  INFO 742664 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 11:54:07.250  INFO 742664 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 11:54:07.251  INFO 742664 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-17 11:54:07.287  INFO 742664 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.961 seconds (JVM running for 1.757)
+2023-02-17 11:54:07.410  INFO 742664 --- [main] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@2ad99cf3]
+2023-02-17 11:54:07.412  INFO 742664 --- [main] c.m.r.controller.ItemController          : Response: []
+2023-02-17 11:54:36.006  INFO 742980 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 742980 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 11:54:36.006 DEBUG 742980 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 11:54:36.007  INFO 742980 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 11:54:36.665  INFO 742980 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 11:54:36.665  INFO 742980 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 11:54:36.666  INFO 742980 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 11:54:36.702  INFO 742980 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.095 seconds (JVM running for 1.765)
+2023-02-17 11:54:36.814  INFO 742980 --- [main] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@7c90b7b7]
+2023-02-17 11:54:36.816  INFO 742980 --- [main] c.m.r.controller.ItemController          : Response: []
+2023-02-17 11:55:24.343  INFO 743572 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 743572 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 11:55:24.344 DEBUG 743572 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 11:55:24.344  INFO 743572 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 11:55:24.950  INFO 743572 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 11:55:24.950  INFO 743572 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 11:55:24.951  INFO 743572 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 11:55:24.976  INFO 743572 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.946 seconds (JVM running for 1.635)
+2023-02-17 11:55:25.091  INFO 743572 --- [main] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@5232e3f1]
+2023-02-17 11:55:25.093  INFO 743572 --- [main] c.m.r.controller.ItemController          : Response: [com.mdsujan.restPostgres.entity.Item@59c500f7]
+2023-02-17 11:55:42.528  INFO 743804 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 743804 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 11:55:42.529 DEBUG 743804 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 11:55:42.530  INFO 743804 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 11:55:43.177  INFO 743804 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 11:55:43.177  INFO 743804 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 11:55:43.179  INFO 743804 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 11:55:43.215  INFO 743804 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.975 seconds (JVM running for 1.732)
+2023-02-17 11:55:43.329  INFO 743804 --- [main] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@251c4280]
+2023-02-17 11:55:43.331  INFO 743804 --- [main] c.m.r.controller.ItemController          : Response: [com.mdsujan.restPostgres.entity.Item@2519026b]
+2023-02-17 11:55:55.592  INFO 743977 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 743977 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 11:55:55.594 DEBUG 743977 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 11:55:55.595  INFO 743977 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 11:55:56.322  INFO 743977 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 11:55:56.322  INFO 743977 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 11:55:56.324  INFO 743977 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 11:55:56.413  INFO 743977 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.124 seconds (JVM running for 1.879)
+2023-02-17 11:55:56.599  INFO 743977 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@75fe1619
+2023-02-17 11:55:56.624  WARN 743977 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-17 11:55:56.667  INFO 743977 --- [main] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@63fd4dda]
+2023-02-17 11:55:56.667  INFO 743977 --- [main] c.m.r.controller.ItemController          : Response: [com.mdsujan.restPostgres.entity.Item@1d6751e3]
+2023-02-17 11:55:56.769  INFO 743977 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@77b5148c
+2023-02-17 11:55:56.770  INFO 743977 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@36359723
