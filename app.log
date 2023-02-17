@@ -1,536 +1,221 @@
-2023-02-16 10:29:41.651  INFO 471298 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 471298 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:29:41.656 DEBUG 471298 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:29:41.657  INFO 471298 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:29:42.207  INFO 471298 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:29:42.207  INFO 471298 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:29:42.337  INFO 471298 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 130 ms
-2023-02-16 10:29:42.362  INFO 471298 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.104 seconds (JVM running for 1.771)
-2023-02-16 10:29:42.424  WARN 471298 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
-2023-02-16 10:31:15.649  INFO 472259 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 472259 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:31:15.651 DEBUG 472259 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:31:15.651  INFO 472259 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:31:16.173  INFO 472259 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:31:16.173  INFO 472259 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:31:16.279  INFO 472259 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 106 ms
-2023-02-16 10:31:16.307  INFO 472259 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.024 seconds (JVM running for 1.599)
-2023-02-16 10:31:16.364  WARN 472259 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
-2023-02-16 10:32:39.338  INFO 473184 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 473184 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:32:39.339 DEBUG 473184 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:32:39.339  INFO 473184 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:32:39.909  INFO 473184 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:32:39.909  INFO 473184 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:32:40.057  INFO 473184 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 148 ms
-2023-02-16 10:32:40.089  INFO 473184 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.137 seconds (JVM running for 1.806)
-2023-02-16 10:32:40.157  WARN 473184 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
-2023-02-16 10:33:16.440  INFO 473606 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 473606 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:33:16.441 DEBUG 473606 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:33:16.442  INFO 473606 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:33:17.045  INFO 473606 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:33:17.045  INFO 473606 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:33:17.046  INFO 473606 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 10:33:17.071  INFO 473606 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.923 seconds (JVM running for 1.592)
-2023-02-16 10:34:35.150  INFO 474463 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 474463 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:34:35.150 DEBUG 474463 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:34:35.151  INFO 474463 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:34:35.777  INFO 474463 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:34:35.777  INFO 474463 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:34:35.778  INFO 474463 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 10:34:35.822  INFO 474463 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.076 seconds (JVM running for 1.685)
-2023-02-16 10:34:53.656  INFO 474689 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 474689 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:34:53.657 DEBUG 474689 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:34:53.657  INFO 474689 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:34:54.372  INFO 474689 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:34:54.372  INFO 474689 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:34:54.373  INFO 474689 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 10:34:54.404  INFO 474689 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.126 seconds (JVM running for 1.771)
-2023-02-16 10:35:17.217  INFO 474966 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 474966 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:35:17.217 DEBUG 474966 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:35:17.218  INFO 474966 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:35:17.971  INFO 474966 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:35:17.971  INFO 474966 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:35:17.972  INFO 474966 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 10:35:18.006  INFO 474966 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.185 seconds (JVM running for 1.812)
-2023-02-16 10:35:24.694  INFO 475099 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 475099 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:35:24.695 DEBUG 475099 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:35:24.695  INFO 475099 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:35:25.399  INFO 475099 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:35:25.399  INFO 475099 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:35:25.401  INFO 475099 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2023-02-16 10:35:25.437  INFO 475099 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.152 seconds (JVM running for 1.847)
-2023-02-16 10:38:26.628  INFO 476869 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 476869 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:38:26.629 DEBUG 476869 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:38:26.629  INFO 476869 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:38:27.298  INFO 476869 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:38:27.298  INFO 476869 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:38:27.299  INFO 476869 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 10:38:27.327  INFO 476869 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.033 seconds (JVM running for 1.613)
-2023-02-16 10:40:39.392  INFO 478148 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 478148 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:40:39.393 DEBUG 478148 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:40:39.393  INFO 478148 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:40:40.032  INFO 478148 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:40:40.032  INFO 478148 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:40:40.033  INFO 478148 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 10:40:40.073  INFO 478148 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.993 seconds (JVM running for 1.636)
-2023-02-16 10:41:08.324  INFO 478510 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 478510 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:41:08.325 DEBUG 478510 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:41:08.325  INFO 478510 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:41:08.934  INFO 478510 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:41:08.934  INFO 478510 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:41:08.935  INFO 478510 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 10:41:08.960  INFO 478510 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.904 seconds (JVM running for 1.524)
-2023-02-16 10:42:10.345  INFO 479128 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 479128 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:42:10.346 DEBUG 479128 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:42:10.346  INFO 479128 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:42:11.035  INFO 479128 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:42:11.035  INFO 479128 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:42:11.036  INFO 479128 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 10:42:11.061  INFO 479128 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.972 seconds (JVM running for 1.63)
-2023-02-16 10:42:52.195  INFO 479545 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 479545 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:42:52.195 DEBUG 479545 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:42:52.196  INFO 479545 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:42:52.780  INFO 479545 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:42:52.780  INFO 479545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:42:52.781  INFO 479545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 10:42:52.814  INFO 479545 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.946 seconds (JVM running for 1.553)
-2023-02-16 10:43:08.176  INFO 479756 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 479756 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:43:08.176 DEBUG 479756 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:43:08.177  INFO 479756 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:43:08.787  INFO 479756 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:43:08.787  INFO 479756 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:43:08.788  INFO 479756 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 10:43:08.813  INFO 479756 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.01 seconds (JVM running for 1.572)
-2023-02-16 10:45:20.737  INFO 481065 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 481065 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:45:20.740 DEBUG 481065 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:45:20.741  INFO 481065 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:45:22.497  INFO 481065 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:45:22.498  INFO 481065 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:45:22.501  INFO 481065 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
-2023-02-16 10:45:22.581  INFO 481065 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 2.68 seconds (JVM running for 3.563)
-2023-02-16 10:45:33.384  INFO 481230 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 481230 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:45:33.385 DEBUG 481230 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:45:33.386  INFO 481230 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:45:35.083  INFO 481230 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:45:35.084  INFO 481230 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:45:35.085  INFO 481230 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 10:45:35.141  INFO 481230 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 2.629 seconds (JVM running for 4.134)
-2023-02-16 10:48:14.596  INFO 482720 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 482720 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 10:48:14.597 DEBUG 482720 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 10:48:14.597  INFO 482720 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 10:48:15.233  INFO 482720 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 10:48:15.234  INFO 482720 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 10:48:15.234  INFO 482720 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2023-02-16 10:48:15.261  INFO 482720 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.959 seconds (JVM running for 1.662)
-2023-02-16 10:48:15.315  WARN 482720 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "wrong"]
-2023-02-16 11:38:39.363  INFO 507543 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 507543 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 11:38:39.363 DEBUG 507543 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 11:38:39.363  INFO 507543 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 11:38:40.021  INFO 507543 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 11:38:40.021  INFO 507543 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 11:38:40.022  INFO 507543 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 11:38:40.067  INFO 507543 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.028 seconds (JVM running for 1.625)
-2023-02-16 11:38:40.135  WARN 507543 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "wrongEndpoint"]
-2023-02-16 11:40:33.239  INFO 508559 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 508559 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 11:40:33.239 DEBUG 508559 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 11:40:33.240  INFO 508559 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 11:40:33.962  INFO 508559 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 11:40:33.962  INFO 508559 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 11:40:33.963  INFO 508559 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 11:40:34.013  INFO 508559 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.135 seconds (JVM running for 1.879)
-2023-02-16 11:40:34.076  WARN 508559 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "wrongEndpoint"]
-2023-02-16 11:52:33.194  INFO 516321 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-msujan with PID 516321 (/home/msujan/Documents/repos/restPostgress/target/classes started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 11:52:33.197  INFO 516321 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 11:52:33.821  INFO 516321 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2023-02-16 11:52:33.828  INFO 516321 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 MongoDB repository interfaces.
-2023-02-16 11:52:33.830  INFO 516321 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2023-02-16 11:52:33.860  INFO 516321 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 5 MongoDB repository interfaces.
-2023-02-16 11:52:34.318  INFO 516321 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
-2023-02-16 11:52:34.325  INFO 516321 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-02-16 11:52:34.325  INFO 516321 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2023-02-16 11:52:35.051  INFO 516321 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-02-16 11:52:35.051  INFO 516321 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1815 ms
-2023-02-16 11:52:35.206  INFO 516321 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.0-60-generic"}, "platform": "Java/Ubuntu/11.0.17+8-post-Ubuntu-1ubuntu220.04"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='learner', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@7fc420b8]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster34938.uh7rhpp.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-rgg5np-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
-2023-02-16 11:52:35.256  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 11:52:35.298  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 11:52:35.299  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 11:52:35.992  INFO 516321 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
-2023-02-16 11:52:36.003  INFO 516321 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 3.27 seconds (JVM running for 3.604)
-2023-02-16 11:52:36.374  INFO 516321 --- [cluster-rtt-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:996022}] to ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017
-2023-02-16 11:52:36.374  INFO 516321 --- [cluster-rtt-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1020890}] to ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 11:52:36.374  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1020886}] to ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 11:52:36.375  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=626379837, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000ab, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ebecf7aa8aced183714d, counter=6}, lastWriteDate=Thu Feb 16 11:52:36 IST 2023, lastUpdateTimeNanos=42599996522512}
-2023-02-16 11:52:36.375  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:996022}] to ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017
-2023-02-16 11:52:36.376  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=617422204, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ea805e1e6f2ef6429a00, counter=4}, lastWriteDate=Thu Feb 16 11:52:36 IST 2023, lastUpdateTimeNanos=42599998667041}
-2023-02-16 11:52:36.380  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000ab from replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 11:52:36.380  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 11 from replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 11:52:36.381  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 11:52:41.221  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:988374}] to ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017
-2023-02-16 11:52:41.221  INFO 516321 --- [cluster-rtt-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:988378}] to ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017
-2023-02-16 11:52:41.221  INFO 516321 --- [cluster-ClusterId{value='63edcbab105e244f852f8f89', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=485540698, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ed31690e67948ac44278, counter=3}, lastWriteDate=Thu Feb 16 11:52:41 IST 2023, lastUpdateTimeNanos=42604844858379}
-2023-02-16 11:52:44.112  INFO 516321 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-02-16 11:52:44.112  INFO 516321 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-02-16 11:52:44.113  INFO 516321 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-02-16 11:53:28.599  INFO 517018 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 517018 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 11:53:28.600 DEBUG 517018 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 11:53:28.600  INFO 517018 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 11:53:29.251  INFO 517018 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 11:53:29.252  INFO 517018 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 11:53:29.253  INFO 517018 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 11:53:29.282  INFO 517018 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.025 seconds (JVM running for 1.684)
-2023-02-16 11:53:29.320  WARN 517018 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
-2023-02-16 11:53:58.899  INFO 517336 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 517336 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 11:53:58.900 DEBUG 517336 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 11:53:58.901  INFO 517336 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 11:53:59.528  INFO 517336 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 11:53:59.528  INFO 517336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 11:53:59.537  INFO 517336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 9 ms
-2023-02-16 11:53:59.562  INFO 517336 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.09 seconds (JVM running for 1.635)
-2023-02-16 11:53:59.590  WARN 517336 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
-2023-02-16 12:16:26.535  INFO 529395 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-msujan with PID 529395 (/home/msujan/Documents/repos/restPostgress/target/classes started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 12:16:26.539  INFO 529395 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 12:16:27.387  INFO 529395 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2023-02-16 12:16:27.397  INFO 529395 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 MongoDB repository interfaces.
-2023-02-16 12:16:27.411  INFO 529395 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2023-02-16 12:16:27.467  INFO 529395 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 5 MongoDB repository interfaces.
-2023-02-16 12:16:28.108  INFO 529395 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
-2023-02-16 12:16:28.121  INFO 529395 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-02-16 12:16:28.122  INFO 529395 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2023-02-16 12:16:28.209  INFO 529395 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-02-16 12:16:28.210  INFO 529395 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1572 ms
-2023-02-16 12:16:28.557  INFO 529395 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.0-60-generic"}, "platform": "Java/Ubuntu/11.0.17+8-post-Ubuntu-1ubuntu220.04"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='learner', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@2a140ce5]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster34938.uh7rhpp.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-rgg5np-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
-2023-02-16 12:16:28.602  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:16:28.620  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:16:28.621  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:16:29.674  INFO 529395 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
-2023-02-16 12:16:29.679  WARN 529395 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
-2023-02-16 12:16:29.913  INFO 529395 --- [cluster-rtt-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:989311}] to ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017
-2023-02-16 12:16:29.913  INFO 529395 --- [cluster-rtt-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:996961}] to ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017
-2023-02-16 12:16:29.943  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:989311}] to ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017
-2023-02-16 12:16:29.944  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=837177325, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ed31690e67948ac44278, counter=3}, lastWriteDate=Thu Feb 16 12:16:29 IST 2023, lastUpdateTimeNanos=44033566934598}
-2023-02-16 12:16:29.948  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:1021709}] to ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:16:29.948  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=841983570, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000ab, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ebecf7aa8aced183714d, counter=6}, lastWriteDate=Thu Feb 16 12:16:29 IST 2023, lastUpdateTimeNanos=44033571704268}
-2023-02-16 12:16:29.949  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000ab from replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:16:29.949  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 11 from replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:16:29.949  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:16:29.956  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:996961}] to ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017
-2023-02-16 12:16:29.957  INFO 529395 --- [cluster-ClusterId{value='63edd144b9e8d645c6902167', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=850276646, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ea805e1e6f2ef6429a00, counter=4}, lastWriteDate=Thu Feb 16 12:16:29 IST 2023, lastUpdateTimeNanos=44033580030610}
-2023-02-16 12:16:31.695  WARN 529395 --- [main] org.apache.tomcat.util.net.NioEndpoint   : Failed to unlock acceptor for [http-nio-8088] because the local address was not available
-2023-02-16 12:16:31.700  INFO 529395 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-02-16 12:16:31.707 ERROR 529395 --- [http-nio-8088-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
-
-java.nio.channels.AsynchronousCloseException: null
-	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202) ~[na:na]
-	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:269) ~[na:na]
-	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:288) ~[na:na]
-	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:547) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:79) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:129) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
-
-2023-02-16 12:16:31.725  INFO 529395 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2023-02-16 12:16:31.743 ERROR 529395 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356) ~[spring-context-5.3.23.jar:5.3.23]
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.5.jar:2.7.5]
-	at com.mdsujan.restPostgres.app.MyApp.main(MyApp.java:19) ~[classes/:na]
-Caused by: java.lang.NullPointerException: null
-	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56) ~[springfox-spring-webmvc-3.0.0.jar:3.0.0]
-	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113) ~[springfox-core-3.0.0.jar:3.0.0]
-	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89) ~[springfox-spi-3.0.0.jar:3.0.0]
-	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469) ~[na:na]
-	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355) ~[na:na]
-	at java.base/java.util.TimSort.sort(TimSort.java:234) ~[na:na]
-	at java.base/java.util.Arrays.sort(Arrays.java:1515) ~[na:na]
-	at java.base/java.util.ArrayList.sort(ArrayList.java:1750) ~[na:na]
-	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[na:na]
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[na:na]
-	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81) ~[springfox-spring-webmvc-3.0.0.jar:3.0.0]
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[na:na]
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[na:na]
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[na:na]
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178) ~[spring-context-5.3.23.jar:5.3.23]
-	... 14 common frames omitted
-
-2023-02-16 12:17:37.613  INFO 530195 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-msujan with PID 530195 (/home/msujan/Documents/repos/restPostgress/target/classes started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 12:17:37.615  INFO 530195 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 12:17:38.211  INFO 530195 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2023-02-16 12:17:38.217  INFO 530195 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 MongoDB repository interfaces.
-2023-02-16 12:17:38.225  INFO 530195 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2023-02-16 12:17:38.254  INFO 530195 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 5 MongoDB repository interfaces.
-2023-02-16 12:17:38.700  INFO 530195 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
-2023-02-16 12:17:38.711  INFO 530195 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-02-16 12:17:38.712  INFO 530195 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2023-02-16 12:17:38.804  INFO 530195 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-02-16 12:17:38.805  INFO 530195 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1134 ms
-2023-02-16 12:17:38.986  INFO 530195 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.0-60-generic"}, "platform": "Java/Ubuntu/11.0.17+8-post-Ubuntu-1ubuntu220.04"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='learner', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@93501be]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster34938.uh7rhpp.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-rgg5np-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
-2023-02-16 12:17:39.045  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:17:39.063  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:17:39.064  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:17:39.903  INFO 530195 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
-2023-02-16 12:17:39.909  WARN 530195 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
-2023-02-16 12:17:40.149  INFO 530195 --- [cluster-rtt-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:989352}] to ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017
-2023-02-16 12:17:40.149  INFO 530195 --- [cluster-rtt-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:1021693}] to ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:17:40.149  INFO 530195 --- [cluster-rtt-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:997000}] to ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017
-2023-02-16 12:17:40.149  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:989352}] to ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017
-2023-02-16 12:17:40.149  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1021693}] to ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:17:40.149  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:997000}] to ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017
-2023-02-16 12:17:40.150  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=683269746, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000ab, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ebecf7aa8aced183714d, counter=6}, lastWriteDate=Thu Feb 16 12:17:40 IST 2023, lastUpdateTimeNanos=44103770942764}
-2023-02-16 12:17:40.150  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=691412303, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ea805e1e6f2ef6429a00, counter=4}, lastWriteDate=Thu Feb 16 12:17:40 IST 2023, lastUpdateTimeNanos=44103770951987}
-2023-02-16 12:17:40.150  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=681346712, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ed31690e67948ac44278, counter=3}, lastWriteDate=Thu Feb 16 12:17:40 IST 2023, lastUpdateTimeNanos=44103770942998}
-2023-02-16 12:17:40.154  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000ab from replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:17:40.154  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 11 from replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:17:40.154  INFO 530195 --- [cluster-ClusterId{value='63edd18a37c1b1724ef2a3ee', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:17:41.923  INFO 530195 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-02-16 12:17:41.942  INFO 530195 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2023-02-16 12:17:41.953 ERROR 530195 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356) ~[spring-context-5.3.23.jar:5.3.23]
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.5.jar:2.7.5]
-	at com.mdsujan.restPostgres.app.MyApp.main(MyApp.java:19) ~[classes/:na]
-Caused by: java.lang.NullPointerException: null
-	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56) ~[springfox-spring-webmvc-3.0.0.jar:3.0.0]
-	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113) ~[springfox-core-3.0.0.jar:3.0.0]
-	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89) ~[springfox-spi-3.0.0.jar:3.0.0]
-	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469) ~[na:na]
-	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355) ~[na:na]
-	at java.base/java.util.TimSort.sort(TimSort.java:234) ~[na:na]
-	at java.base/java.util.Arrays.sort(Arrays.java:1515) ~[na:na]
-	at java.base/java.util.ArrayList.sort(ArrayList.java:1750) ~[na:na]
-	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[na:na]
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[na:na]
-	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81) ~[springfox-spring-webmvc-3.0.0.jar:3.0.0]
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[na:na]
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[na:na]
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[na:na]
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178) ~[spring-context-5.3.23.jar:5.3.23]
-	... 14 common frames omitted
-
-2023-02-16 12:19:13.508  INFO 531322 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-msujan with PID 531322 (/home/msujan/Documents/repos/restPostgress/target/classes started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 12:19:13.509  INFO 531322 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 12:19:14.098  INFO 531322 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2023-02-16 12:19:14.105  INFO 531322 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 MongoDB repository interfaces.
-2023-02-16 12:19:14.106  INFO 531322 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2023-02-16 12:19:14.133  INFO 531322 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 5 MongoDB repository interfaces.
-2023-02-16 12:19:14.701  INFO 531322 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
-2023-02-16 12:19:14.712  INFO 531322 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-02-16 12:19:14.712  INFO 531322 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2023-02-16 12:19:14.810  INFO 531322 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-02-16 12:19:14.810  INFO 531322 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1243 ms
-2023-02-16 12:19:15.244  INFO 531322 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.0-60-generic"}, "platform": "Java/Ubuntu/11.0.17+8-post-Ubuntu-1ubuntu220.04"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='learner', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@17222c11]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster34938.uh7rhpp.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-rgg5np-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
-2023-02-16 12:19:15.361  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:19:15.380  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:19:15.381  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:19:16.284  INFO 531322 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
-2023-02-16 12:19:16.290  WARN 531322 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
-2023-02-16 12:19:16.993  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:989420}] to ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017
-2023-02-16 12:19:16.993  INFO 531322 --- [cluster-rtt-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:997070}] to ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017
-2023-02-16 12:19:16.993  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:997070}] to ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017
-2023-02-16 12:19:16.994  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1052973849, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ed31690e67948ac44278, counter=3}, lastWriteDate=Thu Feb 16 12:19:16 IST 2023, lastUpdateTimeNanos=44200616178491}
-2023-02-16 12:19:16.994  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1052927416, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ea805e1e6f2ef6429a00, counter=4}, lastWriteDate=Thu Feb 16 12:19:16 IST 2023, lastUpdateTimeNanos=44200616182285}
-2023-02-16 12:19:17.000  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:1021980}] to ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:19:17.000  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1060215606, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000ab, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ebecf7aa8aced183714d, counter=6}, lastWriteDate=Thu Feb 16 12:19:16 IST 2023, lastUpdateTimeNanos=44200623419089}
-2023-02-16 12:19:17.001  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000ab from replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:19:17.002  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 11 from replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:19:17.002  INFO 531322 --- [cluster-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:19:17.047  INFO 531322 --- [cluster-rtt-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:989420}] to ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017
-2023-02-16 12:19:17.047  INFO 531322 --- [cluster-rtt-ClusterId{value='63edd1eb547e0e57cea5e783', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1021980}] to ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:19:18.298  WARN 531322 --- [main] org.apache.tomcat.util.net.NioEndpoint   : Failed to unlock acceptor for [http-nio-8088] because the local address was not available
-2023-02-16 12:19:18.300  INFO 531322 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-02-16 12:19:18.305 ERROR 531322 --- [http-nio-8088-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
-
-java.nio.channels.AsynchronousCloseException: null
-	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202) ~[na:na]
-	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:269) ~[na:na]
-	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:288) ~[na:na]
-	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:547) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:79) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:129) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
-
-2023-02-16 12:19:18.321  INFO 531322 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2023-02-16 12:19:18.330 ERROR 531322 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356) ~[spring-context-5.3.23.jar:5.3.23]
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586) ~[spring-context-5.3.23.jar:5.3.23]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.5.jar:2.7.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.5.jar:2.7.5]
-	at com.mdsujan.restPostgres.app.MyApp.main(MyApp.java:18) ~[classes/:na]
-Caused by: java.lang.NullPointerException: null
-	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56) ~[springfox-spring-webmvc-3.0.0.jar:3.0.0]
-	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113) ~[springfox-core-3.0.0.jar:3.0.0]
-	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89) ~[springfox-spi-3.0.0.jar:3.0.0]
-	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469) ~[na:na]
-	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355) ~[na:na]
-	at java.base/java.util.TimSort.sort(TimSort.java:234) ~[na:na]
-	at java.base/java.util.Arrays.sort(Arrays.java:1515) ~[na:na]
-	at java.base/java.util.ArrayList.sort(ArrayList.java:1750) ~[na:na]
-	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[na:na]
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[na:na]
-	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81) ~[springfox-spring-webmvc-3.0.0.jar:3.0.0]
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[na:na]
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[na:na]
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[na:na]
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100) ~[springfox-spring-web-3.0.0.jar:3.0.0]
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178) ~[spring-context-5.3.23.jar:5.3.23]
-	... 14 common frames omitted
-
-2023-02-16 12:20:59.564  INFO 532352 --- [main] com.mdsujan.restPostgres.app.MyApp       : Starting MyApp using Java 11.0.17 on U-msujan with PID 532352 (/home/msujan/Documents/repos/restPostgress/target/classes started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 12:20:59.568  INFO 532352 --- [main] com.mdsujan.restPostgres.app.MyApp       : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 12:21:00.042  INFO 532352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2023-02-16 12:21:00.049  INFO 532352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 MongoDB repository interfaces.
-2023-02-16 12:21:00.053  INFO 532352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2023-02-16 12:21:00.085  INFO 532352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 5 MongoDB repository interfaces.
-2023-02-16 12:21:00.514  INFO 532352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
-2023-02-16 12:21:00.524  INFO 532352 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-02-16 12:21:00.524  INFO 532352 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2023-02-16 12:21:00.593  INFO 532352 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-02-16 12:21:00.593  INFO 532352 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 989 ms
-2023-02-16 12:21:00.820  INFO 532352 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.0-60-generic"}, "platform": "Java/Ubuntu/11.0.17+8-post-Ubuntu-1ubuntu220.04"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='learner', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@24876a7e]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster34938.uh7rhpp.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-rgg5np-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
-2023-02-16 12:21:00.866  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:21:00.884  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:21:00.886  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-srv-cluster34938.uh7rhpp.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017 to client view of cluster
-2023-02-16 12:21:01.810  INFO 532352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
-2023-02-16 12:21:01.950  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:989491}] to ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017
-2023-02-16 12:21:01.950  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:997140}] to ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017
-2023-02-16 12:21:01.950  INFO 532352 --- [cluster-rtt-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:989491}] to ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017
-2023-02-16 12:21:01.950  INFO 532352 --- [cluster-rtt-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:997140}] to ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017
-2023-02-16 12:21:01.950  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1021762}] to ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:21:01.951  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=627012468, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ed31690e67948ac44278, counter=3}, lastWriteDate=Thu Feb 16 12:21:01 IST 2023, lastUpdateTimeNanos=44305573073341}
-2023-02-16 12:21:01.951  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=626994304, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000ab, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ebecf7aa8aced183714d, counter=6}, lastWriteDate=Thu Feb 16 12:21:01 IST 2023, lastUpdateTimeNanos=44305573021866}
-2023-02-16 12:21:01.951  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=626936269, setName='atlas-rgg5np-shard-0', canonicalAddress=ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017, hosts=[ac-5kxm61e-shard-00-02.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017, ac-5kxm61e-shard-00-00.uh7rhpp.mongodb.net:27017], passives=[], arbiters=[], primary='ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=11, topologyVersion=TopologyVersion{processId=63d2ea805e1e6f2ef6429a00, counter=4}, lastWriteDate=Thu Feb 16 12:21:01 IST 2023, lastUpdateTimeNanos=44305573017505}
-2023-02-16 12:21:01.954  INFO 532352 --- [cluster-rtt-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:1021762}] to ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:21:01.954  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000ab from replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:21:01.954  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 11 from replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:21:01.954  INFO 532352 --- [cluster-ClusterId{value='63edd25401d0a536367c11b9', description='null'}-ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 12:21:02.261  INFO 532352 --- [main] com.mdsujan.restPostgres.app.MyApp       : Started MyApp in 2.988 seconds (JVM running for 3.303)
-2023-02-16 12:21:09.082  INFO 532352 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-02-16 12:21:09.083  INFO 532352 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-02-16 12:21:09.087  INFO 532352 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2023-02-16 12:21:09.108  WARN 532352 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /swagger-ui.html
-2023-02-16 12:21:09.211  WARN 532352 --- [http-nio-8088-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
-2023-02-16 12:22:01.028  INFO 532352 --- [http-nio-8088-exec-4] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:1022123}] to ac-5kxm61e-shard-00-01.uh7rhpp.mongodb.net:27017
-2023-02-16 16:09:45.972  INFO 655581 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 655581 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 16:09:45.973 DEBUG 655581 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 16:09:45.973  INFO 655581 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 16:09:46.783  INFO 655581 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 16:09:46.784  INFO 655581 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 16:09:46.784  INFO 655581 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2023-02-16 16:09:46.812  INFO 655581 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.267 seconds (JVM running for 2.042)
-2023-02-16 16:10:06.936  INFO 655822 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 655822 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 16:10:06.937 DEBUG 655822 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 16:10:06.937  INFO 655822 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 16:10:07.743  INFO 655822 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 16:10:07.743  INFO 655822 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 16:10:07.744  INFO 655822 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 16:10:07.784  INFO 655822 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.261 seconds (JVM running for 1.914)
-2023-02-16 16:19:50.940  INFO 661183 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 661183 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 16:19:50.943 DEBUG 661183 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 16:19:50.944  INFO 661183 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 16:19:51.762  INFO 661183 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 16:19:51.763  INFO 661183 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 16:19:51.763  INFO 661183 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2023-02-16 16:19:51.791  INFO 661183 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.234 seconds (JVM running for 2.016)
-2023-02-16 16:20:50.678  INFO 661766 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 661766 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 16:20:50.679 DEBUG 661766 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 16:20:50.679  INFO 661766 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 16:20:51.417  INFO 661766 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 16:20:51.417  INFO 661766 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 16:20:51.418  INFO 661766 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-02-16 16:20:51.451  INFO 661766 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.232 seconds (JVM running for 2.002)
-2023-02-16 16:26:00.677  INFO 664399 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 664399 (started by msujan in /home/msujan/Documents/repos/restPostgress)
-2023-02-16 16:26:00.678 DEBUG 664399 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
-2023-02-16 16:26:00.678  INFO 664399 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-02-16 16:26:01.430  INFO 664399 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-02-16 16:26:01.431  INFO 664399 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-02-16 16:26:01.431  INFO 664399 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2023-02-16 16:26:01.463  INFO 664399 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.247 seconds (JVM running for 1.936)
-2023-02-16 16:26:01.699  WARN 664399 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.mdsujan.restPostgres.entity.Item com.mdsujan.restPostgres.controller.ItemController.createItem(com.mdsujan.restPostgres.entity.Item) throws java.lang.Throwable with 2 errors: [Field error in object 'item' on field 'status': rejected value [null]; codes [NotNull.item.status,NotNull.status,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.status,status]; arguments []; default message [status]]; default message [must not be null]] [Field error in object 'item' on field 'price': rejected value [null]; codes [NotNull.item.price,NotNull.price,NotNull.java.lang.Double,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.price,price]; arguments []; default message [price]]; default message [must not be null]] ]
+2023-02-17 10:03:09.674  INFO 676919 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 676919 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:03:09.678 DEBUG 676919 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:03:09.678  INFO 676919 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:03:10.381  INFO 676919 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:03:10.381  INFO 676919 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:03:10.382  INFO 676919 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:03:10.412  INFO 676919 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.104 seconds (JVM running for 1.664)
+2023-02-17 10:03:10.562  INFO 676919 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@6418e39e
+2023-02-17 10:03:10.563  INFO 676919 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:04:06.943  INFO 677489 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 677489 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:04:06.943 DEBUG 677489 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:04:06.944  INFO 677489 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:04:07.579  INFO 677489 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:04:07.580  INFO 677489 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:04:07.582  INFO 677489 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-02-17 10:04:07.621  INFO 677489 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.026 seconds (JVM running for 1.653)
+2023-02-17 10:04:07.767  INFO 677489 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@67770b37
+2023-02-17 10:04:07.768  INFO 677489 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:06:29.841  INFO 678758 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 678758 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:06:29.842 DEBUG 678758 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:06:29.842  INFO 678758 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:06:30.462  INFO 678758 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:06:30.463  INFO 678758 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:06:30.463  INFO 678758 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-17 10:06:30.490  INFO 678758 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.991 seconds (JVM running for 1.653)
+2023-02-17 10:06:30.632  INFO 678758 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@4cc65c2
+2023-02-17 10:06:30.634  INFO 678758 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:09:53.589  INFO 680598 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 680598 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:09:53.590 DEBUG 680598 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:09:53.591  INFO 680598 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:09:54.335  INFO 680598 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:09:54.336  INFO 680598 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:09:54.337  INFO 680598 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:09:54.369  INFO 680598 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.15 seconds (JVM running for 1.761)
+2023-02-17 10:09:54.591  INFO 680598 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@4bc59b27
+2023-02-17 10:10:35.646  INFO 680598 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:11:17.355  INFO 681369 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 681369 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:11:17.355 DEBUG 681369 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:11:17.356  INFO 681369 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:11:18.001  INFO 681369 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:11:18.001  INFO 681369 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:11:18.002  INFO 681369 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:11:18.030  INFO 681369 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.996 seconds (JVM running for 1.615)
+2023-02-17 10:11:18.173  INFO 681369 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@73041b7d
+2023-02-17 10:11:18.174  INFO 681369 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:11:58.822  INFO 681783 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 681783 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:11:58.823 DEBUG 681783 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:11:58.824  INFO 681783 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:11:59.482  INFO 681783 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:11:59.483  INFO 681783 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:11:59.483  INFO 681783 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-17 10:11:59.532  INFO 681783 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.014 seconds (JVM running for 1.633)
+2023-02-17 10:11:59.734  INFO 681783 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@5a1f778
+2023-02-17 10:11:59.735  INFO 681783 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:12:56.764  INFO 682385 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 682385 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:12:56.764 DEBUG 682385 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:12:56.765  INFO 682385 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:12:57.380  INFO 682385 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:12:57.381  INFO 682385 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:12:57.391  INFO 682385 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 10 ms
+2023-02-17 10:12:57.421  INFO 682385 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.965 seconds (JVM running for 1.616)
+2023-02-17 10:12:57.555  INFO 682385 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@1c57f6b2
+2023-02-17 10:12:57.557  INFO 682385 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:19:10.558  INFO 685606 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 685606 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:19:10.558 DEBUG 685606 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:19:10.559  INFO 685606 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:19:11.350  INFO 685606 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:19:11.350  INFO 685606 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:19:11.351  INFO 685606 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:19:11.393  INFO 685606 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.208 seconds (JVM running for 2.27)
+2023-02-17 10:19:11.636  INFO 685606 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@7af443a3
+2023-02-17 10:19:11.638  INFO 685606 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:19:53.297  INFO 686032 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 686032 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:19:53.298 DEBUG 686032 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:19:53.299  INFO 686032 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:19:54.666  INFO 686032 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:19:54.667  INFO 686032 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:19:54.671  INFO 686032 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2023-02-17 10:19:54.742  INFO 686032 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.824 seconds (JVM running for 2.439)
+2023-02-17 10:21:51.324  INFO 686032 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@6adc5b9c
+2023-02-17 10:21:58.601  INFO 686032 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:22:33.812  INFO 687497 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 687497 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:22:33.813 DEBUG 687497 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:22:33.813  INFO 687497 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:22:34.454  INFO 687497 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:22:34.454  INFO 687497 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:22:34.455  INFO 687497 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:22:34.482  INFO 687497 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.051 seconds (JVM running for 1.758)
+2023-02-17 10:22:34.587  INFO 687497 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@16da476c
+2023-02-17 10:23:01.462  INFO 687845 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 687845 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:23:01.462 DEBUG 687845 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:23:01.463  INFO 687845 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:23:02.160  INFO 687845 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:23:02.160  INFO 687845 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:23:02.161  INFO 687845 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:23:02.194  INFO 687845 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.065 seconds (JVM running for 1.636)
+2023-02-17 10:23:02.296  INFO 687845 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@51f18e31
+2023-02-17 10:23:51.895  INFO 688329 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 688329 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:23:51.897 DEBUG 688329 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:23:51.900  INFO 688329 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:23:52.607  INFO 688329 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:23:52.607  INFO 688329 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:23:52.608  INFO 688329 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:23:52.637  INFO 688329 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.14 seconds (JVM running for 1.8)
+2023-02-17 10:23:52.755  INFO 688329 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@16da476c
+2023-02-17 10:24:09.641  INFO 688578 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 688578 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:24:09.642 DEBUG 688578 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:24:09.642  INFO 688578 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:24:10.297  INFO 688578 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:24:10.298  INFO 688578 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:24:10.299  INFO 688578 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:24:10.338  INFO 688578 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.078 seconds (JVM running for 1.695)
+2023-02-17 10:24:10.420  WARN 688578 --- [main] o.s.web.servlet.PageNotFound             : No mapping for POST /inventory/items
+2023-02-17 10:24:20.740  INFO 688731 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 688731 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:24:20.741 DEBUG 688731 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:24:20.742  INFO 688731 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:24:21.778  INFO 688731 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:24:21.778  INFO 688731 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:24:21.780  INFO 688731 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-02-17 10:24:21.832  INFO 688731 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.687 seconds (JVM running for 2.259)
+2023-02-17 10:24:22.086  INFO 688731 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@5a1f778
+2023-02-17 10:24:22.088  INFO 688731 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:25:52.712  INFO 689558 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 689558 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:25:52.713 DEBUG 689558 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:25:52.713  INFO 689558 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:25:53.365  INFO 689558 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:25:53.365  INFO 689558 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:25:53.366  INFO 689558 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:25:53.400  INFO 689558 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.069 seconds (JVM running for 1.74)
+2023-02-17 10:25:53.571  INFO 689558 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@5a1f778
+2023-02-17 10:25:53.573  INFO 689558 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:39:33.886  INFO 700370 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 700370 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:39:33.887 DEBUG 700370 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:39:33.888  INFO 700370 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:39:34.576  INFO 700370 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:39:34.577  INFO 700370 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:39:34.578  INFO 700370 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:39:34.606  INFO 700370 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.076 seconds (JVM running for 1.607)
+2023-02-17 10:39:34.752  INFO 700370 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@2001e48c
+2023-02-17 10:39:34.753  INFO 700370 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:39:58.086  INFO 700643 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 700643 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:39:58.086 DEBUG 700643 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:39:58.087  INFO 700643 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:39:58.776  INFO 700643 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:39:58.776  INFO 700643 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:39:58.777  INFO 700643 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:39:58.821  INFO 700643 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.09 seconds (JVM running for 1.666)
+2023-02-17 10:39:58.959  INFO 700643 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@1536ea40
+2023-02-17 10:39:58.961  INFO 700643 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:40:11.361  INFO 700846 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 700846 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:40:11.362 DEBUG 700846 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:40:11.362  INFO 700846 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:40:12.013  INFO 700846 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:40:12.013  INFO 700846 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:40:12.015  INFO 700846 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-02-17 10:40:12.048  INFO 700846 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.098 seconds (JVM running for 1.659)
+2023-02-17 10:40:12.201  INFO 700846 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@66c9b52f
+2023-02-17 10:40:12.202  INFO 700846 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:44:00.615  INFO 702987 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 702987 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:44:00.617 DEBUG 702987 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:44:00.617  INFO 702987 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:44:01.338  INFO 702987 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:44:01.338  INFO 702987 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:44:01.339  INFO 702987 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:44:01.376  INFO 702987 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.084 seconds (JVM running for 1.62)
+2023-02-17 10:44:01.534  INFO 702987 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@4f379769
+2023-02-17 10:44:01.535  INFO 702987 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:46:32.871  INFO 704374 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 704374 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:46:32.872 DEBUG 704374 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:46:32.873  INFO 704374 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:46:33.526  INFO 704374 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:46:33.527  INFO 704374 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:46:33.527  INFO 704374 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-17 10:46:33.553  INFO 704374 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.086 seconds (JVM running for 1.752)
+2023-02-17 10:46:33.692  INFO 704374 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@72906e
+2023-02-17 10:46:33.694  INFO 704374 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:48:51.004  INFO 705662 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 705662 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:48:51.005 DEBUG 705662 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:48:51.007  INFO 705662 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:48:51.671  INFO 705662 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:48:51.671  INFO 705662 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:48:51.672  INFO 705662 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-17 10:48:51.699  INFO 705662 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.079 seconds (JVM running for 1.731)
+2023-02-17 10:48:51.851  INFO 705662 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@1235151c
+2023-02-17 10:48:51.852  INFO 705662 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:53:13.046  INFO 708001 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 708001 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:53:13.047 DEBUG 708001 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:53:13.047  INFO 708001 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:53:13.711  INFO 708001 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:53:13.711  INFO 708001 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:53:13.712  INFO 708001 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:53:13.743  INFO 708001 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.083 seconds (JVM running for 1.715)
+2023-02-17 10:53:13.896  INFO 708001 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@5eb5da12
+2023-02-17 10:53:13.897  INFO 708001 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 10:58:14.192  INFO 710759 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 710759 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:58:14.193 DEBUG 710759 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:58:14.194  INFO 710759 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:58:15.060  INFO 710759 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:58:15.060  INFO 710759 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:58:15.061  INFO 710759 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:58:15.086  INFO 710759 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.203 seconds (JVM running for 1.851)
+2023-02-17 10:58:15.276  INFO 710759 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@5099c59b
+2023-02-17 10:58:15.279  INFO 710759 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@1f87607c
+2023-02-17 10:58:47.022  INFO 711095 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 711095 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 10:58:47.022 DEBUG 711095 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 10:58:47.023  INFO 711095 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 10:58:47.695  INFO 711095 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 10:58:47.695  INFO 711095 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 10:58:47.696  INFO 711095 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 10:58:47.729  INFO 711095 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.035 seconds (JVM running for 1.506)
+2023-02-17 10:58:47.943  INFO 711095 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@5a1f778
+2023-02-17 10:58:47.946  INFO 711095 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@6adc5b9c
+2023-02-17 11:00:07.726  INFO 711944 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 711944 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 11:00:07.727 DEBUG 711944 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 11:00:07.727  INFO 711944 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 11:00:08.368  INFO 711944 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 11:00:08.369  INFO 711944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 11:00:08.369  INFO 711944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-17 11:00:08.398  INFO 711944 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.035 seconds (JVM running for 1.642)
+2023-02-17 11:00:08.573  INFO 711944 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@1536ea40
+2023-02-17 11:00:08.575  INFO 711944 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@1da1380b

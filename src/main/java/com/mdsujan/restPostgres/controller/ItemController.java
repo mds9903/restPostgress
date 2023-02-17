@@ -51,6 +51,10 @@ public class ItemController {
     public String createItemNoValidate(@RequestBody Item createItemRequest) throws Throwable {
         logger.info("CREATE NEW ITEM | InQueryRequest: " + createItemRequest);
         return itemService.createItemNoValidate(createItemRequest).toString();
+//        if (createItemRequest != null) {
+//
+//        }
+//        throw new Exception("createItem request is null");
 //        logger.info("Response: " + itemResponse);
 //        return itemResponse;
     }

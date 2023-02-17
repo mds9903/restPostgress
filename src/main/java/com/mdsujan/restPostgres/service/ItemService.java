@@ -43,9 +43,9 @@ public class ItemService {
 
     public Item getItemById(Long itemId) throws Throwable {
         return itemRepository.findById(itemId)
-                             .orElseThrow(() -> new ResourceNotFoundException(
-                                     "item not found for given itemId: '"
-                                     + itemId + "'; please check itemId entered"));
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "item not found for given itemId: '"
+                                + itemId + "'; please check itemId entered"));
     }
 
     //    @CacheEvict(value = "items", allEntries = true)
@@ -55,10 +55,12 @@ public class ItemService {
         // if record with same id exists then simply return it
         if (itemRepository.findById(createItemRequest.getItemId()).isPresent()) {
             throw new DuplicateResourceException("an item with same itemId already exists; please provide a unique " +
-                                                 "itemId in the request body");
+                    "itemId in the request body");
         }
         // else we create a new item
-        return itemRepository.save(createItemRequest);
+        Item response = itemRepository.save(createItemRequest);
+        System.out.println("itemId of created item: " + response.getItemId());
+        return response;
     }
 
     public Item createItemNoValidate(Item createItemRequest) throws Throwable {
@@ -92,8 +94,8 @@ public class ItemService {
                 itemsCreated.add(createItem(item));
             } catch (DuplicateResourceException e) {
                 throw new DuplicateResourceException("For item #" + (itemList.indexOf(item) + 1) + "; an item with " +
-                                                     "same itemId already exists; please provide a unique " +
-                                                     "itemId in the request body");
+                        "same itemId already exists; please provide a unique " +
+                        "itemId in the request body");
             }
         }
 
@@ -105,8 +107,8 @@ public class ItemService {
         if (itemRepository.findById(itemId).isPresent()) {
             // if any child records depend on this item
             if (supplyRepository.findByItemId(itemId).size() > 0
-                || demandRepository.findByItemId(itemId).size() > 0
-                || thresholdRepository.findByItemId(itemId).size() > 0) {
+                    || demandRepository.findByItemId(itemId).size() > 0
+                    || thresholdRepository.findByItemId(itemId).size() > 0) {
                 // this item cannot be deleted
 //                return "Cannot delete item; it has child records";
                 throw new ResourceConflictException("this item cannot be deleted; has child dependencies");
@@ -125,8 +127,8 @@ public class ItemService {
         if (!itemId.equals(updateItemRequest.getItemId())) {
             // itemId in the body is not matching the itemId in the path variable
             throw new UpdateResourceRequestBodyInvalidException("itemId in the body is not matching the itemId in the" +
-                                                                " path variable; " + "please provide the " +
-                                                                "right itemId to avoid confusion");
+                    " path variable; " + "please provide the " +
+                    "right itemId to avoid confusion");
         }
         if (itemRepository.findById(itemId).isPresent()) {
             Item itemToUpdate = itemRepository.findById(itemId).get();
@@ -145,7 +147,7 @@ public class ItemService {
 //            }
         } else {
             throw new ResourceNotFoundException("cannot update this item; item not found; please enter a correct " +
-                                                "itemId");
+                    "itemId");
         }
     }
 
@@ -154,8 +156,8 @@ public class ItemService {
         if (!itemId.equals(updateItemRequest.getItemId())) {
             // itemId in the body is not matching the itemId in the path variable
             throw new UpdateResourceRequestBodyInvalidException("itemId in the body is not matching the itemId in the" +
-                                                                " path variable; " + "please provide the " +
-                                                                "right itemId to avoid confusion");
+                    " path variable; " + "please provide the " +
+                    "right itemId to avoid confusion");
         }
         if (itemRepository.findById(itemId).isPresent()) {
             // find the record matching with the id
@@ -197,7 +199,7 @@ public class ItemService {
             return itemRepository.save(itemToUpdate);
         } else {
             throw new ResourceNotFoundException("cannot update item; item not found; please provide the correct " +
-                                                "itemId");
+                    "itemId");
         }
     }
 

@@ -10,11 +10,13 @@ public class TestUtils {
         return Item.builder()
                 .itemId(123L)
                 .itemDesc("test description")
-                .itemType("test type")
                 .category("test")
-                .deliveryAllowed(false)
-                .shippingAllowed(false)
+                .itemType("test type")
+                .status("test status")
+                .price(100.99)
                 .pickupAllowed(false)
+                .shippingAllowed(false)
+                .deliveryAllowed(false)
                 .build();
     }
 
