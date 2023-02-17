@@ -21,11 +21,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -59,8 +57,7 @@ public class ItemControllerTest {
         // execute
         String expectedJsonString = objectMapper.writeValueAsString(testItemList);
 
-        MvcResult mvcResult = mockMvc.perform(get(base_url)
-                        .accept(MediaType.APPLICATION_JSON))
+        MvcResult mvcResult = mockMvc.perform(get(base_url))
                 .andExpect(status().isOk())
                 .andReturn();
 
@@ -75,8 +72,7 @@ public class ItemControllerTest {
     public void test_getAllItems_wrong_endpoint() throws Exception {
 
         // setup, execute and assert
-        MvcResult mvcResult = mockMvc.perform(get("/wrongEndpoint")
-                        .accept(MediaType.APPLICATION_JSON))
+        MvcResult mvcResult = mockMvc.perform(get("/wrongEndpoint"))
                 .andExpect(status().isNotFound()) // error 404
                 .andReturn();
 
@@ -95,8 +91,7 @@ public class ItemControllerTest {
         // execute
         String expectedJsonResponse = objectMapper.writeValueAsString(testItem);
 
-        MvcResult mvcResult = mockMvc.perform(get(base_url + testId)
-                        .contentType(MediaType.APPLICATION_JSON))
+        MvcResult mvcResult = mockMvc.perform(get(base_url + testId))
                 .andExpect(status().isOk())
                 .andReturn();
 
@@ -123,7 +118,7 @@ public class ItemControllerTest {
 
         MvcResult mvcResult = mockMvc.perform(post(base_url)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(expectedJsonResponse).accept(MediaType.APPLICATION_JSON))
+                        .content(expectedJsonResponse))
                 .andExpect(status().isOk())
                 .andReturn();
 
@@ -148,7 +143,7 @@ public class ItemControllerTest {
 
         MvcResult mvcResult = mockMvc.perform(post(base_url + "/batch")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(expectedJsonResponse).accept(MediaType.APPLICATION_JSON))
+                        .content(expectedJsonResponse))
                 .andExpect(status().isOk())
                 .andReturn();
 
@@ -158,5 +153,47 @@ public class ItemControllerTest {
         assertEquals(expectedJsonResponse, actualJsonResponse);
     }
 
+    @DisplayName("delete an item with correct item id - status ok is received")
+    @Test
+    public void testDeleteItem_valid_id() throws Throwable {
+        // setup
+        Long testId = 1L;
+        // stub
+        Mockito.when(mockItemService.deleteItemById(testId)).thenReturn(anyString());
 
+        // execute and assert
+        MvcResult mvcResult = mockMvc.perform(delete(base_url + "/" + testId))
+                .andExpect(status().isOk())
+                .andReturn();
+    }
+
+    @DisplayName("delete an item with correct item id - status ok is received")
+    @Test
+    public void testDeleteItem_invalid_id() throws Throwable {
+        // setup
+        String invalidIdString = "123abc";
+
+        // execute and assert
+        MvcResult mvcResultString = mockMvc.perform(delete(base_url + "/" + invalidIdString))
+                .andExpect(status().isBadRequest())
+                .andReturn();
+    }
+
+    @DisplayName("updateItem_put with valid itemId in body & request param - should return updated item")
+    @Test
+    public void updateItem_put_valid_inputs() throws Throwable {
+        // setup
+        Long testId = 1L;
+
+        Item testItem = testUtils.getTestItem();
+
+        // stub
+        when(mockItemService.updateItemByIdPut(any(Long.class), any(Item.class)))
+                .thenReturn(testItem);
+
+        // execute
+        String expectedJsonResponse = objectMapper.writeValueAsString(testItem);
+
+        MvcResult mvcResult = mockMvc.perform(put(base_url+testId).)
+    }
 }

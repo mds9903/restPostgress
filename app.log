@@ -315,3 +315,391 @@
 2023-02-17 11:55:56.667  INFO 743977 --- [main] c.m.r.controller.ItemController          : Response: [com.mdsujan.restPostgres.entity.Item@1d6751e3]
 2023-02-17 11:55:56.769  INFO 743977 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@77b5148c
 2023-02-17 11:55:56.770  INFO 743977 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@36359723
+2023-02-17 17:44:29.608  INFO 852098 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 852098 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 17:44:29.609 DEBUG 852098 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 17:44:29.610  INFO 852098 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 17:44:30.258  INFO 852098 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 17:44:30.258  INFO 852098 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 17:44:30.259  INFO 852098 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 17:44:30.286  INFO 852098 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.015 seconds (JVM running for 1.656)
+2023-02-17 17:44:30.355  WARN 852098 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public java.util.List<com.mdsujan.restPostgres.entity.Item> com.mdsujan.restPostgres.controller.ItemController.createItems(java.util.List<com.mdsujan.restPostgres.entity.Item>) throws java.lang.Throwable]
+2023-02-17 17:44:30.374  WARN 852098 --- [main] o.s.test.context.TestContextManager      : Caught exception while invoking 'afterTestMethod' callback on TestExecutionListener [org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@36916eb0] for test method [public void com.mdsujan.restPostgres.controller.ItemControllerTest.testDeleteItemReturnStringResponse() throws java.lang.Throwable] and test instance [com.mdsujan.restPostgres.controller.ItemControllerTest@2173a742]
+
+org.mockito.exceptions.misusing.InvalidUseOfMatchersException: 
+Misplaced or misused argument matcher detected here:
+
+-> at com.mdsujan.restPostgres.controller.ItemControllerTest.testDeleteItemReturnStringResponse(ItemControllerTest.java:166)
+
+You cannot use argument matchers outside of verification or stubbing.
+Examples of correct usage of argument matchers:
+    when(mock.get(anyInt())).thenReturn(null);
+    doThrow(new RuntimeException()).when(mock).someVoidMethod(any());
+    verify(mock).someMethod(contains("foo"))
+
+This message may appear after an NullPointerException if the last matcher is returning an object 
+like any() but the stubbed method signature expect a primitive argument, in this case,
+use primitive alternatives.
+    when(mock.get(any())); // bad use, will raise NPE
+    when(mock.get(anyInt())); // correct usage use
+
+Also, this error might show up because you use argument matchers with methods that cannot be mocked.
+Following methods *cannot* be stubbed/verified: final/private/equals()/hashCode().
+Mocking methods declared on non-public parent classes is not supported.
+
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.resetMocks(ResetMocksTestExecutionListener.java:83) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.resetMocks(ResetMocksTestExecutionListener.java:70) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.afterTestMethod(ResetMocksTestExecutionListener.java:64) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:445) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:94) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) ~[junit-4.13.2.jar:4.13.2]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
+
+2023-02-17 17:44:58.518  INFO 852410 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 852410 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 17:44:58.519 DEBUG 852410 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 17:44:58.519  INFO 852410 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 17:44:59.260  INFO 852410 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 17:44:59.260  INFO 852410 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 17:44:59.261  INFO 852410 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 17:44:59.306  INFO 852410 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.083 seconds (JVM running for 1.841)
+2023-02-17 17:44:59.374  WARN 852410 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2023-02-17 17:44:59.387  WARN 852410 --- [main] o.s.test.context.TestContextManager      : Caught exception while invoking 'afterTestMethod' callback on TestExecutionListener [org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@36916eb0] for test method [public void com.mdsujan.restPostgres.controller.ItemControllerTest.testDeleteItemReturnStringResponse() throws java.lang.Throwable] and test instance [com.mdsujan.restPostgres.controller.ItemControllerTest@2291d9a0]
+
+org.mockito.exceptions.misusing.InvalidUseOfMatchersException: 
+Misplaced or misused argument matcher detected here:
+
+-> at com.mdsujan.restPostgres.controller.ItemControllerTest.testDeleteItemReturnStringResponse(ItemControllerTest.java:166)
+
+You cannot use argument matchers outside of verification or stubbing.
+Examples of correct usage of argument matchers:
+    when(mock.get(anyInt())).thenReturn(null);
+    doThrow(new RuntimeException()).when(mock).someVoidMethod(any());
+    verify(mock).someMethod(contains("foo"))
+
+This message may appear after an NullPointerException if the last matcher is returning an object 
+like any() but the stubbed method signature expect a primitive argument, in this case,
+use primitive alternatives.
+    when(mock.get(any())); // bad use, will raise NPE
+    when(mock.get(anyInt())); // correct usage use
+
+Also, this error might show up because you use argument matchers with methods that cannot be mocked.
+Following methods *cannot* be stubbed/verified: final/private/equals()/hashCode().
+Mocking methods declared on non-public parent classes is not supported.
+
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.resetMocks(ResetMocksTestExecutionListener.java:83) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.resetMocks(ResetMocksTestExecutionListener.java:70) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.afterTestMethod(ResetMocksTestExecutionListener.java:64) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:445) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:94) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) ~[junit-4.13.2.jar:4.13.2]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
+
+2023-02-17 17:46:18.887  INFO 853148 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 853148 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 17:46:18.888 DEBUG 853148 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 17:46:18.888  INFO 853148 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 17:46:19.633  INFO 853148 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 17:46:19.633  INFO 853148 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 17:46:19.635  INFO 853148 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 17:46:19.676  INFO 853148 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.1 seconds (JVM running for 2.889)
+2023-02-17 17:46:19.743  WARN 853148 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2023-02-17 17:46:19.783  WARN 853148 --- [main] o.s.test.context.TestContextManager      : Caught exception while invoking 'afterTestMethod' callback on TestExecutionListener [org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4c1909a3] for test method [public void com.mdsujan.restPostgres.controller.ItemControllerTest.testDeleteItemReturnStringResponse() throws java.lang.Throwable] and test instance [com.mdsujan.restPostgres.controller.ItemControllerTest@4dadd690]
+
+org.mockito.exceptions.misusing.InvalidUseOfMatchersException: 
+Misplaced or misused argument matcher detected here:
+
+-> at com.mdsujan.restPostgres.controller.ItemControllerTest.testDeleteItemReturnStringResponse(ItemControllerTest.java:166)
+
+You cannot use argument matchers outside of verification or stubbing.
+Examples of correct usage of argument matchers:
+    when(mock.get(anyInt())).thenReturn(null);
+    doThrow(new RuntimeException()).when(mock).someVoidMethod(any());
+    verify(mock).someMethod(contains("foo"))
+
+This message may appear after an NullPointerException if the last matcher is returning an object 
+like any() but the stubbed method signature expect a primitive argument, in this case,
+use primitive alternatives.
+    when(mock.get(any())); // bad use, will raise NPE
+    when(mock.get(anyInt())); // correct usage use
+
+Also, this error might show up because you use argument matchers with methods that cannot be mocked.
+Following methods *cannot* be stubbed/verified: final/private/equals()/hashCode().
+Mocking methods declared on non-public parent classes is not supported.
+
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.resetMocks(ResetMocksTestExecutionListener.java:83) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.resetMocks(ResetMocksTestExecutionListener.java:70) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.afterTestMethod(ResetMocksTestExecutionListener.java:64) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:445) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:94) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) ~[junit-4.13.2.jar:4.13.2]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
+
+2023-02-17 17:46:24.936  INFO 853284 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 853284 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 17:46:24.937 DEBUG 853284 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 17:46:24.938  INFO 853284 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 17:46:25.610  INFO 853284 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 17:46:25.611  INFO 853284 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 17:46:25.612  INFO 853284 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 17:46:25.641  INFO 853284 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.029 seconds (JVM running for 1.848)
+2023-02-17 17:46:25.702  WARN 853284 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2023-02-17 17:46:25.731  WARN 853284 --- [main] o.s.test.context.TestContextManager      : Caught exception while invoking 'afterTestMethod' callback on TestExecutionListener [org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@36916eb0] for test method [public void com.mdsujan.restPostgres.controller.ItemControllerTest.testDeleteItemReturnStringResponse() throws java.lang.Throwable] and test instance [com.mdsujan.restPostgres.controller.ItemControllerTest@32f32623]
+
+org.mockito.exceptions.misusing.InvalidUseOfMatchersException: 
+Misplaced or misused argument matcher detected here:
+
+-> at com.mdsujan.restPostgres.controller.ItemControllerTest.testDeleteItemReturnStringResponse(ItemControllerTest.java:166)
+
+You cannot use argument matchers outside of verification or stubbing.
+Examples of correct usage of argument matchers:
+    when(mock.get(anyInt())).thenReturn(null);
+    doThrow(new RuntimeException()).when(mock).someVoidMethod(any());
+    verify(mock).someMethod(contains("foo"))
+
+This message may appear after an NullPointerException if the last matcher is returning an object 
+like any() but the stubbed method signature expect a primitive argument, in this case,
+use primitive alternatives.
+    when(mock.get(any())); // bad use, will raise NPE
+    when(mock.get(anyInt())); // correct usage use
+
+Also, this error might show up because you use argument matchers with methods that cannot be mocked.
+Following methods *cannot* be stubbed/verified: final/private/equals()/hashCode().
+Mocking methods declared on non-public parent classes is not supported.
+
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.resetMocks(ResetMocksTestExecutionListener.java:83) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.resetMocks(ResetMocksTestExecutionListener.java:70) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener.afterTestMethod(ResetMocksTestExecutionListener.java:64) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:445) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:94) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) ~[junit-4.13.2.jar:4.13.2]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
+
+2023-02-17 17:46:40.723  INFO 853480 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 853480 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 17:46:40.724 DEBUG 853480 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 17:46:40.724  INFO 853480 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 17:46:41.442  INFO 853480 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 17:46:41.442  INFO 853480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 17:46:41.443  INFO 853480 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 17:46:41.492  INFO 853480 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.128 seconds (JVM running for 1.715)
+2023-02-17 17:46:41.545  INFO 853480 --- [main] c.m.r.controller.ItemController          : Response: 
+2023-02-17 17:49:43.651  INFO 855094 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 855094 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 17:49:43.652 DEBUG 855094 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 17:49:43.652  INFO 855094 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 17:49:44.334  INFO 855094 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 17:49:44.335  INFO 855094 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 17:49:44.335  INFO 855094 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-17 17:49:44.366  INFO 855094 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.033 seconds (JVM running for 1.852)
+2023-02-17 17:49:44.448  WARN 855094 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-17 17:51:31.040  INFO 856065 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 856065 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 17:51:31.041 DEBUG 856065 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 17:51:31.041  INFO 856065 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 17:51:31.692  INFO 856065 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 17:51:31.693  INFO 856065 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 17:51:31.693  INFO 856065 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-17 17:51:31.719  INFO 856065 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.967 seconds (JVM running for 1.646)
+2023-02-17 17:51:31.775  WARN 856065 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-17 17:53:11.944  INFO 856967 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 856967 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 17:53:11.945 DEBUG 856967 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 17:53:11.945  INFO 856967 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 17:53:12.612  INFO 856967 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 17:53:12.612  INFO 856967 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 17:53:12.613  INFO 856967 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 17:53:12.639  INFO 856967 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.008 seconds (JVM running for 1.689)
+2023-02-17 17:53:12.698  WARN 856967 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-17 17:53:12.738  INFO 856967 --- [main] c.m.r.controller.ItemController          : Response: null
+2023-02-17 17:54:11.792  INFO 857539 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 857539 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 17:54:11.793 DEBUG 857539 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 17:54:11.794  INFO 857539 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 17:54:12.512  INFO 857539 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 17:54:12.512  INFO 857539 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 17:54:12.513  INFO 857539 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 17:54:12.560  INFO 857539 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.086 seconds (JVM running for 1.708)
+2023-02-17 17:54:12.629  WARN 857539 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-17 17:54:43.429  INFO 857890 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 857890 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 17:54:43.430 DEBUG 857890 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 17:54:43.430  INFO 857890 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 17:54:44.149  INFO 857890 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 17:54:44.149  INFO 857890 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 17:54:44.150  INFO 857890 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 17:54:44.176  INFO 857890 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.069 seconds (JVM running for 1.712)
+2023-02-17 17:54:44.277  INFO 857890 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@60cb1ed6
+2023-02-17 17:54:44.297  WARN 857890 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-17 17:54:44.337  INFO 857890 --- [main] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@385dfb63]
+2023-02-17 17:54:44.338  INFO 857890 --- [main] c.m.r.controller.ItemController          : Response: [com.mdsujan.restPostgres.entity.Item@364fd4ae]
+2023-02-17 17:54:44.391  INFO 857890 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@b950f82
+2023-02-17 17:54:44.392  INFO 857890 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@5d352de0
+2023-02-17 17:54:44.398  INFO 857890 --- [main] c.m.r.controller.ItemController          : Response: 
+2023-02-17 17:54:44.407  WARN 857890 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-17 17:54:55.019  INFO 858070 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 858070 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 17:54:55.019 DEBUG 858070 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 17:54:55.020  INFO 858070 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 17:54:55.687  INFO 858070 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 17:54:55.687  INFO 858070 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 17:54:55.688  INFO 858070 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-17 17:54:55.715  INFO 858070 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.975 seconds (JVM running for 1.818)
+2023-02-17 17:54:55.801  INFO 858070 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@2f20f7ad
+2023-02-17 17:54:55.822  WARN 858070 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-17 17:54:55.855  INFO 858070 --- [main] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@4a058df8]
+2023-02-17 17:54:55.856  INFO 858070 --- [main] c.m.r.controller.ItemController          : Response: [com.mdsujan.restPostgres.entity.Item@4b56b031]
+2023-02-17 17:54:55.930  INFO 858070 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@53eba4b8
+2023-02-17 17:54:55.930  INFO 858070 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@437bd805
+2023-02-17 17:54:55.935  INFO 858070 --- [main] c.m.r.controller.ItemController          : Response: 
+2023-02-17 17:54:55.941  WARN 858070 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-17 18:01:45.735  INFO 861637 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 861637 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 18:01:45.735 DEBUG 861637 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 18:01:45.736  INFO 861637 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 18:01:46.365  INFO 861637 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 18:01:46.365  INFO 861637 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 18:01:46.366  INFO 861637 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 18:01:46.398  INFO 861637 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.949 seconds (JVM running for 1.736)
+2023-02-17 18:01:46.476  INFO 861637 --- [main] c.m.r.controller.ItemController          : Response: 
+2023-02-17 18:02:07.675  INFO 861889 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 861889 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 18:02:07.676 DEBUG 861889 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 18:02:07.677  INFO 861889 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 18:02:08.317  INFO 861889 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 18:02:08.317  INFO 861889 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 18:02:08.317  INFO 861889 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-17 18:02:08.344  INFO 861889 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.03 seconds (JVM running for 1.781)
+2023-02-17 18:02:08.409  WARN 861889 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-17 18:03:44.808  INFO 862761 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 862761 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 18:03:44.809 DEBUG 862761 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 18:03:44.809  INFO 862761 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 18:03:45.480  INFO 862761 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 18:03:45.480  INFO 862761 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 18:03:45.481  INFO 862761 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 18:03:45.508  INFO 862761 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.023 seconds (JVM running for 1.693)
+2023-02-17 18:06:30.775  INFO 864219 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 864219 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 18:06:30.775 DEBUG 864219 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 18:06:30.776  INFO 864219 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 18:06:31.450  INFO 864219 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 18:06:31.451  INFO 864219 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 18:06:31.452  INFO 864219 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 18:06:31.483  INFO 864219 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.001 seconds (JVM running for 1.809)
+2023-02-17 18:06:31.584  INFO 864219 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@49433c98
+2023-02-17 18:06:31.604  WARN 864219 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-17 18:06:31.615  WARN 864219 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/octet-stream' not supported]
+2023-02-17 18:06:31.629  WARN 864219 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/octet-stream' not supported]
+2023-02-17 18:06:31.638  INFO 864219 --- [main] c.m.r.controller.ItemController          : Response: 
+2023-02-17 18:06:31.644  WARN 864219 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-17 18:08:13.623  INFO 865284 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 865284 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 18:08:13.624 DEBUG 865284 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 18:08:13.624  INFO 865284 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 18:08:14.313  INFO 865284 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 18:08:14.313  INFO 865284 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 18:08:14.314  INFO 865284 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 18:08:14.345  INFO 865284 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.032 seconds (JVM running for 1.748)
+2023-02-17 18:08:14.465  WARN 865284 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/octet-stream' not supported]
+2023-02-17 18:09:18.433  INFO 865931 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 865931 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 18:09:18.434 DEBUG 865931 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 18:09:18.434  INFO 865931 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 18:09:19.077  INFO 865931 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 18:09:19.078  INFO 865931 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 18:09:19.079  INFO 865931 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 18:09:19.108  INFO 865931 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.994 seconds (JVM running for 1.631)
+2023-02-17 18:09:19.174  WARN 865931 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-17 18:09:37.580  INFO 866156 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 866156 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 18:09:37.581 DEBUG 866156 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 18:09:37.581  INFO 866156 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 18:09:38.260  INFO 866156 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 18:09:38.261  INFO 866156 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 18:09:38.261  INFO 866156 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-17 18:09:38.292  INFO 866156 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.037 seconds (JVM running for 1.731)
+2023-02-17 18:09:38.435  INFO 866156 --- [main] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@75d366c2]
+2023-02-17 18:09:38.436  INFO 866156 --- [main] c.m.r.controller.ItemController          : Response: [com.mdsujan.restPostgres.entity.Item@6ad179b4]
+2023-02-17 18:09:55.055  INFO 866363 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 866363 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 18:09:55.056 DEBUG 866363 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 18:09:55.057  INFO 866363 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 18:09:56.120  INFO 866363 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 18:09:56.120  INFO 866363 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 18:09:56.121  INFO 866363 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 18:09:56.160  INFO 866363 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.708 seconds (JVM running for 2.907)
+2023-02-17 18:09:56.406  INFO 866363 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@5348d83c
+2023-02-17 18:09:56.409  INFO 866363 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@7455dacb
+2023-02-17 18:11:01.067  INFO 866988 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 866988 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-17 18:11:01.068 DEBUG 866988 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-17 18:11:01.068  INFO 866988 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-17 18:11:02.029  INFO 866988 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-17 18:11:02.030  INFO 866988 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-17 18:11:02.031  INFO 866988 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-17 18:11:02.068  INFO 866988 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 1.466 seconds (JVM running for 2.254)
+2023-02-17 18:11:02.190  INFO 866988 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@67332b1e
+2023-02-17 18:11:02.223  WARN 866988 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-17 18:11:02.269  INFO 866988 --- [main] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@623e0631]
+2023-02-17 18:11:02.270  INFO 866988 --- [main] c.m.r.controller.ItemController          : Response: [com.mdsujan.restPostgres.entity.Item@359066bc]
+2023-02-17 18:11:02.339  INFO 866988 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@678a9516
+2023-02-17 18:11:02.340  INFO 866988 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@5bf9ea6b
+2023-02-17 18:11:02.347  INFO 866988 --- [main] c.m.r.controller.ItemController          : Response: 
+2023-02-17 18:11:02.358  WARN 866988 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
