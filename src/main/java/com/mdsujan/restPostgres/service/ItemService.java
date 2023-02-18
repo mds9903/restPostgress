@@ -205,7 +205,7 @@ public class ItemService {
 
     public PaginatedResponse getAllItemsPaginated(Integer pageSize, Integer pageNum) {
         List<Item> items = itemRepository.findAll(PageRequest.of(pageNum - 1, pageSize)).getContent();
-        Long maxPages = itemRepository.count() / pageSize;
+        Integer maxPages = Math.toIntExact(itemRepository.count() / pageSize);
 
         return new PaginatedResponse(items, maxPages, pageNum, pageSize);
     }

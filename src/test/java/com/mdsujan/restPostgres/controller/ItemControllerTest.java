@@ -3,6 +3,7 @@ package com.mdsujan.restPostgres.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mdsujan.restPostgres.TestUtils;
 import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.response.PaginatedResponse;
 import com.mdsujan.restPostgres.service.ItemService;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -181,7 +182,7 @@ public class ItemControllerTest {
 
     @DisplayName("updateItem_put with valid itemId in body & request param - should return updated item")
     @Test
-    public void updateItem_put_valid_inputs() throws Throwable {
+    public void test_updateItem_put_valid_inputs() throws Throwable {
         // setup
         Long testId = 1L;
 
@@ -194,6 +195,112 @@ public class ItemControllerTest {
         // execute
         String expectedJsonResponse = objectMapper.writeValueAsString(testItem);
 
-        MvcResult mvcResult = mockMvc.perform(put(base_url+testId).)
+        MvcResult mvcResult = mockMvc.perform(put(base_url + testId)
+                        .content(objectMapper.writeValueAsString(testItem))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String actualJsonResponse = mvcResult.getResponse().getContentAsString();
+
+        // assertions
+        assertEquals(expectedJsonResponse, actualJsonResponse);
+    }
+
+    @DisplayName("updateItem_put with invalid itemId in body & request param - should return status as bad request")
+    @Test
+    public void updateItem_put_invalid_inputs() throws Throwable {
+        // setup
+        String testId = "abc123";
+
+        Item testItem = testUtils.getTestItem();
+
+        // stub
+        when(mockItemService.updateItemByIdPut(any(Long.class), any(Item.class)))
+                .thenReturn(testItem);
+
+        // execute and assertion
+        MvcResult mvcResult = mockMvc.perform(put(base_url + testId)
+                        .content(objectMapper.writeValueAsString(testItem))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andReturn();
+
+    }
+
+    @DisplayName("updateItem_patch with valid itemId in body & request param - should return updated item")
+    @Test
+    public void updateItem_patch_valid_inputs() throws Throwable {
+        // setup
+        Long testId = 1L;
+
+        Item testItem = testUtils.getTestItem();
+        Item testItemPatchUpdate = testUtils.getTestItemPatchUpdate(); // patch update item, some fields null
+        Item testItemPatchUpdated = testUtils.getTestItemPatchUpdated(); // item after updated by patch
+
+        // stub
+        when(mockItemService.updateItemByIdPatch(any(Long.class), any(Item.class)))
+                .thenReturn(testItemPatchUpdated);
+
+        // execute
+        String expectedJsonResponse = objectMapper.writeValueAsString(testItemPatchUpdated);
+
+        MvcResult mvcResult = mockMvc.perform(patch(base_url + testId)
+                        .content(objectMapper.writeValueAsString(testItemPatchUpdate))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String actualJsonResponse = mvcResult.getResponse().getContentAsString();
+
+        // assertions
+        assertEquals(expectedJsonResponse, actualJsonResponse);
+    }
+
+    @DisplayName("updateItem_put with invalid itemId in body & request param - should return status as bad request")
+    @Test
+    public void updateItem_patch_invalid_inputs() throws Throwable {
+        // setup
+        String testId = "abc123";
+
+        Item testItemPatchUpdated = testUtils.getTestItemPatchUpdated(); // item after updated by patch
+
+        // stub
+        when(mockItemService.updateItemByIdPatch(any(Long.class), any(Item.class)))
+                .thenReturn(testItemPatchUpdated);
+
+        // execute
+        MvcResult mvcResult = mockMvc.perform(patch(base_url + testId)
+                        .content(objectMapper.writeValueAsString(testItemPatchUpdated))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andReturn();
+    }
+
+    @DisplayName("getItems paginated valid input - should return a paginated response json")
+    @Test
+    public void testPaginatedResponse_valid_inputs() throws Exception {
+        // setup
+        Long testId = 1L;
+
+        PaginatedResponse testPaginatedResponse = testUtils.getTestPaginatedResponse();
+
+        // stub
+        when(mockItemService.getAllItemsPaginated(any(Integer.class), any(Integer.class)))
+                .thenReturn(testPaginatedResponse);
+
+        // execute
+        String expectedJsonResponse = objectMapper.writeValueAsString(testPaginatedResponse);
+
+        MvcResult mvcResult = mockMvc.perform(get(base_url
+                        + "/paginated/")
+                        .param("pageSize", testPaginatedResponse.getPageSize().toString())
+                        .param("pageNum", testPaginatedResponse.getPageNum().toString()))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String actualJsonResponse = mvcResult.getResponse().getContentAsString();
+        // assert
+        assertEquals(expectedJsonResponse, actualJsonResponse);
     }
 }
