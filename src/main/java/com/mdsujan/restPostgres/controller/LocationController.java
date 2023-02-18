@@ -1,20 +1,16 @@
 package com.mdsujan.restPostgres.controller;
 
-import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/inventory/locations")
 @CrossOrigin(origins = "http://localhost:3000")
-
-
 public class LocationController {
     @Autowired
     LocationService locationService;

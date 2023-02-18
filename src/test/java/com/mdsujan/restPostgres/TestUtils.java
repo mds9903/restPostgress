@@ -1,6 +1,7 @@
 package com.mdsujan.restPostgres;
 
 import com.mdsujan.restPostgres.entity.Item;
+import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.response.PaginatedResponse;
 
 import java.util.List;
@@ -56,4 +57,52 @@ public class TestUtils {
                 .build();
     }
 
+    public Location getTestLocation() {
+        return Location.builder()
+                .locationId(1L)
+                .locationDesc("test description")
+                .type("testType")
+                .pickupAllowed(false)
+                .deliveryAllowed(false)
+                .shippingAllowed(false)
+                .addrLine1("test line 1")
+                .addrLine2("test line 2")
+                .addrLine3("test line 3")
+                .city("testCity")
+                .state("testState")
+                .country("testCountry")
+                .pincode("123456")
+                .build();
+    }
+
+    public Location getTestLocationPatchUpdate() {
+        return Location.builder()
+                .locationId(1L)
+                .locationDesc("test description2")
+                .shippingAllowed(true)
+                .type("testType2")
+                .addrLine1("test2 line 1")
+                .state("testState")
+                .pincode("987654")
+                .build();
+    }
+
+    public Location getTestLocationPatchUpdated() {
+        return Location.builder()
+                .locationId(1L)
+                .locationDesc("test description2")
+                .type("testType2")
+                .pickupAllowed(false)
+                .deliveryAllowed(false)
+                .shippingAllowed(true)
+                .addrLine1("test2 line 1")
+                .addrLine2("test line 2")
+                .addrLine3("test line 3")
+                .city("testCity")
+                .state("testState2")
+                .country("testCountry")
+                .pincode("987654")
+                .build();
+
+    }
 }
