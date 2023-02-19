@@ -2,7 +2,12 @@ package com.mdsujan.restPostgres;
 
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
+import com.mdsujan.restPostgres.entity.Supply;
+import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
+import com.mdsujan.restPostgres.request.CreateSupplyRequest;
+import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
 import com.mdsujan.restPostgres.response.PaginatedResponse;
+import com.mdsujan.restPostgres.response.SupplyResponse;
 
 import java.util.List;
 
@@ -104,5 +109,71 @@ public class TestUtils {
                 .pincode("987654")
                 .build();
 
+    }
+
+    public Supply getTestSupply() {
+        return Supply.builder()
+                .supplyId(1L)
+                .supplyType(AllowedSupplyTypes.ONHAND)
+                .supplyQty(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .build();
+    }
+
+    public SupplyResponse getTestSupplyResponse() {
+        return SupplyResponse.builder()
+                .supplyId(1L)
+                .type(AllowedSupplyTypes.ONHAND)
+                .supplyQty(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .build();
+    }
+
+    public UpdateSupplyRequest getTestUpdateSupplyRequestPatch() {
+        return UpdateSupplyRequest.builder()
+                .supplyQty(2L)
+                .build();
+    }
+
+    public Supply getTestSupplyPatchUpdated() {
+        return Supply.builder()
+                .supplyId(1L)
+                .supplyType(AllowedSupplyTypes.ONHAND)
+                .supplyQty(2L)
+                .itemId(1L)
+                .locationId(1L)
+                .build();
+    }
+
+    public SupplyResponse getTestSupplyResponsePatchUpdated() {
+        return SupplyResponse.builder()
+                .supplyId(1L)
+                .type(AllowedSupplyTypes.ONHAND)
+                .supplyQty(2L)
+                .itemId(1L)
+                .locationId(1L)
+                .build();
+    }
+
+    public CreateSupplyRequest getCreateSupplyRequest() {
+        return CreateSupplyRequest
+                .builder()
+                .supplyId(1L)
+                .supplyType(AllowedSupplyTypes.ONHAND)
+                .supplyQty(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .build();
+    }
+
+    public UpdateSupplyRequest getTestUpdateSupplyRequestPut() {
+        return UpdateSupplyRequest.builder()
+                .supplyType(AllowedSupplyTypes.ONHAND)
+                .supplyQty(2L)
+                .itemId(1L)
+                .locationId(1L)
+                .build();
     }
 }

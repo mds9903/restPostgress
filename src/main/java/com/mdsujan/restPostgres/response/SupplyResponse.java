@@ -5,7 +5,6 @@ import com.mdsujan.restPostgres.entity.Supply;
 import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.springframework.data.annotation.AccessType;
 
 
 @Getter
@@ -13,6 +12,7 @@ import org.springframework.data.annotation.AccessType;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 public class SupplyResponse {
     Long supplyId;
     AllowedSupplyTypes type;
@@ -24,8 +24,6 @@ public class SupplyResponse {
         this.supplyId = supply.getSupplyId();
         this.type = supply.getSupplyType();
         this.supplyQty = supply.getSupplyQty();
-//        this.itemId = supply.getItem().getItemId();
-//        this.locationId = supply.getLocation().getLocationId();
         this.itemId = supply.getItemId();
         this.locationId = supply.getLocationId();
     }
