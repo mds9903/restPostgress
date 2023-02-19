@@ -1,16 +1,14 @@
 package com.mdsujan.restPostgres.request;
 
 import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 public class CreateDemandRequest {
     Long demandId;
     Long itemId;

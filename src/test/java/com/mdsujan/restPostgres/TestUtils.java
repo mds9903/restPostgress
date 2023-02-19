@@ -1,11 +1,16 @@
 package com.mdsujan.restPostgres;
 
+import com.mdsujan.restPostgres.entity.Demand;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.entity.Location;
 import com.mdsujan.restPostgres.entity.Supply;
+import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
 import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
+import com.mdsujan.restPostgres.request.CreateDemandRequest;
 import com.mdsujan.restPostgres.request.CreateSupplyRequest;
+import com.mdsujan.restPostgres.request.UpdateDemandRequest;
 import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
+import com.mdsujan.restPostgres.response.DemandResponse;
 import com.mdsujan.restPostgres.response.PaginatedResponse;
 import com.mdsujan.restPostgres.response.SupplyResponse;
 
@@ -176,4 +181,78 @@ public class TestUtils {
                 .locationId(1L)
                 .build();
     }
+
+    public Demand getTestDemand() {
+        return Demand
+                .builder()
+                .demandId(1L)
+                .demandType(AllowedDemandTypes.HARD_PROMISED)
+                .demandQty(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .build();
+    }
+
+    public DemandResponse getTestDemandResponse() {
+        return DemandResponse
+                .builder()
+                .demandId(1L)
+                .demandType(AllowedDemandTypes.HARD_PROMISED)
+                .demandQty(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .build();
+    }
+
+    public CreateDemandRequest getCreateDemandRequest() {
+        return CreateDemandRequest
+                .builder()
+                .demandId(1L)
+                .demandType(AllowedDemandTypes.HARD_PROMISED)
+                .demandQty(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .build();
+    }
+
+    public UpdateDemandRequest getTestUpdateDemandRequestPut() {
+        return UpdateDemandRequest
+                .builder()
+                .demandType(AllowedDemandTypes.HARD_PROMISED)
+                .demandQty(2L) // update
+                .itemId(1L)
+                .locationId(1L)
+                .build();
+    }
+
+    public UpdateDemandRequest getTestUpdateDemandRequestPatch() {
+        return UpdateDemandRequest
+                .builder()
+                .demandQty(2L) // update
+                .build();
+    }
+
+    public Demand getTestDemandUpdatedPatch() {
+        return Demand
+                .builder()
+                .demandId(1L)
+                .demandType(AllowedDemandTypes.HARD_PROMISED)
+                .demandQty(2L) // updated
+                .itemId(1L)
+                .locationId(1L)
+                .build();
+    }
+
+    public DemandResponse getTestDemandResponseUpdatedPatch() {
+        return DemandResponse
+                .builder()
+                .demandId(1L)
+                .demandType(AllowedDemandTypes.HARD_PROMISED)
+                .demandQty(2L) // updated
+                .itemId(1L)
+                .locationId(1L)
+                .build();
+    }
+
+
 }

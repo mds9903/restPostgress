@@ -2,16 +2,14 @@ package com.mdsujan.restPostgres.response;
 
 import com.mdsujan.restPostgres.entity.Demand;
 import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class DemandResponse {
     Long demandId;
 
