@@ -1,18 +1,13 @@
 package com.mdsujan.restPostgres;
 
-import com.mdsujan.restPostgres.entity.Demand;
-import com.mdsujan.restPostgres.entity.Item;
-import com.mdsujan.restPostgres.entity.Location;
-import com.mdsujan.restPostgres.entity.Supply;
+import com.mdsujan.restPostgres.entity.*;
 import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
 import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
-import com.mdsujan.restPostgres.request.CreateDemandRequest;
-import com.mdsujan.restPostgres.request.CreateSupplyRequest;
-import com.mdsujan.restPostgres.request.UpdateDemandRequest;
-import com.mdsujan.restPostgres.request.UpdateSupplyRequest;
+import com.mdsujan.restPostgres.request.*;
 import com.mdsujan.restPostgres.response.DemandResponse;
 import com.mdsujan.restPostgres.response.PaginatedResponse;
 import com.mdsujan.restPostgres.response.SupplyResponse;
+import com.mdsujan.restPostgres.response.ThresholdResponse;
 
 import java.util.List;
 
@@ -254,5 +249,79 @@ public class TestUtils {
                 .build();
     }
 
+
+    public Threshold getTestThreshold() {
+        return Threshold
+                .builder()
+                .thresholdId(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .minThreshold(1L)
+                .maxThreshold(10L)
+                .build();
+    }
+
+    public ThresholdResponse getTestThresholdResponse() {
+        return ThresholdResponse
+                .builder()
+                .thresholdId(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .minThreshold(1L)
+                .maxThreshold(10L)
+                .build();
+    }
+
+
+    public CreateThresholdRequest getTestCreateThresholdRequest() {
+        return CreateThresholdRequest
+                .builder()
+                .thresholdId(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .minThreshold(1L)
+                .maxThreshold(10L)
+                .build();
+    }
+
+
+    public UpdateThresholdRequest getTestUpdateThresholdRequestPut() {
+        return UpdateThresholdRequest
+                .builder()
+                .itemId(1L)
+                .locationId(1L)
+                .maxThreshold(10L)
+                .minThreshold(5L) // update
+                .build();
+    }
+
+    public UpdateThresholdRequest getTestUpdateThresholdRequestPatch() {
+        return UpdateThresholdRequest
+                .builder()
+                .minThreshold(5L) // update
+                .build();
+    }
+
+    public ThresholdResponse getTestUpdatedThresholdResponse() {
+        return ThresholdResponse
+                .builder()
+                .thresholdId(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .minThreshold(5L) // updated
+                .maxThreshold(10L)  // updated
+                .build();
+    }
+
+    public Threshold getTestUpdatedThreshold() {
+        return Threshold
+                .builder()
+                .thresholdId(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .minThreshold(5L) // updated
+                .maxThreshold(10L)
+                .build();
+    }
 
 }

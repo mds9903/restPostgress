@@ -1,16 +1,14 @@
 package com.mdsujan.restPostgres.response;
 
 import com.mdsujan.restPostgres.entity.Threshold;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class ThresholdResponse {
     Long thresholdId;
     Long itemId;
