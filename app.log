@@ -264,3 +264,161 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct 
 2023-02-20 11:33:19.562  WARN 289808 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
 2023-02-20 11:33:19.616  WARN 289808 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123WrongId"]
 2023-02-20 11:33:19.627  WARN 289808 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123WrongId"]
+2023-02-20 12:38:31.724  INFO 324478 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 324478 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 12:38:31.725 DEBUG 324478 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-20 12:38:31.726  INFO 324478 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 12:38:32.173  WARN 324478 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'supplyController': Unsatisfied dependency expressed through field 'supplyService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.mdsujan.restPostgres.service.SupplyService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-02-20 12:38:32.177  INFO 324478 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-02-20 12:38:32.188 ERROR 324478 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field supplyService in com.mdsujan.restPostgres.controller.SupplyController required a bean of type 'com.mdsujan.restPostgres.service.SupplyService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.mdsujan.restPostgres.service.SupplyService' in your configuration.
+
+2023-02-20 12:38:32.190 ERROR 324478 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@729d991e] to prepare test instance [com.mdsujan.restPostgres.controller.AvailabilityControllerTest@47d023b7]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) ~[junit-4.13.2.jar:4.13.2]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'supplyController': Unsatisfied dependency expressed through field 'supplyService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.mdsujan.restPostgres.service.SupplyService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.5.jar:2.7.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.5.jar:2.7.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.5.jar:2.7.5]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:132) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90) ~[spring-test-5.3.23.jar:5.3.23]
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.mdsujan.restPostgres.service.SupplyService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656) ~[spring-beans-5.3.23.jar:5.3.23]
+	... 46 common frames omitted
+
+2023-02-20 12:39:23.106  INFO 324974 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 324974 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 12:39:23.107 DEBUG 324974 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-20 12:39:23.107  INFO 324974 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 12:39:23.766  INFO 324974 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-20 12:39:23.766  INFO 324974 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-20 12:39:23.767  INFO 324974 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-20 12:39:23.794  INFO 324974 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 1.013 seconds (JVM running for 1.696)
+2023-02-20 12:39:23.885  WARN 324974 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /inventory/v111
+2023-02-20 12:39:58.790  INFO 325335 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 325335 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 12:39:58.791 DEBUG 325335 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-20 12:39:58.791  INFO 325335 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 12:39:59.412  INFO 325335 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-20 12:39:59.412  INFO 325335 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-20 12:39:59.413  INFO 325335 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-20 12:39:59.470  INFO 325335 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 1.012 seconds (JVM running for 1.666)
+2023-02-20 12:39:59.563  WARN 325335 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /inventory/v1/1/1
+2023-02-20 12:40:22.438  INFO 325606 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 325606 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 12:40:22.439 DEBUG 325606 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-20 12:40:22.439  INFO 325606 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 12:40:23.190  INFO 325606 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-20 12:40:23.190  INFO 325606 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-20 12:40:23.192  INFO 325606 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-02-20 12:40:23.257  INFO 325606 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 1.097 seconds (JVM running for 1.77)
+2023-02-20 12:40:23.399  WARN 325606 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /inventory/v1/availability1/1
+2023-02-20 12:40:41.232  INFO 325920 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 325920 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 12:40:41.233 DEBUG 325920 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-20 12:40:41.234  INFO 325920 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 12:40:42.395  INFO 325920 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-20 12:40:42.395  INFO 325920 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-20 12:40:42.397  INFO 325920 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-02-20 12:40:42.443  INFO 325920 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 1.744 seconds (JVM running for 2.383)
+2023-02-20 12:42:56.795  INFO 327189 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 327189 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 12:42:56.796 DEBUG 327189 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-20 12:42:56.796  INFO 327189 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 12:42:57.427  INFO 327189 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-20 12:42:57.427  INFO 327189 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-20 12:42:57.428  INFO 327189 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-20 12:42:57.458  INFO 327189 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 1.004 seconds (JVM running for 1.635)
+2023-02-20 12:45:16.382  INFO 328501 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 328501 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 12:45:16.383 DEBUG 328501 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-20 12:45:16.383  INFO 328501 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 12:45:16.983  INFO 328501 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-20 12:45:16.983  INFO 328501 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-20 12:45:16.984  INFO 328501 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-20 12:45:17.023  INFO 328501 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 0.902 seconds (JVM running for 1.622)
+2023-02-20 12:45:27.274  INFO 328663 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 328663 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 12:45:27.275 DEBUG 328663 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-20 12:45:27.275  INFO 328663 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 12:45:27.891  INFO 328663 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-20 12:45:27.891  INFO 328663 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-20 12:45:27.892  INFO 328663 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-20 12:45:27.920  INFO 328663 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 0.939 seconds (JVM running for 1.523)
+2023-02-20 12:45:42.468  INFO 328876 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 328876 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 12:45:42.469 DEBUG 328876 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-20 12:45:42.469  INFO 328876 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 12:45:43.149  INFO 328876 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-20 12:45:43.149  INFO 328876 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-20 12:45:43.150  INFO 328876 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-20 12:45:43.179  INFO 328876 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 1.013 seconds (JVM running for 1.601)
+2023-02-20 12:48:20.680  INFO 331506 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 331506 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 12:48:20.682 DEBUG 331506 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-20 12:48:20.683  INFO 331506 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 12:48:21.781  INFO 331506 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-20 12:48:21.781  INFO 331506 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-20 12:48:21.783  INFO 331506 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-20 12:48:21.827  INFO 331506 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 1.755 seconds (JVM running for 3.085)
+2023-02-20 12:48:31.279  INFO 331677 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 331677 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 12:48:31.281 DEBUG 331677 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-20 12:48:31.283  INFO 331677 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 12:48:32.384  INFO 331677 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-20 12:48:32.384  INFO 331677 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-20 12:48:32.386  INFO 331677 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-02-20 12:48:32.453  INFO 331677 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 1.794 seconds (JVM running for 2.735)

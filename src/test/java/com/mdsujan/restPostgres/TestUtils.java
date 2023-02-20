@@ -4,10 +4,7 @@ import com.mdsujan.restPostgres.entity.*;
 import com.mdsujan.restPostgres.enums.AllowedDemandTypes;
 import com.mdsujan.restPostgres.enums.AllowedSupplyTypes;
 import com.mdsujan.restPostgres.request.*;
-import com.mdsujan.restPostgres.response.DemandResponse;
-import com.mdsujan.restPostgres.response.PaginatedResponse;
-import com.mdsujan.restPostgres.response.SupplyResponse;
-import com.mdsujan.restPostgres.response.ThresholdResponse;
+import com.mdsujan.restPostgres.response.*;
 
 import java.util.List;
 
@@ -324,4 +321,32 @@ public class TestUtils {
                 .build();
     }
 
+    public AvailabilityV1Response getTestAvailabilityV1Response() {
+        return AvailabilityV1Response
+                .builder()
+                .availableQty(1L)
+                .itemId(1L)
+                .locationId("1")
+                .build();
+    }
+
+    public AvailabilityV2Response getTestAvailabilityV2Response() {
+        return AvailabilityV2Response
+                .builder()
+                .availabilityQty(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .stockLevel("GREEN")
+                .build();
+    }
+
+    public AvailabilityV3Response getTestAvailabilityV3Response() {
+        return AvailabilityV3Response
+                .builder()
+                .availabilityQty(1L)
+                .itemId(1L)
+                .locationId(1L)
+                .stockLevel("GREEN")
+                .build();
+    }
 }

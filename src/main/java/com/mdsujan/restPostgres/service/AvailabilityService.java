@@ -58,7 +58,7 @@ public class AvailabilityService {
 
         if (supplyList == null || demandList == null) {
             throw new ResourceNotFoundException("no supplies for this itemId and locationId; " +
-                                                "please enter correct itemId and locationId");
+                    "please enter correct itemId and locationId");
         }
 
         // gets only the "ONHAND" qty as mentioned in the assignment sheet
@@ -99,20 +99,20 @@ public class AvailabilityService {
 
         if (supplyList == null || demandList == null) {
             throw new ResourceNotFoundException("no supplies and/or demands for this itemId and locationId; " +
-                                                "please enter correct itemId and locationId");
+                    "please enter correct itemId and locationId");
         }
 
         // get the onhand qty for the supply of given item on all locations
         Long onhandQty = supplyList.stream()
-                                   .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
-                                   .map(Supply::getSupplyId)
-                                   .reduce(0L, Long::sum);
+                .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
+                .map(Supply::getSupplyId)
+                .reduce(0L, Long::sum);
 
         // get the hardPromised qty for the demand of the given item on all locations
         Long hardPromisedQty = demandList.stream() // declarative programming
-                                         .filter(demand -> demand.getDemandType() == AllowedDemandTypes.HARD_PROMISED)
-                                         .map(Demand::getDemandQty)
-                                         .reduce(0L, Long::sum);
+                .filter(demand -> demand.getDemandType() == AllowedDemandTypes.HARD_PROMISED)
+                .map(Demand::getDemandQty)
+                .reduce(0L, Long::sum);
         // using method reference and lambda (java 8+)
 
 //        // imperative programming
@@ -144,17 +144,17 @@ public class AvailabilityService {
 
         // get the hardPromised qty for the demand of the given item and location
         Long onhandQty = supplyRepository.findByItemIdAndLocationId(itemId, locationId)
-                                         .stream()
-                                         .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
-                                         .map(Supply::getSupplyQty)
-                                         .reduce(0L, Long::sum);
+                .stream()
+                .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.ONHAND)
+                .map(Supply::getSupplyQty)
+                .reduce(0L, Long::sum);
 
         // get the hardPromised qty for the demand of the given item and location
         Long hardPromisedQty = demandRepository.findByItemIdAndLocationId(itemId, locationId)
-                                               .stream()
-                                               .filter(demand -> demand.getDemandType() == AllowedDemandTypes.HARD_PROMISED)
-                                               .map(Demand::getDemandQty)
-                                               .reduce(0L, Long::sum);
+                .stream()
+                .filter(demand -> demand.getDemandType() == AllowedDemandTypes.HARD_PROMISED)
+                .map(Demand::getDemandQty)
+                .reduce(0L, Long::sum);
 
         // qty available
         Long availableQty = onhandQty + hardPromisedQty;
@@ -194,15 +194,15 @@ public class AvailabilityService {
 
         for (String supplyType : supplyTypeList) {
             supplyQty += supplyList.stream()
-                                   .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.valueOf(supplyType))
-                                   .map(Supply::getSupplyQty)
-                                   .reduce(0L, Long::sum);
+                    .filter(supply -> supply.getSupplyType() == AllowedSupplyTypes.valueOf(supplyType))
+                    .map(Supply::getSupplyQty)
+                    .reduce(0L, Long::sum);
         }
         for (String demandType : demandTypeList) {
             demandQty += demandList.stream()
-                                   .filter(demand -> demand.getDemandType() == AllowedDemandTypes.valueOf(demandType))
-                                   .map(Demand::getDemandQty)
-                                   .reduce(0L, (a, b) -> a + b);
+                    .filter(demand -> demand.getDemandType() == AllowedDemandTypes.valueOf(demandType))
+                    .map(Demand::getDemandQty)
+                    .reduce(0L, Long::sum);
         }
         Long availableQty = supplyQty + demandQty;
         /*
