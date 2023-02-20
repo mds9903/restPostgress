@@ -236,7 +236,7 @@ public class ItemControllerTest {
 
         Item testItem = testUtils.getTestItem();
         Item testItemPatchUpdate = testUtils.getTestItemPatchUpdate(); // patch update item, some fields null
-        Item testItemPatchUpdated = testUtils.getTestItemPatchUpdated(); // item after updated by patch
+        Item testItemPatchUpdated = testUtils.getTestItemUpdated(); // item after updated by patch
 
         // stub
         when(mockItemService.updateItemByIdPatch(any(Long.class), any(Item.class)))
@@ -263,7 +263,7 @@ public class ItemControllerTest {
         // setup
         String testId = "abc123";
 
-        Item testItemPatchUpdated = testUtils.getTestItemPatchUpdated(); // item after updated by patch
+        Item testItemPatchUpdated = testUtils.getTestItemUpdated(); // item after updated by patch
 
         // stub
         when(mockItemService.updateItemByIdPatch(any(Long.class), any(Item.class)))

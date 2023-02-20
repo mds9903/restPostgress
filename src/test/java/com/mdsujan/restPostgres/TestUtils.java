@@ -29,24 +29,24 @@ public class TestUtils {
     public Item getTestItemPatchUpdate() {
         return Item.builder()
                 .itemId(123L)
-                .category("test2")
-                .itemType("test type2")
-                .status("test status2")
-                .pickupAllowed(false)
+                .category("test2") // update
+                .itemType("test type2") // update
+                .status("test status2") // update
+                .pickupAllowed(false) // update
                 .build();
     }
 
-    public Item getTestItemPatchUpdated() {
+    public Item getTestItemUpdated() {
         return Item.builder()
                 .itemId(123L)
                 .itemDesc("test description")
-                .category("test2")
-                .itemType("test type2")
-                .status("test status2")
+                .category("test2") // updated
+                .itemType("test type2") // updated
+                .status("test status2") // updated
                 .price(100.99)
                 .pickupAllowed(false)
-                .shippingAllowed(false)
-                .deliveryAllowed(false)
+                .shippingAllowed(true)
+                .deliveryAllowed(true)
                 .build();
     }
 
