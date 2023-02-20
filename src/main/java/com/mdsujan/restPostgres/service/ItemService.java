@@ -63,25 +63,6 @@ public class ItemService {
         return response;
     }
 
-//    public Item createItemNoValidate(Item createItemRequest) throws Throwable {
-//
-//        ObjectMapper mapper = new ObjectMapper();
-////        mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
-//        String jsonString = mapper.writeValueAsString(createItemRequest);
-//        return itemRepository.save(createItemRequest);
-//
-//
-////        // new record should not be created if record already exists
-////
-////        // if record with same id exists then simply return it
-////        if (itemRepository.findById(createItemRequest.getItemId()).isPresent()) {
-////            throw new DuplicateResourceException("an item with same itemId already exists; please provide a unique
-////            itemId in the request body");
-////        }
-////        // else we create a new item
-////        return itemRepository.save(createItemRequest);
-//    }
-
     public List<Item> createItems(List<Item> itemList) throws Throwable {
         // for each item in itemList
         // perform item creation
