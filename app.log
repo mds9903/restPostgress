@@ -1252,3 +1252,126 @@ Caused by: java.lang.IllegalArgumentException: Paging query needs to have a Page
 2023-02-20 16:19:04.309  INFO 451817 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 451817 (started by msujan in /home/msujan/Documents/repos/restPostgress)
 2023-02-20 16:19:04.311  INFO 451817 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
 2023-02-20 16:19:04.766  INFO 451817 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.735 seconds (JVM running for 1.272)
+2023-02-20 21:15:34.484  INFO 454076 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 454076 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:15:34.486  INFO 454076 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:15:34.957  INFO 454076 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.734 seconds (JVM running for 1.379)
+2023-02-20 21:18:02.748  INFO 455437 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 455437 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:18:02.749  INFO 455437 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:18:03.224  INFO 455437 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.759 seconds (JVM running for 1.453)
+2023-02-20 21:30:01.105  INFO 461641 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 461641 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:30:01.106  INFO 461641 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:30:01.569  INFO 461641 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.792 seconds (JVM running for 1.273)
+2023-02-20 21:30:43.591  INFO 462083 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 462083 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:30:43.592  INFO 462083 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:30:44.111  INFO 462083 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.776 seconds (JVM running for 1.284)
+2023-02-20 21:30:55.554  INFO 462254 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 462254 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:30:55.555  INFO 462254 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:30:56.318  INFO 462254 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 1.262 seconds (JVM running for 1.714)
+2023-02-20 21:46:42.986  INFO 470652 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 470652 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:46:42.987  INFO 470652 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:46:43.446  INFO 470652 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.776 seconds (JVM running for 1.39)
+2023-02-20 21:50:58.184  INFO 474354 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 474354 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:50:58.186  INFO 474354 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:50:58.653  WARN 474354 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'itemService': Unsatisfied dependency expressed through field 'demandRepository'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.mdsujan.restPostgres.repository.DemandRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-02-20 21:50:58.666 ERROR 474354 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field demandRepository in com.mdsujan.restPostgres.service.ItemService required a bean of type 'com.mdsujan.restPostgres.repository.DemandRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.mdsujan.restPostgres.repository.DemandRepository' in your configuration.
+
+2023-02-20 21:50:58.669 ERROR 474354 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@6d3a388c] to prepare test instance [com.mdsujan.restPostgres.service.ItemServiceTest@22e5f96e]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) ~[junit-4.13.2.jar:4.13.2]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'itemService': Unsatisfied dependency expressed through field 'demandRepository'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.mdsujan.restPostgres.repository.DemandRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.5.jar:2.7.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.5.jar:2.7.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.5.jar:2.7.5]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:132) ~[spring-boot-test-2.7.5.jar:2.7.5]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141) ~[spring-test-5.3.23.jar:5.3.23]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90) ~[spring-test-5.3.23.jar:5.3.23]
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.mdsujan.restPostgres.repository.DemandRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656) ~[spring-beans-5.3.23.jar:5.3.23]
+	... 46 common frames omitted
+
+2023-02-20 21:51:22.884  INFO 474627 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 474627 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:51:22.885  INFO 474627 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:51:23.385  INFO 474627 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.802 seconds (JVM running for 1.454)
+2023-02-20 21:54:27.820  INFO 476439 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 476439 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:54:27.821  INFO 476439 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:54:28.279  INFO 476439 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.802 seconds (JVM running for 1.412)
+2023-02-20 21:56:12.083  INFO 477391 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 477391 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:56:12.084  INFO 477391 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:56:12.547  INFO 477391 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.743 seconds (JVM running for 1.408)
+2023-02-20 21:58:37.742  INFO 478714 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 478714 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:58:37.743  INFO 478714 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:58:38.246  INFO 478714 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.884 seconds (JVM running for 1.41)
+2023-02-20 21:59:32.279  INFO 479289 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 479289 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:59:32.281  INFO 479289 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:59:32.843  INFO 479289 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.899 seconds (JVM running for 1.877)
+2023-02-20 21:59:46.929  INFO 479488 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 479488 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:59:46.931  INFO 479488 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:59:47.749  INFO 479488 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 1.568 seconds (JVM running for 2.559)
+2023-02-20 21:59:53.888  INFO 479626 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 479626 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:59:53.891  INFO 479626 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 21:59:54.687  INFO 479626 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 1.373 seconds (JVM running for 2.371)
+2023-02-20 21:59:59.802  INFO 479750 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 479750 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-20 21:59:59.804  INFO 479750 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-20 22:00:00.536  INFO 479750 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 1.327 seconds (JVM running for 2.258)

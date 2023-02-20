@@ -3,6 +3,7 @@ package com.mdsujan.restPostgres.service;
 import com.mdsujan.restPostgres.TestUtils;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.exceptionHandling.DuplicateResourceException;
+import com.mdsujan.restPostgres.exceptionHandling.ResourceConflictException;
 import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
@@ -15,6 +16,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -70,17 +73,22 @@ public class ItemServiceTest {
         // setup
         Integer testPageSize = 1;
         Integer testPageNum = 1;
-        List<PaginatedResponse> expectedPaginatedItemList = List.of(testUtils.getTestPaginatedResponse());
+        PaginatedResponse expectedPaginatedItemList = testUtils.getTestPaginatedResponse();
         List<Item> expectedItemList = List.of(testUtils.getTestItem());
+        Page<Item> expectedPage = new PageImpl<>(expectedItemList);
 
         // stub
-        when(mockItemRepository.findAll(any(Pageable.class)).getContent()).thenReturn(expectedItemList);
+        when(mockItemRepository.findAll(any(Pageable.class)))
+                .thenReturn(expectedPage);
+        when(mockItemRepository.count()).thenReturn(1L);
 
         // execute
-        Object actual = itemService.getAllItemsPaginated(testPageSize, testPageNum);
+        PaginatedResponse actual = itemService.getAllItemsPaginated(testPageSize, testPageNum);
 
         // assertions
-        assertEquals(expectedPaginatedItemList, actual);
+        assertEquals(expectedPaginatedItemList.getItems().get(0).getItemId(),
+                actual.getItems().get(0).getItemId());
+
     }
 
     @DisplayName("get item by id when id is valid")
@@ -153,7 +161,8 @@ public class ItemServiceTest {
     public void testDeleteItem_valid_id() throws Throwable {
         // stub
         Item testItem = testUtils.getTestItem();
-        when(mockItemRepository.findById(testItem.getItemId())).thenReturn(Optional.of(testItem));
+        when(mockItemRepository.findById(testItem.getItemId()))
+                .thenReturn(Optional.of(testItem));
         doNothing().when(mockItemRepository).deleteById(anyLong());
 
         // execute
@@ -166,7 +175,25 @@ public class ItemServiceTest {
     }
 
     @Test
-    public void testDeleteItem_invalid_id() throws Throwable {
+    public void testDeleteItem_has_conflict() {
+        // stub
+        Item testItem = testUtils.getTestItem();
+
+        when(mockItemRepository.findById(testItem.getItemId()))
+                .thenReturn(Optional.of(testItem));
+        // creates a conflict
+        when(mockSupplyRepository.findByItemId(testItem.getItemId()))
+                .thenReturn(List.of(testUtils.getTestSupply()));
+
+        // assert
+        assertThrows(ResourceConflictException.class, () -> {
+            itemService.deleteItemById(testItem.getItemId());
+        });
+
+    }
+
+    @Test
+    public void testDeleteItem_invalid_id() {
         // stub
         Item testItem = testUtils.getTestItem();
         when(mockItemRepository.findById(testItem.getItemId()))

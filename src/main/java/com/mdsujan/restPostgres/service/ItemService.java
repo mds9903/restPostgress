@@ -1,6 +1,5 @@
 package com.mdsujan.restPostgres.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mdsujan.restPostgres.entity.Item;
 import com.mdsujan.restPostgres.exceptionHandling.DuplicateResourceException;
 import com.mdsujan.restPostgres.exceptionHandling.ResourceConflictException;
@@ -13,6 +12,7 @@ import com.mdsujan.restPostgres.repository.ThresholdRepository;
 import com.mdsujan.restPostgres.response.PaginatedResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -63,24 +63,24 @@ public class ItemService {
         return response;
     }
 
-    public Item createItemNoValidate(Item createItemRequest) throws Throwable {
-
-        ObjectMapper mapper = new ObjectMapper();
-//        mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
-        String jsonString = mapper.writeValueAsString(createItemRequest);
-        return itemRepository.save(createItemRequest);
-
-
-//        // new record should not be created if record already exists
+//    public Item createItemNoValidate(Item createItemRequest) throws Throwable {
 //
-//        // if record with same id exists then simply return it
-//        if (itemRepository.findById(createItemRequest.getItemId()).isPresent()) {
-//            throw new DuplicateResourceException("an item with same itemId already exists; please provide a unique
-//            itemId in the request body");
-//        }
-//        // else we create a new item
+//        ObjectMapper mapper = new ObjectMapper();
+////        mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+//        String jsonString = mapper.writeValueAsString(createItemRequest);
 //        return itemRepository.save(createItemRequest);
-    }
+//
+//
+////        // new record should not be created if record already exists
+////
+////        // if record with same id exists then simply return it
+////        if (itemRepository.findById(createItemRequest.getItemId()).isPresent()) {
+////            throw new DuplicateResourceException("an item with same itemId already exists; please provide a unique
+////            itemId in the request body");
+////        }
+////        // else we create a new item
+////        return itemRepository.save(createItemRequest);
+//    }
 
     public List<Item> createItems(List<Item> itemList) throws Throwable {
         // for each item in itemList
@@ -204,7 +204,8 @@ public class ItemService {
     }
 
     public PaginatedResponse getAllItemsPaginated(Integer pageSize, Integer pageNum) {
-        List<Item> items = itemRepository.findAll(PageRequest.of(pageNum - 1, pageSize)).getContent();
+        Pageable pageable = PageRequest.of(pageNum - 1, pageSize);
+        List<Item> items = itemRepository.findAll(pageable).getContent();
         Integer maxPages = Math.toIntExact(itemRepository.count() / pageSize);
 
         return new PaginatedResponse(items, maxPages, pageNum, pageSize);
