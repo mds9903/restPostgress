@@ -41,33 +41,10 @@ public class ThresholdService {
         }
     }
 
-//    public ThresholdDetailsResponse getThresholdDetailsByItemAndLocation(Long itemId, Long
-//    thresholdId) {
-//        // seems a little hard coded; an efficient solution could be updated later
-//        // get the list of thresholds with matching itemId and thresholdId
-//        List<Threshold> thresholdList = getThresholdsByItemIdAndLocationId(itemId, thresholdId);
-//        // from this list extract the sum of quantities for ONHAND and INTRANSIT thresholds
-//        Long minThreshold = thresholdList.stream()
-//                .filter(threshold -> threshold.getThresholdType() == AllowedThresholdTypes
-//                .PLANNED)
-//                .map(Threshold::getThresholdQty)
-//                .reduce(0L, (a, b) -> a + b);
-//        Long maxThreshold = thresholdList.stream()
-//                .filter(threshold -> threshold.getThresholdType() == AllowedThresholdTypes
-//                .HARD_PROMISED)
-//                .map(Threshold::getThresholdQty)
-//                .reduce(0L, (a, b) -> a + b);
-//
-////        System.out.println("\n\nOnhand: "+onhandQty+"\t\tIntransit: "+intransitQty);
-//        // form a ThresholdDetailsResponse with these values
-//        // return the ThresholdDetailsResponse
-//        return new ThresholdDetailsResponse(itemId, thresholdId, new ThresholdDetails
-//        (minThreshold, maxThreshold));
-//    }
-
     public Threshold createThreshold(CreateThresholdRequest createThresholdRequest) throws Throwable {
         // create entry for given item/location pair
-        if (thresholdRepository.findById(createThresholdRequest.getThresholdId()).isPresent()) {
+        if (thresholdRepository.findById(
+                createThresholdRequest.getThresholdId()).isPresent()) {
             throw new DuplicateResourceException(
                     "threshold with given thresholdId already exists, please provide unique thresholdId");
         }
@@ -80,11 +57,11 @@ public class ThresholdService {
             // exist in the
             // thresholds table
             if (thresholdRepository.findByItemIdAndLocationId(createThresholdRequest.getItemId(),
-                                                              createThresholdRequest.getLocationId()) != null) {
+                    createThresholdRequest.getLocationId()) != null) {
                 throw new DuplicateResourceException(
                         "a threshold with given itemId and locationId pair already exists; please provide unique " +
-                        "itemId and " +
-                        "locationId threshold record to create");
+                                "itemId and " +
+                                "locationId threshold record to create");
             } else {
                 // create new threshold
                 Threshold threshold = new Threshold(createThresholdRequest);
@@ -96,11 +73,12 @@ public class ThresholdService {
         } else {
             throw new ResourceNotFoundException(
                     "no item and/or location found for given itemId and locationId; please provide correct " +
-                    "itemId and locationId in the request");
+                            "itemId and locationId in the request");
         }
     }
 
-    public List<ThresholdResponse> createThresholds(List<CreateThresholdRequest> createThresholdRequests)
+    public List<ThresholdResponse> createThresholds(
+            List<CreateThresholdRequest> createThresholdRequests)
             throws Throwable {
         // for each threshold in thresholdsList
         // perform threshold creation
@@ -162,7 +140,7 @@ public class ThresholdService {
         // for given itemId and locationId find the min and max thresholds
         Threshold threshold = thresholdRepository.findByItemIdAndLocationId(itemId, locationId);
         return new ThresholdDetailsResponse(itemId, locationId, new ThresholdDetails(threshold.getMinThreshold(),
-                                                                                     threshold.getMaxThreshold()));
+                threshold.getMaxThreshold()));
     }
 
     public String deleteThresholdById(Long thresholdId) throws Throwable {
@@ -175,27 +153,5 @@ public class ThresholdService {
         throw new ResourceNotFoundException(
                 "cannot delete; no such threshold found; please provide correct thresholdId");
     }
-//    public Boolean updateThresholdByItemAndLocationPut(Long itemId, Long locationId,
-//                                                       UpdateThresholdRequest updateThresholdRequest) throws
-//                                                       Throwable {
-//        // update (all) the thresholds having the given itemId and locationId
-//        // check if itemId is correct or not
-//        if (itemRepository.findById(itemId).isPresent() && locationRepository.findById(locationId).isPresent()) {
-//            // if correct then perform the update
-//            Integer recordsUpdated =
-//                    thresholdRepository.UpdateThresholdsByItemAndLocation(itemRepository.findById(itemId).get(),
-//                                                                          locationRepository.findById(locationId)
-//                                                                          .get(),
-//                                                                          updateThresholdRequest.getMinThreshold(),
-//                                                                          updateThresholdRequest.getMaxThreshold());
-//            if (recordsUpdated == 0) {
-//                throw new Exception("No records updated");
-//            }
-//            return true;
-//        } else {
-//            throw new ResourceNotFoundException(
-//                    "cannot update;no such threshold found; please provide correct thresholdId");
-//        }
 
-//    }
 }

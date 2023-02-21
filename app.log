@@ -22,3 +22,213 @@
 2023-02-21 10:26:42.548  INFO 559946 --- [main] c.m.r.service.LocationServiceTest        : Starting LocationServiceTest using Java 11.0.17 on U-msujan with PID 559946 (started by msujan in /home/msujan/Documents/repos/restPostgress)
 2023-02-21 10:26:42.548  INFO 559946 --- [main] c.m.r.service.LocationServiceTest        : No active profile set, falling back to 1 default profile: "default"
 2023-02-21 10:26:42.583  INFO 559946 --- [main] c.m.r.service.LocationServiceTest        : Started LocationServiceTest in 0.068 seconds (JVM running for 2.898)
+2023-02-21 10:39:16.408  INFO 566558 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 566558 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 10:39:16.409  INFO 566558 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 10:39:16.823  INFO 566558 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.659 seconds (JVM running for 1.299)
+2023-02-21 10:40:07.622  INFO 567066 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 567066 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 10:40:07.623  INFO 567066 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 10:40:08.099  INFO 567066 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.701 seconds (JVM running for 1.306)
+2023-02-21 10:40:39.864  INFO 567421 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 567421 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 10:40:39.865  INFO 567421 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 10:40:40.317  INFO 567421 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.749 seconds (JVM running for 1.216)
+2023-02-21 10:44:23.439  INFO 569362 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 569362 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 10:44:23.440  INFO 569362 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 10:44:23.916  INFO 569362 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.798 seconds (JVM running for 1.28)
+2023-02-21 10:45:09.052  INFO 569819 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 569819 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 10:45:09.054  INFO 569819 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 10:45:09.549  INFO 569819 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.808 seconds (JVM running for 1.311)
+2023-02-21 10:48:45.589  INFO 571705 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 571705 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 10:48:45.590  INFO 571705 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 10:48:46.013  INFO 571705 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.671 seconds (JVM running for 1.288)
+2023-02-21 10:49:27.268  INFO 572145 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 572145 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 10:49:27.269  INFO 572145 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 10:49:27.707  INFO 572145 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.702 seconds (JVM running for 1.241)
+2023-02-21 10:52:39.759  INFO 573928 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 573928 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 10:52:39.760  INFO 573928 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 10:52:40.242  INFO 573928 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.795 seconds (JVM running for 1.25)
+2023-02-21 10:53:30.130  INFO 574407 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 574407 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 10:53:30.132  INFO 574407 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 10:53:30.618  INFO 574407 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.78 seconds (JVM running for 1.328)
+2023-02-21 10:54:54.041  INFO 575246 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 575246 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 10:54:54.042  INFO 575246 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 10:54:54.594  INFO 575246 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.829 seconds (JVM running for 1.249)
+2023-02-21 10:55:23.276  INFO 575560 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 575560 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 10:55:23.277  INFO 575560 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 10:55:23.719  INFO 575560 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.684 seconds (JVM running for 1.27)
+2023-02-21 11:27:54.840  INFO 597880 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 597880 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 11:27:54.841  INFO 597880 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 11:27:55.340  INFO 597880 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.775 seconds (JVM running for 1.312)
+2023-02-21 13:19:05.902  INFO 656513 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 656513 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:19:05.904  INFO 656513 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:19:06.360  INFO 656513 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.826 seconds (JVM running for 1.426)
+2023-02-21 13:19:12.692  INFO 656655 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 656655 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:19:12.693  INFO 656655 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:19:13.277  INFO 656655 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.892 seconds (JVM running for 1.503)
+2023-02-21 13:20:24.490  INFO 657336 --- [main] c.m.r.c.ThresholdControllerTest          : Starting ThresholdControllerTest using Java 11.0.17 on U-msujan with PID 657336 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:20:24.492 DEBUG 657336 --- [main] c.m.r.c.ThresholdControllerTest          : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:20:24.492  INFO 657336 --- [main] c.m.r.c.ThresholdControllerTest          : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:20:25.638  INFO 657336 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:20:25.639  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:20:25.640  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 13:20:25.678  INFO 657336 --- [main] c.m.r.c.ThresholdControllerTest          : Started ThresholdControllerTest in 1.661 seconds (JVM running for 3.862)
+2023-02-21 13:20:25.948  WARN 657336 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-21 13:20:26.012  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-21 13:20:26.043  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123WrongId"]
+2023-02-21 13:20:26.052  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123WrongId"]
+2023-02-21 13:20:26.087  INFO 657336 --- [main] c.m.r.controller.DemandControllerTest    : Starting DemandControllerTest using Java 11.0.17 on U-msujan with PID 657336 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:20:26.087 DEBUG 657336 --- [main] c.m.r.controller.DemandControllerTest    : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:20:26.087  INFO 657336 --- [main] c.m.r.controller.DemandControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:20:26.207  INFO 657336 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:20:26.207  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:20:26.208  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 13:20:26.216  INFO 657336 --- [main] c.m.r.controller.DemandControllerTest    : Started DemandControllerTest in 0.145 seconds (JVM running for 4.4)
+2023-02-21 13:20:26.238  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:20:26.279  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-21 13:20:26.304  WARN 657336 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-21 13:20:26.310  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:20:26.330  INFO 657336 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 657336 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:20:26.331  INFO 657336 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:20:26.442  INFO 657336 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.126 seconds (JVM running for 4.626)
+2023-02-21 13:20:26.516  INFO 657336 --- [main] c.m.r.controller.SupplyControllerTest    : Starting SupplyControllerTest using Java 11.0.17 on U-msujan with PID 657336 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:20:26.516 DEBUG 657336 --- [main] c.m.r.controller.SupplyControllerTest    : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:20:26.516  INFO 657336 --- [main] c.m.r.controller.SupplyControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:20:26.607  INFO 657336 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:20:26.607  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:20:26.607  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-21 13:20:26.615  INFO 657336 --- [main] c.m.r.controller.SupplyControllerTest    : Started SupplyControllerTest in 0.113 seconds (JVM running for 4.799)
+2023-02-21 13:20:26.623  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:20:26.629  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:20:26.632  WARN 657336 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-21 13:20:26.636  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-21 13:20:26.716  INFO 657336 --- [main] c.m.r.service.LocationServiceTest        : Starting LocationServiceTest using Java 11.0.17 on U-msujan with PID 657336 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:20:26.716  INFO 657336 --- [main] c.m.r.service.LocationServiceTest        : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:20:26.757  INFO 657336 --- [main] c.m.r.service.LocationServiceTest        : Started LocationServiceTest in 0.062 seconds (JVM running for 4.941)
+2023-02-21 13:20:26.837  INFO 657336 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 657336 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:20:26.838 DEBUG 657336 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:20:26.838  INFO 657336 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:20:26.980  INFO 657336 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:20:26.981  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:20:26.981  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-21 13:20:26.993  INFO 657336 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 0.177 seconds (JVM running for 5.177)
+2023-02-21 13:20:27.064  INFO 657336 --- [main] c.m.r.controller.LocationControllerTest  : Starting LocationControllerTest using Java 11.0.17 on U-msujan with PID 657336 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:20:27.064 DEBUG 657336 --- [main] c.m.r.controller.LocationControllerTest  : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:20:27.064  INFO 657336 --- [main] c.m.r.controller.LocationControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:20:27.175  INFO 657336 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:20:27.175  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:20:27.176  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 13:20:27.182  INFO 657336 --- [main] c.m.r.controller.LocationControllerTest  : Started LocationControllerTest in 0.14 seconds (JVM running for 5.366)
+2023-02-21 13:20:27.237  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:20:27.243  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:20:27.248  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-21 13:20:27.268  WARN 657336 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-21 13:20:27.283  INFO 657336 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 657336 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:20:27.283 DEBUG 657336 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:20:27.283  INFO 657336 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:20:27.386  INFO 657336 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:20:27.386  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:20:27.387  INFO 657336 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 13:20:27.394  INFO 657336 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.123 seconds (JVM running for 5.578)
+2023-02-21 13:20:27.401  INFO 657336 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@5af40e45
+2023-02-21 13:20:27.421  WARN 657336 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-21 13:20:27.447  INFO 657336 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@43d6262c
+2023-02-21 13:20:27.448  INFO 657336 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@5e2975ca
+2023-02-21 13:20:27.457  INFO 657336 --- [main] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@4df7b4ac]
+2023-02-21 13:20:27.458  INFO 657336 --- [main] c.m.r.controller.ItemController          : Response: [com.mdsujan.restPostgres.entity.Item@7c47e077]
+2023-02-21 13:20:27.476  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:20:27.486  INFO 657336 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@6acb45c1
+2023-02-21 13:20:27.487  INFO 657336 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@294c44b7
+2023-02-21 13:20:27.499  INFO 657336 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@556aed22
+2023-02-21 13:20:27.500  INFO 657336 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@57a982f9
+2023-02-21 13:20:27.506  INFO 657336 --- [main] c.m.r.controller.ItemController          : Response: 
+2023-02-21 13:20:27.513  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-21 13:20:27.522  WARN 657336 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:20:27.549  INFO 657336 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 657336 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:20:27.549  INFO 657336 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:20:27.563  INFO 657336 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.037 seconds (JVM running for 5.747)
+2023-02-21 13:21:09.777  INFO 657823 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 657823 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:21:09.779  INFO 657823 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:21:10.261  INFO 657823 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.765 seconds (JVM running for 1.402)
+2023-02-21 13:21:59.198  INFO 658301 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 658301 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:21:59.200  INFO 658301 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:21:59.652  INFO 658301 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.739 seconds (JVM running for 1.372)
+2023-02-21 13:22:21.657  INFO 658545 --- [main] c.m.r.c.ThresholdControllerTest          : Starting ThresholdControllerTest using Java 11.0.17 on U-msujan with PID 658545 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:22:21.658 DEBUG 658545 --- [main] c.m.r.c.ThresholdControllerTest          : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:22:21.659  INFO 658545 --- [main] c.m.r.c.ThresholdControllerTest          : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:22:22.894  INFO 658545 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:22:22.894  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:22:22.896  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 13:22:22.945  INFO 658545 --- [main] c.m.r.c.ThresholdControllerTest          : Started ThresholdControllerTest in 1.7 seconds (JVM running for 3.712)
+2023-02-21 13:22:23.348  WARN 658545 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-21 13:22:23.474  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-21 13:22:23.510  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123WrongId"]
+2023-02-21 13:22:23.517  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123WrongId"]
+2023-02-21 13:22:23.571  INFO 658545 --- [main] c.m.r.controller.DemandControllerTest    : Starting DemandControllerTest using Java 11.0.17 on U-msujan with PID 658545 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:22:23.572 DEBUG 658545 --- [main] c.m.r.controller.DemandControllerTest    : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:22:23.572  INFO 658545 --- [main] c.m.r.controller.DemandControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:22:23.776  INFO 658545 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:22:23.776  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:22:23.777  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 13:22:23.794  INFO 658545 --- [main] c.m.r.controller.DemandControllerTest    : Started DemandControllerTest in 0.252 seconds (JVM running for 4.561)
+2023-02-21 13:22:23.814  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:22:23.879  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-21 13:22:23.920  WARN 658545 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-21 13:22:23.928  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:22:23.961  INFO 658545 --- [main] c.m.r.service.ItemServiceTest            : Starting ItemServiceTest using Java 11.0.17 on U-msujan with PID 658545 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:22:23.962  INFO 658545 --- [main] c.m.r.service.ItemServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:22:24.186  INFO 658545 --- [main] c.m.r.service.ItemServiceTest            : Started ItemServiceTest in 0.25 seconds (JVM running for 4.953)
+2023-02-21 13:22:24.308  INFO 658545 --- [main] c.m.r.controller.SupplyControllerTest    : Starting SupplyControllerTest using Java 11.0.17 on U-msujan with PID 658545 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:22:24.309 DEBUG 658545 --- [main] c.m.r.controller.SupplyControllerTest    : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:22:24.309  INFO 658545 --- [main] c.m.r.controller.SupplyControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:22:24.476  INFO 658545 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:22:24.477  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:22:24.477  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-21 13:22:24.490  INFO 658545 --- [main] c.m.r.controller.SupplyControllerTest    : Started SupplyControllerTest in 0.207 seconds (JVM running for 5.258)
+2023-02-21 13:22:24.502  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:22:24.511  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:22:24.516  WARN 658545 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-21 13:22:24.523  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-21 13:22:24.632  INFO 658545 --- [main] c.m.r.service.LocationServiceTest        : Starting LocationServiceTest using Java 11.0.17 on U-msujan with PID 658545 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:22:24.632  INFO 658545 --- [main] c.m.r.service.LocationServiceTest        : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:22:24.677  INFO 658545 --- [main] c.m.r.service.LocationServiceTest        : Started LocationServiceTest in 0.068 seconds (JVM running for 5.444)
+2023-02-21 13:22:24.758  INFO 658545 --- [main] c.m.r.c.AvailabilityControllerTest       : Starting AvailabilityControllerTest using Java 11.0.17 on U-msujan with PID 658545 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:22:24.758 DEBUG 658545 --- [main] c.m.r.c.AvailabilityControllerTest       : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:22:24.758  INFO 658545 --- [main] c.m.r.c.AvailabilityControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:22:24.915  INFO 658545 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:22:24.915  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:22:24.915  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-21 13:22:24.929  INFO 658545 --- [main] c.m.r.c.AvailabilityControllerTest       : Started AvailabilityControllerTest in 0.193 seconds (JVM running for 5.696)
+2023-02-21 13:22:24.998  INFO 658545 --- [main] c.m.r.controller.LocationControllerTest  : Starting LocationControllerTest using Java 11.0.17 on U-msujan with PID 658545 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:22:24.998 DEBUG 658545 --- [main] c.m.r.controller.LocationControllerTest  : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:22:24.999  INFO 658545 --- [main] c.m.r.controller.LocationControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:22:25.263  INFO 658545 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:22:25.263  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:22:25.264  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-21 13:22:25.292  INFO 658545 --- [main] c.m.r.controller.LocationControllerTest  : Started LocationControllerTest in 0.316 seconds (JVM running for 6.06)
+2023-02-21 13:22:25.401  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:22:25.415  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:22:25.423  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-21 13:22:25.469  WARN 658545 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-21 13:22:25.512  INFO 658545 --- [main] c.m.r.controller.ItemControllerTest      : Starting ItemControllerTest using Java 11.0.17 on U-msujan with PID 658545 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:22:25.512 DEBUG 658545 --- [main] c.m.r.controller.ItemControllerTest      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-02-21 13:22:25.512  INFO 658545 --- [main] c.m.r.controller.ItemControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:22:25.663  INFO 658545 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 13:22:25.664  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 13:22:25.664  INFO 658545 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-21 13:22:25.676  INFO 658545 --- [main] c.m.r.controller.ItemControllerTest      : Started ItemControllerTest in 0.2 seconds (JVM running for 6.443)
+2023-02-21 13:22:25.686  INFO 658545 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@6fdc2db6
+2023-02-21 13:22:25.708  WARN 658545 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET /wrongEndpoint
+2023-02-21 13:22:25.728  INFO 658545 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@1aee6d14
+2023-02-21 13:22:25.728  INFO 658545 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@54a6ef6
+2023-02-21 13:22:25.737  INFO 658545 --- [main] c.m.r.controller.ItemController          : InQueryRequest: [com.mdsujan.restPostgres.entity.Item@48d31d25]
+2023-02-21 13:22:25.738  INFO 658545 --- [main] c.m.r.controller.ItemController          : Response: [com.mdsujan.restPostgres.entity.Item@46188a89]
+2023-02-21 13:22:25.754  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:22:25.764  INFO 658545 --- [main] c.m.r.controller.ItemController          : CREATE NEW ITEM | InQueryRequest: com.mdsujan.restPostgres.entity.Item@4de158ca
+2023-02-21 13:22:25.765  INFO 658545 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@4f2fdf3d
+2023-02-21 13:22:25.779  INFO 658545 --- [main] c.m.r.controller.ItemController          : InQueryRequest: com.mdsujan.restPostgres.entity.Item@474619d9
+2023-02-21 13:22:25.780  INFO 658545 --- [main] c.m.r.controller.ItemController          : Response: com.mdsujan.restPostgres.entity.Item@bb5f9d
+2023-02-21 13:22:25.789  INFO 658545 --- [main] c.m.r.controller.ItemController          : Response: 
+2023-02-21 13:22:25.799  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "123abc"]
+2023-02-21 13:22:25.810  WARN 658545 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "abc123"]
+2023-02-21 13:22:25.848  INFO 658545 --- [main] c.m.r.service.ThresholdServiceTest       : Starting ThresholdServiceTest using Java 11.0.17 on U-msujan with PID 658545 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 13:22:25.848  INFO 658545 --- [main] c.m.r.service.ThresholdServiceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 13:22:25.866  INFO 658545 --- [main] c.m.r.service.ThresholdServiceTest       : Started ThresholdServiceTest in 0.049 seconds (JVM running for 6.634)
