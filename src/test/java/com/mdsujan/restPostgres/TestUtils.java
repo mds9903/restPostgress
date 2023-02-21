@@ -349,4 +349,22 @@ public class TestUtils {
                 .stockLevel("GREEN")
                 .build();
     }
+
+    public Location getTestUpdatedLocation() {
+        return Location.builder()
+                .locationId(1L)
+                .locationDesc("test description")
+                .type("test2Type")
+                .pickupAllowed(false)
+                .deliveryAllowed(false)
+                .shippingAllowed(false)
+                .addrLine1("test2 line 1")
+                .addrLine2("test2 line 2")
+                .addrLine3("test line 3")
+                .city("test2City")
+                .state("test2State")
+                .country("testCountry")
+                .pincode("123456")
+                .build();
+    }
 }
