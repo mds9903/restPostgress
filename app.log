@@ -313,3 +313,75 @@
 2023-02-21 17:49:17.252  INFO 773599 --- [main] c.m.r.service.DemandServiceTest          : Starting DemandServiceTest using Java 11.0.17 on U-msujan with PID 773599 (started by msujan in /home/msujan/Documents/repos/restPostgress)
 2023-02-21 17:49:17.253  INFO 773599 --- [main] c.m.r.service.DemandServiceTest          : No active profile set, falling back to 1 default profile: "default"
 2023-02-21 17:49:17.710  INFO 773599 --- [main] c.m.r.service.DemandServiceTest          : Started DemandServiceTest in 0.727 seconds (JVM running for 1.298)
+2023-02-21 18:11:51.090  INFO 785432 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 785432 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 18:11:51.091  INFO 785432 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 18:11:51.720  INFO 785432 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 18:11:51.721  INFO 785432 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 18:11:51.721  INFO 785432 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-21 18:11:51.753  INFO 785432 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 0.929 seconds (JVM running for 1.453)
+2023-02-21 18:13:02.589  INFO 786090 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 786090 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 18:13:02.591  INFO 786090 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 18:13:03.203  INFO 786090 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 18:13:03.203  INFO 786090 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 18:13:03.204  INFO 786090 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 18:13:03.236  INFO 786090 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 0.904 seconds (JVM running for 1.526)
+2023-02-21 18:15:05.647  INFO 787202 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 787202 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 18:15:05.648  INFO 787202 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 18:15:06.256  INFO 787202 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 18:15:06.256  INFO 787202 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 18:15:06.257  INFO 787202 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-21 18:15:06.295  INFO 787202 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 1.002 seconds (JVM running for 1.509)
+2023-02-21 18:20:21.950  INFO 789907 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 789907 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 18:20:21.951  INFO 789907 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 18:20:22.597  INFO 789907 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 18:20:22.598  INFO 789907 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 18:20:22.599  INFO 789907 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 18:20:22.640  INFO 789907 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 1.009 seconds (JVM running for 1.64)
+2023-02-21 18:21:39.545  INFO 790638 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 790638 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 18:21:39.546  INFO 790638 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 18:21:40.301  INFO 790638 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 18:21:40.302  INFO 790638 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 18:21:40.303  INFO 790638 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 18:21:40.341  INFO 790638 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 1.066 seconds (JVM running for 1.675)
+2023-02-21 19:53:26.456  INFO 816136 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 816136 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 19:53:26.457  INFO 816136 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 19:53:27.105  INFO 816136 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 19:53:27.105  INFO 816136 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 19:53:27.106  INFO 816136 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 19:53:27.134  INFO 816136 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 0.99 seconds (JVM running for 1.524)
+2023-02-21 19:59:30.042  INFO 819346 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 819346 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 19:59:30.043  INFO 819346 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 19:59:30.660  INFO 819346 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 19:59:30.660  INFO 819346 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 19:59:30.661  INFO 819346 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 19:59:30.700  INFO 819346 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 0.937 seconds (JVM running for 1.478)
+2023-02-21 20:01:13.752  INFO 820354 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 820354 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 20:01:13.753  INFO 820354 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 20:01:14.386  INFO 820354 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 20:01:14.386  INFO 820354 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 20:01:14.387  INFO 820354 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 20:01:14.414  INFO 820354 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 0.977 seconds (JVM running for 1.565)
+2023-02-21 20:02:23.810  INFO 821010 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 821010 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 20:02:23.811  INFO 821010 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 20:02:24.499  INFO 821010 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 20:02:24.499  INFO 821010 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 20:02:24.500  INFO 821010 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 20:02:24.527  INFO 821010 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 1.054 seconds (JVM running for 1.552)
+2023-02-21 20:03:19.483  INFO 821552 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 821552 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 20:03:19.484  INFO 821552 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 20:03:20.130  INFO 821552 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 20:03:20.130  INFO 821552 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 20:03:20.131  INFO 821552 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-02-21 20:03:20.160  INFO 821552 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 1.042 seconds (JVM running for 1.532)
+2023-02-21 20:03:37.976  INFO 821780 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 821780 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 20:03:37.977  INFO 821780 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 20:03:38.622  INFO 821780 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 20:03:38.622  INFO 821780 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 20:03:38.623  INFO 821780 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-02-21 20:03:38.653  INFO 821780 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 0.941 seconds (JVM running for 1.545)
+2023-02-21 20:03:46.539  INFO 821938 --- [main] c.m.r.service.AvailabilityServiceTest    : Starting AvailabilityServiceTest using Java 11.0.17 on U-msujan with PID 821938 (started by msujan in /home/msujan/Documents/repos/restPostgress)
+2023-02-21 20:03:46.540  INFO 821938 --- [main] c.m.r.service.AvailabilityServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2023-02-21 20:03:47.663  INFO 821938 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-02-21 20:03:47.663  INFO 821938 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-21 20:03:47.665  INFO 821938 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-02-21 20:03:47.731  INFO 821938 --- [main] c.m.r.service.AvailabilityServiceTest    : Started AvailabilityServiceTest in 1.698 seconds (JVM running for 2.413)

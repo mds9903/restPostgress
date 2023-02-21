@@ -324,29 +324,38 @@ public class TestUtils {
     public AvailabilityV1Response getTestAvailabilityV1Response() {
         return AvailabilityV1Response
                 .builder()
-                .availableQty(1L)
+                .availableQty(2L)
                 .itemId(1L)
                 .locationId("1")
+                .build();
+    }
+
+    public AvailabilityV1Response getTestAvailabilityV1ResponseAllLocations() {
+        return AvailabilityV1Response
+                .builder()
+                .availableQty(2L)
+                .itemId(1L)
+                .locationId("NETWORK")
                 .build();
     }
 
     public AvailabilityV2Response getTestAvailabilityV2Response() {
         return AvailabilityV2Response
                 .builder()
-                .availabilityQty(1L)
+                .availabilityQty(2L)
                 .itemId(1L)
                 .locationId(1L)
-                .stockLevel("GREEN")
+                .stockLevel("yellow")
                 .build();
     }
 
     public AvailabilityV3Response getTestAvailabilityV3Response() {
         return AvailabilityV3Response
                 .builder()
-                .availabilityQty(1L)
+                .availabilityQty(2L)
                 .itemId(1L)
                 .locationId(1L)
-                .stockLevel("GREEN")
+                .stockLevel("yellow")
                 .build();
     }
 
@@ -418,4 +427,6 @@ public class TestUtils {
                 .demandType(AllowedDemandTypes.HARD_PROMISED)
                 .build();
     }
+
+
 }
