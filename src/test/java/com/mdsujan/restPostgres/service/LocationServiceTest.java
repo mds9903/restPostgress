@@ -78,9 +78,9 @@ public class LocationServiceTest {
         assertEquals(expected, actual);
     }
 
-    @DisplayName("get location by id when id is invalid")
+    @DisplayName("get location by id when location not found")
     @Test
-    public void testGetLocationById_invalid_id() throws Throwable {
+    public void testGetLocationById_invalid_id() {
         // stub
         when(mockLocationRepository.findById(anyLong()))
                 .thenReturn(Optional.empty());

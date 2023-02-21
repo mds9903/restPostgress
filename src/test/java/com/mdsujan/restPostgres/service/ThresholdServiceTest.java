@@ -9,6 +9,7 @@ import com.mdsujan.restPostgres.repository.LocationRepository;
 import com.mdsujan.restPostgres.repository.ThresholdRepository;
 import com.mdsujan.restPostgres.request.CreateThresholdRequest;
 import com.mdsujan.restPostgres.request.UpdateThresholdRequest;
+import com.mdsujan.restPostgres.response.ThresholdDetailsResponse;
 import com.mdsujan.restPostgres.response.ThresholdResponse;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -78,9 +79,9 @@ public class ThresholdServiceTest {
         assertEquals(expected, actual);
     }
 
-    @DisplayName("get ResourceNotFoundException when id is invalid")
+    @DisplayName("get ResourceNotFoundException when threshold not found")
     @Test
-    public void testGetThresholdById_invalid_id() throws Throwable {
+    public void testGetThresholdById_invalid_id() {
         // stub
         when(mockThresholdRepository.findById(anyLong()))
                 .thenReturn(Optional.empty());
@@ -233,5 +234,21 @@ public class ThresholdServiceTest {
         assertEquals(testThreshold, actual);
     }
 
-
+    @Test
+    public void testGetThresholdDetailsByItemAndLocation() {
+        // setup
+        Threshold testThreshold = testUtils.getTestThreshold();
+        Long testItemId = testUtils.getTestItem().getItemId();
+        Long testLocationId = testUtils.getTestLocation().getLocationId();
+        ThresholdDetailsResponse excpectedhresholdDetailsResponse =
+                testUtils.getTestThresholdDetailsResponse();
+        // stub
+        when(mockThresholdRepository.findByItemIdAndLocationId(testItemId, testLocationId))
+                .thenReturn(testThreshold);
+        // execute
+        ThresholdDetailsResponse actual = thresholdService.getThresholdDetailsByItemAndLocation(
+                testItemId, testLocationId);
+        // assertions
+        assertEquals(excpectedhresholdDetailsResponse, actual);
+    }
 }

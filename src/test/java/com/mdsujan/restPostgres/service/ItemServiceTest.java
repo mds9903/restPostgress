@@ -108,7 +108,7 @@ public class ItemServiceTest {
         assertEquals(expected, actual);
     }
 
-    @DisplayName("get item by id when id is invalid")
+    @DisplayName("get item by id when item not found")
     @Test
     public void testGetItemById_invalid_id() throws Throwable {
         // stub

@@ -114,7 +114,7 @@ public class SupplyControllerTest {
         String expectedJsonResponse = objectMapper.writeValueAsString(testUtils.getTestSupplyResponse());
         MvcResult mvcResult = mockMvc.perform(post(base_url)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(testUtils.getCreateSupplyRequest())))
+                        .content(objectMapper.writeValueAsString(testUtils.getTestCreateSupplyRequest())))
                 .andExpect(status().isOk())
                 .andReturn();
         String actualJsonResponse = mvcResult.getResponse().getContentAsString();
@@ -129,7 +129,7 @@ public class SupplyControllerTest {
 
         // setup
         List<CreateSupplyRequest> testCreateSupplyRequestList = List.of(
-                testUtils.getCreateSupplyRequest());
+                testUtils.getTestCreateSupplyRequest());
 
         List<SupplyResponse> testSupplyResponseList = List.of(
                 testUtils.getTestSupplyResponse());
@@ -236,7 +236,7 @@ public class SupplyControllerTest {
         // UpdateSupplyRequest obj - for request body json
         UpdateSupplyRequest testSupplyPatchUpdateSupplyRequest = testUtils.getTestUpdateSupplyRequestPatch();
         // updated supply obj - for service mock
-        Supply mockUpdatedSupply = testUtils.getTestSupplyPatchUpdated();
+        Supply mockUpdatedSupply = testUtils.getTestSupplyUpdated();
         // SupplyResponse obj - for response body json
         SupplyResponse testSupplyResponsePatchUpdated = testUtils.getTestSupplyResponsePatchUpdated();
 
@@ -265,7 +265,7 @@ public class SupplyControllerTest {
         // setup
         String testId = "abc123";
 
-        Supply mockUpdatedSupply = testUtils.getTestSupplyPatchUpdated(); // supply after updated by patch
+        Supply mockUpdatedSupply = testUtils.getTestSupplyUpdated(); // supply after updated by patch
 
         // stub
         when(mockSupplyService.updateSupplyPatch(any(Long.class), any(UpdateSupplyRequest.class)))

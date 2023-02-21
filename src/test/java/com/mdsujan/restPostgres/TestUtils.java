@@ -14,7 +14,7 @@ public class TestUtils {
     // get a list of items
     public Item getTestItem() {
         return Item.builder()
-                .itemId(123L)
+                .itemId(1L)
                 .itemDesc("test description")
                 .category("test")
                 .itemType("test type")
@@ -134,13 +134,13 @@ public class TestUtils {
                 .build();
     }
 
-    public Supply getTestSupplyPatchUpdated() {
+    public Supply getTestSupplyUpdated() {
         return Supply.builder()
                 .supplyId(1L)
                 .supplyType(AllowedSupplyTypes.ONHAND)
-                .supplyQty(2L)
+                .supplyQty(2L) // updated
                 .itemId(1L)
-                .locationId(1L)
+                .locationId(1L) // updated
                 .build();
     }
 
@@ -154,7 +154,7 @@ public class TestUtils {
                 .build();
     }
 
-    public CreateSupplyRequest getCreateSupplyRequest() {
+    public CreateSupplyRequest getTestCreateSupplyRequest() {
         return CreateSupplyRequest
                 .builder()
                 .supplyId(1L)
@@ -224,7 +224,7 @@ public class TestUtils {
                 .build();
     }
 
-    public Demand getTestDemandUpdatedPatch() {
+    public Demand getTestDemandUpdated() {
         return Demand
                 .builder()
                 .demandId(1L)
@@ -365,6 +365,57 @@ public class TestUtils {
                 .state("test2State")
                 .country("testCountry")
                 .pincode("123456")
+                .build();
+    }
+
+    public ThresholdDetailsResponse getTestThresholdDetailsResponse() {
+        return ThresholdDetailsResponse
+                .builder()
+                .itemId(1L)
+                .locationId(1L)
+                .thresholdDetails(
+                        ThresholdDetails
+                                .builder()
+                                .minThreshold(1L)
+                                .maxThreshold(10L)
+                                .build())
+                .build();
+    }
+
+    public SupplyDetailsResponse getTestSupplyDetailsResponse() {
+        return SupplyDetailsResponse
+                .builder()
+                .itemId(1L)
+                .locationId(1L)
+                .supplyDetails(SupplyDetails
+                        .builder()
+                        .onhandQty(1L)
+                        .intransitQty(0L)
+                        .build())
+                .build();
+    }
+
+    public DemandDetailsResponse getTestDemandDetailsResponse() {
+        return DemandDetailsResponse
+                .builder()
+                .itemId(1L)
+                .locationId(1L)
+                .demandDetails(DemandDetails
+                        .builder()
+                        .hardPromisedQty(1L)
+                        .plannedQty(0L)
+                        .build())
+                .build();
+    }
+
+    public CreateDemandRequest getTestCreateDemandRequest() {
+        return CreateDemandRequest
+                .builder()
+                .itemId(1L)
+                .locationId(1L)
+                .demandId(1L)
+                .demandQty(1L)
+                .demandType(AllowedDemandTypes.HARD_PROMISED)
                 .build();
     }
 }

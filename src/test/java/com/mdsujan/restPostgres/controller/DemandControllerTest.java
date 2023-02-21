@@ -236,7 +236,7 @@ public class DemandControllerTest {
         // UpdateDemandRequest obj - for request body json
         UpdateDemandRequest testDemandPatchUpdateDemandRequest = testUtils.getTestUpdateDemandRequestPatch();
         // updated demand obj - for service mock
-        Demand mockUpdatedDemand = testUtils.getTestDemandUpdatedPatch();
+        Demand mockUpdatedDemand = testUtils.getTestDemandUpdated();
         // DemandResponse obj - for response body json
         DemandResponse testDemandResponsePatchUpdated = testUtils.getTestDemandResponseUpdatedPatch();
 
@@ -265,7 +265,7 @@ public class DemandControllerTest {
         // setup
         String testId = "abc123";
 
-        Demand mockUpdatedDemand = testUtils.getTestDemandUpdatedPatch(); // demand after updated by patch
+        Demand mockUpdatedDemand = testUtils.getTestDemandUpdated(); // demand after updated by patch
 
         // stub
         when(mockDemandService.updateDemandPatch(any(Long.class), any(UpdateDemandRequest.class)))
