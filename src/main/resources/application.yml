@@ -9,13 +9,18 @@ locations:
 
 # spring
 spring:
-#  profiles:
-#    active: dev
-# mongodb
+  #  profiles:
+  #    active: dev
+  # mongodb
   data:
     mongodb:
       uri: "mongodb+srv://learner:4748@cluster34938.uh7rhpp.mongodb.net/?retryWrites=true&w=majority"
       database: "db_inventory_app"
+  security:
+    user:
+      name: "mds9903"
+      password: "4748"
+
 # logging
 logging:
   file:
