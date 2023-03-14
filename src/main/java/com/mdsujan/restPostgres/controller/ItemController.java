@@ -32,7 +32,7 @@ public class ItemController {
         return itemService.getAllItemsPaginated(pageSize, pageNum);
     }
 
-    @GetMapping(value = "/{itemId}") // return the details of specific itemId
+    @GetMapping(value = "/getItemById/{itemId}") // return the details of specific itemId
     public Item getItem(@PathVariable @Valid Long itemId) throws Throwable {
         Item itemResponse = itemService.getItemById(itemId);
         logger.info("Response: " + itemResponse);
@@ -55,13 +55,12 @@ public class ItemController {
 //        return itemResponse;
     }
 
-//    @RequestMapping(value = "/", method = RequestMethod.POST, consumes = "text/plain")
-//    public Item createItem(@RequestBody @Valid Item createItemRequest) throws Throwable {
-//        logger.info("InQueryRequest: " + createItemRequest);
-//        Item itemResponse = itemService.createItem(createItemRequest);
-//        logger.info("Response: " + itemResponse);
-//        return itemResponse;
-//    }
+    @GetMapping("/ItemDescStartsWith/{pattern}")
+    public List<Item> searchItem_ItemDescStartsWith(@PathVariable String pattern) throws Throwable {
+        List<Item> itemsFound = itemService.searchItem_ItemDescStartsWith(pattern);
+        logger.info("Response: " + itemsFound);
+        return itemsFound;
+    }
 
     @PostMapping("/batch") // create an item in the table
     public List<Item> createItems(@RequestBody List<Item> createItemRequestList) throws Throwable {

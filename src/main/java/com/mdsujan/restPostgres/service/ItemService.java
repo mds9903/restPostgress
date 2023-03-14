@@ -1,9 +1,11 @@
 package com.mdsujan.restPostgres.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.mdsujan.restPostgres.entity.Item;
-import com.mdsujan.restPostgres.exceptionHandling.*;
+import com.mdsujan.restPostgres.exceptionHandling.DuplicateResourceException;
+import com.mdsujan.restPostgres.exceptionHandling.ResourceConflictException;
+import com.mdsujan.restPostgres.exceptionHandling.ResourceNotFoundException;
+import com.mdsujan.restPostgres.exceptionHandling.UpdateResourceRequestBodyInvalidException;
 import com.mdsujan.restPostgres.repository.DemandRepository;
 import com.mdsujan.restPostgres.repository.ItemRepository;
 import com.mdsujan.restPostgres.repository.SupplyRepository;
@@ -12,7 +14,6 @@ import com.mdsujan.restPostgres.response.PaginatedResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -197,4 +198,7 @@ public class ItemService {
         return new PaginatedResponse(items, maxPages, pageNum, pageSize);
     }
 
+    public List<Item> searchItem_ItemDescStartsWith(String pattern) {
+        return itemRepository.searchByItemDesc(pattern);
+    }
 }
